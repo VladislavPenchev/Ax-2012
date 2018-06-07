@@ -1,0 +1,768 @@
+﻿Exportfile for AOT version 1.0 or later
+Formatversion: 1
+
+***Element: JOB
+
+; Microsoft Dynamics AX Job: RentalTableInsert unloaded
+; --------------------------------------------------------------------------------
+  JOBVERSION 1
+  
+  SOURCE #RentalTableInsert
+    #static void RentalTableInsert(Args _args)
+    #{
+    #    Set hashSetRentalCars = new Set(Types::Class);
+    #    RentalTable rentalTable;
+    #    RentallTable rentClass;
+    #    int i =0;
+    #    SetEnumerator sE;
+    #    TransDate  transDate;
+    #    ;
+    #
+    #    transDate =mkDate(24,04,2009);
+    #
+    #    for(i = 1; i <= 3; i++)
+    #    {
+    #        rentClass = new RentallTable();
+    #
+    #        rentClass.setRentralId(strFmt("%1",i));
+    #        rentClass.setCustAccount(strFmt("110%1",i));
+    #        rentClass.setFromDate(transDate);
+    #        rentClass.setToDate(mkDate(24,i,2009));
+    #        rentClass.setCarId(strFmt("%1", i));
+    #
+    #        hashSetRentalCars.add(rentClass);
+    #    }
+    #
+    #    sE = hashSetRentalCars.getEnumerator();
+    #
+    #    while(sE.moveNext())
+    #    {
+    #        rentClass = sE.current();
+    #
+    #        rentalTable.initValue();
+    #
+    #        if(hashSetRentalCars.in(rentClass))
+    #        {
+    #            rentalTable.RentalId = rentClass.getRentalId();
+    #            rentalTable.CustAccount = rentClass.getCustAccount();
+    #            rentalTable.FromDate = rentClass.getFromDate();
+    #            rentalTable.ToDate = rentClass.getToDate();
+    #            rentalTable.CarId = rentClass.getCarId();
+    #
+    #            if(rentalTable.validateWrite())
+    #            {
+    #                rentalTable.insert();
+    #            }
+    #            else
+    #            {
+    #                info("Error");
+    #            }
+    #        }
+    #    }
+    #}
+  ENDSOURCE
+  PROPERTIES
+    Origin              #{74D70963-18DD-4B70-83D1-6E95B8F99293}
+  ENDPROPERTIES
+  
+
+***Element: CLS
+
+; Microsoft Dynamics AX Class: RentallTable unloaded
+; --------------------------------------------------------------------------------
+  CLSVERSION 1
+  
+  CLASS #RentallTable
+    PROPERTIES
+      Name                #RentallTable
+      Origin              #{80393A3D-2BA2-40C9-9C3C-D018FB7FC6C2}
+    ENDPROPERTIES
+    
+    METHODS
+      SOURCE #classDeclaration
+        #public class RentallTable
+        #{
+        #    str rentalId;
+        #    str custAccount;
+        #    date fromDate;
+        #    date toDate;
+        #    str carId;
+        #
+        #}
+      ENDSOURCE
+      SOURCE #getCarId
+        #public str getCarId()
+        #{
+        #    return carId;
+        #}
+      ENDSOURCE
+      SOURCE #getCustAccount
+        #public str getCustAccount()
+        #{
+        #    return custAccount;
+        #}
+      ENDSOURCE
+      SOURCE #getFromDate
+        #public date getFromDate()
+        #{
+        #    return fromDate;
+        #}
+      ENDSOURCE
+      SOURCE #getRentalId
+        #public str getRentalId()
+        #{
+        #    return rentalId;
+        #}
+      ENDSOURCE
+      SOURCE #getToDate
+        #public date getToDate()
+        #{
+        #    return toDate;
+        #}
+      ENDSOURCE
+      SOURCE #setCarId
+        #public void setCarId(str _carId)
+        #{
+        #    carId = _carId;
+        #}
+      ENDSOURCE
+      SOURCE #setCustAccount
+        #public void setCustAccount(str _custAccount)
+        #{
+        #    custAccount = _custAccount;
+        #}
+      ENDSOURCE
+      SOURCE #setFromDate
+        #public void setFromDate(date _fromDate)
+        #{
+        #    fromDate = _fromDate;
+        #}
+      ENDSOURCE
+      SOURCE #setRentralId
+        #public void setRentralId(str _rentalId)
+        #{
+        #    rentalId = _rentalId;
+        #}
+      ENDSOURCE
+      SOURCE #setToDate
+        #public void setToDate(date _toDate)
+        #{
+        #    toDate = _toDate;
+        #}
+      ENDSOURCE
+    ENDMETHODS
+  ENDCLASS
+
+***Element: DBT
+
+; Microsoft Dynamics AX Table : RentalTable unloaded
+; --------------------------------------------------------------------------------
+  TABLEVERSION 1
+  
+  TABLE #RentalTable
+    EnforceFKRelation 1
+    PROPERTIES
+      Name                #RentalTable
+      CreateRecIdIndex    #Yes
+      PrimaryIndex        #SurrogateKey
+      ClusterIndex        #SurrogateKey
+      Origin              #{884EE6E0-8B29-47F8-A0DF-53A730662BB1}
+    ENDPROPERTIES
+    
+    FIELDS
+      FIELD #CarId
+        STRING
+        PROPERTIES
+          Name                #CarId
+          Table               #RentalTable
+          Origin              #{02542339-DD0F-45B1-9B45-D998CE6916C9}
+        ENDPROPERTIES
+        
+      FIELD #ToDate
+        DATE
+        PROPERTIES
+          Name                #ToDate
+          Table               #RentalTable
+          Origin              #{A4464140-6CA1-46D9-9D3A-F7DB82A26864}
+        ENDPROPERTIES
+        
+      FIELD #FromDate
+        DATE
+        PROPERTIES
+          Name                #FromDate
+          Table               #RentalTable
+          Origin              #{97D88B12-1DD3-4242-A671-AB8291F4D912}
+        ENDPROPERTIES
+        
+      FIELD #CustAccount
+        STRING
+        PROPERTIES
+          Name                #CustAccount
+          Table               #RentalTable
+          Origin              #{46CFBA3D-3A0A-435F-B21E-940492358137}
+        ENDPROPERTIES
+        
+      FIELD #RentalId
+        STRING
+        PROPERTIES
+          Name                #RentalId
+          Table               #RentalTable
+          Origin              #{8A78B9B3-B582-4BFE-BC18-E0AB3BFB575F}
+        ENDPROPERTIES
+        
+    ENDFIELDS
+    GROUPS
+    ENDGROUPS
+    
+    INDICES
+    ENDINDICES
+    FULLTEXTINDICES
+    ENDFULLTEXTINDICES
+    REFERENCES
+    ENDREFERENCES
+    
+    DELETEACTIONS
+    ENDDELETEACTIONS
+    
+    METHODS
+    ENDMETHODS
+  ENDTABLE
+  
+
+***Element: JOB
+
+; Microsoft Dynamics AX Job: CustTableeInsert unloaded
+; --------------------------------------------------------------------------------
+  JOBVERSION 1
+  
+  SOURCE #CustTableeInsert
+    #static void CustTableeInsert(Args _args)
+    #{
+    #    Set hashSetWithCustomers = new Set(Types::Class);
+    #    CusttTable custtTable;
+    #    Customer customer;
+    #    int i = 0;
+    #    SetEnumerator sE;
+    #    ;
+    #
+    #
+    #
+    #    for(i = 1;i <= 3;i++)
+    #    {
+    #        customer = new Customer();
+    #
+    #        customer.setAccountNum("110" + strFmt("%1",i));
+    #        customer.setName("Forest Wholesales" + strFmt("%1",i));
+    #        customer.setCustGroup(strFmt("%1",i) + "0");
+    #        if(i mod 2 == 0)
+    #        {
+    #            customer.setBlocked("Yes");
+    #        }
+    #        else
+    #        {
+    #            customer.setBlocked("No");
+    #        }
+    #
+    #
+    #        hashSetWithCustomers.add(customer);
+    #    }
+    #
+    #    sE = hashSetWithCustomers.getEnumerator();
+    #
+    #   while(sE.moveNext())
+    #   {
+    #        customer = sE.current();
+    #
+    #       custtTable.initValue();
+    #
+    #       if(hashSetWithCustomers.in(customer))
+    #       {
+    #            custtTable.AccountNum = customer.getAccountNum();
+    #            custtTable.Name = customer.getName();
+    #            custtTable.CustGroupId = customer.getCustGroup();
+    #            custtTable.Blocked = customer.getBlocked();
+    #
+    #           if(custtTable.validateWrite())
+    #           {
+    #               custtTable.insert();
+    #
+    #           }
+    #           else
+    #           {
+    #               info("Error");
+    #           }
+    #
+    #       }
+    #
+    #   }
+    #
+    #}
+  ENDSOURCE
+  PROPERTIES
+    Origin              #{2202F1C5-D7B6-4FE6-963A-9492497E87BD}
+  ENDPROPERTIES
+  
+
+***Element: DBT
+
+; Microsoft Dynamics AX Table : CusttTable unloaded
+; --------------------------------------------------------------------------------
+  TABLEVERSION 1
+  
+  TABLE #CusttTable
+    EnforceFKRelation 1
+    PROPERTIES
+      Name                #CusttTable
+      CreateRecIdIndex    #Yes
+      PrimaryIndex        #SurrogateKey
+      ClusterIndex        #SurrogateKey
+      Origin              #{F935C6D1-6BFE-43C5-8CB7-6CB8D0FFFB58}
+    ENDPROPERTIES
+    
+    FIELDS
+      FIELD #AccountNum
+        STRING
+        PROPERTIES
+          Name                #AccountNum
+          Table               #CusttTable
+          Origin              #{29E35F5C-64A9-49B5-BA10-66964955E4E8}
+          ExtendedDataType    #AccountNum
+          StringSize          #20
+        ENDPROPERTIES
+        
+      FIELD #Blocked
+        STRING
+        PROPERTIES
+          Name                #Blocked
+          Table               #CusttTable
+          Origin              #{F6F910DF-7A64-47D0-A483-B8AD3FBEC3AD}
+        ENDPROPERTIES
+        
+      FIELD #CustGroupId
+        STRING
+        PROPERTIES
+          Name                #CustGroupId
+          Table               #CusttTable
+          Origin              #{D5E44643-4245-4D13-9052-86BE9249C4CA}
+          ExtendedDataType    #CustGroupId
+        ENDPROPERTIES
+        
+      FIELD #Name
+        STRING
+        PROPERTIES
+          Name                #Name
+          Table               #CusttTable
+          Origin              #{589FD5F6-6ACC-45EB-AEDC-C172D3AA1A7A}
+          ExtendedDataType    #Name
+          StringSize          #60
+        ENDPROPERTIES
+        
+    ENDFIELDS
+    GROUPS
+    ENDGROUPS
+    
+    INDICES
+    ENDINDICES
+    FULLTEXTINDICES
+    ENDFULLTEXTINDICES
+    REFERENCES
+    ENDREFERENCES
+    
+    DELETEACTIONS
+    ENDDELETEACTIONS
+    
+    METHODS
+    ENDMETHODS
+  ENDTABLE
+  
+
+***Element: CLS
+
+; Microsoft Dynamics AX Class: Customer unloaded
+; --------------------------------------------------------------------------------
+  CLSVERSION 1
+  
+  CLASS #Customer
+    PROPERTIES
+      Name                #Customer
+      Origin              #{0A7603D5-6061-4BC9-A394-A6E937DC30B9}
+    ENDPROPERTIES
+    
+    METHODS
+      SOURCE #classDeclaration
+        #public class Customer
+        #{
+        #    str accountNum;
+        #    str name;
+        #    str custGroupId;
+        #    str blocked;
+        #}
+      ENDSOURCE
+      SOURCE #getAccountNum
+        #public str getAccountNum()
+        #{
+        #    return accountNum;
+        #}
+      ENDSOURCE
+      SOURCE #getBlocked
+        #public str getBlocked()
+        #{
+        #    return blocked;
+        #}
+      ENDSOURCE
+      SOURCE #getCustGroup
+        #public str getCustGroup()
+        #{
+        #    return custGroupId;
+        #}
+      ENDSOURCE
+      SOURCE #getName
+        #public str getName()
+        #{
+        #    return name;
+        #}
+      ENDSOURCE
+      SOURCE #setAccountNum
+        #public void setAccountNum(str _accountNum)
+        #{
+        #    accountNum = _accountNum;
+        #}
+      ENDSOURCE
+      SOURCE #setBlocked
+        #public void setBlocked(str _blocked)
+        #{
+        #    blocked = _blocked;
+        #}
+        #
+      ENDSOURCE
+      SOURCE #setCustGroup
+        #public void setCustGroup(str _custGroupId)
+        #{
+        #   custGroupId = _custGroupId;
+        #}
+      ENDSOURCE
+      SOURCE #setName
+        #public void setName(str _name)
+        #{
+        #    name = _name;
+        #}
+      ENDSOURCE
+    ENDMETHODS
+  ENDCLASS
+
+***Element: JOB
+
+; Microsoft Dynamics AX Job: CarInsert unloaded
+; --------------------------------------------------------------------------------
+  JOBVERSION 1
+  
+  SOURCE #CarInsert
+    #public static void CarInsert(Args _args)
+    #{
+    #    CarTable carTable;
+    #    List cars = new List(Types::Class);
+    #    Car car; //= new Car();
+    #    int i;
+    #    ListEnumerator carsEnumerator;
+    #    ListIterator carsIter;
+    #    Object test = new Object();
+    #
+    #    ;
+    #
+    #    for(i = 1 ; i <= 3; i++)
+    #    {
+    #        car = new Car();
+    #
+    #        car.setCarId(i);
+    #        car.setModelYear("2016");
+    #        car.setCarBrand("Tesla");
+    #        car.setModel("S" + strFmt("%1",i));
+    #        car.setMiliage("200" + strFmt("%1",i));
+    #
+    #        cars.addEnd(car);
+    #    }
+    #
+    #    carsIter = new ListIterator(cars);
+    #
+    #
+    #    while(carsIter.more())
+    #    {
+    #        //car = carsIter.value();
+    #
+    #        test = carsIter.value();
+    #
+    #        carTable.initValue();
+    #
+    #
+    #
+    #        carTable.CarId = test.getCarId();
+    #        carTable.ModelYear = test.getModelYear();
+    #        carTable.CarBrand = test.getCarBrand();
+    #        carTable.Model = test.getModel();
+    #        carTable.Mileage = test.getMiliage();
+    #
+    #        if(carTable.validateWrite())
+    #        {
+    #            carTable.insert();
+    #
+    #            //carsIter.delete();
+    #            carsIter.next();
+    #        }
+    #        else
+    #        {
+    #            info(strFmt("Error"));
+    #        }
+    #
+    #    }
+    #
+    #}
+  ENDSOURCE
+  PROPERTIES
+    Origin              #{2495D3E7-9D7F-442D-B108-DFBA74EBD30F}
+  ENDPROPERTIES
+  
+
+***Element: CLS
+
+; Microsoft Dynamics AX Class: Car unloaded
+; --------------------------------------------------------------------------------
+  CLSVERSION 1
+  
+  CLASS #Car
+    PROPERTIES
+      Name                #Car
+      Origin              #{D5EC2FD0-6B7E-4A8A-A1C8-E42AD7220B2B}
+    ENDPROPERTIES
+    
+    METHODS
+      SOURCE #classDeclaration
+        #public class Car
+        #{
+        #    int carId;
+        #    str modelYear;
+        #    str carBrand;
+        #    str model;
+        #    str miliage;
+        #
+        #}
+      ENDSOURCE
+      SOURCE #getCarBrand
+        #public str getCarBrand()
+        #{
+        #    return carBrand;
+        #}
+      ENDSOURCE
+      SOURCE #getCarId
+        #public int getCarId()
+        #{
+        #    return carId;
+        #}
+      ENDSOURCE
+      SOURCE #getMiliage
+        #public str getMiliage()
+        #{
+        #   return miliage;
+        #}
+      ENDSOURCE
+      SOURCE #getModel
+        #public str getModel()
+        #{
+        #    return model;
+        #}
+      ENDSOURCE
+      SOURCE #getModelYear
+        #public str getModelYear()
+        #{
+        #    return modelYear;
+        #}
+      ENDSOURCE
+      SOURCE #setCarBrand
+        #public void setCarBrand(str _carBrand)
+        #{
+        #    carBrand = _carBrand;
+        #}
+      ENDSOURCE
+      SOURCE #setCarId
+        #public void setCarId(int _carId)
+        #{
+        #    carId = _carId;
+        #}
+      ENDSOURCE
+      SOURCE #setMiliage
+        #public void setMiliage(str _miliage)
+        #{
+        #    miliage = _miliage;
+        #}
+      ENDSOURCE
+      SOURCE #setModel
+        #public void setModel(str _model)
+        #{
+        #    model = _model;
+        #}
+      ENDSOURCE
+      SOURCE #setModelYear
+        #public void setModelYear(str _modelYear)
+        #{
+        #    modelYear = _modelYear;
+        #}
+      ENDSOURCE
+    ENDMETHODS
+  ENDCLASS
+
+***Element: DBT
+
+; Microsoft Dynamics AX Table : CarTable unloaded
+; --------------------------------------------------------------------------------
+  TABLEVERSION 1
+  
+  TABLE #CarTable
+    EnforceFKRelation 1
+    PROPERTIES
+      Name                #CarTable
+      CreateRecIdIndex    #Yes
+      PrimaryIndex        #SurrogateKey
+      ClusterIndex        #SurrogateKey
+      Origin              #{8EF069EE-1FB7-4879-9F73-9ADC500BF85D}
+    ENDPROPERTIES
+    
+    FIELDS
+      FIELD #CarBrand
+        STRING
+        PROPERTIES
+          Name                #CarBrand
+          Table               #CarTable
+          Origin              #{BAB2AC09-7232-498B-A640-B8C62DAC6807}
+        ENDPROPERTIES
+        
+      FIELD #CarId
+        INT
+        PROPERTIES
+          Name                #CarId
+          Table               #CarTable
+          Origin              #{F0394C9F-620A-473C-AE4A-19DD3D6F316E}
+        ENDPROPERTIES
+        
+      FIELD #Mileage
+        STRING
+        PROPERTIES
+          Name                #Mileage
+          Table               #CarTable
+          Origin              #{43DB0CF4-C4D2-4B0D-88F2-B4C31802BA2C}
+        ENDPROPERTIES
+        
+      FIELD #Model
+        STRING
+        PROPERTIES
+          Name                #Model
+          Table               #CarTable
+          Origin              #{C2F79FA5-DC82-445A-B9E1-9724B8173432}
+        ENDPROPERTIES
+        
+      FIELD #ModelYear
+        STRING
+        PROPERTIES
+          Name                #ModelYear
+          Table               #CarTable
+          Origin              #{BB341085-6E63-46A0-AE10-B0C331A38FEE}
+        ENDPROPERTIES
+        
+    ENDFIELDS
+    GROUPS
+    ENDGROUPS
+    
+    INDICES
+    ENDINDICES
+    FULLTEXTINDICES
+    ENDFULLTEXTINDICES
+    REFERENCES
+    ENDREFERENCES
+    
+    DELETEACTIONS
+    ENDDELETEACTIONS
+    
+    METHODS
+    ENDMETHODS
+  ENDTABLE
+  
+
+***Element: PRN
+
+; Microsoft Dynamics AX Project : HV_Training unloaded
+; --------------------------------------------------------------------------------
+  PROJECTVERSION 2
+  
+  PROJECT #HV_Training
+  PRIVATE
+  PROPERTIES
+    Name                #HV_Training
+    Origin              #{AC1DA3CC-9DA6-4280-A83B-64BC475B0E1F}
+  ENDPROPERTIES
+  
+    PROJECTCLASS ProjectNode
+    BEGINNODE
+      FILETYPE 0
+      UTILTYPE 5
+      UTILOBJECTID 0
+      NODETYPE 215
+      NAME #RentalTableInsert
+    ENDNODE
+    BEGINNODE
+      FILETYPE 0
+      UTILTYPE 45
+      UTILOBJECTID 1030595
+      NODETYPE 329
+      NAME #RentallTable
+    ENDNODE
+    BEGINNODE
+      FILETYPE 0
+      UTILTYPE 44
+      UTILOBJECTID 107520
+      NODETYPE 204
+      NAME #RentalTable
+    ENDNODE
+    BEGINNODE
+      FILETYPE 0
+      UTILTYPE 5
+      UTILOBJECTID 0
+      NODETYPE 215
+      NAME #CustTableeInsert
+    ENDNODE
+    BEGINNODE
+      FILETYPE 0
+      UTILTYPE 44
+      UTILOBJECTID 107519
+      NODETYPE 204
+      NAME #CusttTable
+    ENDNODE
+    BEGINNODE
+      FILETYPE 0
+      UTILTYPE 45
+      UTILOBJECTID 1030593
+      NODETYPE 329
+      NAME #Customer
+    ENDNODE
+    BEGINNODE
+      FILETYPE 0
+      UTILTYPE 5
+      UTILOBJECTID 0
+      NODETYPE 215
+      NAME #CarInsert
+    ENDNODE
+    BEGINNODE
+      FILETYPE 0
+      UTILTYPE 45
+      UTILOBJECTID 1030590
+      NODETYPE 329
+      NAME #Car
+    ENDNODE
+    BEGINNODE
+      FILETYPE 0
+      UTILTYPE 44
+      UTILOBJECTID 107516
+      NODETYPE 204
+      NAME #CarTable
+    ENDNODE
+  ENDPROJECT
+  
+
+***Element: END

@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>6.3.5000.138</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>32d530f6-ed33-43f9-85c2-92d8c97d8beb</ProjectGuid>
+    <ProjectTypeGuids>{BF6F8E12-879D-49E7-ADF0-5503146B24B8};{aa631830-3ad7-4631-8cf6-443a09bf983b}</ProjectTypeGuids>
+    <Name>HV_Z_PurchCubeHVP_VS</Name>
+    <BaseAssemblyName>HV_Z_PurchCubeHVP_VS</BaseAssemblyName>
+    <!-- Application property page properties -->
+    <OutputType>Dynamics Reporting Library</OutputType>
+    <!-- AssemblyInfo properties -->
+    <AssemblyTitle>HV_Z_PurchCubeHVP_VS</AssemblyTitle>
+    <AssemblyCompany>
+    </AssemblyCompany>
+    <AssemblyProduct>HV_Z_PurchCubeHVP_VS</AssemblyProduct>
+    <AssemblyCopyright>Copyright ©  2018</AssemblyCopyright>
+    <TargetFrameworkVersion>v4.7</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DeployToServer>No</DeployToServer>
+    <DeployToClient>No</DeployToClient>
+    <DeployToEP>No</DeployToEP>
+    <RootNamespace>HV_Z_PurchCubeHVP_VS</RootNamespace>
+    <StartupElement />
+    <DebugTarget>None</DebugTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>bin\Debug\</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>bin\Release\</OutputPath>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="\SSRS Reports\Reports\HV_Z_PurchCubeHVP_Object">
+      <Virtual>True</Virtual>
+    </Compile>
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\DynamicsTools\Microsoft.Dynamics.Framework.Design.Reporting.Modeling.targets" />
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\DynamicsTools\Microsoft.Dynamics.Framework.Design.InteractionProject.targets" />
+</Project>

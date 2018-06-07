@@ -1,0 +1,2 @@
+C:\Users\vladislav.penchev\Desktop\HV_Z_PurchCubeHVP_VS\HV_Z_PurchCubeHVP_VS\bin\Debug\HV_Z_PurchCubeHVP_VS.Model.dll
+C:\Users\vladislav.penchev\Desktop\HV_Z_PurchCubeHVP_VS\HV_Z_PurchCubeHVP_VS\obj\Debug\HV_Z_PurchCubeHVP_VS.Model.dll

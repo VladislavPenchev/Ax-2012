@@ -1,0 +1,5167 @@
+﻿Exportfile for AOT version 1.0 or later
+Formatversion: 1
+
+***Element: MNU
+
+; Microsoft Dynamics AX Menu : AccountsReceivable unloaded
+; --------------------------------------------------------------------------------
+  MNUVERSION 5
+  
+  MENU #AccountsReceivable
+    PROPERTIES
+      Name                #AccountsReceivable
+      Label               #@SYS333907
+      SetCompany          #Yes
+      NormalImage         #3480
+      ImageLocation       #EmbeddedResource
+      Origin              #{A6A17BCE-F328-412A-8D52-67C2310505D3}
+    ENDPROPERTIES
+    
+    MENU #@SYS333846
+      PROPERTIES
+        Name                #Common
+        Label               #@SYS333846
+        NormalImage         #3495
+        ImageLocation       #EmbeddedResource
+      ENDPROPERTIES
+      
+      MENUITEM
+        PROPERTIES
+          Name                #Customs export order
+          MenuItemName        #CustomsExportOrderListPage_IN
+          IsDisplayedInContentArea    #Yes
+        ENDPROPERTIES
+        
+      ENDMENUITEM
+      MENU #@SYS333909
+        PROPERTIES
+          Name                #Customers
+          Label               #@SYS333909
+        ENDPROPERTIES
+        
+        MENUITEM
+          PROPERTIES
+            Name                #All customers
+            MenuItemName        #CustTableListPage
+            IsDisplayedInContentArea    #Yes
+          ENDPROPERTIES
+          
+        ENDMENUITEM
+        MENUITEM
+          PROPERTIES
+            Name                #Customers on hold
+            MenuItemName        #CustTableHoldListPage
+            IsDisplayedInContentArea    #Yes
+          ENDPROPERTIES
+          
+        ENDMENUITEM
+        MENUITEM
+          PROPERTIES
+            Name                #Customers past due
+            MenuItemName        #CustTablePastDueListPage
+            IsDisplayedInContentArea    #Yes
+          ENDPROPERTIES
+          
+        ENDMENUITEM
+        MENUITEM
+          PROPERTIES
+            Name                #eInvoice enrollment and answer
+            MenuItemName        #CustEInvoiceIntegrationeInvoice
+          ENDPROPERTIES
+          
+        ENDMENUITEM
+      ENDMENU
+      MENU #@SYS333910
+        PROPERTIES
+          Name                #CustomerInvoices
+          Label               #@SYS333910
+        ENDPROPERTIES
+        
+        MENUITEM
+          PROPERTIES
+            Name                #Open customer invoices
+            MenuItemName        #CustOpenInvoicesListPage
+            IsDisplayedInContentArea    #Yes
+          ENDPROPERTIES
+          
+        ENDMENUITEM
+        MENUITEM
+          PROPERTIES
+            Name                #Customer invoices due today
+            MenuItemName        #CustOpenInvoicesDueTodayListPage
+            IsDisplayedInContentArea    #Yes
+          ENDPROPERTIES
+          
+        ENDMENUITEM
+        MENUITEM
+          PROPERTIES
+            Name                #Customer invoices past due
+            MenuItemName        #CustOpenInvoicesPastDueListPage
+            IsDisplayedInContentArea    #Yes
+          ENDPROPERTIES
+          
+        ENDMENUITEM
+      ENDMENU
+      MENU #@SYS333911
+        PROPERTIES
+          Name                #FreeTextInvoices
+          Label               #@SYS333911
+        ENDPROPERTIES
+        
+        MENUITEM
+          PROPERTIES
+            Name                #All free text invoices
+            MenuItemName        #CustFreeInvoiceListPage
+            IsDisplayedInContentArea    #Yes
+          ENDPROPERTIES
+          
+        ENDMENUITEM
+        MENUITEM
+          PROPERTIES
+            Name                #Free text invoices assigned to me
+            MenuItemName        #CustFreeInvoiceAssignedToMeListPage
+            IsDisplayedInContentArea    #Yes
+          ENDPROPERTIES
+          
+        ENDMENUITEM
+        MENUITEM
+          PROPERTIES
+            Name                #Free text invoices assigned to my queues
+            MenuItemName        #CustFreeInvoiceAssignedToQueuesListPage
+            IsDisplayedInContentArea    #Yes
+          ENDPROPERTIES
+          
+        ENDMENUITEM
+      ENDMENU
+      MENU #@SYS333912
+        PROPERTIES
+          Name                #Payments
+          Label               #@SYS333912
+        ENDPROPERTIES
+        
+        MENUITEM
+          PROPERTIES
+            Name                #Payment journals
+            MenuItemName        #LedgerJournalTableCustPaymentListPage
+            IsDisplayedInContentArea    #Yes
+          ENDPROPERTIES
+          
+        ENDMENUITEM
+        MENUITEM
+          PROPERTIES
+            Name                #Payment journals assigned to me
+            MenuItemName        #CustPaymentAssignedToMeListPage
+            IsDisplayedInContentArea    #Yes
+          ENDPROPERTIES
+          
+        ENDMENUITEM
+        MENUITEM
+          PROPERTIES
+            Name                #Payment journals assigned to my queues
+            MenuItemName        #CustPaymentAssignedToQueuesListPage
+            IsDisplayedInContentArea    #Yes
+          ENDPROPERTIES
+          
+        ENDMENUITEM
+      ENDMENU
+      MENU #@SYS333918
+        PROPERTIES
+          Name                #BillOfExchange
+          Label               #@SYS333918
+        ENDPROPERTIES
+        
+        MENUITEM
+          PROPERTIES
+            Name                #Endorse bills of exchange
+            MenuItemName        #CustBillOfExchangeEndorseListPage
+            IsDisplayedInContentArea    #Yes
+          ENDPROPERTIES
+          
+        ENDMENUITEM
+      ENDMENU
+      MENU #@SYS333913
+        PROPERTIES
+          Name                #Collections
+          Label               #@SYS333913
+        ENDPROPERTIES
+        
+        MENUITEM
+          PROPERTIES
+            Name                #Collections
+            MenuItemName        #CustCollectionsPoolsListPage
+            IsDisplayedInContentArea    #Yes
+          ENDPROPERTIES
+          
+        ENDMENUITEM
+        MENUITEM
+          PROPERTIES
+            Name                #Collections cases
+            MenuItemName        #CustCollectionsCaseListPage
+            IsDisplayedInContentArea    #Yes
+          ENDPROPERTIES
+          
+        ENDMENUITEM
+        MENUITEM
+          PROPERTIES
+            Name                #Collections activities
+            MenuItemName        #CustCollectionsActivitiesListPage
+            IsDisplayedInContentArea    #Yes
+          ENDPROPERTIES
+          
+        ENDMENUITEM
+      ENDMENU
+      MENU #@SYS334260
+        PROPERTIES
+          Name                #SalesOrders
+          Label               #@SYS334260
+        ENDPROPERTIES
+        
+        MENUITEM
+          PROPERTIES
+            Name                #All sales orders
+            MenuItemName        #SalesTableListPage
+            IsDisplayedInContentArea    #Yes
+          ENDPROPERTIES
+          
+        ENDMENUITEM
+        MENUITEM
+          PROPERTIES
+            Name                #Sales agreements
+            MenuItemName        #SalesAgreementListPage
+            IsDisplayedInContentArea    #Yes
+          ENDPROPERTIES
+          
+        ENDMENUITEM
+        MENUITEM
+          PROPERTIES
+            Name                #Shipped but not invoiced sales orders
+            MenuItemName        #SalesTableListPageShippedNotInvoiced
+            IsDisplayedInContentArea    #Yes
+          ENDPROPERTIES
+          
+        ENDMENUITEM
+        MENUITEM
+          PROPERTIES
+            Name                #All fulfilled orders
+            MenuItemName        #SalesTableListPageFulfilled
+            IsDisplayedInContentArea    #Yes
+          ENDPROPERTIES
+          
+        ENDMENUITEM
+        MENUITEM
+          PROPERTIES
+            Name                #All partially picked orders
+            MenuItemName        #SalesTableListPagePartiallyPicked
+            IsDisplayedInContentArea    #Yes
+          ENDPROPERTIES
+          
+        ENDMENUITEM
+      ENDMENU
+      MENU #@SYS322452
+        PROPERTIES
+          Name                #Postdatedchecks
+          Label               #@SYS322452
+        ENDPROPERTIES
+        
+        MENUITEM
+          PROPERTIES
+            Name                #Customer postdated checks
+            MenuItemName        #CustPostDatedChecks
+            IsDisplayedInContentArea    #Yes
+          ENDPROPERTIES
+          
+        ENDMENUITEM
+      ENDMENU
+      MENU #@GLS107924
+        PROPERTIES
+          Name                #AdvanceInvoices
+          Label               #@GLS107924
+        ENDPROPERTIES
+        
+        MENUITEM
+          PROPERTIES
+            Name                #All advance invoices
+            MenuItemName        #CzCustAdvanceInvoiceListPage
+            IsDisplayedInContentArea    #Yes
+          ENDPROPERTIES
+          
+        ENDMENUITEM
+      ENDMENU
+      MENU #@GLS63553
+        PROPERTIES
+          Name                #FiscalDocuments
+          Label               #@GLS63553
+          CountryRegionCodes  #BR
+        ENDPROPERTIES
+        
+        MENUITEM
+          PROPERTIES
+            Name                #All fiscal documents
+            MenuItemName        #FiscalDocumentListPageCust_BR
+            IsDisplayedInContentArea    #Yes
+          ENDPROPERTIES
+          
+        ENDMENUITEM
+        MENUITEM
+          PROPERTIES
+            Name                #All sales complementary fiscal documents
+            MenuItemName        #SalesComplementaryInvoiceListPage
+            IsDisplayedInContentArea    #Yes
+          ENDPROPERTIES
+          
+        ENDMENUITEM
+        MENUITEM
+          PROPERTIES
+            Name                #Rejected fiscal documents with pending cancellation
+            MenuItemName        #FiscalDocumentLPCustCancelPending_BR
+            IsDisplayedInContentArea    #Yes
+          ENDPROPERTIES
+          
+        ENDMENUITEM
+        MENUITEM
+          PROPERTIES
+            Name                #Fiscal documents pending an update to contingency mode
+            MenuItemName        #FiscalDocumentLPCustContigencyPending_BR
+            IsDisplayedInContentArea    #Yes
+          ENDPROPERTIES
+          
+        ENDMENUITEM
+      ENDMENU
+    ENDMENU
+    MENU #@SYS333879
+      PROPERTIES
+        Name                #Journals
+        Label               #@SYS333879
+        NormalImage         #3475
+        ImageLocation       #EmbeddedResource
+      ENDPROPERTIES
+      
+      MENUITEM
+        PROPERTIES
+          Name                #Customer unmerge
+          MenuItemName        #MCRCustUnmergeWorkbench
+        ENDPROPERTIES
+        
+      ENDMENUITEM
+      MENU #@SYS19789
+        PROPERTIES
+          Name                #Submenu1
+          Label               #@SYS19789
+        ENDPROPERTIES
+        
+        MENUITEM
+          PROPERTIES
+            Name                #Price/discount agreement journals
+            MenuItemName        #PriceDiscAdmTable_sales
+          ENDPROPERTIES
+          
+        ENDMENUITEM
+      ENDMENU
+      MENU #@SYS333917
+        PROPERTIES
+          Name                #Payments
+          Label               #@SYS333917
+        ENDPROPERTIES
+        
+        MENUITEM
+          PROPERTIES
+            Name                #Payment journal
+            MenuItemName        #LedgerJournalTable_CustPaym
+          ENDPROPERTIES
+          
+        ENDMENUITEM
+        MENUITEM
+          PROPERTIES
+            Name                #Payment transfers
+            MenuItemName        #CustPaymReconciliation
+          ENDPROPERTIES
+          
+        ENDMENUITEM
+        MENUITEM
+          PROPERTIES
+            Name                #Remittance
+            MenuItemName        #CustPaymManFile
+          ENDPROPERTIES
+          
+        ENDMENUITEM
+        MENUITEM
+          PROPERTIES
+            Name                #Payment transactions
+            MenuItemName        #CustPaymManTrans
+          ENDPROPERTIES
+          
+        ENDMENUITEM
+      ENDMENU
+      MENU #@SYS333918
+        PROPERTIES
+          Name                #BillOfExchange
+          Label               #@SYS333918
+        ENDPROPERTIES
+        
+        MENUITEM
+          PROPERTIES
+            Name                #Draw bill of exchange journal
+            MenuItemName        #LedgerJournalTable_CustDrawBill
+          ENDPROPERTIES
+          
+        ENDMENUITEM
+        MENUITEM
+          PROPERTIES
+            Name                #Protest bill of exchange journal
+            MenuItemName        #LedgerJournalTable_CustProtestBill
+          ENDPROPERTIES
+          
+        ENDMENUITEM
+        MENUITEM
+          PROPERTIES
+            Name                #Redraw bill of exchange journal
+            MenuItemName        #LedgerJournalTable_CustRedrawBill
+          ENDPROPERTIES
+          
+        ENDMENUITEM
+        MENUITEM
+          PROPERTIES
+            Name                #Remittance journal
+            MenuItemName        #LedgerJournalTable_CustPaymRemittance
+          ENDPROPERTIES
+          
+        ENDMENUITEM
+        MENUITEM
+          PROPERTIES
+            Name                #Settle bill of exchange journal
+            MenuItemName        #LedgerJournalTable_CustSettleBill
+          ENDPROPERTIES
+          
+        ENDMENUITEM
+      ENDMENU
+    ENDMENU
+    MENU #@SYS333856
+      PROPERTIES
+        Name                #Inquiries
+        Label               #@SYS333856
+        NormalImage         #3474
+        ImageLocation       #EmbeddedResource
+      ENDPROPERTIES
+      
+      MENUITEM
+        PROPERTIES
+          Name                #Payment fee
+          MenuItemName        #CustPaymFeeInquery
+        ENDPROPERTIES
+        
+      ENDMENUITEM
+      MENUITEM
+        PROPERTIES
+          Name                #Credit card issues
+          MenuItemName        #CreditCardIssues
+        ENDPROPERTIES
+        
+      ENDMENUITEM
+      MENUITEM
+        PROPERTIES
+          Name                #Customer balance inquiry
+          MenuItemName        #CustBalanceList_CN
+        ENDPROPERTIES
+        
+      ENDMENUITEM
+      MENUITEM
+        PROPERTIES
+          Name                #Tax document
+          MenuItemName        #CZTaxDocumentTable_Cust
+        ENDPROPERTIES
+        
+      ENDMENUITEM
+      MENUITEM
+        PROPERTIES
+          Name                #Payment order register
+          MenuItemName        #BankPaymentOrderJour_Cust_RU
+        ENDPROPERTIES
+        
+      ENDMENUITEM
+      MENUITEM
+        PROPERTIES
+          Name                #Act of adjustment
+          MenuItemName        #RLedgerSheetActAdjustCust
+        ENDPROPERTIES
+        
+      ENDMENUITEM
+      MENUITEM
+        PROPERTIES
+          Name                #COD outstanding
+          MenuItemName        #SalesCOD
+        ENDPROPERTIES
+        
+      ENDMENUITEM
+      MENU #@SYS333921
+        PROPERTIES
+          Name                #Collections
+          Label               #@SYS333921
+        ENDPROPERTIES
+        
+        MENUITEM
+          PROPERTIES
+            Name                #Collection letter journal
+            MenuItemName        #CustCollectionLetterJournal
+          ENDPROPERTIES
+          
+        ENDMENUITEM
+        MENUITEM
+          PROPERTIES
+            Name                #Interest journal
+            MenuItemName        #CustInterestJournal
+          ENDPROPERTIES
+          
+        ENDMENUITEM
+      ENDMENU
+      MENU #@SYS333922
+        PROPERTIES
+          Name                #BillOfExchange
+          Label               #@SYS333922
+        ENDPROPERTIES
+        
+        MENUITEM
+          PROPERTIES
+            Name                #Bill of exchange journal
+            MenuItemName        #CustBillOfExchangeJour
+          ENDPROPERTIES
+          
+        ENDMENUITEM
+        MENUITEM
+          PROPERTIES
+            Name                #Bill of exchange statistics
+            MenuItemName        #CustBillOfExchangeStat
+          ENDPROPERTIES
+          
+        ENDMENUITEM
+      ENDMENU
+      MENU #@SYS333923
+        PROPERTIES
+          Name                #Journals
+          Label               #@SYS333923
+        ENDPROPERTIES
+        
+        MENUITEM
+          PROPERTIES
+            Name                #Invoice for payment
+            MenuItemName        #CustInvoice4PaymJournal_RU
+          ENDPROPERTIES
+          
+        ENDMENUITEM
+        MENUITEM
+          PROPERTIES
+            Name                #Invoice journal
+            MenuItemName        #CustInvoiceJournal
+          ENDPROPERTIES
+          
+        ENDMENUITEM
+        MENUITEM
+          PROPERTIES
+            Name                #Facture
+            MenuItemName        #FactureJournalCust_RU
+          ENDPROPERTIES
+          
+        ENDMENUITEM
+        MENUITEM
+          PROPERTIES
+            Name                #Pro forma invoice journals
+            MenuItemName        #M_I064ProformaInvoiceJournal
+          ENDPROPERTIES
+          
+        ENDMENUITEM
+        MENUITEM
+          PROPERTIES
+            Name                #CFD (electronic invoices)
+            MenuItemName        #EInvoiceJour_MX
+          ENDPROPERTIES
+          
+        ENDMENUITEM
+        MENUITEM
+          PROPERTIES
+            Name                #CFDI (electronic invoices)
+            MenuItemName        #EInvoiceCFDIJour_MX
+          ENDPROPERTIES
+          
+        ENDMENUITEM
+        MENUITEM
+          PROPERTIES
+            Name                #Shipping bill
+            MenuItemName        #CustomsCustShippingBillJournal_IN
+          ENDPROPERTIES
+          
+        ENDMENUITEM
+        MENUITEM
+          PROPERTIES
+            Name                #Gift card invoice
+            MenuItemName        #MCRGiftCardCustFreeInvoiceDetails
+          ENDPROPERTIES
+          
+        ENDMENUITEM
+        MENUITEM
+          PROPERTIES
+            Name                #Entry certificate journal
+            MenuItemName        #CustEntryCertificateJour_W
+          ENDPROPERTIES
+          
+        ENDMENUITEM
+      ENDMENU
+      MENU #@SYS333924
+        PROPERTIES
+          Name                #History
+          Label               #@SYS333924
+        ENDPROPERTIES
+        
+        MENUITEM
+          PROPERTIES
+            Name                #Invoice
+            MenuItemName        #SalesPostingHistoryInvoice
+          ENDPROPERTIES
+          
+        ENDMENUITEM
+        MENUITEM
+          PROPERTIES
+            Name                #Invoice for payment
+            MenuItemName        #SalesPostingHistoryInvoice4Paym_RU
+          ENDPROPERTIES
+          
+        ENDMENUITEM
+        MENUITEM
+          PROPERTIES
+            Name                #Journal of passing of property
+            MenuItemName        #GoodsInRouteJour_RU
+          ENDPROPERTIES
+          
+        ENDMENUITEM
+        MENUITEM
+          PROPERTIES
+            Name                #Sales tax history
+            MenuItemName        #MCRSalesTaxInquiryHistory
+          ENDPROPERTIES
+          
+        ENDMENUITEM
+        MENU #@SYS333926
+          PROPERTIES
+            Name                #Payments
+            Label               #@SYS333926
+          ENDPROPERTIES
+          
+          MENUITEM
+            PROPERTIES
+              Name                #History on payment
+              MenuItemName        #CustPaymManTransHist
+            ENDPROPERTIES
+            
+          ENDMENUITEM
+          MENUITEM
+            PROPERTIES
+              Name                #History on payment fee
+              MenuItemName        #CustPaymManFeeHist
+            ENDPROPERTIES
+            
+          ENDMENUITEM
+          MENUITEM
+            PROPERTIES
+              Name                #Credit card history
+              MenuItemName        #CreditCardAuthTrans
+            ENDPROPERTIES
+            
+          ENDMENUITEM
+        ENDMENU
+      ENDMENU
+    ENDMENU
+    MENU #@SYS333860
+      PROPERTIES
+        Name                #Reports
+        Label               #@SYS333860
+        NormalImage         #3477
+        ImageLocation       #EmbeddedResource
+      ENDPROPERTIES
+      
+      MENU #Submenu1
+        PROPERTIES
+          Name                #Submenu1
+          Label               #Submenu1
+        ENDPROPERTIES
+        
+      ENDMENU
+      MENU #@SYS333936
+        PROPERTIES
+          Name                #Customer
+          Label               #@SYS333936
+        ENDPROPERTIES
+        
+        MENUITEM
+          PROPERTIES
+            Name                #Customers
+            MenuItemType        #Output
+            MenuItemName        #CustListReport
+          ENDPROPERTIES
+          
+        ENDMENUITEM
+        MENUITEM
+          PROPERTIES
+            Name                #Customer base data
+            MenuItemType        #Output
+            MenuItemName        #CustBasedata
+          ENDPROPERTIES
+          
+        ENDMENUITEM
+      ENDMENU
+      MENU #@SYS333927
+        PROPERTIES
+          Name                #Transactions
+          Label               #@SYS333927
+        ENDPROPERTIES
+        
+        MENU #@SYS333928
+          PROPERTIES
+            Name                #SalesOrders
+            Label               #@SYS333928
+          ENDPROPERTIES
+          
+          MENUITEM
+            PROPERTIES
+              Name                #Order lines not invoiced
+              MenuItemType        #Output
+              MenuItemName        #SalesNotInvoiced
+            ENDPROPERTIES
+            
+          ENDMENUITEM
+          MENUITEM
+            PROPERTIES
+              Name                #Ledger posting for sales orders
+              MenuItemType        #Output
+              MenuItemName        #CustSalesDistribution_NA
+            ENDPROPERTIES
+            
+          ENDMENUITEM
+          MENUITEM
+            PROPERTIES
+              Name                #Price override report
+              MenuItemType        #Output
+              MenuItemName        #MCRPriceOverrideReport
+            ENDPROPERTIES
+            
+          ENDMENUITEM
+        ENDMENU
+        MENU #@SYS333929
+          PROPERTIES
+            Name                #Invoice
+            Label               #@SYS333929
+          ENDPROPERTIES
+          
+          MENUITEM
+            PROPERTIES
+              Name                #Packing slip registration journal
+              MenuItemType        #Output
+              MenuItemName        #CustVendPackingSlipRegistration
+            ENDPROPERTIES
+            
+          ENDMENUITEM
+          MENUITEM
+            PROPERTIES
+              Name                #Customer invoice transactions
+              MenuItemType        #Output
+              MenuItemName        #CustInvoice
+            ENDPROPERTIES
+            
+          ENDMENUITEM
+          MENUITEM
+            PROPERTIES
+              Name                #Invoice specification
+              MenuItemType        #Output
+              MenuItemName        #CustInvoiceSpec
+            ENDPROPERTIES
+            
+          ENDMENUITEM
+          MENUITEM
+            PROPERTIES
+              Name                #Printed fiscal documents
+              MenuItemType        #Output
+              MenuItemName        #PlFiscalDocReport
+            ENDPROPERTIES
+            
+          ENDMENUITEM
+          MENUITEM
+            PROPERTIES
+              Name                #Converted fiscal documents report
+              MenuItemType        #Output
+              MenuItemName        #PlFiscalDoc2Invoice
+            ENDPROPERTIES
+            
+          ENDMENUITEM
+          MENUITEM
+            PROPERTIES
+              Name                #List of excise tax transactions
+              MenuItemType        #Output
+              MenuItemName        #TaxExciseAnnualReport
+            ENDPROPERTIES
+            
+          ENDMENUITEM
+          MENUITEM
+            PROPERTIES
+              Name                #Used invoice numbers
+              MenuItemType        #Output
+              MenuItemName        #CustVendStateInvoiceUsedNum
+            ENDPROPERTIES
+            
+          ENDMENUITEM
+          MENUITEM
+            PROPERTIES
+              Name                #Invoice register (FR0672)
+              MenuItemType        #Output
+              MenuItemName        #CustInvoiceJourRegisterReport
+            ENDPROPERTIES
+            
+          ENDMENUITEM
+          MENUITEM
+            PROPERTIES
+              Name                #Customer debit note and credit note list
+              MenuItemType        #Output
+              MenuItemName        #CustDebitCreditNote_MY
+            ENDPROPERTIES
+            
+          ENDMENUITEM
+        ENDMENU
+        MENU #@SYS333930
+          PROPERTIES
+            Name                #Customer
+            Label               #@SYS333930
+          ENDPROPERTIES
+          
+          MENUITEM
+            PROPERTIES
+              Name                #Internal account statement
+              MenuItemType        #Output
+              MenuItemName        #CustAccountStatementInt
+            ENDPROPERTIES
+            
+          ENDMENUITEM
+          MENUITEM
+            PROPERTIES
+              Name                #Transactions
+              MenuItemType        #Output
+              MenuItemName        #CustTransList
+            ENDPROPERTIES
+            
+          ENDMENUITEM
+          MENUITEM
+            PROPERTIES
+              Name                #Open transactions
+              MenuItemType        #Output
+              MenuItemName        #CustTransOpenPerDate
+            ENDPROPERTIES
+            
+          ENDMENUITEM
+          MENUITEM
+            PROPERTIES
+              Name                #History by transaction
+              MenuItemType        #Output
+              MenuItemName        #CustLedgerTrans
+            ENDPROPERTIES
+            
+          ENDMENUITEM
+          MENUITEM
+            PROPERTIES
+              Name                #Sales tax specification
+              MenuItemType        #Output
+              MenuItemName        #CustTransTaxTrans
+            ENDPROPERTIES
+            
+          ENDMENUITEM
+          MENUITEM
+            PROPERTIES
+              Name                #COD
+              MenuItemType        #Output
+              MenuItemName        #CustCOD
+            ENDPROPERTIES
+            
+          ENDMENUITEM
+          MENUITEM
+            PROPERTIES
+              Name                #Customer auditor
+              MenuItemType        #Output
+              MenuItemName        #CustReport_Auditor
+            ENDPROPERTIES
+            
+          ENDMENUITEM
+          MENUITEM
+            PROPERTIES
+              Name                #Customer turnover and balances statement
+              MenuItemType        #Output
+              MenuItemName        #CustTurnoverAndBalance
+            ENDPROPERTIES
+            
+          ENDMENUITEM
+          MENUITEM
+            PROPERTIES
+              Name                #Customer balance notice
+              MenuItemType        #Output
+              MenuItemName        #CustBalanceNotice
+            ENDPROPERTIES
+            
+          ENDMENUITEM
+          MENUITEM
+            PROPERTIES
+              Name                #Packages at customers
+              MenuItemType        #Output
+              MenuItemName        #PlInventPackagesAtCustomer
+            ENDPROPERTIES
+            
+          ENDMENUITEM
+          MENUITEM
+            PROPERTIES
+              Name                #Customer reconciliation statement
+              MenuItemType        #Output
+              MenuItemName        #CustInterReconciliation
+            ENDPROPERTIES
+            
+          ENDMENUITEM
+        ENDMENU
+        MENU #@SYS333931
+          PROPERTIES
+            Name                #France
+            Label               #@SYS333931
+          ENDPROPERTIES
+          
+          MENUITEM
+            PROPERTIES
+              Name                #Customer account statement
+              MenuItemType        #Output
+              MenuItemName        #CustAccountStatement_FR
+            ENDPROPERTIES
+            
+          ENDMENUITEM
+          MENUITEM
+            PROPERTIES
+              Name                #List of open customer drafts
+              MenuItemType        #Output
+              MenuItemName        #CustBillOpenTrans_FR
+            ENDPROPERTIES
+            
+          ENDMENUITEM
+        ENDMENU
+        MENU #@SYS333932
+          PROPERTIES
+            Name                #Commission
+            Label               #@SYS333932
+          ENDPROPERTIES
+          
+          MENUITEM
+            PROPERTIES
+              Name                #Transaction list
+              MenuItemType        #Output
+              MenuItemName        #CommissionTrans
+            ENDPROPERTIES
+            
+          ENDMENUITEM
+        ENDMENU
+        MENU #@SYS4000837
+          PROPERTIES
+            Name                #ElectronicInvoice
+            Label               #@SYS4000837
+          ENDPROPERTIES
+          
+          MENUITEM
+            PROPERTIES
+              Name                #Contingency
+              MenuItemType        #Output
+              MenuItemName        #fiscaldocumentcontingencyView_BR
+            ENDPROPERTIES
+            
+          ENDMENUITEM
+        ENDMENU
+        MENU #@SYS333933
+          PROPERTIES
+            Name                #Payments
+            Label               #@SYS333933
+          ENDPROPERTIES
+          
+          MENUITEM
+            PROPERTIES
+              Name                #Voided payment transactions
+              MenuItemType        #Output
+              MenuItemName        #CustPaymManUnpaid
+            ENDPROPERTIES
+            
+          ENDMENUITEM
+          MENUITEM
+            PROPERTIES
+              Name                #Payment step process
+              MenuItemType        #Output
+              MenuItemName        #CustPaymManReport_StepPosting
+            ENDPROPERTIES
+            
+          ENDMENUITEM
+          MENUITEM
+            PROPERTIES
+              Name                #Reimbursement
+              MenuItemType        #Output
+              MenuItemName        #CustReimbursement
+            ENDPROPERTIES
+            
+          ENDMENUITEM
+          MENUITEM
+            PROPERTIES
+              Name                #Customer posted payment journal
+              MenuItemType        #Output
+              MenuItemName        #CustPostPaymJournal_NA
+            ENDPROPERTIES
+            
+          ENDMENUITEM
+        ENDMENU
+      ENDMENU
+      MENU #@RET4440
+        PROPERTIES
+          Name                #Gift
+          Label               #@RET4440
+        ENDPROPERTIES
+        
+        MENUITEM
+          PROPERTIES
+            Name                #Open
+            MenuItemType        #Output
+            MenuItemName        #MCRGiftCertOpen
+          ENDPROPERTIES
+          
+        ENDMENUITEM
+        MENUITEM
+          PROPERTIES
+            Name                #Redeemed
+            MenuItemType        #Output
+            MenuItemName        #MCRGiftCertRedeemed
+          ENDPROPERTIES
+          
+        ENDMENUITEM
+        MENUITEM
+          PROPERTIES
+            Name                #Issued
+            MenuItemType        #Output
+            MenuItemName        #MCRGiftCardIssue
+          ENDPROPERTIES
+          
+        ENDMENUITEM
+        MENUITEM
+          PROPERTIES
+            Name                #Voided
+            MenuItemType        #Output
+            MenuItemName        #MCRGiftCardVoided
+          ENDPROPERTIES
+          
+        ENDMENUITEM
+      ENDMENU
+      MENU #@SYS333934
+        PROPERTIES
+          Name                #Status
+          Label               #@SYS333934
+        ENDPROPERTIES
+        
+        MENUITEM
+          PROPERTIES
+            Name                #Bill of exchange journal
+            MenuItemType        #Output
+            MenuItemName        #CustBillOfExchangeReport
+          ENDPROPERTIES
+          
+        ENDMENUITEM
+        MENUITEM
+          PROPERTIES
+            Name                #Customer aging
+            MenuItemType        #Output
+            MenuItemName        #CustAgingBalance
+          ENDPROPERTIES
+          
+        ENDMENUITEM
+        MENUITEM
+          PROPERTIES
+            Name                #Customer balance list
+            MenuItemType        #Output
+            MenuItemName        #CustProvisionalBalance
+          ENDPROPERTIES
+          
+        ENDMENUITEM
+        MENUITEM
+          PROPERTIES
+            Name                #Customer balance list with credit limit
+            MenuItemType        #Output
+            MenuItemName        #CustBalanceList
+          ENDPROPERTIES
+          
+        ENDMENUITEM
+        MENUITEM
+          PROPERTIES
+            Name                #Customer balance list with payments in transfer
+            MenuItemType        #Output
+            MenuItemName        #CustBalanceList_MY
+          ENDPROPERTIES
+          
+        ENDMENUITEM
+        MENUITEM
+          PROPERTIES
+            Name                #Detailed due day list
+            MenuItemType        #Output
+            MenuItemName        #CustDueReportDetail
+          ENDPROPERTIES
+          
+        ENDMENUITEM
+        MENUITEM
+          PROPERTIES
+            Name                #Shipped not invoiced
+            MenuItemType        #Output
+            MenuItemName        #CustShippedNotInvoiced_NA
+          ENDPROPERTIES
+          
+        ENDMENUITEM
+        MENUITEM
+          PROPERTIES
+            Name                #Total accounts receivable in the past periods chart
+            MenuItemType        #Output
+            MenuItemName        #LedgerTotalAcctsReceivablePastXPeriods
+          ENDPROPERTIES
+          
+        ENDMENUITEM
+        MENUITEM
+          PROPERTIES
+            Name                #Customer due register
+            MenuItemType        #Output
+            MenuItemName        #M_I063DeadLines_CustFix
+          ENDPROPERTIES
+          
+        ENDMENUITEM
+      ENDMENU
+      MENU #@SYS333935
+        PROPERTIES
+          Name                #Statistics
+          Label               #@SYS333935
+        ENDPROPERTIES
+        
+        MENU #@SYS333936
+          PROPERTIES
+            Name                #Customer
+            Label               #@SYS333936
+          ENDPROPERTIES
+          
+          MENUITEM
+            PROPERTIES
+              Name                #Cash receipt journal totals and transaction count chart
+              MenuItemType        #Output
+              MenuItemName        #CustCashReceiptJournalTotalsandTrxCnt
+            ENDPROPERTIES
+            
+          ENDMENUITEM
+          MENUITEM
+            PROPERTIES
+              Name                #Customer turnover
+              MenuItemType        #Output
+              MenuItemName        #CustRevenue
+            ENDPROPERTIES
+            
+          ENDMENUITEM
+        ENDMENU
+        MENU #@SYS333937
+          PROPERTIES
+            Name                #Invoice
+            Label               #@SYS333937
+          ENDPROPERTIES
+          
+          MENUITEM
+            PROPERTIES
+              Name                #Invoice turnover
+              MenuItemType        #Output
+              MenuItemName        #CustInvoiceVolume
+            ENDPROPERTIES
+            
+          ENDMENUITEM
+          MENUITEM
+            PROPERTIES
+              Name                #Customer invoice journal
+              MenuItemType        #Output
+              MenuItemName        #CustInvoiceJourReport
+            ENDPROPERTIES
+            
+          ENDMENUITEM
+          MENUITEM
+            PROPERTIES
+              Name                #Posted customer invoice totals and transaction count chart
+              MenuItemType        #Output
+              MenuItemName        #CustPostedCustInvoiceTotalsandTrxCount
+            ENDPROPERTIES
+            
+          ENDMENUITEM
+          MENUITEM
+            PROPERTIES
+              Name                #Advance invoices journal
+              MenuItemType        #Output
+              MenuItemName        #CustAdvanceInvoiceJour
+            ENDPROPERTIES
+            
+          ENDMENUITEM
+        ENDMENU
+      ENDMENU
+      MENU #@GLS115581
+        PROPERTIES
+          Name                #Submenu1
+          Label               #@GLS115581
+          CountryRegionCodes  #RU
+        ENDPROPERTIES
+        
+        MENUITEM
+          PROPERTIES
+            Name                #Storage report
+            MenuItemType        #Output
+            MenuItemName        #InventBaileeReport_RU
+          ENDPROPERTIES
+          
+        ENDMENUITEM
+      ENDMENU
+      MENU #@SYS333939
+        PROPERTIES
+          Name                #External
+          Label               #@SYS333939
+        ENDPROPERTIES
+        
+        MENUITEM
+          PROPERTIES
+            Name                #Customer account statement
+            MenuItemType        #Output
+            MenuItemName        #CustAccountStatementExt
+          ENDPROPERTIES
+          
+        ENDMENUITEM
+        MENUITEM
+          PROPERTIES
+            Name                #Collection letter note
+            MenuItemType        #Output
+            MenuItemName        #CustReport_collectionLetterAll
+          ENDPROPERTIES
+          
+        ENDMENUITEM
+        MENUITEM
+          PROPERTIES
+            Name                #Interest note
+            MenuItemType        #Output
+            MenuItemName        #CustReport_interestNoteAll
+          ENDPROPERTIES
+          
+        ENDMENUITEM
+        MENUITEM
+          PROPERTIES
+            Name                #Customer balance confirmation
+            MenuItemType        #Output
+            MenuItemName        #CustBalanceConfirmation
+          ENDPROPERTIES
+          
+        ENDMENUITEM
+      ENDMENU
+      MENU #@SYS333942
+        PROPERTIES
+          Name                #BillOfExchange
+          Label               #@SYS333942
+        ENDPROPERTIES
+        
+        MENUITEM
+          PROPERTIES
+            Name                #Open transactions
+            MenuItemType        #Output
+            MenuItemName        #CustTransOpenReport_ES
+          ENDPROPERTIES
+          
+        ENDMENUITEM
+        MENUITEM
+          PROPERTIES
+            Name                #Open cartera transactions
+            MenuItemType        #Output
+            MenuItemName        #CustBillOfExchangeReport_ES
+          ENDPROPERTIES
+          
+        ENDMENUITEM
+        MENUITEM
+          PROPERTIES
+            Name                #Open bills
+            MenuItemType        #Output
+            MenuItemName        #CustOpenBillId_ES
+          ENDPROPERTIES
+          
+        ENDMENUITEM
+        MENUITEM
+          PROPERTIES
+            Name                #Bill-Invoice relation by transaction date
+            MenuItemType        #Output
+            MenuItemName        #CustInvoiceSettledTransDate_ES
+          ENDPROPERTIES
+          
+        ENDMENUITEM
+      ENDMENU
+      MENU #@GLS63261
+        PROPERTIES
+          Name                #AsiaReports
+          Label               #@GLS63261
+        ENDPROPERTIES
+        
+        MENUITEM
+          PROPERTIES
+            Name                #Customer details (China)
+            MenuItemType        #Output
+            MenuItemName        #CustLedgerTransactions_CN
+          ENDPROPERTIES
+          
+        ENDMENUITEM
+        MENUITEM
+          PROPERTIES
+            Name                #Customer collection letter
+            MenuItemType        #Output
+            MenuItemName        #CustCollectionLetter_CN
+          ENDPROPERTIES
+          
+        ENDMENUITEM
+        MENUITEM
+          PROPERTIES
+            Name                #Customer aging
+            MenuItemType        #Output
+            MenuItemName        #CustAging_CN
+          ENDPROPERTIES
+          
+        ENDMENUITEM
+        MENUITEM
+          PROPERTIES
+            Name                #Customer balance report
+            MenuItemType        #Output
+            MenuItemName        #CustBalance_CN
+          ENDPROPERTIES
+          
+        ENDMENUITEM
+        MENUITEM
+          PROPERTIES
+            Name                #Customer balance by dimension (China)
+            MenuItemType        #Output
+            MenuItemName        #CustBalanceByDimension_CN
+          ENDPROPERTIES
+          
+        ENDMENUITEM
+        MENUITEM
+          PROPERTIES
+            Name                #Customer balance by profiles (China)
+            MenuItemType        #Output
+            MenuItemName        #CustBalanceByProfile_CN
+          ENDPROPERTIES
+          
+        ENDMENUITEM
+        MENUITEM
+          PROPERTIES
+            Name                #Customer balance by customer groups (China)
+            MenuItemType        #Output
+            MenuItemName        #CustBalancebyCustGroup_CN
+          ENDPROPERTIES
+          
+        ENDMENUITEM
+        MENUITEM
+          PROPERTIES
+            Name                #Customer balance by sales groups (China)
+            MenuItemType        #Output
+            MenuItemName        #CustBalancebySalesGroup_CN
+          ENDPROPERTIES
+          
+        ENDMENUITEM
+        MENUITEM
+          PROPERTIES
+            Name                #Receivable statistics report
+            MenuItemType        #Output
+            MenuItemName        #CustReceivableStatistics_CN
+          ENDPROPERTIES
+          
+        ENDMENUITEM
+        MENUITEM
+          PROPERTIES
+            Name                #Receivable details (China)
+            MenuItemType        #Output
+            MenuItemName        #CustReceivableTransaction_CN
+          ENDPROPERTIES
+          
+        ENDMENUITEM
+        MENUITEM
+          PROPERTIES
+            Name                #Aging analysis of receivable payment
+            MenuItemType        #Output
+            MenuItemName        #CustAgingAnalysisofPayment_CN
+          ENDPROPERTIES
+          
+        ENDMENUITEM
+        MENUITEM
+          PROPERTIES
+            Name                #Receivable balance report
+            MenuItemType        #Output
+            MenuItemName        #CustReceivableBalance_CN
+          ENDPROPERTIES
+          
+        ENDMENUITEM
+        MENUITEM
+          PROPERTIES
+            Name                #Customer settlements (China)
+            MenuItemType        #Output
+            MenuItemName        #CustSettlement_CN
+          ENDPROPERTIES
+          
+        ENDMENUITEM
+        MENUITEM
+          PROPERTIES
+            Name                #Due amount analysis (China)
+            MenuItemType        #Output
+            MenuItemName        #CustDueAmountAnalysis_CN
+          ENDPROPERTIES
+          
+        ENDMENUITEM
+      ENDMENU
+      MENU #@GLS223282
+        PROPERTIES
+          Name                #France
+          Label               #@GLS223282
+          ConfigurationKey    #PurchFrenchRegulatory_PSN
+        ENDPROPERTIES
+        
+        MENUITEM
+          PROPERTIES
+            Name                #Titre de recette
+            MenuItemName        #CustDirectiveReport_PSN
+          ENDPROPERTIES
+          
+        ENDMENUITEM
+        MENUITEM
+          PROPERTIES
+            Name                #Bordereau de titre
+            MenuItemName        #CustRoutingSlipReport_PSN
+          ENDPROPERTIES
+          
+        ENDMENUITEM
+      ENDMENU
+      MENU #@IBP74
+        PROPERTIES
+          Name                #Submenu1
+          Label               #@IBP74
+        ENDPROPERTIES
+        
+        MENUITEM
+          PROPERTIES
+            Name                #Letter of intent
+            MenuItemType        #Output
+            MenuItemName        #M_I008PlafondCustIntentLetter
+          ENDPROPERTIES
+          
+        ENDMENUITEM
+      ENDMENU
+      SEPARATOR
+      MENUITEM
+        PROPERTIES
+          Name                #*TemplateView*
+          MenuItemType        #Output
+          MenuItemName        #TemplateView
+        ENDPROPERTIES
+        
+      ENDMENUITEM
+      MENUITEM
+        PROPERTIES
+          Name                #CustReport
+          MenuItemType        #Output
+          MenuItemName        #TestCustReport
+        ENDPROPERTIES
+        
+      ENDMENUITEM
+      MENUITEM
+        PROPERTIES
+          Name                #*HV_PrintView*
+          MenuItemType        #Output
+          MenuItemName        #HV_PrintView
+        ENDPROPERTIES
+        
+      ENDMENUITEM
+    ENDMENU
+    MENU #@SYS333865
+      PROPERTIES
+        Name                #Periodic
+        Label               #@SYS333865
+        NormalImage         #3476
+        ImageLocation       #EmbeddedResource
+      ENDPROPERTIES
+      
+      MENU #@SYS4081908
+        PROPERTIES
+          Name                #CFDIElectronicInvoices
+          Label               #@SYS4081908
+          CountryRegionCodes  #MX
+        ENDPROPERTIES
+        
+        MENUITEM
+          PROPERTIES
+            Name                #Export/import electronic invoice process
+            MenuItemType        #Action
+            MenuItemName        #EInvoiceMsgExporter_MX
+          ENDPROPERTIES
+          
+        ENDMENUITEM
+      ENDMENU
+      MENU #@SYS341961
+        PROPERTIES
+          Name                #CFDElectronicInvoices
+          Label               #@SYS341961
+          CountryRegionCodes  #MX
+        ENDPROPERTIES
+        
+        MENUITEM
+          PROPERTIES
+            Name                #EInvoice monthly report
+            MenuItemType        #Action
+            MenuItemName        #EinvoiceMonthlyReport_MX
+          ENDPROPERTIES
+          
+        ENDMENUITEM
+      ENDMENU
+      MENUITEM
+        PROPERTIES
+          Name                #Foreign currency revaluation
+          MenuItemName        #CustExchRateAdjustment
+        ENDPROPERTIES
+        
+      ENDMENUITEM
+      MENUITEM
+        PROPERTIES
+          Name                #Reimbursement
+          MenuItemType        #Action
+          MenuItemName        #CustOverPaym
+        ENDPROPERTIES
+        
+      ENDMENUITEM
+      MENUITEM
+        PROPERTIES
+          Name                #Update invoice payment ID
+          MenuItemType        #Action
+          MenuItemName        #BankCustPaymIdUpdate_NO
+        ENDPROPERTIES
+        
+      ENDMENUITEM
+      MENUITEM
+        PROPERTIES
+          Name                #Create prenotes
+          MenuItemType        #Action
+          MenuItemName        #PrenoteAR
+        ENDPROPERTIES
+        
+      ENDMENUITEM
+      MENUITEM
+        PROPERTIES
+          Name                #Maintain titres de recette (France)
+          MenuItemName        #CustDirective_PSN
+        ENDPROPERTIES
+        
+      ENDMENUITEM
+      MENU #@SYS334268
+        PROPERTIES
+          Name                #Update
+          Label               #@SYS334268
+        ENDPROPERTIES
+        
+        MENUITEM
+          PROPERTIES
+            Name                #Update financials
+            MenuItemType        #Action
+            MenuItemName        #smmUpdateFinancial
+          ENDPROPERTIES
+          
+        ENDMENUITEM
+      ENDMENU
+      MENUITEM
+        PROPERTIES
+          Name                #Consolidated invoice
+          MenuItemName        #CustConsInvoiceListPage_JP
+          IsDisplayedInContentArea    #Yes
+        ENDPROPERTIES
+        
+      ENDMENUITEM
+      MENUITEM
+        PROPERTIES
+          Name                #Export sales invoices
+          MenuItemName        #PlCustInvoiceJournalSad
+        ENDPROPERTIES
+        
+      ENDMENUITEM
+      MENUITEM
+        PROPERTIES
+          Name                #Create payment reference numbers
+          MenuItemType        #Action
+          MenuItemName        #EeCustPaymentReference
+        ENDPROPERTIES
+        
+      ENDMENUITEM
+      MENUITEM
+        PROPERTIES
+          Name                #Account receivable counting
+          MenuItemType        #Action
+          MenuItemName        #RTax25InventoryActAR
+        ENDPROPERTIES
+        
+      ENDMENUITEM
+      MENUITEM
+        PROPERTIES
+          Name                #Facture creation for prepayment
+          MenuItemName        #CustPrepaymentFactureCreate_RU
+        ENDPROPERTIES
+        
+      ENDMENUITEM
+      MENUITEM
+        PROPERTIES
+          Name                #Invoice register (FR0672)
+          MenuItemType        #Output
+          MenuItemName        #CustInvoiceJourRegisterXML
+        ENDPROPERTIES
+        
+      ENDMENUITEM
+      MENU #@SYS333944
+        PROPERTIES
+          Name                #RecurringInvoices
+          Label               #@SYS333944
+        ENDPROPERTIES
+        
+        MENUITEM
+          PROPERTIES
+            Name                #Generate recurring invoices
+            MenuItemType        #Action
+            MenuItemName        #CustRecurrenceInvoiceServiceOperation
+          ENDPROPERTIES
+          
+        ENDMENUITEM
+        MENUITEM
+          PROPERTIES
+            Name                #Post recurring invoices
+            MenuItemName        #CustRecurrenceInvoiceGroup
+          ENDPROPERTIES
+          
+        ENDMENUITEM
+      ENDMENU
+      MENU #@SYS333945
+        PROPERTIES
+          Name                #SalesUpdate
+          Label               #@SYS333945
+        ENDPROPERTIES
+        
+        MENUITEM
+          PROPERTIES
+            Name                #Invoice for payment
+            MenuItemType        #Action
+            MenuItemName        #SalesFormLetter_Invoice4Paym_RU
+          ENDPROPERTIES
+          
+        ENDMENUITEM
+        MENUITEM
+          PROPERTIES
+            Name                #Invoice
+            MenuItemType        #Action
+            MenuItemName        #SalesFormLetter_Invoice
+          ENDPROPERTIES
+          
+        ENDMENUITEM
+        MENUITEM
+          PROPERTIES
+            Name                #Free text invoice
+            MenuItemType        #Action
+            MenuItemName        #CustPostInvoiceJob
+          ENDPROPERTIES
+          
+        ENDMENUITEM
+        MENUITEM
+          PROPERTIES
+            Name                #Facture
+            MenuItemType        #Action
+            MenuItemName        #SalesFormLetter_Facture_RU
+          ENDPROPERTIES
+          
+        ENDMENUITEM
+        MENUITEM
+          PROPERTIES
+            Name                #Loads
+            MenuItemName        #WHSLoadTableInvoicePost_BR
+          ENDPROPERTIES
+          
+        ENDMENUITEM
+      ENDMENU
+      MENU #@GLS60697
+        PROPERTIES
+          Name                #TaxIntegration
+          Label               #@GLS60697
+          ConfigurationKey    #LedgerBasicSalesTax
+          CountryRegionCodes  #CN
+        ENDPROPERTIES
+        
+        MENUITEM
+          PROPERTIES
+            Name                #VAT invoice integration
+            MenuItemName        #TaxIntgrExportDocument_CN
+          ENDPROPERTIES
+          
+        ENDMENUITEM
+      ENDMENU
+      MENU #@SYS333946
+        PROPERTIES
+          Name                #Payments
+          Label               #@SYS333946
+        ENDPROPERTIES
+        
+        MENUITEM
+          PROPERTIES
+            Name                #Post
+            MenuItemType        #Action
+            MenuItemName        #CustPaymManTransPost
+          ENDPROPERTIES
+          
+        ENDMENUITEM
+        MENUITEM
+          PROPERTIES
+            Name                #Cancel
+            MenuItemType        #Action
+            MenuItemName        #CustPaymManTransPostCancel
+          ENDPROPERTIES
+          
+        ENDMENUITEM
+        MENUITEM
+          PROPERTIES
+            Name                #Renegotiation
+            MenuItemType        #Action
+            MenuItemName        #CustPaymManTransPostRenegotiate
+          ENDPROPERTIES
+          
+        ENDMENUITEM
+      ENDMENU
+      MENU #@SYS333947
+        PROPERTIES
+          Name                #Collections
+          Label               #@SYS333947
+        ENDPROPERTIES
+        
+        MENUITEM
+          PROPERTIES
+            Name                #New collection letters
+            MenuItemType        #Action
+            MenuItemName        #CustCollectionLetterCreate
+          ENDPROPERTIES
+          
+        ENDMENUITEM
+        MENUITEM
+          PROPERTIES
+            Name                #Print/post collection letters
+            MenuItemName        #CustCollectionLetterNote
+          ENDPROPERTIES
+          
+        ENDMENUITEM
+        MENUITEM
+          PROPERTIES
+            Name                #Interest calculation
+            MenuItemType        #Action
+            MenuItemName        #CustInterestCreate
+          ENDPROPERTIES
+          
+        ENDMENUITEM
+        MENUITEM
+          PROPERTIES
+            Name                #Interest note
+            MenuItemName        #CustInterestNote
+          ENDPROPERTIES
+          
+        ENDMENUITEM
+        MENUITEM
+          PROPERTIES
+            Name                #Customer aging snapshot
+            MenuItemName        #CustAgingSnapshot
+          ENDPROPERTIES
+          
+        ENDMENUITEM
+      ENDMENU
+      MENU #@GLS103091
+        PROPERTIES
+          Name                #Settlement_RU
+          Label               #@GLS103091
+        ENDPROPERTIES
+        
+        MENUITEM
+          PROPERTIES
+            Name                #Periodic settlement
+            MenuItemType        #Action
+            MenuItemName        #CustVendAutoSettlement_Cust_RU
+          ENDPROPERTIES
+          
+        ENDMENUITEM
+        MENUITEM
+          PROPERTIES
+            Name                #Periodic reverse
+            MenuItemType        #Action
+            MenuItemName        #CustVendAutoReverse_Cust_RU
+          ENDPROPERTIES
+          
+        ENDMENUITEM
+      ENDMENU
+      MENU #@GLS101510
+        PROPERTIES
+          Name                #SalesBook_RU
+          Label               #@GLS101510
+        ENDPROPERTIES
+        
+        MENUITEM
+          PROPERTIES
+            Name                #Sales books journal
+            MenuItemName        #SalesBookTable_RU
+          ENDPROPERTIES
+          
+        ENDMENUITEM
+        MENUITEM
+          PROPERTIES
+            Name                #Preliminary processing export factures
+            MenuItemName        #SalesHandlingExportFacture_RU
+          ENDPROPERTIES
+          
+        ENDMENUITEM
+        MENUITEM
+          PROPERTIES
+            Name                #Cancel preliminary processing of export factures
+            MenuItemName        #SalesCancelHandlingExportFacture_RU
+          ENDPROPERTIES
+          
+        ENDMENUITEM
+        MENUITEM
+          PROPERTIES
+            Name                #Outgoing VAT processing
+            MenuItemName        #SalesBookVAT_Process_RU
+          ENDPROPERTIES
+          
+        ENDMENUITEM
+        MENUITEM
+          PROPERTIES
+            Name                #Canceling processed VAT
+            MenuItemName        #SalesBookVAT_Cancel_RU
+          ENDPROPERTIES
+          
+        ENDMENUITEM
+        MENUITEM
+          PROPERTIES
+            Name                #VAT processing log
+            MenuItemName        #SalesBookVATProcessLog_RU
+          ENDPROPERTIES
+          
+        ENDMENUITEM
+        MENUITEM
+          PROPERTIES
+            Name                #VAT restoring journal
+            MenuItemName        #RestoredVATProcess_RU
+          ENDPROPERTIES
+          
+        ENDMENUITEM
+        MENUITEM
+          PROPERTIES
+            Name                #Parameters of VAT process
+            MenuItemName        #SalesBookVATProcessParameters_RU
+          ENDPROPERTIES
+          
+        ENDMENUITEM
+      ENDMENU
+      MENU #@GLS115581
+        PROPERTIES
+          Name                #Submenu1
+          Label               #@GLS115581
+          CountryRegionCodes  #RU
+        ENDPROPERTIES
+        
+        MENUITEM
+          PROPERTIES
+            Name                #Storage calculation
+            MenuItemName        #InventBaileeCalcTable_RU
+          ENDPROPERTIES
+          
+        ENDMENUITEM
+        MENUITEM
+          PROPERTIES
+            Name                #Creation of storage calculation
+            MenuItemType        #Action
+            MenuItemName        #InventBaileeCreateCalc_RU
+          ENDPROPERTIES
+          
+        ENDMENUITEM
+        MENUITEM
+          PROPERTIES
+            Name                #Forming of storage debt
+            MenuItemType        #Action
+            MenuItemName        #InventBaileeCreateSales_RU
+          ENDPROPERTIES
+          
+        ENDMENUITEM
+      ENDMENU
+      MENU #@GLS103846
+        PROPERTIES
+          Name                #Amortization_RU
+          Label               #@GLS103846
+          ConfigurationKey    #LedgerBasic
+          CountryRegionCodes  #RU
+        ENDPROPERTIES
+        
+        MENUITEM
+          PROPERTIES
+            Name                #Accounts receivable amortization
+            MenuItemName        #RTax25DebtDebitAmortisation
+          ENDPROPERTIES
+          
+        ENDMENUITEM
+        MENUITEM
+          PROPERTIES
+            Name                #Accounts receivable amortization cancellation
+            MenuItemName        #RTax25DebtDebitReverse
+          ENDPROPERTIES
+          
+        ENDMENUITEM
+      ENDMENU
+      MENU #@GLS62505
+        PROPERTIES
+          Name                #RPSExportImport
+          Label               #@GLS62505
+        ENDPROPERTIES
+        
+        MENUITEM
+          PROPERTIES
+            Name                #Export RPS file
+            MenuItemType        #Action
+            MenuItemName        #RPSExport_BR
+          ENDPROPERTIES
+          
+        ENDMENUITEM
+        MENUITEM
+          PROPERTIES
+            Name                #Import RPS file
+            MenuItemType        #Action
+            MenuItemName        #RPSImport_BR
+          ENDPROPERTIES
+          
+        ENDMENUITEM
+      ENDMENU
+      MENU #@SYS4000837
+        PROPERTIES
+          Name                #ElectronicInvoice
+          Label               #@SYS4000837
+        ENDPROPERTIES
+        
+        MENUITEM
+          PROPERTIES
+            Name                #History
+            MenuItemName        #EFDocHist_BR
+          ENDPROPERTIES
+          
+        ENDMENUITEM
+        MENUITEM
+          PROPERTIES
+            Name                #Export/import NF-e process
+            MenuItemType        #Action
+            MenuItemName        #EFDocMsgExporter_BR
+          ENDPROPERTIES
+          
+        ENDMENUITEM
+        MENUITEM
+          PROPERTIES
+            Name                #Contingency
+            MenuItemName        #EFDocContingencyMode_BR
+          ENDPROPERTIES
+          
+        ENDMENUITEM
+        MENUITEM
+          PROPERTIES
+            Name                #NF-e email status
+            MenuItemName        #EFDocEmailStatus_BR
+          ENDPROPERTIES
+          
+        ENDMENUITEM
+        MENUITEM
+          PROPERTIES
+            Name                #Generate emails for NF-e
+            MenuItemType        #Action
+            MenuItemName        #EFDocEmailProcess_BR
+          ENDPROPERTIES
+          
+        ENDMENUITEM
+      ENDMENU
+      MENU #@SYP4882276
+        PROPERTIES
+          Name                #EInvoice_IT
+          Label               #@SYP4882276
+        ENDPROPERTIES
+        
+        MENUITEM
+          PROPERTIES
+            Name                #Electronic invoices
+            MenuItemName        #EInvoice_IT
+          ENDPROPERTIES
+          
+        ENDMENUITEM
+      ENDMENU
+      MENU #@SYS4003533
+        PROPERTIES
+          Name                #OverdueDebt
+          Label               #@SYS4003533
+          CountryRegionCodes  #PL
+        ENDPROPERTIES
+        
+        MENUITEM
+          PROPERTIES
+            Name                #Overdue debt VAT
+            MenuItemName        #CustOverdueVATJournalTableListPage_W
+            IsDisplayedInContentArea    #Yes
+          ENDPROPERTIES
+          
+        ENDMENUITEM
+      ENDMENU
+    ENDMENU
+    MENU #@SYS333869
+      PROPERTIES
+        Name                #Setup
+        Label               #@SYS333869
+        NormalImage         #3478
+        ImageLocation       #EmbeddedResource
+      ENDPROPERTIES
+      
+      MENUITEM
+        PROPERTIES
+          Name                #Accounts receivable parameters
+          MenuItemName        #CustParameters
+        ENDPROPERTIES
+        
+      ENDMENUITEM
+      MENUITEM
+        PROPERTIES
+          Name                #Accounts receivable workflows
+          MenuItemName        #WorkflowConfigurationCust
+          IsDisplayedInContentArea    #Yes
+        ENDPROPERTIES
+        
+      ENDMENUITEM
+      MENUITEM
+        PROPERTIES
+          Name                #Customer posting profiles
+          MenuItemName        #CustPosting
+        ENDPROPERTIES
+        
+      ENDMENUITEM
+      MENUITEM
+        PROPERTIES
+          Name                #Free text invoice templates
+          MenuItemName        #CustInvoiceTemplate
+        ENDPROPERTIES
+        
+      ENDMENUITEM
+      MENUITEM
+        PROPERTIES
+          Name                #Period of documents collection
+          MenuItemName        #SalesPeriodConfirmation_RU
+        ENDPROPERTIES
+        
+      ENDMENUITEM
+      MENUITEM
+        PROPERTIES
+          Name                #Assign fiscal document types
+          MenuItemName        #CustFiscalDocumentType_BR
+        ENDPROPERTIES
+        
+      ENDMENUITEM
+      MENU #@SYS333948
+        PROPERTIES
+          Name                #Customers
+          Label               #@SYS333948
+        ENDPROPERTIES
+        
+        MENUITEM
+          PROPERTIES
+            Name                #Customer groups
+            MenuItemName        #CustGroup
+          ENDPROPERTIES
+          
+        ENDMENUITEM
+        MENUITEM
+          PROPERTIES
+            Name                #Customer reasons
+            MenuItemName        #CustReasons
+          ENDPROPERTIES
+          
+        ENDMENUITEM
+      ENDMENU
+      MENU #@GLS115581
+        PROPERTIES
+          Name                #Submenu1
+          Label               #@GLS115581
+          CountryRegionCodes  #RU
+        ENDPROPERTIES
+        
+        MENUITEM
+          PROPERTIES
+            Name                #Storage calculation setup
+            MenuItemName        #InventBaileeCalcSetup_RU
+          ENDPROPERTIES
+          
+        ENDMENUITEM
+      ENDMENU
+      MENU #@SYS333949
+        PROPERTIES
+          Name                #Misc.Charges
+          Label               #@SYS333949
+        ENDPROPERTIES
+        
+        MENUITEM
+          PROPERTIES
+            Name                #Charges code
+            MenuItemName        #MarkupTable_Cust
+          ENDPROPERTIES
+          
+        ENDMENUITEM
+        MENUITEM
+          PROPERTIES
+            Name                #Customer charge groups
+            MenuItemName        #MarkupGroup_Cust
+          ENDPROPERTIES
+          
+        ENDMENUITEM
+        MENUITEM
+          PROPERTIES
+            Name                #Item charge groups
+            MenuItemName        #MarkupGroup_Invent
+          ENDPROPERTIES
+          
+        ENDMENUITEM
+        MENUITEM
+          PROPERTIES
+            Name                #Delivery charges groups
+            MenuItemName        #MarkupGroup_Delivery
+          ENDPROPERTIES
+          
+        ENDMENUITEM
+        MENUITEM
+          PROPERTIES
+            Name                #Auto charges
+            MenuItemName        #MarkupAutoSetup_Cust
+          ENDPROPERTIES
+          
+        ENDMENUITEM
+        MENUITEM
+          PROPERTIES
+            Name                #Charges posting
+            MenuItemName        #MarkupCustPosting_RU
+          ENDPROPERTIES
+          
+        ENDMENUITEM
+      ENDMENU
+      MENU #@SYS333952
+        PROPERTIES
+          Name                #Forms
+          Label               #@SYS333952
+        ENDPROPERTIES
+        
+        MENUITEM
+          PROPERTIES
+            Name                #Form notes
+            MenuItemName        #CustFormLetterRemarks
+          ENDPROPERTIES
+          
+        ENDMENUITEM
+        MENUITEM
+          PROPERTIES
+            Name                #Form setup
+            MenuItemName        #CustFormletterParameters
+          ENDPROPERTIES
+          
+        ENDMENUITEM
+        MENUITEM
+          PROPERTIES
+            Name                #Form sorting
+            MenuItemName        #SalesFormLetterSortingParameters
+          ENDPROPERTIES
+          
+        ENDMENUITEM
+      ENDMENU
+      MENU #@SYS333953
+        PROPERTIES
+          Name                #Payment
+          Label               #@SYS333953
+        ENDPROPERTIES
+        
+        MENUITEM
+          PROPERTIES
+            Name                #Terms of payment
+            MenuItemName        #CustPaymTerm
+          ENDPROPERTIES
+          
+        ENDMENUITEM
+        MENUITEM
+          PROPERTIES
+            Name                #Cash discounts
+            MenuItemName        #CustCashDisc
+          ENDPROPERTIES
+          
+        ENDMENUITEM
+        MENUITEM
+          PROPERTIES
+            Name                #Payment schedules
+            MenuItemName        #CustPaymSched
+          ENDPROPERTIES
+          
+        ENDMENUITEM
+        MENUITEM
+          PROPERTIES
+            Name                #Payment days
+            MenuItemName        #CustPaymDay
+          ENDPROPERTIES
+          
+        ENDMENUITEM
+        MENUITEM
+          PROPERTIES
+            Name                #Payment fee
+            MenuItemName        #CustPaymFee
+          ENDPROPERTIES
+          
+        ENDMENUITEM
+        MENUITEM
+          PROPERTIES
+            Name                #Methods of payment
+            MenuItemName        #CustPaymMode
+          ENDPROPERTIES
+          
+        ENDMENUITEM
+        MENUITEM
+          PROPERTIES
+            Name                #Payment step
+            MenuItemName        #PaymManStepTable
+          ENDPROPERTIES
+          
+        ENDMENUITEM
+        MENUITEM
+          PROPERTIES
+            Name                #Payment services
+            MenuItemName        #CreditCardProcessors
+          ENDPROPERTIES
+          
+        ENDMENUITEM
+        MENUITEM
+          PROPERTIES
+            Name                #Bank account trap
+            MenuItemName        #BankAccountTrap
+          ENDPROPERTIES
+          
+        ENDMENUITEM
+        MENUITEM
+          PROPERTIES
+            Name                #Payment ID
+            MenuItemName        #BankCustPaymIdTable
+          ENDPROPERTIES
+          
+        ENDMENUITEM
+        MENUITEM
+          PROPERTIES
+            Name                #Payment ID per country/region
+            MenuItemName        #LogisticsCountryRegionPaymentIdType_NO
+          ENDPROPERTIES
+          
+        ENDMENUITEM
+        MENUITEM
+          PROPERTIES
+            Name                #Payment calendar
+            MenuItemName        #PaymCalendar
+          ENDPROPERTIES
+          
+        ENDMENUITEM
+        MENUITEM
+          PROPERTIES
+            Name                #Payment calendar configuration – customers
+            MenuItemName        #PaymCalendarRuleCustomer
+          ENDPROPERTIES
+          
+        ENDMENUITEM
+        MENUITEM
+          PROPERTIES
+            Name                #Fine codes
+            MenuItemName        #CustFineSetup_BR
+          ENDPROPERTIES
+          
+        ENDMENUITEM
+        MENUITEM
+          PROPERTIES
+            Name                #Interest codes
+            MenuItemName        #CustInterestSetup_BR
+          ENDPROPERTIES
+          
+        ENDMENUITEM
+        MENUITEM
+          PROPERTIES
+            Name                #Block payment types
+            MenuItemName        #M_I014PaymBlockType
+          ENDPROPERTIES
+          
+        ENDMENUITEM
+        MENUITEM
+          PROPERTIES
+            Name                #Payment blocks
+            MenuItemName        #M_I014CustPaymBlock
+          ENDPROPERTIES
+          
+        ENDMENUITEM
+        MENUITEM
+          PROPERTIES
+            Name                #Due date limits
+            MenuItemName        #PaymDueDateLimit_ES
+          ENDPROPERTIES
+          
+        ENDMENUITEM
+        MENU #@SYS333954
+          PROPERTIES
+            Name                #Egiro
+            Label               #@SYS333954
+          ENDPROPERTIES
+          
+          MENUITEM
+            PROPERTIES
+              Name                #eGiro parameters
+              MenuItemName        #CustEgiroParameters
+            ENDPROPERTIES
+            
+          ENDMENUITEM
+          MENUITEM
+            PROPERTIES
+              Name                #Free text interpreter
+              MenuItemName        #CustEgiroFtxAnalyse
+            ENDPROPERTIES
+            
+          ENDMENUITEM
+        ENDMENU
+      ENDMENU
+      MENU #@SYS333955
+        PROPERTIES
+          Name                #Collections
+          Label               #@SYS333955
+        ENDPROPERTIES
+        
+        MENUITEM
+          PROPERTIES
+            Name                #Collection letter
+            MenuItemName        #CollectionLetterCourse
+          ENDPROPERTIES
+          
+        ENDMENUITEM
+        MENUITEM
+          PROPERTIES
+            Name                #Interest
+            MenuItemName        #Interest
+          ENDPROPERTIES
+          
+        ENDMENUITEM
+        MENUITEM
+          PROPERTIES
+            Name                #Customer pools
+            MenuItemName        #CustCollectionsPool
+          ENDPROPERTIES
+          
+        ENDMENUITEM
+        MENUITEM
+          PROPERTIES
+            Name                #Collections agents
+            MenuItemName        #CustCollectionsAgent
+          ENDPROPERTIES
+          
+        ENDMENUITEM
+        MENUITEM
+          PROPERTIES
+            Name                #Aging period definitions
+            MenuItemName        #CustReportInterval
+          ENDPROPERTIES
+          
+        ENDMENUITEM
+      ENDMENU
+      MENU #@SYS333957
+        PROPERTIES
+          Name                #E-invoice
+          Label               #@SYS333957
+        ENDPROPERTIES
+        
+        MENUITEM
+          PROPERTIES
+            Name                #e-invoice
+            MenuItemName        #CustEInvoice
+          ENDPROPERTIES
+          
+        ENDMENUITEM
+        MENUITEM
+          PROPERTIES
+            Name                #Payment mode change
+            MenuItemName        #CustEInvoiceIntegrationTypePaymMode
+          ENDPROPERTIES
+          
+        ENDMENUITEM
+        MENUITEM
+          PROPERTIES
+            Name                #Error codes
+            MenuItemName        #CustEInvoiceIntegrationError
+          ENDPROPERTIES
+          
+        ENDMENUITEM
+        MENUITEM
+          PROPERTIES
+            Name                #Integration type
+            MenuItemName        #CustEinvoiceIntegrationTypeTable
+          ENDPROPERTIES
+          
+        ENDMENUITEM
+        MENUITEM
+          PROPERTIES
+            Name                #Parameters sending documets by e-mail
+            MenuItemName        #M_I051SendReportsMailParameters
+          ENDPROPERTIES
+          
+        ENDMENUITEM
+      ENDMENU
+      MENU #@SYS332788
+        PROPERTIES
+          Name                #SitesService
+          Label               #@SYS332788
+          CountryRegionCodes  #US
+        ENDPROPERTIES
+        
+        MENUITEM
+          PROPERTIES
+            Name                #Available solutions
+            MenuItemName        #custSitesAvailableSolution
+            Parameters          #SitesService.AccountsReceivable
+          ENDPROPERTIES
+          
+        ENDMENUITEM
+        MENUITEM
+          PROPERTIES
+            Name                #Online pages
+            MenuItemName        #SitesSvcCreatePage
+          ENDPROPERTIES
+          
+        ENDMENUITEM
+      ENDMENU
+      MENU #@GLS5007
+        PROPERTIES
+          Name                #Customs_IN
+          Label               #@GLS5007
+          CountryRegionCodes  #IN
+        ENDPROPERTIES
+        
+        MENUITEM
+          PROPERTIES
+            Name                #Shipping bill number
+            MenuItemName        #CustomsShippingBillNumberTable_IN
+          ENDPROPERTIES
+          
+        ENDMENUITEM
+      ENDMENU
+      MENU #@GLS60697
+        PROPERTIES
+          Name                #TaxIntegration
+          Label               #@GLS60697
+          ConfigurationKey    #LedgerBasicSalesTax
+          CountryRegionCodes  #CN
+        ENDPROPERTIES
+        
+        MENUITEM
+          PROPERTIES
+            Name                #Tax integration profiles
+            MenuItemName        #TaxProfileTable_CN
+          ENDPROPERTIES
+          
+        ENDMENUITEM
+        MENUITEM
+          PROPERTIES
+            Name                #VAT invoice description
+            MenuItemName        #VATInvoiceDescTable_CN
+          ENDPROPERTIES
+          
+        ENDMENUITEM
+      ENDMENU
+      MENU #@SYS334290
+        PROPERTIES
+          Name                #SalesAgreements
+          Label               #@SYS334290
+          CountryRegionCodes  #RU
+        ENDPROPERTIES
+        
+        MENUITEM
+          PROPERTIES
+            Name                #Sales agreement classifications
+            MenuItemName        #SalesAgreementClassification
+          ENDPROPERTIES
+          
+        ENDMENUITEM
+      ENDMENU
+      MENU #@GLS103894
+        PROPERTIES
+          Name                #Submenu1
+          Label               #@GLS103894
+          ConfigurationKey    #LedgerBasic
+          CountryRegionCodes  #RU
+        ENDPROPERTIES
+        
+        MENUITEM
+          PROPERTIES
+            Name                #Debt interval
+            MenuItemName        #RTax25DebtPeriodDebit
+          ENDPROPERTIES
+          
+        ENDMENUITEM
+      ENDMENU
+      MENU #@GLS110132
+        PROPERTIES
+          Name                #Submenu1
+          Label               #@GLS110132
+          CountryRegionCodes  #PL
+        ENDPROPERTIES
+        
+        MENUITEM
+          PROPERTIES
+            Name                #Fiscal printers
+            MenuItemName        #PlFiscalPrinterTable
+          ENDPROPERTIES
+          
+        ENDMENUITEM
+        MENUITEM
+          PROPERTIES
+            Name                #Fiscal tax codes
+            MenuItemName        #HuFiscalTaxTable
+          ENDPROPERTIES
+          
+        ENDMENUITEM
+      ENDMENU
+      MENUITEM
+        PROPERTIES
+          Name                #Billing classifications
+          MenuItemName        #CustBillingClassification
+        ENDPROPERTIES
+        
+      ENDMENUITEM
+      MENUITEM
+        PROPERTIES
+          Name                #Billing codes
+          MenuItemName        #CustBillingCode
+        ENDPROPERTIES
+        
+      ENDMENUITEM
+      MENUITEM
+        PROPERTIES
+          Name                #Billing code custom fields
+          MenuItemName        #CustCustomField
+        ENDPROPERTIES
+        
+      ENDMENUITEM
+      MENUITEM
+        PROPERTIES
+          Name                #Trading partner codes
+          MenuItemName        #CustTradingPartnerCode
+        ENDPROPERTIES
+        
+      ENDMENUITEM
+      MENU #@SYP4882276
+        PROPERTIES
+          Name                #EInvoice_IT
+          Label               #@SYP4882276
+        ENDPROPERTIES
+        
+        MENUITEM
+          PROPERTIES
+            Name                #Electronic invoice parameters	
+            MenuItemName        #EInvoiceParameters_IT
+          ENDPROPERTIES
+          
+        ENDMENUITEM
+        MENUITEM
+          PROPERTIES
+            Name                #Electronic signature certificates
+            MenuItemName        #XmlCertificate
+          ENDPROPERTIES
+          
+        ENDMENUITEM
+        MENUITEM
+          PROPERTIES
+            Name                #Electronic invoice property types
+            MenuItemName        #EInvoicePropertyTypeTable
+          ENDPROPERTIES
+          
+        ENDMENUITEM
+      ENDMENU
+    ENDMENU
+  ENDMENU
+  
+
+***Element: FTM
+
+; Microsoft Dynamics AX MENUITEM : TestCustReport unloaded
+; --------------------------------------------------------------------------------
+  VERSION 1
+  
+  MENUITEM #TestCustReport
+    Type: 2
+    PROPERTIES
+      Name                #TestCustReport
+      Label               #CustReport
+      ObjectType          #Class
+      Object              #IS_TestCustController
+      Origin              #{AE759DAA-882B-4CC6-9018-EE338B55DFB7}
+    ENDPROPERTIES
+    
+  ENDMENUITEM
+  
+
+***Element: VPA
+
+; Microsoft Dynamics AX VISUALSTUDIOPROJECT : TestCustReport unloaded
+; --------------------------------------------------------------------------------
+  VERSION 1
+  
+  VISUALSTUDIOPROJECT #TestCustReport
+    PROPERTIES
+      Name                #TestCustReport
+      ProjectGUID         #{5F1DE6EB-1A11-4F5B-8D09-38E917DB1FBC}
+      ProjectTypeGUID     #{AA631830-3AD7-4631-8CF6-443A09BF983B}
+      VisualStudioProjectFile   #TestCustReport.dynamicsproj
+      Origin              #{5A3B933A-6E39-4B29-BBBC-7A4DC4CA90DB}
+    ENDPROPERTIES
+    
+    REFERENCEDPROJECTS
+      #
+    ENDREFERENCEDPROJECTS
+    
+    VISUALSTUDIOPROJECTFOLDER #Project Content
+      PROPERTIES
+        Name                #Project Content
+      ENDPROPERTIES
+      
+      VISUALSTUDIOPROJECTFILE #TestCustReport.dynamicsproj
+        PROPERTIES
+          Name                #TestCustReport.dynamicsproj
+        ENDPROPERTIES
+        
+        SOURCE 2150
+#﻿<?xml version="1.0" encoding="utf-8"?>
+#<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+#  <PropertyGroup>
+#    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+#    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+#    <ProductVersion>6.3.5000.138</ProductVersion>
+#    <SchemaVersion>2.0</SchemaVersion>
+#    <ProjectGuid>5f1de6eb-1a11-4f5b-8d09-38e917db1fbc</ProjectGuid>
+#    <ProjectTypeGuids>{BF6F8E12-879D-49E7-ADF0-5503146B24B8};{aa631830-3ad7-4631-8cf6-443a09bf983b}</ProjectTypeGuids>
+#    <Name>TestCustReport</Name>
+#    <BaseAssemblyName>ReportModel1</BaseAssemblyName>
+#    <!-- Application property page properties -->
+#    <OutputType>Dynamics Reporting Library</OutputType>
+#    <!-- AssemblyInfo properties -->
+#    <AssemblyTitle>ReportModel1</AssemblyTitle>
+#    <AssemblyCompany>
+#    </AssemblyCompany>
+#    <AssemblyProduct>ReportModel1</AssemblyProduct>
+#    <AssemblyCopyright>Copyright ©  2017</AssemblyCopyright>
+#    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+#    <FileAlignment>512</FileAlignment>
+#    <OutputPath>bin\Debug\</OutputPath>
+#    <DeployToServer>No</DeployToServer>
+#    <DeployToClient>No</DeployToClient>
+#    <DeployToEP>No</DeployToEP>
+#    <RootNamespace>ReportModel1</RootNamespace>
+#    <StartupElement />
+#    <DebugTarget>None</DebugTarget>
+#  </PropertyGroup>
+#  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+#    <OutputPath>bin\Debug\</OutputPath>
+#  </PropertyGroup>
+#  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+#    <OutputPath>bin\Release\</OutputPath>
+#  </PropertyGroup>
+#  <ItemGroup>
+#    <Compile Include="\SSRS Reports\Reports\IS_testCustReport">
+#      <Virtual>True</Virtual>
+#    </Compile>
+#  </ItemGroup>
+#  <Import Project="$(MSBuildExtensionsPath)\Microsoft\DynamicsTools\Microsoft.Dynamics.Framework.Design.Reporting.Modeling.targets" />
+#  <Import Project="$(MSBuildExtensionsPath)\Microsoft\DynamicsTools\Microsoft.Dynamics.Framework.Design.InteractionProject.targets" />
+#</Project>
+        ENDSOURCE
+      ENDVISUALSTUDIOPROJECTFILE
+      
+    ENDVISUALSTUDIOPROJECTFOLDER
+    
+    VISUALSTUDIOPROJECTFOLDER #Project Output
+      PROPERTIES
+        Name                #Project Output
+      ENDPROPERTIES
+      
+    ENDVISUALSTUDIOPROJECTFOLDER
+    
+  ENDVISUALSTUDIOPROJECT
+  
+
+***Element: SRP
+
+; Microsoft Dynamics AX REPORT : IS_testCustReport unloaded
+; --------------------------------------------------------------------------------
+  VERSION 1
+  
+  REPORT #IS_testCustReport
+    PROPERTIES
+      Name                #IS_testCustReport
+      Origin              #{E5838EB7-675F-4F16-8E52-9489D0C7309D}
+    ENDPROPERTIES
+    
+    CROSSREFERENCES
+#<CrossReferenceInfo>
+#    <CrossReferenceEntry>
+#        <ReferencedAotObjectName>Is_TestCustDP</ReferencedAotObjectName>
+#        <xrefKind>10</xrefKind>
+#        <XrefReference>2</XrefReference>
+#    </CrossReferenceEntry>
+#    <CrossReferenceEntry>
+#        <ReferencedAotObjectName>Is_TestCustDP.Is_TestCustReportHeaderTMP</ReferencedAotObjectName>
+#        <xrefKind>11</xrefKind>
+#        <XrefReference>4</XrefReference>
+#    </CrossReferenceEntry>
+#    <CrossReferenceEntry>
+#        <ReferencedAotObjectName>Is_TestCustDP.processReport</ReferencedAotObjectName>
+#        <xrefKind>11</xrefKind>
+#        <XrefReference>4</XrefReference>
+#    </CrossReferenceEntry>
+#    <CrossReferenceEntry>
+#        <ReferencedAotObjectName>Is_TestCustReportHeaderTMP.CompanyAddress</ReferencedAotObjectName>
+#        <xrefKind>2</xrefKind>
+#        <XrefReference>1</XrefReference>
+#    </CrossReferenceEntry>
+#    <CrossReferenceEntry>
+#        <ReferencedAotObjectName>Is_TestCustReportHeaderTMP</ReferencedAotObjectName>
+#        <xrefKind>1</xrefKind>
+#        <XrefReference>1</XrefReference>
+#    </CrossReferenceEntry>
+#    <CrossReferenceEntry>
+#        <ReferencedAotObjectName>Is_TestCustReportHeaderTMP.CompanyLogo</ReferencedAotObjectName>
+#        <xrefKind>2</xrefKind>
+#        <XrefReference>1</XrefReference>
+#    </CrossReferenceEntry>
+#    <CrossReferenceEntry>
+#        <ReferencedAotObjectName>Is_TestCustReportHeaderTMP.CompanyName</ReferencedAotObjectName>
+#        <xrefKind>2</xrefKind>
+#        <XrefReference>1</XrefReference>
+#    </CrossReferenceEntry>
+#    <CrossReferenceEntry>
+#        <ReferencedAotObjectName>Is_TestCustDP.Is_TestCustTMP</ReferencedAotObjectName>
+#        <xrefKind>11</xrefKind>
+#        <XrefReference>4</XrefReference>
+#    </CrossReferenceEntry>
+#    <CrossReferenceEntry>
+#        <ReferencedAotObjectName>Is_TestCustTMP.Address</ReferencedAotObjectName>
+#        <xrefKind>2</xrefKind>
+#        <XrefReference>1</XrefReference>
+#    </CrossReferenceEntry>
+#    <CrossReferenceEntry>
+#        <ReferencedAotObjectName>Is_TestCustTMP</ReferencedAotObjectName>
+#        <xrefKind>1</xrefKind>
+#        <XrefReference>1</XrefReference>
+#    </CrossReferenceEntry>
+#    <CrossReferenceEntry>
+#        <ReferencedAotObjectName>Is_TestCustTMP.CustAccount</ReferencedAotObjectName>
+#        <xrefKind>2</xrefKind>
+#        <XrefReference>1</XrefReference>
+#    </CrossReferenceEntry>
+#    <CrossReferenceEntry>
+#        <ReferencedAotObjectName>Is_TestCustTMP.CustGroupId</ReferencedAotObjectName>
+#        <xrefKind>2</xrefKind>
+#        <XrefReference>1</XrefReference>
+#    </CrossReferenceEntry>
+#    <CrossReferenceEntry>
+#        <ReferencedAotObjectName>Is_TestCustTMP.CustGroupId1</ReferencedAotObjectName>
+#        <xrefKind>2</xrefKind>
+#        <XrefReference>1</XrefReference>
+#    </CrossReferenceEntry>
+#    <CrossReferenceEntry>
+#        <ReferencedAotObjectName>Is_TestCustTMP.Name</ReferencedAotObjectName>
+#        <xrefKind>2</xrefKind>
+#        <XrefReference>1</XrefReference>
+#    </CrossReferenceEntry>
+#    <CrossReferenceEntry>
+#        <ReferencedAotObjectName>@SYS7149</ReferencedAotObjectName>
+#        <xrefKind>19</xrefKind>
+#        <XrefReference>2</XrefReference>
+#    </CrossReferenceEntry>
+#</CrossReferenceInfo>
+    ENDCROSSREFERENCES
+    
+    MOXL 95582
+#<?xml version="1.0" encoding="utf-8" ?>
+#<Reports Version="6.2.15.0">
+#  <Report Name="IS_testCustReport">
+#    <DataSet Name="DS" DataSourceType="ReportDataProvider" Query="SELECT * FROM Is_TestCustDP.Is_TestCustReportHeaderTMP">
+#      <DataSetField Name="CompanyAddress" Alias="Is_TestCustReportHeaderTMP.1.CompanyAddress" Caption="@SYS9362" DisplayWidth="Auto" UserDefined="False"/>
+#      <DataSetField Name="CompanyLogo" Alias="Is_TestCustReportHeaderTMP.1.CompanyLogo" Caption="@SYS86069" DataType="System.Byte[]" DisplayWidth="Auto" UserDefined="False"/>
+#      <DataSetField Name="CompanyName" Alias="Is_TestCustReportHeaderTMP.1.CompanyName" Caption="@SYS7399" DisplayWidth="Auto" UserDefined="False"/>
+#      <DataSetParameter Name="AX_PartitionKey" Alias="AX_PartitionKey" DataType="System.String" Parameter=":IS_testCustReport.Parameters.AX_PartitionKey"/>
+#      <DataSetParameter Name="AX_CompanyName" Alias="AX_CompanyName" DataType="System.String" Parameter=":IS_testCustReport.Parameters.AX_CompanyName"/>
+#      <DataSetParameter Name="AX_UserContext" Alias="AX_UserContext" DataType="System.String" Parameter=":IS_testCustReport.Parameters.AX_UserContext"/>
+#      <DataSetParameter Name="AX_RenderingCulture" Alias="AX_RenderingCulture" DataType="System.String" Parameter=":IS_testCustReport.Parameters.AX_RenderingCulture"/>
+#      <DataSetParameter Name="AX_ReportContext" Alias="AX_ReportContext" DataType="System.String" Parameter=":IS_testCustReport.Parameters.AX_ReportContext"/>
+#      <DataSetParameter Name="AX_RdpPreProcessedId" Alias="AX_RdpPreProcessedId" DataType="System.String" Parameter=":IS_testCustReport.Parameters.AX_RdpPreProcessedId"/>
+#      <DataSetParameter Name="CustAccount" Alias="CustAccount" DataType="System.String" Parameter=":IS_testCustReport.Parameters.DS_CustAccount"/>
+#    </DataSet>
+#    <DataSet Name="DS2" DataSourceType="ReportDataProvider" Query="SELECT * FROM Is_TestCustDP.Is_TestCustTMP">
+#      <DataSetField Name="Address" Alias="Is_TestCustTMP.1.Address" Caption="@SYS300925" DisplayWidth="Auto" UserDefined="False"/>
+#      <DataSetField Name="CustAccount" Alias="Is_TestCustTMP.1.CustAccount" Caption="@SYS7149" DisplayWidth="Auto" UserDefined="False"/>
+#      <DataSetField Name="CustGroupId" Alias="Is_TestCustTMP.1.CustGroupId" Caption="@SYS11904" DisplayWidth="Auto" UserDefined="False"/>
+#      <DataSetField Name="CustGroupId1" Alias="Is_TestCustTMP.1.CustGroupId1" Caption="@SYS11904" DisplayWidth="Auto" UserDefined="False"/>
+#      <DataSetField Name="Name" Alias="Is_TestCustTMP.1.Name" Caption="@SYS7399" DisplayWidth="Auto" UserDefined="False"/>
+#      <DataSetParameter Name="AX_PartitionKey" Alias="AX_PartitionKey" DataType="System.String" Parameter=":IS_testCustReport.Parameters.AX_PartitionKey"/>
+#      <DataSetParameter Name="AX_CompanyName" Alias="AX_CompanyName" DataType="System.String" Parameter=":IS_testCustReport.Parameters.AX_CompanyName"/>
+#      <DataSetParameter Name="AX_UserContext" Alias="AX_UserContext" DataType="System.String" Parameter=":IS_testCustReport.Parameters.AX_UserContext"/>
+#      <DataSetParameter Name="AX_RenderingCulture" Alias="AX_RenderingCulture" DataType="System.String" Parameter=":IS_testCustReport.Parameters.AX_RenderingCulture"/>
+#      <DataSetParameter Name="AX_ReportContext" Alias="AX_ReportContext" DataType="System.String" Parameter=":IS_testCustReport.Parameters.AX_ReportContext"/>
+#      <DataSetParameter Name="AX_RdpPreProcessedId" Alias="AX_RdpPreProcessedId" DataType="System.String" Parameter=":IS_testCustReport.Parameters.AX_RdpPreProcessedId"/>
+#      <DataSetParameter Name="CustAccount" Alias="CustAccount" DataType="System.String" Parameter=":IS_testCustReport.Parameters.DS_CustAccount"/>
+#    </DataSet>
+#    <ParameterGroup Name="Parameters">
+#      <Parameter Name="AX_PartitionKey" AllowBlank="True" Nullable="True" UserVisibility="Hidden"/>
+#      <Parameter Name="AX_CompanyName" UserVisibility="Hidden">
+#        <UnboundDefault Name="UnboundDefault" Value="=Microsoft.Dynamics.Framework.Reports.BuiltInMethods.GetUserCompany(Parameters!AX_UserContext.Value)"/>
+#      </Parameter>
+#      <Parameter Name="AX_UserContext" AllowBlank="True" Nullable="True" UserVisibility="Hidden"/>
+#      <Parameter Name="AX_RenderingCulture" AllowBlank="True" Nullable="True" UserVisibility="Hidden"/>
+#      <Parameter Name="AX_ReportContext" AllowBlank="True" Nullable="True" UserVisibility="Hidden"/>
+#      <Parameter Name="AX_RdpPreProcessedId" AllowBlank="True" Nullable="True" UserVisibility="Hidden"/>
+#      <Parameter Name="DS_CustAccount" PromptString="@SYS7149"/>
+#    </ParameterGroup>
+#    <PrecisionDesign Name="Report" Text="&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+#&lt;Report xmlns:rd=&quot;http://schemas.microsoft.com/SQLServer/reporting/reportdesigner&quot; xmlns:cl=&quot;http://schemas.microsoft.com/sqlserver/reporting/2010/01/componentdefinition&quot; xmlns=&quot;http://schemas.microsoft.com/sqlserver/reporting/2010/01/reportdefinition&quot;&gt;
+#  &lt;AutoRefresh&gt;0&lt;/AutoRefresh&gt;
+#  &lt;DataSources&gt;
+#    &lt;DataSource Name=&quot;AutoGen__ReportDataProvider&quot;&gt;
+#      &lt;ConnectionProperties&gt;
+#        &lt;DataProvider&gt;AXREPORTDATAPROVIDER&lt;/DataProvider&gt;
+#        &lt;ConnectString /&gt;
+#        &lt;IntegratedSecurity&gt;true&lt;/IntegratedSecurity&gt;
+#      &lt;/ConnectionProperties&gt;
+#      &lt;rd:DataSourceID&gt;e75a6d3c-00c2-4fa5-a7a7-4339905b8031&lt;/rd:DataSourceID&gt;
+#    &lt;/DataSource&gt;
+#  &lt;/DataSources&gt;
+#  &lt;DataSets&gt;
+#    &lt;DataSet Name=&quot;DS&quot;&gt;
+#      &lt;Query&gt;
+#        &lt;DataSourceName&gt;AutoGen__ReportDataProvider&lt;/DataSourceName&gt;
+#        &lt;QueryParameters&gt;
+#          &lt;QueryParameter Name=&quot;AX_PartitionKey&quot;&gt;
+#            &lt;Value&gt;=Parameters!AX_PartitionKey.Value&lt;/Value&gt;
+#          &lt;/QueryParameter&gt;
+#          &lt;QueryParameter Name=&quot;AX_CompanyName&quot;&gt;
+#            &lt;Value&gt;=Parameters!AX_CompanyName.Value&lt;/Value&gt;
+#          &lt;/QueryParameter&gt;
+#          &lt;QueryParameter Name=&quot;AX_UserContext&quot;&gt;
+#            &lt;Value&gt;=Parameters!AX_UserContext.Value&lt;/Value&gt;
+#          &lt;/QueryParameter&gt;
+#          &lt;QueryParameter Name=&quot;AX_RenderingCulture&quot;&gt;
+#            &lt;Value&gt;=Parameters!AX_RenderingCulture.Value&lt;/Value&gt;
+#          &lt;/QueryParameter&gt;
+#          &lt;QueryParameter Name=&quot;AX_ReportContext&quot;&gt;
+#            &lt;Value&gt;=Parameters!AX_ReportContext.Value&lt;/Value&gt;
+#          &lt;/QueryParameter&gt;
+#          &lt;QueryParameter Name=&quot;AX_RdpPreProcessedId&quot;&gt;
+#            &lt;Value&gt;=Parameters!AX_RdpPreProcessedId.Value&lt;/Value&gt;
+#          &lt;/QueryParameter&gt;
+#          &lt;QueryParameter Name=&quot;CustAccount&quot;&gt;
+#            &lt;Value&gt;=Parameters!DS_CustAccount.Value&lt;/Value&gt;
+#          &lt;/QueryParameter&gt;
+#        &lt;/QueryParameters&gt;
+#        &lt;CommandText&gt;SELECT * FROM Is_TestCustDP.Is_TestCustReportHeaderTMP&lt;/CommandText&gt;
+#        &lt;rd:UseGenericDesigner&gt;true&lt;/rd:UseGenericDesigner&gt;
+#      &lt;/Query&gt;
+#      &lt;Fields&gt;
+#        &lt;Field Name=&quot;CompanyAddress&quot;&gt;
+#          &lt;DataField&gt;Is_TestCustReportHeaderTMP.1.CompanyAddress&lt;/DataField&gt;
+#          &lt;rd:TypeName&gt;System.String&lt;/rd:TypeName&gt;
+#        &lt;/Field&gt;
+#        &lt;Field Name=&quot;CompanyLogo&quot;&gt;
+#          &lt;DataField&gt;Is_TestCustReportHeaderTMP.1.CompanyLogo&lt;/DataField&gt;
+#          &lt;rd:TypeName&gt;System.Byte[]&lt;/rd:TypeName&gt;
+#        &lt;/Field&gt;
+#        &lt;Field Name=&quot;CompanyName&quot;&gt;
+#          &lt;DataField&gt;Is_TestCustReportHeaderTMP.1.CompanyName&lt;/DataField&gt;
+#          &lt;rd:TypeName&gt;System.String&lt;/rd:TypeName&gt;
+#        &lt;/Field&gt;
+#      &lt;/Fields&gt;
+#      &lt;rd:DataSetInfo&gt;
+#        &lt;rd:DataSetName&gt;DS&lt;/rd:DataSetName&gt;
+#        &lt;rd:TableName&gt;Fields&lt;/rd:TableName&gt;
+#        &lt;rd:TableAdapterFillMethod&gt;Fill&lt;/rd:TableAdapterFillMethod&gt;
+#        &lt;rd:TableAdapterGetDataMethod&gt;GetData&lt;/rd:TableAdapterGetDataMethod&gt;
+#        &lt;rd:TableAdapterName&gt;FieldsTableAdapter&lt;/rd:TableAdapterName&gt;
+#      &lt;/rd:DataSetInfo&gt;
+#    &lt;/DataSet&gt;
+#    &lt;DataSet Name=&quot;DS2&quot;&gt;
+#      &lt;Query&gt;
+#        &lt;DataSourceName&gt;AutoGen__ReportDataProvider&lt;/DataSourceName&gt;
+#        &lt;QueryParameters&gt;
+#          &lt;QueryParameter Name=&quot;AX_PartitionKey&quot;&gt;
+#            &lt;Value&gt;=Parameters!AX_PartitionKey.Value&lt;/Value&gt;
+#          &lt;/QueryParameter&gt;
+#          &lt;QueryParameter Name=&quot;AX_CompanyName&quot;&gt;
+#            &lt;Value&gt;=Parameters!AX_CompanyName.Value&lt;/Value&gt;
+#          &lt;/QueryParameter&gt;
+#          &lt;QueryParameter Name=&quot;AX_UserContext&quot;&gt;
+#            &lt;Value&gt;=Parameters!AX_UserContext.Value&lt;/Value&gt;
+#          &lt;/QueryParameter&gt;
+#          &lt;QueryParameter Name=&quot;AX_RenderingCulture&quot;&gt;
+#            &lt;Value&gt;=Parameters!AX_RenderingCulture.Value&lt;/Value&gt;
+#          &lt;/QueryParameter&gt;
+#          &lt;QueryParameter Name=&quot;AX_ReportContext&quot;&gt;
+#            &lt;Value&gt;=Parameters!AX_ReportContext.Value&lt;/Value&gt;
+#          &lt;/QueryParameter&gt;
+#          &lt;QueryParameter Name=&quot;AX_RdpPreProcessedId&quot;&gt;
+#            &lt;Value&gt;=Parameters!AX_RdpPreProcessedId.Value&lt;/Value&gt;
+#          &lt;/QueryParameter&gt;
+#          &lt;QueryParameter Name=&quot;CustAccount&quot;&gt;
+#            &lt;Value&gt;=Parameters!DS_CustAccount.Value&lt;/Value&gt;
+#          &lt;/QueryParameter&gt;
+#        &lt;/QueryParameters&gt;
+#        &lt;CommandText&gt;SELECT * FROM Is_TestCustDP.Is_TestCustTMP&lt;/CommandText&gt;
+#        &lt;rd:UseGenericDesigner&gt;true&lt;/rd:UseGenericDesigner&gt;
+#      &lt;/Query&gt;
+#      &lt;Fields&gt;
+#        &lt;Field Name=&quot;Address&quot;&gt;
+#          &lt;DataField&gt;Is_TestCustTMP.1.Address&lt;/DataField&gt;
+#          &lt;rd:TypeName&gt;System.String&lt;/rd:TypeName&gt;
+#        &lt;/Field&gt;
+#        &lt;Field Name=&quot;CustAccount&quot;&gt;
+#          &lt;DataField&gt;Is_TestCustTMP.1.CustAccount&lt;/DataField&gt;
+#          &lt;rd:TypeName&gt;System.String&lt;/rd:TypeName&gt;
+#        &lt;/Field&gt;
+#        &lt;Field Name=&quot;CustGroupId&quot;&gt;
+#          &lt;DataField&gt;Is_TestCustTMP.1.CustGroupId&lt;/DataField&gt;
+#          &lt;rd:TypeName&gt;System.String&lt;/rd:TypeName&gt;
+#        &lt;/Field&gt;
+#        &lt;Field Name=&quot;CustGroupId1&quot;&gt;
+#          &lt;DataField&gt;Is_TestCustTMP.1.CustGroupId1&lt;/DataField&gt;
+#          &lt;rd:TypeName&gt;System.String&lt;/rd:TypeName&gt;
+#        &lt;/Field&gt;
+#        &lt;Field Name=&quot;Name&quot;&gt;
+#          &lt;DataField&gt;Is_TestCustTMP.1.Name&lt;/DataField&gt;
+#          &lt;rd:TypeName&gt;System.String&lt;/rd:TypeName&gt;
+#        &lt;/Field&gt;
+#      &lt;/Fields&gt;
+#      &lt;rd:DataSetInfo&gt;
+#        &lt;rd:DataSetName&gt;DS2&lt;/rd:DataSetName&gt;
+#        &lt;rd:TableName&gt;Fields&lt;/rd:TableName&gt;
+#        &lt;rd:TableAdapterFillMethod&gt;Fill&lt;/rd:TableAdapterFillMethod&gt;
+#        &lt;rd:TableAdapterGetDataMethod&gt;GetData&lt;/rd:TableAdapterGetDataMethod&gt;
+#        &lt;rd:TableAdapterName&gt;FieldsTableAdapter&lt;/rd:TableAdapterName&gt;
+#      &lt;/rd:DataSetInfo&gt;
+#    &lt;/DataSet&gt;
+#  &lt;/DataSets&gt;
+#  &lt;ReportSections&gt;
+#    &lt;ReportSection&gt;
+#      &lt;Body&gt;
+#        &lt;ReportItems&gt;
+#          &lt;Textbox Name=&quot;Textbox1&quot;&gt;
+#            &lt;CanGrow&gt;true&lt;/CanGrow&gt;
+#            &lt;KeepTogether&gt;true&lt;/KeepTogether&gt;
+#            &lt;Paragraphs&gt;
+#              &lt;Paragraph&gt;
+#                &lt;TextRuns&gt;
+#                  &lt;TextRun&gt;
+#                    &lt;Value&gt;CustTable Data&lt;/Value&gt;
+#                    &lt;Style /&gt;
+#                  &lt;/TextRun&gt;
+#                &lt;/TextRuns&gt;
+#                &lt;Style&gt;
+#                  &lt;TextAlign&gt;Center&lt;/TextAlign&gt;
+#                &lt;/Style&gt;
+#              &lt;/Paragraph&gt;
+#              &lt;Paragraph&gt;
+#                &lt;TextRuns&gt;
+#                  &lt;TextRun&gt;
+#                    &lt;Value /&gt;
+#                    &lt;Style /&gt;
+#                  &lt;/TextRun&gt;
+#                &lt;/TextRuns&gt;
+#                &lt;Style /&gt;
+#              &lt;/Paragraph&gt;
+#            &lt;/Paragraphs&gt;
+#            &lt;rd:DefaultName&gt;Textbox1&lt;/rd:DefaultName&gt;
+#            &lt;Top&gt;7.88141cm&lt;/Top&gt;
+#            &lt;Left&gt;3.31294cm&lt;/Left&gt;
+#            &lt;Height&gt;0.6cm&lt;/Height&gt;
+#            &lt;Width&gt;14.33917cm&lt;/Width&gt;
+#            &lt;Style&gt;
+#              &lt;Border&gt;
+#                &lt;Style&gt;None&lt;/Style&gt;
+#              &lt;/Border&gt;
+#              &lt;PaddingLeft&gt;2pt&lt;/PaddingLeft&gt;
+#              &lt;PaddingRight&gt;2pt&lt;/PaddingRight&gt;
+#              &lt;PaddingTop&gt;2pt&lt;/PaddingTop&gt;
+#              &lt;PaddingBottom&gt;2pt&lt;/PaddingBottom&gt;
+#            &lt;/Style&gt;
+#          &lt;/Textbox&gt;
+#          &lt;Tablix Name=&quot;Tablix1&quot;&gt;
+#            &lt;TablixBody&gt;
+#              &lt;TablixColumns&gt;
+#                &lt;TablixColumn&gt;
+#                  &lt;Width&gt;3.94639cm&lt;/Width&gt;
+#                &lt;/TablixColumn&gt;
+#                &lt;TablixColumn&gt;
+#                  &lt;Width&gt;3.94639cm&lt;/Width&gt;
+#                &lt;/TablixColumn&gt;
+#                &lt;TablixColumn&gt;
+#                  &lt;Width&gt;2.5cm&lt;/Width&gt;
+#                &lt;/TablixColumn&gt;
+#                &lt;TablixColumn&gt;
+#                  &lt;Width&gt;3.94639cm&lt;/Width&gt;
+#                &lt;/TablixColumn&gt;
+#              &lt;/TablixColumns&gt;
+#              &lt;TablixRows&gt;
+#                &lt;TablixRow&gt;
+#                  &lt;Height&gt;0.6cm&lt;/Height&gt;
+#                  &lt;TablixCells&gt;
+#                    &lt;TablixCell&gt;
+#                      &lt;CellContents&gt;
+#                        &lt;Textbox Name=&quot;Textbox2&quot;&gt;
+#                          &lt;CanGrow&gt;true&lt;/CanGrow&gt;
+#                          &lt;KeepTogether&gt;true&lt;/KeepTogether&gt;
+#                          &lt;Paragraphs&gt;
+#                            &lt;Paragraph&gt;
+#                              &lt;TextRuns&gt;
+#                                &lt;TextRun&gt;
+#                                  &lt;Value&gt;Name&lt;/Value&gt;
+#                                  &lt;Style /&gt;
+#                                &lt;/TextRun&gt;
+#                              &lt;/TextRuns&gt;
+#                              &lt;Style /&gt;
+#                            &lt;/Paragraph&gt;
+#                          &lt;/Paragraphs&gt;
+#                          &lt;rd:DefaultName&gt;Textbox2&lt;/rd:DefaultName&gt;
+#                          &lt;Style&gt;
+#                            &lt;Border&gt;
+#                              &lt;Color&gt;LightGrey&lt;/Color&gt;
+#                              &lt;Style&gt;Solid&lt;/Style&gt;
+#                            &lt;/Border&gt;
+#                            &lt;PaddingLeft&gt;2pt&lt;/PaddingLeft&gt;
+#                            &lt;PaddingRight&gt;2pt&lt;/PaddingRight&gt;
+#                            &lt;PaddingTop&gt;2pt&lt;/PaddingTop&gt;
+#                            &lt;PaddingBottom&gt;2pt&lt;/PaddingBottom&gt;
+#                          &lt;/Style&gt;
+#                        &lt;/Textbox&gt;
+#                      &lt;/CellContents&gt;
+#                    &lt;/TablixCell&gt;
+#                    &lt;TablixCell&gt;
+#                      &lt;CellContents&gt;
+#                        &lt;Textbox Name=&quot;Textbox4&quot;&gt;
+#                          &lt;CanGrow&gt;true&lt;/CanGrow&gt;
+#                          &lt;KeepTogether&gt;true&lt;/KeepTogether&gt;
+#                          &lt;Paragraphs&gt;
+#                            &lt;Paragraph&gt;
+#                              &lt;TextRuns&gt;
+#                                &lt;TextRun&gt;
+#                                  &lt;Value&gt;Address&lt;/Value&gt;
+#                                  &lt;Style /&gt;
+#                                &lt;/TextRun&gt;
+#                              &lt;/TextRuns&gt;
+#                              &lt;Style /&gt;
+#                            &lt;/Paragraph&gt;
+#                          &lt;/Paragraphs&gt;
+#                          &lt;rd:DefaultName&gt;Textbox4&lt;/rd:DefaultName&gt;
+#                          &lt;Style&gt;
+#                            &lt;Border&gt;
+#                              &lt;Color&gt;LightGrey&lt;/Color&gt;
+#                              &lt;Style&gt;Solid&lt;/Style&gt;
+#                            &lt;/Border&gt;
+#                            &lt;PaddingLeft&gt;2pt&lt;/PaddingLeft&gt;
+#                            &lt;PaddingRight&gt;2pt&lt;/PaddingRight&gt;
+#                            &lt;PaddingTop&gt;2pt&lt;/PaddingTop&gt;
+#                            &lt;PaddingBottom&gt;2pt&lt;/PaddingBottom&gt;
+#                          &lt;/Style&gt;
+#                        &lt;/Textbox&gt;
+#                      &lt;/CellContents&gt;
+#                    &lt;/TablixCell&gt;
+#                    &lt;TablixCell&gt;
+#                      &lt;CellContents&gt;
+#                        &lt;Textbox Name=&quot;Textbox8&quot;&gt;
+#                          &lt;CanGrow&gt;true&lt;/CanGrow&gt;
+#                          &lt;KeepTogether&gt;true&lt;/KeepTogether&gt;
+#                          &lt;Paragraphs&gt;
+#                            &lt;Paragraph&gt;
+#                              &lt;TextRuns&gt;
+#                                &lt;TextRun&gt;
+#                                  &lt;Value&gt;Cust Account&lt;/Value&gt;
+#                                  &lt;Style /&gt;
+#                                &lt;/TextRun&gt;
+#                              &lt;/TextRuns&gt;
+#                              &lt;Style /&gt;
+#                            &lt;/Paragraph&gt;
+#                          &lt;/Paragraphs&gt;
+#                          &lt;rd:DefaultName&gt;Textbox8&lt;/rd:DefaultName&gt;
+#                          &lt;Style&gt;
+#                            &lt;Border&gt;
+#                              &lt;Color&gt;LightGrey&lt;/Color&gt;
+#                              &lt;Style&gt;Solid&lt;/Style&gt;
+#                            &lt;/Border&gt;
+#                            &lt;PaddingLeft&gt;2pt&lt;/PaddingLeft&gt;
+#                            &lt;PaddingRight&gt;2pt&lt;/PaddingRight&gt;
+#                            &lt;PaddingTop&gt;2pt&lt;/PaddingTop&gt;
+#                            &lt;PaddingBottom&gt;2pt&lt;/PaddingBottom&gt;
+#                          &lt;/Style&gt;
+#                        &lt;/Textbox&gt;
+#                      &lt;/CellContents&gt;
+#                    &lt;/TablixCell&gt;
+#                    &lt;TablixCell&gt;
+#                      &lt;CellContents&gt;
+#                        &lt;Textbox Name=&quot;Textbox6&quot;&gt;
+#                          &lt;CanGrow&gt;true&lt;/CanGrow&gt;
+#                          &lt;KeepTogether&gt;true&lt;/KeepTogether&gt;
+#                          &lt;Paragraphs&gt;
+#                            &lt;Paragraph&gt;
+#                              &lt;TextRuns&gt;
+#                                &lt;TextRun&gt;
+#                                  &lt;Value&gt;Cust Group Id&lt;/Value&gt;
+#                                  &lt;Style /&gt;
+#                                &lt;/TextRun&gt;
+#                              &lt;/TextRuns&gt;
+#                              &lt;Style /&gt;
+#                            &lt;/Paragraph&gt;
+#                          &lt;/Paragraphs&gt;
+#                          &lt;rd:DefaultName&gt;Textbox6&lt;/rd:DefaultName&gt;
+#                          &lt;Style&gt;
+#                            &lt;Border&gt;
+#                              &lt;Color&gt;LightGrey&lt;/Color&gt;
+#                              &lt;Style&gt;Solid&lt;/Style&gt;
+#                            &lt;/Border&gt;
+#                            &lt;PaddingLeft&gt;2pt&lt;/PaddingLeft&gt;
+#                            &lt;PaddingRight&gt;2pt&lt;/PaddingRight&gt;
+#                            &lt;PaddingTop&gt;2pt&lt;/PaddingTop&gt;
+#                            &lt;PaddingBottom&gt;2pt&lt;/PaddingBottom&gt;
+#                          &lt;/Style&gt;
+#                        &lt;/Textbox&gt;
+#                      &lt;/CellContents&gt;
+#                    &lt;/TablixCell&gt;
+#                  &lt;/TablixCells&gt;
+#                &lt;/TablixRow&gt;
+#                &lt;TablixRow&gt;
+#                  &lt;Height&gt;0.6cm&lt;/Height&gt;
+#                  &lt;TablixCells&gt;
+#                    &lt;TablixCell&gt;
+#                      &lt;CellContents&gt;
+#                        &lt;Textbox Name=&quot;Textbox11&quot;&gt;
+#                          &lt;CanGrow&gt;true&lt;/CanGrow&gt;
+#                          &lt;KeepTogether&gt;true&lt;/KeepTogether&gt;
+#                          &lt;Paragraphs&gt;
+#                            &lt;Paragraph&gt;
+#                              &lt;TextRuns&gt;
+#                                &lt;TextRun&gt;
+#                                  &lt;Value /&gt;
+#                                  &lt;Style /&gt;
+#                                &lt;/TextRun&gt;
+#                              &lt;/TextRuns&gt;
+#                              &lt;Style /&gt;
+#                            &lt;/Paragraph&gt;
+#                          &lt;/Paragraphs&gt;
+#                          &lt;rd:DefaultName&gt;Textbox11&lt;/rd:DefaultName&gt;
+#                          &lt;Style&gt;
+#                            &lt;Border&gt;
+#                              &lt;Color&gt;LightGrey&lt;/Color&gt;
+#                              &lt;Style&gt;Solid&lt;/Style&gt;
+#                            &lt;/Border&gt;
+#                            &lt;PaddingLeft&gt;2pt&lt;/PaddingLeft&gt;
+#                            &lt;PaddingRight&gt;2pt&lt;/PaddingRight&gt;
+#                            &lt;PaddingTop&gt;2pt&lt;/PaddingTop&gt;
+#                            &lt;PaddingBottom&gt;2pt&lt;/PaddingBottom&gt;
+#                          &lt;/Style&gt;
+#                        &lt;/Textbox&gt;
+#                      &lt;/CellContents&gt;
+#                    &lt;/TablixCell&gt;
+#                    &lt;TablixCell&gt;
+#                      &lt;CellContents&gt;
+#                        &lt;Textbox Name=&quot;Textbox12&quot;&gt;
+#                          &lt;CanGrow&gt;true&lt;/CanGrow&gt;
+#                          &lt;KeepTogether&gt;true&lt;/KeepTogether&gt;
+#                          &lt;Paragraphs&gt;
+#                            &lt;Paragraph&gt;
+#                              &lt;TextRuns&gt;
+#                                &lt;TextRun&gt;
+#                                  &lt;Value /&gt;
+#                                  &lt;Style /&gt;
+#                                &lt;/TextRun&gt;
+#                              &lt;/TextRuns&gt;
+#                              &lt;Style /&gt;
+#                            &lt;/Paragraph&gt;
+#                          &lt;/Paragraphs&gt;
+#                          &lt;rd:DefaultName&gt;Textbox12&lt;/rd:DefaultName&gt;
+#                          &lt;Style&gt;
+#                            &lt;Border&gt;
+#                              &lt;Color&gt;LightGrey&lt;/Color&gt;
+#                              &lt;Style&gt;Solid&lt;/Style&gt;
+#                            &lt;/Border&gt;
+#                            &lt;PaddingLeft&gt;2pt&lt;/PaddingLeft&gt;
+#                            &lt;PaddingRight&gt;2pt&lt;/PaddingRight&gt;
+#                            &lt;PaddingTop&gt;2pt&lt;/PaddingTop&gt;
+#                            &lt;PaddingBottom&gt;2pt&lt;/PaddingBottom&gt;
+#                          &lt;/Style&gt;
+#                        &lt;/Textbox&gt;
+#                      &lt;/CellContents&gt;
+#                    &lt;/TablixCell&gt;
+#                    &lt;TablixCell&gt;
+#                      &lt;CellContents&gt;
+#                        &lt;Textbox Name=&quot;Textbox13&quot;&gt;
+#                          &lt;CanGrow&gt;true&lt;/CanGrow&gt;
+#                          &lt;KeepTogether&gt;true&lt;/KeepTogether&gt;
+#                          &lt;Paragraphs&gt;
+#                            &lt;Paragraph&gt;
+#                              &lt;TextRuns&gt;
+#                                &lt;TextRun&gt;
+#                                  &lt;Value /&gt;
+#                                  &lt;Style /&gt;
+#                                &lt;/TextRun&gt;
+#                              &lt;/TextRuns&gt;
+#                              &lt;Style /&gt;
+#                            &lt;/Paragraph&gt;
+#                          &lt;/Paragraphs&gt;
+#                          &lt;rd:DefaultName&gt;Textbox13&lt;/rd:DefaultName&gt;
+#                          &lt;Style&gt;
+#                            &lt;Border&gt;
+#                              &lt;Color&gt;LightGrey&lt;/Color&gt;
+#                              &lt;Style&gt;Solid&lt;/Style&gt;
+#                            &lt;/Border&gt;
+#                            &lt;PaddingLeft&gt;2pt&lt;/PaddingLeft&gt;
+#                            &lt;PaddingRight&gt;2pt&lt;/PaddingRight&gt;
+#                            &lt;PaddingTop&gt;2pt&lt;/PaddingTop&gt;
+#                            &lt;PaddingBottom&gt;2pt&lt;/PaddingBottom&gt;
+#                          &lt;/Style&gt;
+#                        &lt;/Textbox&gt;
+#                      &lt;/CellContents&gt;
+#                    &lt;/TablixCell&gt;
+#                    &lt;TablixCell&gt;
+#                      &lt;CellContents&gt;
+#                        &lt;Textbox Name=&quot;Textbox14&quot;&gt;
+#                          &lt;CanGrow&gt;true&lt;/CanGrow&gt;
+#                          &lt;KeepTogether&gt;true&lt;/KeepTogether&gt;
+#                          &lt;Paragraphs&gt;
+#                            &lt;Paragraph&gt;
+#                              &lt;TextRuns&gt;
+#                                &lt;TextRun&gt;
+#                                  &lt;Value /&gt;
+#                                  &lt;Style /&gt;
+#                                &lt;/TextRun&gt;
+#                              &lt;/TextRuns&gt;
+#                              &lt;Style /&gt;
+#                            &lt;/Paragraph&gt;
+#                          &lt;/Paragraphs&gt;
+#                          &lt;rd:DefaultName&gt;Textbox14&lt;/rd:DefaultName&gt;
+#                          &lt;Style&gt;
+#                            &lt;Border&gt;
+#                              &lt;Color&gt;LightGrey&lt;/Color&gt;
+#                              &lt;Style&gt;Solid&lt;/Style&gt;
+#                            &lt;/Border&gt;
+#                            &lt;PaddingLeft&gt;2pt&lt;/PaddingLeft&gt;
+#                            &lt;PaddingRight&gt;2pt&lt;/PaddingRight&gt;
+#                            &lt;PaddingTop&gt;2pt&lt;/PaddingTop&gt;
+#                            &lt;PaddingBottom&gt;2pt&lt;/PaddingBottom&gt;
+#                          &lt;/Style&gt;
+#                        &lt;/Textbox&gt;
+#                      &lt;/CellContents&gt;
+#                    &lt;/TablixCell&gt;
+#                  &lt;/TablixCells&gt;
+#                &lt;/TablixRow&gt;
+#                &lt;TablixRow&gt;
+#                  &lt;Height&gt;0.6cm&lt;/Height&gt;
+#                  &lt;TablixCells&gt;
+#                    &lt;TablixCell&gt;
+#                      &lt;CellContents&gt;
+#                        &lt;Textbox Name=&quot;Name&quot;&gt;
+#                          &lt;CanGrow&gt;true&lt;/CanGrow&gt;
+#                          &lt;KeepTogether&gt;true&lt;/KeepTogether&gt;
+#                          &lt;Paragraphs&gt;
+#                            &lt;Paragraph&gt;
+#                              &lt;TextRuns&gt;
+#                                &lt;TextRun&gt;
+#                                  &lt;Value /&gt;
+#                                  &lt;Style /&gt;
+#                                &lt;/TextRun&gt;
+#                              &lt;/TextRuns&gt;
+#                              &lt;Style /&gt;
+#                            &lt;/Paragraph&gt;
+#                          &lt;/Paragraphs&gt;
+#                          &lt;rd:DefaultName&gt;Name&lt;/rd:DefaultName&gt;
+#                          &lt;CustomProperties&gt;
+#                            &lt;CustomProperty&gt;
+#                              &lt;Name&gt;AXDataType&lt;/Name&gt;
+#                              &lt;Value&gt;String&lt;/Value&gt;
+#                            &lt;/CustomProperty&gt;
+#                          &lt;/CustomProperties&gt;
+#                          &lt;Style&gt;
+#                            &lt;Border&gt;
+#                              &lt;Color&gt;LightGrey&lt;/Color&gt;
+#                              &lt;Style&gt;Solid&lt;/Style&gt;
+#                            &lt;/Border&gt;
+#                            &lt;PaddingLeft&gt;2pt&lt;/PaddingLeft&gt;
+#                            &lt;PaddingRight&gt;2pt&lt;/PaddingRight&gt;
+#                            &lt;PaddingTop&gt;2pt&lt;/PaddingTop&gt;
+#                            &lt;PaddingBottom&gt;2pt&lt;/PaddingBottom&gt;
+#                          &lt;/Style&gt;
+#                        &lt;/Textbox&gt;
+#                      &lt;/CellContents&gt;
+#                    &lt;/TablixCell&gt;
+#                    &lt;TablixCell&gt;
+#                      &lt;CellContents&gt;
+#                        &lt;Textbox Name=&quot;Address&quot;&gt;
+#                          &lt;CanGrow&gt;true&lt;/CanGrow&gt;
+#                          &lt;KeepTogether&gt;true&lt;/KeepTogether&gt;
+#                          &lt;Paragraphs&gt;
+#                            &lt;Paragraph&gt;
+#                              &lt;TextRuns&gt;
+#                                &lt;TextRun&gt;
+#                                  &lt;Value /&gt;
+#                                  &lt;Style /&gt;
+#                                &lt;/TextRun&gt;
+#                              &lt;/TextRuns&gt;
+#                              &lt;Style /&gt;
+#                            &lt;/Paragraph&gt;
+#                          &lt;/Paragraphs&gt;
+#                          &lt;rd:DefaultName&gt;Address&lt;/rd:DefaultName&gt;
+#                          &lt;CustomProperties&gt;
+#                            &lt;CustomProperty&gt;
+#                              &lt;Name&gt;AXDataType&lt;/Name&gt;
+#                              &lt;Value&gt;String&lt;/Value&gt;
+#                            &lt;/CustomProperty&gt;
+#                          &lt;/CustomProperties&gt;
+#                          &lt;Style&gt;
+#                            &lt;Border&gt;
+#                              &lt;Color&gt;LightGrey&lt;/Color&gt;
+#                              &lt;Style&gt;Solid&lt;/Style&gt;
+#                            &lt;/Border&gt;
+#                            &lt;PaddingLeft&gt;2pt&lt;/PaddingLeft&gt;
+#                            &lt;PaddingRight&gt;2pt&lt;/PaddingRight&gt;
+#                            &lt;PaddingTop&gt;2pt&lt;/PaddingTop&gt;
+#                            &lt;PaddingBottom&gt;2pt&lt;/PaddingBottom&gt;
+#                          &lt;/Style&gt;
+#                        &lt;/Textbox&gt;
+#                      &lt;/CellContents&gt;
+#                    &lt;/TablixCell&gt;
+#                    &lt;TablixCell&gt;
+#                      &lt;CellContents&gt;
+#                        &lt;Textbox Name=&quot;CustAccount&quot;&gt;
+#                          &lt;CanGrow&gt;true&lt;/CanGrow&gt;
+#                          &lt;KeepTogether&gt;true&lt;/KeepTogether&gt;
+#                          &lt;Paragraphs&gt;
+#                            &lt;Paragraph&gt;
+#                              &lt;TextRuns&gt;
+#                                &lt;TextRun&gt;
+#                                  &lt;Value /&gt;
+#                                  &lt;Style /&gt;
+#                                &lt;/TextRun&gt;
+#                              &lt;/TextRuns&gt;
+#                              &lt;Style /&gt;
+#                            &lt;/Paragraph&gt;
+#                          &lt;/Paragraphs&gt;
+#                          &lt;rd:DefaultName&gt;CustAccount&lt;/rd:DefaultName&gt;
+#                          &lt;CustomProperties&gt;
+#                            &lt;CustomProperty&gt;
+#                              &lt;Name&gt;AXDataType&lt;/Name&gt;
+#                              &lt;Value&gt;String&lt;/Value&gt;
+#                            &lt;/CustomProperty&gt;
+#                          &lt;/CustomProperties&gt;
+#                          &lt;Style&gt;
+#                            &lt;Border&gt;
+#                              &lt;Color&gt;LightGrey&lt;/Color&gt;
+#                              &lt;Style&gt;Solid&lt;/Style&gt;
+#                            &lt;/Border&gt;
+#                            &lt;PaddingLeft&gt;2pt&lt;/PaddingLeft&gt;
+#                            &lt;PaddingRight&gt;2pt&lt;/PaddingRight&gt;
+#                            &lt;PaddingTop&gt;2pt&lt;/PaddingTop&gt;
+#                            &lt;PaddingBottom&gt;2pt&lt;/PaddingBottom&gt;
+#                          &lt;/Style&gt;
+#                        &lt;/Textbox&gt;
+#                      &lt;/CellContents&gt;
+#                    &lt;/TablixCell&gt;
+#                    &lt;TablixCell&gt;
+#                      &lt;CellContents&gt;
+#                        &lt;Textbox Name=&quot;CustGroupId&quot;&gt;
+#                          &lt;CanGrow&gt;true&lt;/CanGrow&gt;
+#                          &lt;KeepTogether&gt;true&lt;/KeepTogether&gt;
+#                          &lt;Paragraphs&gt;
+#                            &lt;Paragraph&gt;
+#                              &lt;TextRuns&gt;
+#                                &lt;TextRun&gt;
+#                                  &lt;Value /&gt;
+#                                  &lt;Style /&gt;
+#                                &lt;/TextRun&gt;
+#                              &lt;/TextRuns&gt;
+#                              &lt;Style /&gt;
+#                            &lt;/Paragraph&gt;
+#                          &lt;/Paragraphs&gt;
+#                          &lt;rd:DefaultName&gt;CustGroupId&lt;/rd:DefaultName&gt;
+#                          &lt;CustomProperties&gt;
+#                            &lt;CustomProperty&gt;
+#                              &lt;Name&gt;AXDataType&lt;/Name&gt;
+#                              &lt;Value&gt;String&lt;/Value&gt;
+#                            &lt;/CustomProperty&gt;
+#                          &lt;/CustomProperties&gt;
+#                          &lt;Style&gt;
+#                            &lt;Border&gt;
+#                              &lt;Color&gt;LightGrey&lt;/Color&gt;
+#                              &lt;Style&gt;Solid&lt;/Style&gt;
+#                            &lt;/Border&gt;
+#                            &lt;PaddingLeft&gt;2pt&lt;/PaddingLeft&gt;
+#                            &lt;PaddingRight&gt;2pt&lt;/PaddingRight&gt;
+#                            &lt;PaddingTop&gt;2pt&lt;/PaddingTop&gt;
+#                            &lt;PaddingBottom&gt;2pt&lt;/PaddingBottom&gt;
+#                          &lt;/Style&gt;
+#                        &lt;/Textbox&gt;
+#                      &lt;/CellContents&gt;
+#                    &lt;/TablixCell&gt;
+#                  &lt;/TablixCells&gt;
+#                &lt;/TablixRow&gt;
+#              &lt;/TablixRows&gt;
+#            &lt;/TablixBody&gt;
+#            &lt;TablixColumnHierarchy&gt;
+#              &lt;TablixMembers&gt;
+#                &lt;TablixMember /&gt;
+#                &lt;TablixMember /&gt;
+#                &lt;TablixMember /&gt;
+#                &lt;TablixMember /&gt;
+#              &lt;/TablixMembers&gt;
+#            &lt;/TablixColumnHierarchy&gt;
+#            &lt;TablixRowHierarchy&gt;
+#              &lt;TablixMembers&gt;
+#                &lt;TablixMember&gt;
+#                  &lt;TablixHeader&gt;
+#                    &lt;Size&gt;2.5cm&lt;/Size&gt;
+#                    &lt;CellContents&gt;
+#                      &lt;Textbox Name=&quot;Textbox3&quot;&gt;
+#                        &lt;CanGrow&gt;true&lt;/CanGrow&gt;
+#                        &lt;KeepTogether&gt;true&lt;/KeepTogether&gt;
+#                        &lt;Paragraphs&gt;
+#                          &lt;Paragraph&gt;
+#                            &lt;TextRuns&gt;
+#                              &lt;TextRun&gt;
+#                                &lt;Value&gt;Cust Group Id&lt;/Value&gt;
+#                                &lt;Style /&gt;
+#                              &lt;/TextRun&gt;
+#                            &lt;/TextRuns&gt;
+#                            &lt;Style /&gt;
+#                          &lt;/Paragraph&gt;
+#                        &lt;/Paragraphs&gt;
+#                        &lt;rd:DefaultName&gt;Textbox3&lt;/rd:DefaultName&gt;
+#                        &lt;Style&gt;
+#                          &lt;Border&gt;
+#                            &lt;Color&gt;LightGrey&lt;/Color&gt;
+#                            &lt;Style&gt;Solid&lt;/Style&gt;
+#                          &lt;/Border&gt;
+#                          &lt;PaddingLeft&gt;2pt&lt;/PaddingLeft&gt;
+#                          &lt;PaddingRight&gt;2pt&lt;/PaddingRight&gt;
+#                          &lt;PaddingTop&gt;2pt&lt;/PaddingTop&gt;
+#                          &lt;PaddingBottom&gt;2pt&lt;/PaddingBottom&gt;
+#                        &lt;/Style&gt;
+#                      &lt;/Textbox&gt;
+#                    &lt;/CellContents&gt;
+#                  &lt;/TablixHeader&gt;
+#                  &lt;TablixMembers&gt;
+#                    &lt;TablixMember /&gt;
+#                  &lt;/TablixMembers&gt;
+#                  &lt;KeepWithGroup&gt;After&lt;/KeepWithGroup&gt;
+#                &lt;/TablixMember&gt;
+#                &lt;TablixMember&gt;
+#                  &lt;Group Name=&quot;CustGroupId&quot;&gt;
+#                    &lt;GroupExpressions&gt;
+#                      &lt;GroupExpression&gt;=Fields!CustGroupId.Value&lt;/GroupExpression&gt;
+#                    &lt;/GroupExpressions&gt;
+#                  &lt;/Group&gt;
+#                  &lt;SortExpressions&gt;
+#                    &lt;SortExpression&gt;
+#                      &lt;Value&gt;=Fields!CustGroupId.Value&lt;/Value&gt;
+#                    &lt;/SortExpression&gt;
+#                  &lt;/SortExpressions&gt;
+#                  &lt;TablixHeader&gt;
+#                    &lt;Size&gt;2.5cm&lt;/Size&gt;
+#                    &lt;CellContents&gt;
+#                      &lt;Textbox Name=&quot;CustGroupId1&quot;&gt;
+#                        &lt;CanGrow&gt;true&lt;/CanGrow&gt;
+#                        &lt;KeepTogether&gt;true&lt;/KeepTogether&gt;
+#                        &lt;Paragraphs&gt;
+#                          &lt;Paragraph&gt;
+#                            &lt;TextRuns&gt;
+#                              &lt;TextRun&gt;
+#                                &lt;Value /&gt;
+#                                &lt;Style /&gt;
+#                              &lt;/TextRun&gt;
+#                            &lt;/TextRuns&gt;
+#                            &lt;Style /&gt;
+#                          &lt;/Paragraph&gt;
+#                        &lt;/Paragraphs&gt;
+#                        &lt;rd:DefaultName&gt;CustGroupId1&lt;/rd:DefaultName&gt;
+#                        &lt;CustomProperties&gt;
+#                          &lt;CustomProperty&gt;
+#                            &lt;Name&gt;AXDataType&lt;/Name&gt;
+#                            &lt;Value&gt;String&lt;/Value&gt;
+#                          &lt;/CustomProperty&gt;
+#                        &lt;/CustomProperties&gt;
+#                        &lt;Style&gt;
+#                          &lt;Border&gt;
+#                            &lt;Color&gt;LightGrey&lt;/Color&gt;
+#                            &lt;Style&gt;Solid&lt;/Style&gt;
+#                          &lt;/Border&gt;
+#                          &lt;PaddingLeft&gt;2pt&lt;/PaddingLeft&gt;
+#                          &lt;PaddingRight&gt;2pt&lt;/PaddingRight&gt;
+#                          &lt;PaddingTop&gt;2pt&lt;/PaddingTop&gt;
+#                          &lt;PaddingBottom&gt;2pt&lt;/PaddingBottom&gt;
+#                        &lt;/Style&gt;
+#                      &lt;/Textbox&gt;
+#                    &lt;/CellContents&gt;
+#                  &lt;/TablixHeader&gt;
+#                  &lt;TablixMembers&gt;
+#                    &lt;TablixMember&gt;
+#                      &lt;KeepWithGroup&gt;After&lt;/KeepWithGroup&gt;
+#                    &lt;/TablixMember&gt;
+#                    &lt;TablixMember&gt;
+#                      &lt;Group Name=&quot;Details&quot; /&gt;
+#                    &lt;/TablixMember&gt;
+#                  &lt;/TablixMembers&gt;
+#                &lt;/TablixMember&gt;
+#              &lt;/TablixMembers&gt;
+#            &lt;/TablixRowHierarchy&gt;
+#            &lt;DataSetName&gt;DS&lt;/DataSetName&gt;
+#            &lt;Top&gt;11.34746cm&lt;/Top&gt;
+#            &lt;Left&gt;3.31294cm&lt;/Left&gt;
+#            &lt;Height&gt;1.8cm&lt;/Height&gt;
+#            &lt;Width&gt;16.83917cm&lt;/Width&gt;
+#            &lt;ZIndex&gt;1&lt;/ZIndex&gt;
+#            &lt;Style&gt;
+#              &lt;Border&gt;
+#                &lt;Style&gt;None&lt;/Style&gt;
+#              &lt;/Border&gt;
+#            &lt;/Style&gt;
+#          &lt;/Tablix&gt;
+#          &lt;Image Name=&quot;Image1&quot;&gt;
+#            &lt;Source&gt;Database&lt;/Source&gt;
+#            &lt;Value&gt;=First(Fields!CompanyLogo.Value, &quot;DS&quot;)&lt;/Value&gt;
+#            &lt;MIMEType&gt;image/bmp&lt;/MIMEType&gt;
+#            &lt;Sizing&gt;FitProportional&lt;/Sizing&gt;
+#            &lt;Top&gt;0cm&lt;/Top&gt;
+#            &lt;Left&gt;0cm&lt;/Left&gt;
+#            &lt;Height&gt;5.86563cm&lt;/Height&gt;
+#            &lt;Width&gt;8.67021cm&lt;/Width&gt;
+#            &lt;ZIndex&gt;2&lt;/ZIndex&gt;
+#            &lt;Style&gt;
+#              &lt;Border&gt;
+#                &lt;Style&gt;None&lt;/Style&gt;
+#              &lt;/Border&gt;
+#            &lt;/Style&gt;
+#          &lt;/Image&gt;
+#          &lt;Textbox Name=&quot;Textbox5&quot;&gt;
+#            &lt;CanGrow&gt;true&lt;/CanGrow&gt;
+#            &lt;KeepTogether&gt;true&lt;/KeepTogether&gt;
+#            &lt;Paragraphs&gt;
+#              &lt;Paragraph&gt;
+#                &lt;TextRuns&gt;
+#                  &lt;TextRun&gt;
+#                    &lt;Value&gt;=First(Fields!Name.Value, &quot;DS2&quot;)&lt;/Value&gt;
+#                    &lt;Style /&gt;
+#                  &lt;/TextRun&gt;
+#                &lt;/TextRuns&gt;
+#                &lt;Style /&gt;
+#              &lt;/Paragraph&gt;
+#            &lt;/Paragraphs&gt;
+#            &lt;rd:DefaultName&gt;Textbox5&lt;/rd:DefaultName&gt;
+#            &lt;Top&gt;0.22585cm&lt;/Top&gt;
+#            &lt;Left&gt;8.88188cm&lt;/Left&gt;
+#            &lt;Height&gt;0.6cm&lt;/Height&gt;
+#            &lt;Width&gt;12.13083cm&lt;/Width&gt;
+#            &lt;ZIndex&gt;3&lt;/ZIndex&gt;
+#            &lt;Style&gt;
+#              &lt;Border&gt;
+#                &lt;Style&gt;None&lt;/Style&gt;
+#              &lt;/Border&gt;
+#              &lt;PaddingLeft&gt;2pt&lt;/PaddingLeft&gt;
+#              &lt;PaddingRight&gt;2pt&lt;/PaddingRight&gt;
+#              &lt;PaddingTop&gt;2pt&lt;/PaddingTop&gt;
+#              &lt;PaddingBottom&gt;2pt&lt;/PaddingBottom&gt;
+#            &lt;/Style&gt;
+#          &lt;/Textbox&gt;
+#          &lt;Textbox Name=&quot;Textbox7&quot;&gt;
+#            &lt;CanGrow&gt;true&lt;/CanGrow&gt;
+#            &lt;KeepTogether&gt;true&lt;/KeepTogether&gt;
+#            &lt;Paragraphs&gt;
+#              &lt;Paragraph&gt;
+#                &lt;TextRuns&gt;
+#                  &lt;TextRun&gt;
+#                    &lt;Value /&gt;
+#                    &lt;Style /&gt;
+#                  &lt;/TextRun&gt;
+#                &lt;/TextRuns&gt;
+#                &lt;Style /&gt;
+#              &lt;/Paragraph&gt;
+#            &lt;/Paragraphs&gt;
+#            &lt;rd:DefaultName&gt;Textbox7&lt;/rd:DefaultName&gt;
+#            &lt;Top&gt;1.47849cm&lt;/Top&gt;
+#            &lt;Left&gt;8.77604cm&lt;/Left&gt;
+#            &lt;Height&gt;0.6cm&lt;/Height&gt;
+#            &lt;Width&gt;12.23667cm&lt;/Width&gt;
+#            &lt;ZIndex&gt;4&lt;/ZIndex&gt;
+#            &lt;Style&gt;
+#              &lt;Border&gt;
+#                &lt;Style&gt;None&lt;/Style&gt;
+#              &lt;/Border&gt;
+#              &lt;PaddingLeft&gt;2pt&lt;/PaddingLeft&gt;
+#              &lt;PaddingRight&gt;2pt&lt;/PaddingRight&gt;
+#              &lt;PaddingTop&gt;2pt&lt;/PaddingTop&gt;
+#              &lt;PaddingBottom&gt;2pt&lt;/PaddingBottom&gt;
+#            &lt;/Style&gt;
+#          &lt;/Textbox&gt;
+#        &lt;/ReportItems&gt;
+#        &lt;Height&gt;15.34583cm&lt;/Height&gt;
+#        &lt;Style /&gt;
+#      &lt;/Body&gt;
+#      &lt;Width&gt;23.63612cm&lt;/Width&gt;
+#      &lt;Page&gt;
+#        &lt;PageHeight&gt;29.7cm&lt;/PageHeight&gt;
+#        &lt;PageWidth&gt;21cm&lt;/PageWidth&gt;
+#        &lt;InteractiveHeight&gt;11in&lt;/InteractiveHeight&gt;
+#        &lt;InteractiveWidth&gt;8.5in&lt;/InteractiveWidth&gt;
+#        &lt;LeftMargin&gt;2.54cm&lt;/LeftMargin&gt;
+#        &lt;RightMargin&gt;2.54cm&lt;/RightMargin&gt;
+#        &lt;TopMargin&gt;2.54cm&lt;/TopMargin&gt;
+#        &lt;BottomMargin&gt;2.54cm&lt;/BottomMargin&gt;
+#        &lt;ColumnSpacing&gt;1.27cm&lt;/ColumnSpacing&gt;
+#        &lt;Style /&gt;
+#      &lt;/Page&gt;
+#    &lt;/ReportSection&gt;
+#  &lt;/ReportSections&gt;
+#  &lt;ReportParameters&gt;
+#    &lt;ReportParameter Name=&quot;AX_PartitionKey&quot;&gt;
+#      &lt;DataType&gt;String&lt;/DataType&gt;
+#      &lt;Nullable&gt;true&lt;/Nullable&gt;
+#      &lt;AllowBlank&gt;true&lt;/AllowBlank&gt;
+#      &lt;Prompt&gt;AX_PartitionKey&lt;/Prompt&gt;
+#      &lt;Hidden&gt;true&lt;/Hidden&gt;
+#    &lt;/ReportParameter&gt;
+#    &lt;ReportParameter Name=&quot;AX_UserContext&quot;&gt;
+#      &lt;DataType&gt;String&lt;/DataType&gt;
+#      &lt;Nullable&gt;true&lt;/Nullable&gt;
+#      &lt;AllowBlank&gt;true&lt;/AllowBlank&gt;
+#      &lt;Prompt&gt;AX_UserContext&lt;/Prompt&gt;
+#      &lt;Hidden&gt;true&lt;/Hidden&gt;
+#    &lt;/ReportParameter&gt;
+#    &lt;ReportParameter Name=&quot;AX_CompanyName&quot;&gt;
+#      &lt;DataType&gt;String&lt;/DataType&gt;
+#      &lt;DefaultValue&gt;
+#        &lt;Values&gt;
+#          &lt;Value&gt;=Microsoft.Dynamics.Framework.Reports.BuiltInMethods.GetUserCompany(Parameters!AX_UserContext.Value)&lt;/Value&gt;
+#        &lt;/Values&gt;
+#      &lt;/DefaultValue&gt;
+#      &lt;Prompt&gt;AX_CompanyName&lt;/Prompt&gt;
+#      &lt;Hidden&gt;true&lt;/Hidden&gt;
+#    &lt;/ReportParameter&gt;
+#    &lt;ReportParameter Name=&quot;AX_RenderingCulture&quot;&gt;
+#      &lt;DataType&gt;String&lt;/DataType&gt;
+#      &lt;Nullable&gt;true&lt;/Nullable&gt;
+#      &lt;AllowBlank&gt;true&lt;/AllowBlank&gt;
+#      &lt;Prompt&gt;AX_RenderingCulture&lt;/Prompt&gt;
+#      &lt;Hidden&gt;true&lt;/Hidden&gt;
+#    &lt;/ReportParameter&gt;
+#    &lt;ReportParameter Name=&quot;AX_ReportContext&quot;&gt;
+#      &lt;DataType&gt;String&lt;/DataType&gt;
+#      &lt;Nullable&gt;true&lt;/Nullable&gt;
+#      &lt;AllowBlank&gt;true&lt;/AllowBlank&gt;
+#      &lt;Prompt&gt;AX_ReportContext&lt;/Prompt&gt;
+#      &lt;Hidden&gt;true&lt;/Hidden&gt;
+#      &lt;UsedInQuery&gt;True&lt;/UsedInQuery&gt;
+#    &lt;/ReportParameter&gt;
+#    &lt;ReportParameter Name=&quot;AX_RdpPreProcessedId&quot;&gt;
+#      &lt;DataType&gt;String&lt;/DataType&gt;
+#      &lt;Nullable&gt;true&lt;/Nullable&gt;
+#      &lt;AllowBlank&gt;true&lt;/AllowBlank&gt;
+#      &lt;Prompt&gt;AX_RdpPreProcessedId&lt;/Prompt&gt;
+#      &lt;Hidden&gt;true&lt;/Hidden&gt;
+#    &lt;/ReportParameter&gt;
+#    &lt;ReportParameter Name=&quot;DS_CustAccount&quot;&gt;
+#      &lt;DataType&gt;String&lt;/DataType&gt;
+#      &lt;Prompt&gt;@SYS7149&lt;/Prompt&gt;
+#    &lt;/ReportParameter&gt;
+#  &lt;/ReportParameters&gt;
+#  &lt;Language&gt;en-US&lt;/Language&gt;
+#  &lt;rd:ReportUnitType&gt;Cm&lt;/rd:ReportUnitType&gt;
+#  &lt;rd:ExpressionDialog&gt;Microsoft.Dynamics.Framework.Design.Reports.ExpressionEditor.ExpressionEditorDialog, Microsoft.Dynamics.Framework.Design.Reports&lt;/rd:ExpressionDialog&gt;
+#  &lt;rd:ReportID&gt;1b772aca-b291-4faf-b14a-acbc851d3009&lt;/rd:ReportID&gt;
+#&lt;/Report&gt;">
+#      <DisableIndividualTransformation Name="DisableIndividualTransformation"/>
+#    </PrecisionDesign>
+#  </Report>
+#</Reports>
+    ENDMOXL
+    DESIGNS
+      SSRSREPORTDESIGN
+        PROPERTIES
+          Name                #Report
+        ENDPROPERTIES
+        
+        CROSSREFERENCES
+#<CrossReferenceInfo>
+#    <CrossReferenceEntry>
+#        <ReferencedAotObjectName>Is_TestCustDP</ReferencedAotObjectName>
+#        <xrefKind>10</xrefKind>
+#        <XrefReference>2</XrefReference>
+#    </CrossReferenceEntry>
+#    <CrossReferenceEntry>
+#        <ReferencedAotObjectName>Is_TestCustDP.Is_TestCustReportHeaderTMP</ReferencedAotObjectName>
+#        <xrefKind>11</xrefKind>
+#        <XrefReference>4</XrefReference>
+#    </CrossReferenceEntry>
+#    <CrossReferenceEntry>
+#        <ReferencedAotObjectName>Is_TestCustDP.processReport</ReferencedAotObjectName>
+#        <xrefKind>11</xrefKind>
+#        <XrefReference>4</XrefReference>
+#    </CrossReferenceEntry>
+#    <CrossReferenceEntry>
+#        <ReferencedAotObjectName>Is_TestCustReportHeaderTMP.CompanyAddress</ReferencedAotObjectName>
+#        <xrefKind>2</xrefKind>
+#        <XrefReference>1</XrefReference>
+#    </CrossReferenceEntry>
+#    <CrossReferenceEntry>
+#        <ReferencedAotObjectName>Is_TestCustReportHeaderTMP</ReferencedAotObjectName>
+#        <xrefKind>1</xrefKind>
+#        <XrefReference>1</XrefReference>
+#    </CrossReferenceEntry>
+#    <CrossReferenceEntry>
+#        <ReferencedAotObjectName>Is_TestCustReportHeaderTMP.CompanyLogo</ReferencedAotObjectName>
+#        <xrefKind>2</xrefKind>
+#        <XrefReference>1</XrefReference>
+#    </CrossReferenceEntry>
+#    <CrossReferenceEntry>
+#        <ReferencedAotObjectName>Is_TestCustReportHeaderTMP.CompanyName</ReferencedAotObjectName>
+#        <xrefKind>2</xrefKind>
+#        <XrefReference>1</XrefReference>
+#    </CrossReferenceEntry>
+#    <CrossReferenceEntry>
+#        <ReferencedAotObjectName>Is_TestCustDP.Is_TestCustTMP</ReferencedAotObjectName>
+#        <xrefKind>11</xrefKind>
+#        <XrefReference>4</XrefReference>
+#    </CrossReferenceEntry>
+#    <CrossReferenceEntry>
+#        <ReferencedAotObjectName>Is_TestCustTMP.Address</ReferencedAotObjectName>
+#        <xrefKind>2</xrefKind>
+#        <XrefReference>1</XrefReference>
+#    </CrossReferenceEntry>
+#    <CrossReferenceEntry>
+#        <ReferencedAotObjectName>Is_TestCustTMP</ReferencedAotObjectName>
+#        <xrefKind>1</xrefKind>
+#        <XrefReference>1</XrefReference>
+#    </CrossReferenceEntry>
+#    <CrossReferenceEntry>
+#        <ReferencedAotObjectName>Is_TestCustTMP.CustAccount</ReferencedAotObjectName>
+#        <xrefKind>2</xrefKind>
+#        <XrefReference>1</XrefReference>
+#    </CrossReferenceEntry>
+#    <CrossReferenceEntry>
+#        <ReferencedAotObjectName>Is_TestCustTMP.CustGroupId</ReferencedAotObjectName>
+#        <xrefKind>2</xrefKind>
+#        <XrefReference>1</XrefReference>
+#    </CrossReferenceEntry>
+#    <CrossReferenceEntry>
+#        <ReferencedAotObjectName>Is_TestCustTMP.CustGroupId1</ReferencedAotObjectName>
+#        <xrefKind>2</xrefKind>
+#        <XrefReference>1</XrefReference>
+#    </CrossReferenceEntry>
+#    <CrossReferenceEntry>
+#        <ReferencedAotObjectName>Is_TestCustTMP.Name</ReferencedAotObjectName>
+#        <xrefKind>2</xrefKind>
+#        <XrefReference>1</XrefReference>
+#    </CrossReferenceEntry>
+#    <CrossReferenceEntry>
+#        <ReferencedAotObjectName>@SYS7149</ReferencedAotObjectName>
+#        <xrefKind>19</xrefKind>
+#        <XrefReference>2</XrefReference>
+#    </CrossReferenceEntry>
+#</CrossReferenceInfo>
+        ENDCROSSREFERENCES
+        
+        RDL 84848
+#<?xml version="1.0" encoding="utf-8"?>
+#<Report xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner" xmlns:cl="http://schemas.microsoft.com/sqlserver/reporting/2010/01/componentdefinition" xmlns="http://schemas.microsoft.com/sqlserver/reporting/2010/01/reportdefinition">
+#  <AutoRefresh>0</AutoRefresh>
+#  <ReportSections>
+#    <ReportSection>
+#      <Body>
+#        <ReportItems>
+#          <Textbox Name="Textbox1">
+#            <CanGrow>true</CanGrow>
+#            <KeepTogether>true</KeepTogether>
+#            <Paragraphs>
+#              <Paragraph>
+#                <TextRuns>
+#                  <TextRun>
+#                    <Value>CustTable Data</Value>
+#                    <Style />
+#                  </TextRun>
+#                </TextRuns>
+#                <Style>
+#                  <TextAlign>Center</TextAlign>
+#                </Style>
+#              </Paragraph>
+#              <Paragraph>
+#                <TextRuns>
+#                  <TextRun>
+#                    <Value />
+#                    <Style />
+#                  </TextRun>
+#                </TextRuns>
+#                <Style />
+#              </Paragraph>
+#            </Paragraphs>
+#            <rd:DefaultName>Textbox1</rd:DefaultName>
+#            <Top>3.72745cm</Top>
+#            <Left>3.27766cm</Left>
+#            <Height>0.6cm</Height>
+#            <Width>14.33917cm</Width>
+#            <Style>
+#              <Border>
+#                <Style>None</Style>
+#              </Border>
+#              <PaddingLeft>2pt</PaddingLeft>
+#              <PaddingRight>2pt</PaddingRight>
+#              <PaddingTop>2pt</PaddingTop>
+#              <PaddingBottom>2pt</PaddingBottom>
+#            </Style>
+#          </Textbox>
+#          <Tablix Name="Tablix1">
+#            <TablixBody>
+#              <TablixColumns>
+#                <TablixColumn>
+#                  <Width>3.94639cm</Width>
+#                </TablixColumn>
+#                <TablixColumn>
+#                  <Width>3.94639cm</Width>
+#                </TablixColumn>
+#                <TablixColumn>
+#                  <Width>2.5cm</Width>
+#                </TablixColumn>
+#                <TablixColumn>
+#                  <Width>3.94639cm</Width>
+#                </TablixColumn>
+#              </TablixColumns>
+#              <TablixRows>
+#                <TablixRow>
+#                  <Height>0.6cm</Height>
+#                  <TablixCells>
+#                    <TablixCell>
+#                      <CellContents>
+#                        <Textbox Name="Textbox2">
+#                          <CanGrow>true</CanGrow>
+#                          <KeepTogether>true</KeepTogether>
+#                          <Paragraphs>
+#                            <Paragraph>
+#                              <TextRuns>
+#                                <TextRun>
+#                                  <Value>Name</Value>
+#                                  <Style />
+#                                </TextRun>
+#                              </TextRuns>
+#                              <Style />
+#                            </Paragraph>
+#                          </Paragraphs>
+#                          <rd:DefaultName>Textbox2</rd:DefaultName>
+#                          <Style>
+#                            <Border>
+#                              <Color>LightGrey</Color>
+#                              <Style>Solid</Style>
+#                            </Border>
+#                            <PaddingLeft>2pt</PaddingLeft>
+#                            <PaddingRight>2pt</PaddingRight>
+#                            <PaddingTop>2pt</PaddingTop>
+#                            <PaddingBottom>2pt</PaddingBottom>
+#                          </Style>
+#                        </Textbox>
+#                      </CellContents>
+#                    </TablixCell>
+#                    <TablixCell>
+#                      <CellContents>
+#                        <Textbox Name="Textbox4">
+#                          <CanGrow>true</CanGrow>
+#                          <KeepTogether>true</KeepTogether>
+#                          <Paragraphs>
+#                            <Paragraph>
+#                              <TextRuns>
+#                                <TextRun>
+#                                  <Value>Address</Value>
+#                                  <Style />
+#                                </TextRun>
+#                              </TextRuns>
+#                              <Style />
+#                            </Paragraph>
+#                          </Paragraphs>
+#                          <rd:DefaultName>Textbox4</rd:DefaultName>
+#                          <Style>
+#                            <Border>
+#                              <Color>LightGrey</Color>
+#                              <Style>Solid</Style>
+#                            </Border>
+#                            <PaddingLeft>2pt</PaddingLeft>
+#                            <PaddingRight>2pt</PaddingRight>
+#                            <PaddingTop>2pt</PaddingTop>
+#                            <PaddingBottom>2pt</PaddingBottom>
+#                          </Style>
+#                        </Textbox>
+#                      </CellContents>
+#                    </TablixCell>
+#                    <TablixCell>
+#                      <CellContents>
+#                        <Textbox Name="Textbox8">
+#                          <CanGrow>true</CanGrow>
+#                          <KeepTogether>true</KeepTogether>
+#                          <Paragraphs>
+#                            <Paragraph>
+#                              <TextRuns>
+#                                <TextRun>
+#                                  <Value>Cust Account</Value>
+#                                  <Style />
+#                                </TextRun>
+#                              </TextRuns>
+#                              <Style />
+#                            </Paragraph>
+#                          </Paragraphs>
+#                          <rd:DefaultName>Textbox8</rd:DefaultName>
+#                          <Style>
+#                            <Border>
+#                              <Color>LightGrey</Color>
+#                              <Style>Solid</Style>
+#                            </Border>
+#                            <PaddingLeft>2pt</PaddingLeft>
+#                            <PaddingRight>2pt</PaddingRight>
+#                            <PaddingTop>2pt</PaddingTop>
+#                            <PaddingBottom>2pt</PaddingBottom>
+#                          </Style>
+#                        </Textbox>
+#                      </CellContents>
+#                    </TablixCell>
+#                    <TablixCell>
+#                      <CellContents>
+#                        <Textbox Name="Textbox6">
+#                          <CanGrow>true</CanGrow>
+#                          <KeepTogether>true</KeepTogether>
+#                          <Paragraphs>
+#                            <Paragraph>
+#                              <TextRuns>
+#                                <TextRun>
+#                                  <Value>Cust Group Id</Value>
+#                                  <Style />
+#                                </TextRun>
+#                              </TextRuns>
+#                              <Style />
+#                            </Paragraph>
+#                          </Paragraphs>
+#                          <rd:DefaultName>Textbox6</rd:DefaultName>
+#                          <Style>
+#                            <Border>
+#                              <Color>LightGrey</Color>
+#                              <Style>Solid</Style>
+#                            </Border>
+#                            <PaddingLeft>2pt</PaddingLeft>
+#                            <PaddingRight>2pt</PaddingRight>
+#                            <PaddingTop>2pt</PaddingTop>
+#                            <PaddingBottom>2pt</PaddingBottom>
+#                          </Style>
+#                        </Textbox>
+#                      </CellContents>
+#                    </TablixCell>
+#                  </TablixCells>
+#                </TablixRow>
+#                <TablixRow>
+#                  <Height>0.6cm</Height>
+#                  <TablixCells>
+#                    <TablixCell>
+#                      <CellContents>
+#                        <Textbox Name="Textbox11">
+#                          <CanGrow>true</CanGrow>
+#                          <KeepTogether>true</KeepTogether>
+#                          <Paragraphs>
+#                            <Paragraph>
+#                              <TextRuns>
+#                                <TextRun>
+#                                  <Value />
+#                                  <Style />
+#                                </TextRun>
+#                              </TextRuns>
+#                              <Style />
+#                            </Paragraph>
+#                          </Paragraphs>
+#                          <rd:DefaultName>Textbox11</rd:DefaultName>
+#                          <Style>
+#                            <Border>
+#                              <Color>LightGrey</Color>
+#                              <Style>Solid</Style>
+#                            </Border>
+#                            <PaddingLeft>2pt</PaddingLeft>
+#                            <PaddingRight>2pt</PaddingRight>
+#                            <PaddingTop>2pt</PaddingTop>
+#                            <PaddingBottom>2pt</PaddingBottom>
+#                          </Style>
+#                        </Textbox>
+#                      </CellContents>
+#                    </TablixCell>
+#                    <TablixCell>
+#                      <CellContents>
+#                        <Textbox Name="Textbox12">
+#                          <CanGrow>true</CanGrow>
+#                          <KeepTogether>true</KeepTogether>
+#                          <Paragraphs>
+#                            <Paragraph>
+#                              <TextRuns>
+#                                <TextRun>
+#                                  <Value />
+#                                  <Style />
+#                                </TextRun>
+#                              </TextRuns>
+#                              <Style />
+#                            </Paragraph>
+#                          </Paragraphs>
+#                          <rd:DefaultName>Textbox12</rd:DefaultName>
+#                          <Style>
+#                            <Border>
+#                              <Color>LightGrey</Color>
+#                              <Style>Solid</Style>
+#                            </Border>
+#                            <PaddingLeft>2pt</PaddingLeft>
+#                            <PaddingRight>2pt</PaddingRight>
+#                            <PaddingTop>2pt</PaddingTop>
+#                            <PaddingBottom>2pt</PaddingBottom>
+#                          </Style>
+#                        </Textbox>
+#                      </CellContents>
+#                    </TablixCell>
+#                    <TablixCell>
+#                      <CellContents>
+#                        <Textbox Name="Textbox13">
+#                          <CanGrow>true</CanGrow>
+#                          <KeepTogether>true</KeepTogether>
+#                          <Paragraphs>
+#                            <Paragraph>
+#                              <TextRuns>
+#                                <TextRun>
+#                                  <Value />
+#                                  <Style />
+#                                </TextRun>
+#                              </TextRuns>
+#                              <Style />
+#                            </Paragraph>
+#                          </Paragraphs>
+#                          <rd:DefaultName>Textbox13</rd:DefaultName>
+#                          <Style>
+#                            <Border>
+#                              <Color>LightGrey</Color>
+#                              <Style>Solid</Style>
+#                            </Border>
+#                            <PaddingLeft>2pt</PaddingLeft>
+#                            <PaddingRight>2pt</PaddingRight>
+#                            <PaddingTop>2pt</PaddingTop>
+#                            <PaddingBottom>2pt</PaddingBottom>
+#                          </Style>
+#                        </Textbox>
+#                      </CellContents>
+#                    </TablixCell>
+#                    <TablixCell>
+#                      <CellContents>
+#                        <Textbox Name="Textbox14">
+#                          <CanGrow>true</CanGrow>
+#                          <KeepTogether>true</KeepTogether>
+#                          <Paragraphs>
+#                            <Paragraph>
+#                              <TextRuns>
+#                                <TextRun>
+#                                  <Value />
+#                                  <Style />
+#                                </TextRun>
+#                              </TextRuns>
+#                              <Style />
+#                            </Paragraph>
+#                          </Paragraphs>
+#                          <rd:DefaultName>Textbox14</rd:DefaultName>
+#                          <Style>
+#                            <Border>
+#                              <Color>LightGrey</Color>
+#                              <Style>Solid</Style>
+#                            </Border>
+#                            <PaddingLeft>2pt</PaddingLeft>
+#                            <PaddingRight>2pt</PaddingRight>
+#                            <PaddingTop>2pt</PaddingTop>
+#                            <PaddingBottom>2pt</PaddingBottom>
+#                          </Style>
+#                        </Textbox>
+#                      </CellContents>
+#                    </TablixCell>
+#                  </TablixCells>
+#                </TablixRow>
+#                <TablixRow>
+#                  <Height>0.6cm</Height>
+#                  <TablixCells>
+#                    <TablixCell>
+#                      <CellContents>
+#                        <Textbox Name="Name">
+#                          <CanGrow>true</CanGrow>
+#                          <KeepTogether>true</KeepTogether>
+#                          <Paragraphs>
+#                            <Paragraph>
+#                              <TextRuns>
+#                                <TextRun>
+#                                  <Value>=Fields!Name.Value</Value>
+#                                  <Style />
+#                                </TextRun>
+#                              </TextRuns>
+#                              <Style />
+#                            </Paragraph>
+#                          </Paragraphs>
+#                          <rd:DefaultName>Name</rd:DefaultName>
+#                          <CustomProperties>
+#                            <CustomProperty>
+#                              <Name>AXDataType</Name>
+#                              <Value><![CDATA[String]]></Value>
+#                            </CustomProperty>
+#                            <CustomProperty>
+#                              <Name>AXEDTFormat</Name>
+#                              <Value><![CDATA[Is_TestCustTMP.Name]]></Value>
+#                            </CustomProperty>
+#                            <CustomProperty>
+#                              <Name>AXEDTTextAlign</Name>
+#                              <Value><![CDATA[Is_TestCustTMP.Name]]></Value>
+#                            </CustomProperty>
+#                            <CustomProperty>
+#                              <Name>AXEDTDirection</Name>
+#                              <Value><![CDATA[Is_TestCustTMP.Name]]></Value>
+#                            </CustomProperty>
+#                            <CustomProperty>
+#                              <Name>AXFieldName</Name>
+#                              <Value><![CDATA[Name]]></Value>
+#                            </CustomProperty>
+#                          </CustomProperties>
+#                          <Style>
+#                            <Border>
+#                              <Color>LightGrey</Color>
+#                              <Style>Solid</Style>
+#                            </Border>
+#                            <PaddingLeft>2pt</PaddingLeft>
+#                            <PaddingRight>2pt</PaddingRight>
+#                            <PaddingTop>2pt</PaddingTop>
+#                            <PaddingBottom>2pt</PaddingBottom>
+#                          </Style>
+#                        </Textbox>
+#                      </CellContents>
+#                    </TablixCell>
+#                    <TablixCell>
+#                      <CellContents>
+#                        <Textbox Name="Address">
+#                          <CanGrow>true</CanGrow>
+#                          <KeepTogether>true</KeepTogether>
+#                          <Paragraphs>
+#                            <Paragraph>
+#                              <TextRuns>
+#                                <TextRun>
+#                                  <Value>=Fields!Address.Value</Value>
+#                                  <Style />
+#                                </TextRun>
+#                              </TextRuns>
+#                              <Style />
+#                            </Paragraph>
+#                          </Paragraphs>
+#                          <rd:DefaultName>Address</rd:DefaultName>
+#                          <CustomProperties>
+#                            <CustomProperty>
+#                              <Name>AXDataType</Name>
+#                              <Value><![CDATA[String]]></Value>
+#                            </CustomProperty>
+#                            <CustomProperty>
+#                              <Name>AXEDTFormat</Name>
+#                              <Value><![CDATA[Is_TestCustTMP.Address]]></Value>
+#                            </CustomProperty>
+#                            <CustomProperty>
+#                              <Name>AXEDTTextAlign</Name>
+#                              <Value><![CDATA[Is_TestCustTMP.Address]]></Value>
+#                            </CustomProperty>
+#                            <CustomProperty>
+#                              <Name>AXEDTDirection</Name>
+#                              <Value><![CDATA[Is_TestCustTMP.Address]]></Value>
+#                            </CustomProperty>
+#                            <CustomProperty>
+#                              <Name>AXFieldName</Name>
+#                              <Value><![CDATA[Address]]></Value>
+#                            </CustomProperty>
+#                          </CustomProperties>
+#                          <Style>
+#                            <Border>
+#                              <Color>LightGrey</Color>
+#                              <Style>Solid</Style>
+#                            </Border>
+#                            <PaddingLeft>2pt</PaddingLeft>
+#                            <PaddingRight>2pt</PaddingRight>
+#                            <PaddingTop>2pt</PaddingTop>
+#                            <PaddingBottom>2pt</PaddingBottom>
+#                          </Style>
+#                        </Textbox>
+#                      </CellContents>
+#                    </TablixCell>
+#                    <TablixCell>
+#                      <CellContents>
+#                        <Textbox Name="CustAccount">
+#                          <CanGrow>true</CanGrow>
+#                          <KeepTogether>true</KeepTogether>
+#                          <Paragraphs>
+#                            <Paragraph>
+#                              <TextRuns>
+#                                <TextRun>
+#                                  <Value>=Fields!CustAccount.Value</Value>
+#                                  <Style />
+#                                </TextRun>
+#                              </TextRuns>
+#                              <Style />
+#                            </Paragraph>
+#                          </Paragraphs>
+#                          <rd:DefaultName>CustAccount</rd:DefaultName>
+#                          <CustomProperties>
+#                            <CustomProperty>
+#                              <Name>AXDataType</Name>
+#                              <Value><![CDATA[String]]></Value>
+#                            </CustomProperty>
+#                            <CustomProperty>
+#                              <Name>AXEDTFormat</Name>
+#                              <Value><![CDATA[Is_TestCustTMP.CustAccount]]></Value>
+#                            </CustomProperty>
+#                            <CustomProperty>
+#                              <Name>AXEDTTextAlign</Name>
+#                              <Value><![CDATA[Is_TestCustTMP.CustAccount]]></Value>
+#                            </CustomProperty>
+#                            <CustomProperty>
+#                              <Name>AXEDTDirection</Name>
+#                              <Value><![CDATA[Is_TestCustTMP.CustAccount]]></Value>
+#                            </CustomProperty>
+#                            <CustomProperty>
+#                              <Name>AXFieldName</Name>
+#                              <Value><![CDATA[CustAccount]]></Value>
+#                            </CustomProperty>
+#                          </CustomProperties>
+#                          <Style>
+#                            <Border>
+#                              <Color>LightGrey</Color>
+#                              <Style>Solid</Style>
+#                            </Border>
+#                            <PaddingLeft>2pt</PaddingLeft>
+#                            <PaddingRight>2pt</PaddingRight>
+#                            <PaddingTop>2pt</PaddingTop>
+#                            <PaddingBottom>2pt</PaddingBottom>
+#                          </Style>
+#                        </Textbox>
+#                      </CellContents>
+#                    </TablixCell>
+#                    <TablixCell>
+#                      <CellContents>
+#                        <Textbox Name="CustGroupId">
+#                          <CanGrow>true</CanGrow>
+#                          <KeepTogether>true</KeepTogether>
+#                          <Paragraphs>
+#                            <Paragraph>
+#                              <TextRuns>
+#                                <TextRun>
+#                                  <Value>=Fields!CustGroupId.Value</Value>
+#                                  <Style />
+#                                </TextRun>
+#                              </TextRuns>
+#                              <Style />
+#                            </Paragraph>
+#                          </Paragraphs>
+#                          <rd:DefaultName>CustGroupId</rd:DefaultName>
+#                          <CustomProperties>
+#                            <CustomProperty>
+#                              <Name>AXDataType</Name>
+#                              <Value><![CDATA[String]]></Value>
+#                            </CustomProperty>
+#                            <CustomProperty>
+#                              <Name>AXEDTFormat</Name>
+#                              <Value><![CDATA[Is_TestCustTMP.CustGroupId]]></Value>
+#                            </CustomProperty>
+#                            <CustomProperty>
+#                              <Name>AXEDTTextAlign</Name>
+#                              <Value><![CDATA[Is_TestCustTMP.CustGroupId]]></Value>
+#                            </CustomProperty>
+#                            <CustomProperty>
+#                              <Name>AXEDTDirection</Name>
+#                              <Value><![CDATA[Is_TestCustTMP.CustGroupId]]></Value>
+#                            </CustomProperty>
+#                            <CustomProperty>
+#                              <Name>AXFieldName</Name>
+#                              <Value><![CDATA[CustGroupId]]></Value>
+#                            </CustomProperty>
+#                          </CustomProperties>
+#                          <Style>
+#                            <Border>
+#                              <Color>LightGrey</Color>
+#                              <Style>Solid</Style>
+#                            </Border>
+#                            <PaddingLeft>2pt</PaddingLeft>
+#                            <PaddingRight>2pt</PaddingRight>
+#                            <PaddingTop>2pt</PaddingTop>
+#                            <PaddingBottom>2pt</PaddingBottom>
+#                          </Style>
+#                        </Textbox>
+#                      </CellContents>
+#                    </TablixCell>
+#                  </TablixCells>
+#                </TablixRow>
+#              </TablixRows>
+#            </TablixBody>
+#            <TablixColumnHierarchy>
+#              <TablixMembers>
+#                <TablixMember />
+#                <TablixMember />
+#                <TablixMember />
+#                <TablixMember />
+#              </TablixMembers>
+#            </TablixColumnHierarchy>
+#            <TablixRowHierarchy>
+#              <TablixMembers>
+#                <TablixMember>
+#                  <TablixHeader>
+#                    <Size>2.5cm</Size>
+#                    <CellContents>
+#                      <Textbox Name="Textbox3">
+#                        <CanGrow>true</CanGrow>
+#                        <KeepTogether>true</KeepTogether>
+#                        <Paragraphs>
+#                          <Paragraph>
+#                            <TextRuns>
+#                              <TextRun>
+#                                <Value>Cust Group Id</Value>
+#                                <Style />
+#                              </TextRun>
+#                            </TextRuns>
+#                            <Style />
+#                          </Paragraph>
+#                        </Paragraphs>
+#                        <rd:DefaultName>Textbox3</rd:DefaultName>
+#                        <Style>
+#                          <Border>
+#                            <Color>LightGrey</Color>
+#                            <Style>Solid</Style>
+#                          </Border>
+#                          <PaddingLeft>2pt</PaddingLeft>
+#                          <PaddingRight>2pt</PaddingRight>
+#                          <PaddingTop>2pt</PaddingTop>
+#                          <PaddingBottom>2pt</PaddingBottom>
+#                        </Style>
+#                      </Textbox>
+#                    </CellContents>
+#                  </TablixHeader>
+#                  <TablixMembers>
+#                    <TablixMember />
+#                  </TablixMembers>
+#                  <KeepWithGroup>After</KeepWithGroup>
+#                </TablixMember>
+#                <TablixMember>
+#                  <Group Name="CustGroupId">
+#                    <GroupExpressions>
+#                      <GroupExpression>=Fields!CustGroupId.Value</GroupExpression>
+#                    </GroupExpressions>
+#                  </Group>
+#                  <SortExpressions>
+#                    <SortExpression>
+#                      <Value>=Fields!CustGroupId.Value</Value>
+#                    </SortExpression>
+#                  </SortExpressions>
+#                  <TablixHeader>
+#                    <Size>2.5cm</Size>
+#                    <CellContents>
+#                      <Textbox Name="CustGroupId1">
+#                        <CanGrow>true</CanGrow>
+#                        <KeepTogether>true</KeepTogether>
+#                        <Paragraphs>
+#                          <Paragraph>
+#                            <TextRuns>
+#                              <TextRun>
+#                                <Value>=Fields!CustGroupId.Value</Value>
+#                                <Style />
+#                              </TextRun>
+#                            </TextRuns>
+#                            <Style />
+#                          </Paragraph>
+#                        </Paragraphs>
+#                        <rd:DefaultName>CustGroupId1</rd:DefaultName>
+#                        <Style>
+#                          <Border>
+#                            <Color>LightGrey</Color>
+#                            <Style>Solid</Style>
+#                          </Border>
+#                          <PaddingLeft>2pt</PaddingLeft>
+#                          <PaddingRight>2pt</PaddingRight>
+#                          <PaddingTop>2pt</PaddingTop>
+#                          <PaddingBottom>2pt</PaddingBottom>
+#                        </Style>
+#                        <CustomProperties>
+#                          <CustomProperty>
+#                            <Name>AXDataType</Name>
+#                            <Value><![CDATA[String]]></Value>
+#                          </CustomProperty>
+#                          <CustomProperty>
+#                            <Name>AXEDTFormat</Name>
+#                            <Value><![CDATA[Is_TestCustTMP.CustGroupId]]></Value>
+#                          </CustomProperty>
+#                          <CustomProperty>
+#                            <Name>AXEDTTextAlign</Name>
+#                            <Value><![CDATA[Is_TestCustTMP.CustGroupId]]></Value>
+#                          </CustomProperty>
+#                          <CustomProperty>
+#                            <Name>AXEDTDirection</Name>
+#                            <Value><![CDATA[Is_TestCustTMP.CustGroupId]]></Value>
+#                          </CustomProperty>
+#                          <CustomProperty>
+#                            <Name>AXFieldName</Name>
+#                            <Value><![CDATA[CustGroupId]]></Value>
+#                          </CustomProperty>
+#                        </CustomProperties>
+#                      </Textbox>
+#                      <rd:Selected>true</rd:Selected>
+#                    </CellContents>
+#                  </TablixHeader>
+#                  <TablixMembers>
+#                    <TablixMember>
+#                      <KeepWithGroup>After</KeepWithGroup>
+#                    </TablixMember>
+#                    <TablixMember>
+#                      <Group Name="Details" />
+#                    </TablixMember>
+#                  </TablixMembers>
+#                </TablixMember>
+#              </TablixMembers>
+#            </TablixRowHierarchy>
+#            <DataSetName>DS</DataSetName>
+#            <Top>5.23558cm</Top>
+#            <Left>3.27766cm</Left>
+#            <Height>1.8cm</Height>
+#            <Width>16.83917cm</Width>
+#            <ZIndex>1</ZIndex>
+#            <Style>
+#              <Border>
+#                <Style>None</Style>
+#              </Border>
+#            </Style>
+#          </Tablix>
+#          <Image Name="Image1">
+#            <Source>Database</Source>
+#            <Value>=First(Fields!CompanyLogo.Value, "DSHeader")</Value>
+#            <MIMEType>image/bmp</MIMEType>
+#            <Sizing>FitProportional</Sizing>
+#            <Top>0cm</Top>
+#            <Left>0cm</Left>
+#            <Height>2.16146cm</Height>
+#            <Width>2.74354cm</Width>
+#            <ZIndex>2</ZIndex>
+#            <Style>
+#              <Border>
+#                <Style>None</Style>
+#              </Border>
+#            </Style>
+#          </Image>
+#          <Textbox Name="Textbox5">
+#            <CanGrow>true</CanGrow>
+#            <KeepTogether>true</KeepTogether>
+#            <Paragraphs>
+#              <Paragraph>
+#                <TextRuns>
+#                  <TextRun>
+#                    <Value>=First(Fields!CompanyName.Value, "DSHeader")</Value>
+#                    <Style />
+#                  </TextRun>
+#                </TextRuns>
+#                <Style />
+#              </Paragraph>
+#            </Paragraphs>
+#            <rd:DefaultName>Textbox5</rd:DefaultName>
+#            <Top>0cm</Top>
+#            <Left>2.91993cm</Left>
+#            <Height>0.6cm</Height>
+#            <Width>12.13083cm</Width>
+#            <ZIndex>3</ZIndex>
+#            <Style>
+#              <Border>
+#                <Style>None</Style>
+#              </Border>
+#              <PaddingLeft>2pt</PaddingLeft>
+#              <PaddingRight>2pt</PaddingRight>
+#              <PaddingTop>2pt</PaddingTop>
+#              <PaddingBottom>2pt</PaddingBottom>
+#            </Style>
+#          </Textbox>
+#          <Textbox Name="Textbox7">
+#            <CanGrow>true</CanGrow>
+#            <KeepTogether>true</KeepTogether>
+#            <Paragraphs>
+#              <Paragraph>
+#                <TextRuns>
+#                  <TextRun>
+#                    <Value>=First(Fields!CompanyAddress.Value, "DSHeader")</Value>
+#                    <Style />
+#                  </TextRun>
+#                </TextRuns>
+#                <Style />
+#              </Paragraph>
+#            </Paragraphs>
+#            <rd:DefaultName>Textbox7</rd:DefaultName>
+#            <Top>1.00224cm</Top>
+#            <Left>2.84938cm</Left>
+#            <Height>0.6cm</Height>
+#            <Width>12.23667cm</Width>
+#            <ZIndex>4</ZIndex>
+#            <Style>
+#              <Border>
+#                <Style>None</Style>
+#              </Border>
+#              <PaddingLeft>2pt</PaddingLeft>
+#              <PaddingRight>2pt</PaddingRight>
+#              <PaddingTop>2pt</PaddingTop>
+#              <PaddingBottom>2pt</PaddingBottom>
+#            </Style>
+#          </Textbox>
+#        </ReportItems>
+#        <Height>7.62cm</Height>
+#        <Style />
+#      </Body>
+#      <Width>21.59cm</Width>
+#      <Page>
+#        <PageHeight>29.7cm</PageHeight>
+#        <PageWidth>21cm</PageWidth>
+#        <InteractiveHeight>11in</InteractiveHeight>
+#        <InteractiveWidth>8.5in</InteractiveWidth>
+#        <LeftMargin>2.54cm</LeftMargin>
+#        <RightMargin>2.54cm</RightMargin>
+#        <TopMargin>2.54cm</TopMargin>
+#        <BottomMargin>2.54cm</BottomMargin>
+#        <ColumnSpacing>1.27cm</ColumnSpacing>
+#        <Style />
+#      </Page>
+#    </ReportSection>
+#  </ReportSections>
+#  <Language>en-US</Language>
+#  <rd:ReportUnitType>Cm</rd:ReportUnitType>
+#  <rd:ExpressionDialog>Microsoft.Dynamics.Framework.Design.Reports.ExpressionEditor.ExpressionEditorDialog, Microsoft.Dynamics.Framework.Design.Reports</rd:ExpressionDialog>
+#  <rd:ReportID>1b772aca-b291-4faf-b14a-acbc851d3009</rd:ReportID>
+#  <DataSources>
+#    <DataSource Name="AutoGen__ReportDataProvider">
+#      <Transaction>true</Transaction>
+#      <ConnectionProperties>
+#        <DataProvider>AXREPORTDATAPROVIDER</DataProvider>
+#        <ConnectString />
+#        <IntegratedSecurity>true</IntegratedSecurity>
+#      </ConnectionProperties>
+#      <rd:DataSourceID>26bbebba-8b95-476c-9938-d6ca6b3714ee</rd:DataSourceID>
+#    </DataSource>
+#  </DataSources>
+#  <DataSets>
+#    <DataSet Name="DS">
+#      <Fields>
+#        <Field Name="Address">
+#          <DataField>Is_TestCustTMP.1.Address</DataField>
+#          <rd:TypeName>System.String</rd:TypeName>
+#        </Field>
+#        <Field Name="CustAccount">
+#          <DataField>Is_TestCustTMP.1.CustAccount</DataField>
+#          <rd:TypeName>System.String</rd:TypeName>
+#        </Field>
+#        <Field Name="CustGroupId">
+#          <DataField>Is_TestCustTMP.1.CustGroupId</DataField>
+#          <rd:TypeName>System.String</rd:TypeName>
+#        </Field>
+#        <Field Name="Name">
+#          <DataField>Is_TestCustTMP.1.Name</DataField>
+#          <rd:TypeName>System.String</rd:TypeName>
+#        </Field>
+#      </Fields>
+#      <Query>
+#        <QueryParameters>
+#          <QueryParameter Name="AX_PartitionKey">
+#            <Value>=Parameters!AX_PartitionKey.Value</Value>
+#          </QueryParameter>
+#          <QueryParameter Name="AX_CompanyName">
+#            <Value>=Parameters!AX_CompanyName.Value</Value>
+#          </QueryParameter>
+#          <QueryParameter Name="AX_UserContext">
+#            <Value>=Parameters!AX_UserContext.Value</Value>
+#          </QueryParameter>
+#          <QueryParameter Name="AX_RenderingCulture">
+#            <Value>=Parameters!AX_RenderingCulture.Value</Value>
+#          </QueryParameter>
+#          <QueryParameter Name="AX_ReportContext">
+#            <Value>=Parameters!AX_ReportContext.Value</Value>
+#          </QueryParameter>
+#          <QueryParameter Name="AX_RdpPreProcessedId">
+#            <Value>=Parameters!AX_RdpPreProcessedId.Value</Value>
+#          </QueryParameter>
+#          <QueryParameter Name="CustAccount">
+#            <Value>=Parameters!DS_CustAccount.Value</Value>
+#          </QueryParameter>
+#        </QueryParameters>
+#        <DataSourceName>AutoGen__ReportDataProvider</DataSourceName>
+#        <CommandType>Text</CommandType>
+#        <CommandText>SELECT * FROM Is_TestCustDP.Is_TestCustTMP</CommandText>
+#        <rd:UseGenericDesigner>true</rd:UseGenericDesigner>
+#      </Query>
+#      <rd:DataSetInfo>
+#        <rd:TableAdapterGetDataMethod>GetData</rd:TableAdapterGetDataMethod>
+#        <rd:DataSetName>DS</rd:DataSetName>
+#        <rd:TableAdapterFillMethod>Fill</rd:TableAdapterFillMethod>
+#        <rd:TableAdapterName>FieldsTableAdapter</rd:TableAdapterName>
+#        <rd:TableName>Fields</rd:TableName>
+#      </rd:DataSetInfo>
+#    </DataSet>
+#    <DataSet Name="DSHeader">
+#      <Fields>
+#        <Field Name="CompanyAddress">
+#          <DataField>Is_TestCustReportHeaderTMP.1.CompanyAddress</DataField>
+#          <rd:TypeName>System.String</rd:TypeName>
+#        </Field>
+#        <Field Name="CompanyLogo">
+#          <DataField>Is_TestCustReportHeaderTMP.1.CompanyLogo</DataField>
+#          <rd:TypeName>System.Byte[]</rd:TypeName>
+#        </Field>
+#        <Field Name="CompanyName">
+#          <DataField>Is_TestCustReportHeaderTMP.1.CompanyName</DataField>
+#          <rd:TypeName>System.String</rd:TypeName>
+#        </Field>
+#      </Fields>
+#      <Query>
+#        <QueryParameters>
+#          <QueryParameter Name="AX_PartitionKey">
+#            <Value>=Parameters!AX_PartitionKey.Value</Value>
+#          </QueryParameter>
+#          <QueryParameter Name="AX_CompanyName">
+#            <Value>=Parameters!AX_CompanyName.Value</Value>
+#          </QueryParameter>
+#          <QueryParameter Name="AX_UserContext">
+#            <Value>=Parameters!AX_UserContext.Value</Value>
+#          </QueryParameter>
+#          <QueryParameter Name="AX_RenderingCulture">
+#            <Value>=Parameters!AX_RenderingCulture.Value</Value>
+#          </QueryParameter>
+#          <QueryParameter Name="AX_ReportContext">
+#            <Value>=Parameters!AX_ReportContext.Value</Value>
+#          </QueryParameter>
+#          <QueryParameter Name="AX_RdpPreProcessedId">
+#            <Value>=Parameters!AX_RdpPreProcessedId.Value</Value>
+#          </QueryParameter>
+#          <QueryParameter Name="CustAccount">
+#            <Value>=Parameters!DS_CustAccount.Value</Value>
+#          </QueryParameter>
+#        </QueryParameters>
+#        <DataSourceName>AutoGen__ReportDataProvider</DataSourceName>
+#        <CommandType>Text</CommandType>
+#        <CommandText>SELECT * FROM Is_TestCustDP.Is_TestCustReportHeaderTMP</CommandText>
+#        <rd:UseGenericDesigner>true</rd:UseGenericDesigner>
+#      </Query>
+#      <rd:DataSetInfo>
+#        <rd:TableAdapterGetDataMethod>GetData</rd:TableAdapterGetDataMethod>
+#        <rd:DataSetName>DSHeader</rd:DataSetName>
+#        <rd:TableAdapterFillMethod>Fill</rd:TableAdapterFillMethod>
+#        <rd:TableAdapterName>FieldsTableAdapter</rd:TableAdapterName>
+#        <rd:TableName>Fields</rd:TableName>
+#      </rd:DataSetInfo>
+#    </DataSet>
+#  </DataSets>
+#  <ReportParameters>
+#    <ReportParameter Name="AX_PartitionKey">
+#      <DataType>String</DataType>
+#      <Nullable>true</Nullable>
+#      <Hidden>true</Hidden>
+#      <AllowBlank>true</AllowBlank>
+#      <Prompt>AX_PartitionKey</Prompt>
+#      <MultiValue>false</MultiValue>
+#    </ReportParameter>
+#    <ReportParameter Name="AX_UserContext">
+#      <DataType>String</DataType>
+#      <Nullable>true</Nullable>
+#      <Hidden>true</Hidden>
+#      <AllowBlank>true</AllowBlank>
+#      <Prompt>AX_UserContext</Prompt>
+#      <MultiValue>false</MultiValue>
+#    </ReportParameter>
+#    <ReportParameter Name="AX_CompanyName">
+#      <DataType>String</DataType>
+#      <Nullable>false</Nullable>
+#      <Hidden>true</Hidden>
+#      <DefaultValue>
+#        <Values>
+#          <Value>=Microsoft.Dynamics.Framework.Reports.BuiltInMethods.GetUserCompany(Parameters!AX_UserContext.Value)</Value>
+#        </Values>
+#      </DefaultValue>
+#      <AllowBlank>false</AllowBlank>
+#      <Prompt>AX_CompanyName</Prompt>
+#      <MultiValue>false</MultiValue>
+#    </ReportParameter>
+#    <ReportParameter Name="AX_RenderingCulture">
+#      <DataType>String</DataType>
+#      <Nullable>true</Nullable>
+#      <Hidden>true</Hidden>
+#      <AllowBlank>true</AllowBlank>
+#      <Prompt>AX_RenderingCulture</Prompt>
+#      <MultiValue>false</MultiValue>
+#    </ReportParameter>
+#    <ReportParameter Name="AX_ReportContext">
+#      <DataType>String</DataType>
+#      <Nullable>true</Nullable>
+#      <Hidden>true</Hidden>
+#      <AllowBlank>true</AllowBlank>
+#      <Prompt>AX_ReportContext</Prompt>
+#      <MultiValue>false</MultiValue>
+#      <UsedInQuery>True</UsedInQuery>
+#    </ReportParameter>
+#    <ReportParameter Name="AX_RdpPreProcessedId">
+#      <DataType>String</DataType>
+#      <Nullable>true</Nullable>
+#      <Hidden>true</Hidden>
+#      <AllowBlank>true</AllowBlank>
+#      <Prompt>AX_RdpPreProcessedId</Prompt>
+#      <MultiValue>false</MultiValue>
+#    </ReportParameter>
+#    <ReportParameter Name="DS_CustAccount">
+#      <DataType>String</DataType>
+#      <Nullable>true</Nullable>
+#      <Hidden>false</Hidden>
+#      <AllowBlank>true</AllowBlank>
+#      <Prompt>Customer account</Prompt>
+#      <MultiValue>false</MultiValue>
+#    </ReportParameter>
+#  </ReportParameters>
+#  <CodeModules>
+#    <CodeModule>Microsoft.Dynamics.Framework.Reports, Version=6.3.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35</CodeModule>
+#    <CodeModule>Microsoft.Dynamics.Framework.Metadata.AX, Version=6.3.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35</CodeModule>
+#  </CodeModules>
+#  <Code>Protected Overrides Sub OnInit()
+#    Microsoft.Dynamics.Framework.Reports.DataMethodUtility.ReportInitialize()
+#End Sub
+#
+#</Code>
+#  <CustomProperties>
+#    <CustomProperty>
+#      <Name>DATASETSFIELDS</Name>
+#      <Value><![CDATA[DS:Address.Is_TestCustTMP.Address;CustAccount.Is_TestCustTMP.CustAccount;CustGroupId.Is_TestCustTMP.CustGroupId;Name.Is_TestCustTMP.Name|DSHeader:CompanyAddress.Is_TestCustReportHeaderTMP.CompanyAddress;CompanyLogo.Is_TestCustReportHeaderTMP.CompanyLogo;CompanyName.Is_TestCustReportHeaderTMP.CompanyName]]></Value>
+#    </CustomProperty>
+#  </CustomProperties>
+#</Report>
+        ENDRDL
+        PERMISSIONSET #Permissions
+          PROPERTIES
+          ENDPROPERTIES
+          
+          TABLES #Tables
+          ENDTABLES
+          
+        SERVERMETHODS #Server Methods
+        ENDSERVERMETHODS
+        
+      ASSOCIATEDFORMS #Associated Forms
+      ENDASSOCIATEDFORMS
+      
+  ENDPERMISSIONSET
+  
+ENDSSRSREPORTDESIGN
+
+ENDDESIGNS
+
+ENDREPORT
+
+
+***Element: DBT
+
+; Microsoft Dynamics AX Table : Is_TestCustReportHeaderTMP unloaded
+; --------------------------------------------------------------------------------
+  TABLEVERSION 1
+  
+  TABLE #Is_TestCustReportHeaderTMP
+    EnforceFKRelation 1
+    PROPERTIES
+      Name                #Is_TestCustReportHeaderTMP
+      TableType           #TempDB
+      CreateRecIdIndex    #Yes
+      PrimaryIndex        #SurrogateKey
+      ClusterIndex        #SurrogateKey
+      Origin              #{C1CE09A6-F707-433F-A806-45EE16DC8125}
+    ENDPROPERTIES
+    
+    FIELDS
+      FIELD #CompanyAddress
+        STRING
+        PROPERTIES
+          Name                #CompanyAddress
+          Table               #Is_TestCustReportHeaderTMP
+          Origin              #{8998955D-C116-48AF-92DB-0FD5234A10AD}
+          ExtendedDataType    #Addressing
+          StringSize          #250
+        ENDPROPERTIES
+        
+      FIELD #CompanyLogo
+        QUEUE
+        PROPERTIES
+          Name                #CompanyLogo
+          Table               #Is_TestCustReportHeaderTMP
+          Origin              #{592F6E6B-C4B6-43FE-A9EB-87B23518F85B}
+          ExtendedDataType    #Bitmap
+        ENDPROPERTIES
+        
+      FIELD #CompanyName
+        STRING
+        PROPERTIES
+          Name                #CompanyName
+          Table               #Is_TestCustReportHeaderTMP
+          Origin              #{4DC0D079-8E37-40FF-998A-EC28AA1A940B}
+          ExtendedDataType    #Name
+          StringSize          #60
+        ENDPROPERTIES
+        
+    ENDFIELDS
+    GROUPS
+    ENDGROUPS
+    
+    INDICES
+    ENDINDICES
+    FULLTEXTINDICES
+    ENDFULLTEXTINDICES
+    REFERENCES
+    ENDREFERENCES
+    
+    DELETEACTIONS
+    ENDDELETEACTIONS
+    
+    METHODS
+    ENDMETHODS
+  ENDTABLE
+  
+
+***Element: DBT
+
+; Microsoft Dynamics AX Table : Is_TestCustTMP unloaded
+; --------------------------------------------------------------------------------
+  TABLEVERSION 1
+  
+  TABLE #Is_TestCustTMP
+    EnforceFKRelation 1
+    PROPERTIES
+      Name                #Is_TestCustTMP
+      TableType           #TempDB
+      CreateRecIdIndex    #Yes
+      PrimaryIndex        #SurrogateKey
+      ClusterIndex        #SurrogateKey
+      Origin              #{20A09F80-3F99-4EBD-9728-7B30460C006A}
+    ENDPROPERTIES
+    
+    FIELDS
+      FIELD #Address
+        STRING
+        PROPERTIES
+          Name                #Address
+          Table               #Is_TestCustTMP
+          Origin              #{60C69A1D-A9C0-4370-A167-EEA998ECB064}
+          ExtendedDataType    #String255
+          StringSize          #255
+        ENDPROPERTIES
+        
+      FIELD #Currency
+        STRING
+        PROPERTIES
+          Name                #Currency
+          HelpText            #@SYS316641
+          Mandatory           #Yes
+          Table               #Is_TestCustTMP
+          Origin              #{3D8306D5-F7D7-4598-B219-EEEB3ABFDB52}
+          ExtendedDataType    #CustCurrencyCode
+          StringSize          #3
+        ENDPROPERTIES
+        
+      FIELD #CustAccount
+        STRING
+        PROPERTIES
+          Name                #CustAccount
+          Table               #Is_TestCustTMP
+          Origin              #{2858BF22-F16C-426F-A759-62F7A8173AE9}
+          ExtendedDataType    #CustAccount
+          StringSize          #20
+        ENDPROPERTIES
+        
+      FIELD #CustGroupId
+        STRING
+        PROPERTIES
+          Name                #CustGroupId
+          Table               #Is_TestCustTMP
+          Origin              #{5EDC248B-4AD2-4DC7-AF77-751B62AE12ED}
+          ExtendedDataType    #CustGroupId
+        ENDPROPERTIES
+        
+      FIELD #CustGroupId1
+        STRING
+        PROPERTIES
+          Name                #CustGroupId1
+          Table               #Is_TestCustTMP
+          Origin              #{D7C1AD73-5509-4819-A97F-9F6F5941CA0B}
+          ExtendedDataType    #CustGroupId
+        ENDPROPERTIES
+        
+      FIELD #Name
+        STRING
+        PROPERTIES
+          Name                #Name
+          Table               #Is_TestCustTMP
+          Origin              #{D360710C-DDA0-4901-BA07-FD0086FC368A}
+          ExtendedDataType    #Name
+          StringSize          #60
+        ENDPROPERTIES
+        
+    ENDFIELDS
+    GROUPS
+    ENDGROUPS
+    
+    INDICES
+    ENDINDICES
+    FULLTEXTINDICES
+    ENDFULLTEXTINDICES
+    REFERENCES
+    ENDREFERENCES
+    
+    DELETEACTIONS
+    ENDDELETEACTIONS
+    
+    METHODS
+    ENDMETHODS
+  ENDTABLE
+  
+
+***Element: CLS
+
+; Microsoft Dynamics AX Class: Is_TestCustContract unloaded
+; --------------------------------------------------------------------------------
+  CLSVERSION 1
+  
+  CLASS #Is_TestCustContract
+    PROPERTIES
+      Name                #Is_TestCustContract
+      Origin              #{51933851-D20B-4969-B2C6-433ABBB8482E}
+    ENDPROPERTIES
+    
+    METHODS
+      SOURCE #classDeclaration
+        #[DataContractAttribute]
+        #public class Is_TestCustContract
+        #{
+        #    CustAccount custAccount;
+        #}
+      ENDSOURCE
+      SOURCE #parmCustAccount
+        #[DataMemberAttribute('CustAccount')]
+        #public CustAccount parmCustAccount(CustAccount _custAccount = custAccount)
+        #{
+        #    CustAccount = _custAccount;
+        #
+        #    return CustAccount;
+        #}
+      ENDSOURCE
+    ENDMETHODS
+  ENDCLASS
+
+***Element: CLS
+
+; Microsoft Dynamics AX Class: Is_TestCustController unloaded
+; --------------------------------------------------------------------------------
+  CLSVERSION 1
+  
+  CLASS #Is_TestCustController
+    PROPERTIES
+      Name                #Is_TestCustController
+      Extends             #SrsReportRunController
+      Origin              #{23A14867-6CEB-48E1-B922-0FF3D3D67778}
+    ENDPROPERTIES
+    
+    METHODS
+      SOURCE #classDeclaration
+        #public class Is_TestCustController extends SrsReportRunController
+        #{
+        #
+        #}
+      ENDSOURCE
+      SOURCE #main
+        #public static void main(Args _args)
+        #{
+        #    Is_TestCustController controller = new Is_TestCustController();
+        #
+        #    controller.parmReportName(ssrsReportStr(IS_testCustReport,Report));
+        #    controller.startOperation();
+        #}
+      ENDSOURCE
+    ENDMETHODS
+  ENDCLASS
+
+***Element: CLS
+
+; Microsoft Dynamics AX Class: Is_TestCustDP unloaded
+; --------------------------------------------------------------------------------
+  CLSVERSION 1
+  
+  CLASS #Is_TestCustDP
+    PROPERTIES
+      Name                #Is_TestCustDP
+      Extends             #SRSReportDataProviderBase
+      RunOn               #Server
+      Origin              #{7B4DE96F-8E8B-4716-833B-3395AB60E4F5}
+    ENDPROPERTIES
+    
+    METHODS
+      SOURCE #classDeclaration
+        #[
+        #SRSReportParameterAttribute(classStr(Is_TestCustContract))
+        #]
+        #public class Is_TestCustDP extends SRSReportDataProviderBase
+        #//class Is_TestCustDP extends SrsReportDataProviderPreProcess
+        #{
+        #    Is_TestCustContract contract;
+        #    Is_TestCustTMP tmp;
+        #    Is_TestCustReportHeaderTMP tmpHeader;
+        #    CustTable custTable;
+        #
+        #    CustAccount custAccount;
+        #
+        #}
+      ENDSOURCE
+      SOURCE #getTmp
+        #[
+        #    SRSReportDataSetAttribute(tableStr(Is_TestCustTMP))
+        #]
+        #public Is_TestCustTMP getTmp()
+        #{
+        #    select * from tmp;
+        #    return tmp;
+        #}
+      ENDSOURCE
+      SOURCE #getTmpHeader
+        #[
+        #    SRSReportDataSetAttribute(tableStr(Is_TestCustReportHeaderTMP))
+        #]
+        #public Is_TestCustReportHeaderTMP getTmpHeader()
+        #{
+        #    select * from tmpHeader;
+        #    return tmpHeader;
+        #}
+      ENDSOURCE
+      SOURCE #logic
+        #public  void logic()
+        #{
+        #    while select * from CustTable
+        #       // Where(custAccount == "" || CustTable.AccountNum == custAccount)
+        #    {
+        #        tmp.CustAccount = CustTable.AccountNum;
+        #        tmp.Name = CustTable.name();
+        #        tmp.Address = CustTable.address();
+        #        tmp.CustGroupId = CustTable.CustGroup;
+        #        tmp.Currency = custTable.Currency;
+        #
+        #        tmp.insert();
+        #    }
+        #}
+      ENDSOURCE
+      SOURCE #logicHeader
+        #public void logicHeader()
+        #{
+        #    CompanyInfo cInfo;
+        #
+        #    cInfo = CompanyInfo::find();
+        #
+        #    tmpHeader.CompanyName = cInfo.Name;
+        #    tmpHeader.CompanyAddress = cInfo.primaryAddress();
+        #    tmpHeader.CompanyLogo = FormLetter::companyLogo();
+        #
+        #    tmpHeader.insert();
+        #
+        #}
+      ENDSOURCE
+      SOURCE #processReport
+        #public void processReport()
+        #{
+        #    contract = this.parmDataContract() as Is_TestCustContract;
+        #
+        #    custAccount = contract.parmCustAccount();
+        #
+        #    this.logic();
+        #    this.logicHeader();
+        #}
+      ENDSOURCE
+    ENDMETHODS
+  ENDCLASS
+
+***Element: PRN
+
+; Microsoft Dynamics AX Project : IS_TestReport unloaded
+; --------------------------------------------------------------------------------
+  PROJECTVERSION 2
+  
+  PROJECT #IS_TestReport
+  SHARED
+  PROPERTIES
+    Name                #IS_TestReport
+    Origin              #{D0D64D7B-1DA1-4AB9-99FA-595646E0E550}
+  ENDPROPERTIES
+  
+    PROJECTCLASS ProjectNode
+    BEGINNODE
+      FILETYPE 0
+      UTILTYPE 16
+      UTILOBJECTID 0
+      NODETYPE 205
+      NAME #AccountsReceivable
+    ENDNODE
+    BEGINNODE
+      FILETYPE 0
+      UTILTYPE 2
+      UTILOBJECTID 0
+      NODETYPE 296
+      NAME #TestCustReport
+    ENDNODE
+    BEGINNODE
+      FILETYPE 0
+      UTILTYPE 127
+      UTILOBJECTID 0
+      NODETYPE 1531
+      NAME #TestCustReport
+    ENDNODE
+    BEGINNODE
+      FILETYPE 0
+      UTILTYPE 85
+      UTILOBJECTID 0
+      NODETYPE 1439
+      NAME #IS_testCustReport
+    ENDNODE
+    BEGINNODE
+      FILETYPE 0
+      UTILTYPE 44
+      UTILOBJECTID 107503
+      NODETYPE 204
+      NAME #Is_TestCustReportHeaderTMP
+    ENDNODE
+    BEGINNODE
+      FILETYPE 0
+      UTILTYPE 44
+      UTILOBJECTID 107502
+      NODETYPE 204
+      NAME #Is_TestCustTMP
+    ENDNODE
+    BEGINNODE
+      FILETYPE 0
+      UTILTYPE 45
+      UTILOBJECTID 1030560
+      NODETYPE 329
+      NAME #Is_TestCustContract
+    ENDNODE
+    BEGINNODE
+      FILETYPE 0
+      UTILTYPE 45
+      UTILOBJECTID 1030559
+      NODETYPE 329
+      NAME #Is_TestCustController
+    ENDNODE
+    BEGINNODE
+      FILETYPE 0
+      UTILTYPE 45
+      UTILOBJECTID 1030558
+      NODETYPE 329
+      NAME #Is_TestCustDP
+    ENDNODE
+  ENDPROJECT
+  
+
+***Element: END

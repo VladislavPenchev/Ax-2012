@@ -1,0 +1,563 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2008/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
+  <Body>
+    <Height>2.19792in</Height>
+    <Style />
+  </Body>
+  <Width>8.22917in</Width>
+  <Page>
+    <LeftMargin>1in</LeftMargin>
+    <RightMargin>1in</RightMargin>
+    <TopMargin>1in</TopMargin>
+    <BottomMargin>1in</BottomMargin>
+    <Style />
+  </Page>
+  <AutoRefresh>0</AutoRefresh>
+  <DataSources>
+    <DataSource Name="Ref_SDS_Sales">
+      <DataSourceReference>SDS_Sales</DataSourceReference>
+      <rd:SecurityType>None</rd:SecurityType>
+      <rd:DataSourceID>ac823be9-9b9f-4527-8bfb-17981ae1c17b</rd:DataSourceID>
+    </DataSource>
+  </DataSources>
+  <DataSets>
+    <DataSet Name="DataSet1">
+      <Query>
+        <DataSourceName>Ref_SDS_Sales</DataSourceName>
+        <CommandText>Select * FROM PurchTable</CommandText>
+      </Query>
+      <Fields>
+        <Field Name="PURCHID">
+          <DataField>PURCHID</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="PURCHNAME">
+          <DataField>PURCHNAME</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="ORDERACCOUNT">
+          <DataField>ORDERACCOUNT</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="INVOICEACCOUNT">
+          <DataField>INVOICEACCOUNT</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="FREIGHTZONE">
+          <DataField>FREIGHTZONE</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="EMAIL">
+          <DataField>EMAIL</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="DELIVERYDATE">
+          <DataField>DELIVERYDATE</DataField>
+          <rd:TypeName>System.DateTime</rd:TypeName>
+        </Field>
+        <Field Name="DELIVERYTYPE">
+          <DataField>DELIVERYTYPE</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="ADDRESSREFRECID">
+          <DataField>ADDRESSREFRECID</DataField>
+          <rd:TypeName>System.Int64</rd:TypeName>
+        </Field>
+        <Field Name="ADDRESSREFTABLEID">
+          <DataField>ADDRESSREFTABLEID</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="INTERCOMPANYORIGINALSALESID">
+          <DataField>INTERCOMPANYORIGINALSALESID</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="INTERCOMPANYORIGINALCUSTACCOUNT">
+          <DataField>INTERCOMPANYORIGINALCUSTACCOUNT</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="CURRENCYCODE">
+          <DataField>CURRENCYCODE</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="PAYMENT">
+          <DataField>PAYMENT</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="CASHDISC">
+          <DataField>CASHDISC</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="COUNTYORIGDEST">
+          <DataField>COUNTYORIGDEST</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="INTERCOMPANYDIRECTDELIVERY">
+          <DataField>INTERCOMPANYDIRECTDELIVERY</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="VENDGROUP">
+          <DataField>VENDGROUP</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="LINEDISC">
+          <DataField>LINEDISC</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="DISCPERCENT">
+          <DataField>DISCPERCENT</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+        <Field Name="PRICEGROUPID">
+          <DataField>PRICEGROUPID</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="MULTILINEDISC">
+          <DataField>MULTILINEDISC</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="ENDDISC">
+          <DataField>ENDDISC</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="INTERCOMPANYCUSTPURCHORDERFORMNUM">
+          <DataField>INTERCOMPANYCUSTPURCHORDERFORMNUM</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="TAXGROUP">
+          <DataField>TAXGROUP</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="DLVTERM">
+          <DataField>DLVTERM</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="DLVMODE">
+          <DataField>DLVMODE</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="PURCHSTATUS">
+          <DataField>PURCHSTATUS</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="MARKUPGROUP">
+          <DataField>MARKUPGROUP</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="PURCHASETYPE">
+          <DataField>PURCHASETYPE</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="URL">
+          <DataField>URL</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="POSTINGPROFILE">
+          <DataField>POSTINGPROFILE</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="TRANSACTIONCODE">
+          <DataField>TRANSACTIONCODE</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="ENTERPRISENUMBER">
+          <DataField>ENTERPRISENUMBER</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="SETTLEVOUCHER">
+          <DataField>SETTLEVOUCHER</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="INTERCOMPANYALLOWINDIRECTCREATION">
+          <DataField>INTERCOMPANYALLOWINDIRECTCREATION</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="INTERCOMPANYORIGIN">
+          <DataField>INTERCOMPANYORIGIN</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="CASHDISCPERCENT">
+          <DataField>CASHDISCPERCENT</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+        <Field Name="DELIVERYNAME">
+          <DataField>DELIVERYNAME</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="COVSTATUS">
+          <DataField>COVSTATUS</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="PAYMENTSCHED">
+          <DataField>PAYMENTSCHED</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="INVENTSITEID">
+          <DataField>INVENTSITEID</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="ONETIMEVENDOR">
+          <DataField>ONETIMEVENDOR</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="RETURNITEMNUM">
+          <DataField>RETURNITEMNUM</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="FREIGHTSLIPTYPE">
+          <DataField>FREIGHTSLIPTYPE</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="DOCUMENTSTATUS">
+          <DataField>DOCUMENTSTATUS</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="CONTACTPERSONID">
+          <DataField>CONTACTPERSONID</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="INVENTLOCATIONID">
+          <DataField>INVENTLOCATIONID</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="BANKCENTRALBANKPURPOSECODE">
+          <DataField>BANKCENTRALBANKPURPOSECODE</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="ITEMBUYERGROUPID">
+          <DataField>ITEMBUYERGROUPID</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="PROJID">
+          <DataField>PROJID</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="PURCHPOOLID">
+          <DataField>PURCHPOOLID</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="VATNUM">
+          <DataField>VATNUM</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="PORT">
+          <DataField>PORT</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="INCLTAX">
+          <DataField>INCLTAX</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="BANKCENTRALBANKPURPOSETEXT">
+          <DataField>BANKCENTRALBANKPURPOSETEXT</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="NUMBERSEQUENCEGROUP">
+          <DataField>NUMBERSEQUENCEGROUP</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="LANGUAGEID">
+          <DataField>LANGUAGEID</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="AUTOSUMMARYMODULETYPE">
+          <DataField>AUTOSUMMARYMODULETYPE</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="TRANSPORT">
+          <DataField>TRANSPORT</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="PAYMMODE">
+          <DataField>PAYMMODE</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="PAYMSPEC">
+          <DataField>PAYMSPEC</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="FIXEDDUEDATE">
+          <DataField>FIXEDDUEDATE</DataField>
+          <rd:TypeName>System.DateTime</rd:TypeName>
+        </Field>
+        <Field Name="STATPROCID">
+          <DataField>STATPROCID</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="VENDORREF">
+          <DataField>VENDORREF</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="INTERCOMPANYCOMPANYID">
+          <DataField>INTERCOMPANYCOMPANYID</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="INTERCOMPANYSALESID">
+          <DataField>INTERCOMPANYSALESID</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="INTERCOMPANYORDER">
+          <DataField>INTERCOMPANYORDER</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="RETURNREASONCODEID">
+          <DataField>RETURNREASONCODEID</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="RETURNREPLACEMENTCREATED">
+          <DataField>RETURNREPLACEMENTCREATED</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="REQATTENTION">
+          <DataField>REQATTENTION</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="DEFAULTDIMENSION">
+          <DataField>DEFAULTDIMENSION</DataField>
+          <rd:TypeName>System.Int64</rd:TypeName>
+        </Field>
+        <Field Name="CONFIRMEDDLVEARLIEST">
+          <DataField>CONFIRMEDDLVEARLIEST</DataField>
+          <rd:TypeName>System.DateTime</rd:TypeName>
+        </Field>
+        <Field Name="CONTRACTNUM_SA">
+          <DataField>CONTRACTNUM_SA</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="CHANGEREQUESTREQUIRED">
+          <DataField>CHANGEREQUESTREQUIRED</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="REASONTABLEREF">
+          <DataField>REASONTABLEREF</DataField>
+          <rd:TypeName>System.Int64</rd:TypeName>
+        </Field>
+        <Field Name="DOCUMENTSTATE">
+          <DataField>DOCUMENTSTATE</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="ISMODIFIED">
+          <DataField>ISMODIFIED</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="MATCHINGAGREEMENT">
+          <DataField>MATCHINGAGREEMENT</DataField>
+          <rd:TypeName>System.Int64</rd:TypeName>
+        </Field>
+        <Field Name="SYSTEMENTRYSOURCE">
+          <DataField>SYSTEMENTRYSOURCE</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="SYSTEMENTRYCHANGEPOLICY">
+          <DataField>SYSTEMENTRYCHANGEPOLICY</DataField>
+          <rd:TypeName>System.Int64</rd:TypeName>
+        </Field>
+        <Field Name="MANUALENTRYCHANGEPOLICY">
+          <DataField>MANUALENTRYCHANGEPOLICY</DataField>
+          <rd:TypeName>System.Int64</rd:TypeName>
+        </Field>
+        <Field Name="VENDINVOICEDECLARATION_IS">
+          <DataField>VENDINVOICEDECLARATION_IS</DataField>
+          <rd:TypeName>System.Int64</rd:TypeName>
+        </Field>
+        <Field Name="WORKERPURCHPLACER">
+          <DataField>WORKERPURCHPLACER</DataField>
+          <rd:TypeName>System.Int64</rd:TypeName>
+        </Field>
+        <Field Name="DELIVERYPOSTALADDRESS">
+          <DataField>DELIVERYPOSTALADDRESS</DataField>
+          <rd:TypeName>System.Int64</rd:TypeName>
+        </Field>
+        <Field Name="BANKDOCUMENTTYPE">
+          <DataField>BANKDOCUMENTTYPE</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="LISTCODE">
+          <DataField>LISTCODE</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="ISENCUMBRANCEREQUIRED">
+          <DataField>ISENCUMBRANCEREQUIRED</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="SOURCEDOCUMENTLINE">
+          <DataField>SOURCEDOCUMENTLINE</DataField>
+          <rd:TypeName>System.Int64</rd:TypeName>
+        </Field>
+        <Field Name="SOURCEDOCUMENTHEADER">
+          <DataField>SOURCEDOCUMENTHEADER</DataField>
+          <rd:TypeName>System.Int64</rd:TypeName>
+        </Field>
+        <Field Name="REQUESTER">
+          <DataField>REQUESTER</DataField>
+          <rd:TypeName>System.Int64</rd:TypeName>
+        </Field>
+        <Field Name="ACCOUNTINGDISTRIBUTIONTEMPLATE">
+          <DataField>ACCOUNTINGDISTRIBUTIONTEMPLATE</DataField>
+          <rd:TypeName>System.Int64</rd:TypeName>
+        </Field>
+        <Field Name="ACCOUNTINGDATE">
+          <DataField>ACCOUNTINGDATE</DataField>
+          <rd:TypeName>System.DateTime</rd:TypeName>
+        </Field>
+        <Field Name="FINALIZECLOSINGDATE">
+          <DataField>FINALIZECLOSINGDATE</DataField>
+          <rd:TypeName>System.DateTime</rd:TypeName>
+        </Field>
+        <Field Name="CONSTARGET_JP">
+          <DataField>CONSTARGET_JP</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="INTRASTATFULFILLMENTDATE_HU">
+          <DataField>INTRASTATFULFILLMENTDATE_HU</DataField>
+          <rd:TypeName>System.DateTime</rd:TypeName>
+        </Field>
+        <Field Name="UNITEDVATINVOICE_LT">
+          <DataField>UNITEDVATINVOICE_LT</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="INTRASTATADDVALUE_LV">
+          <DataField>INTRASTATADDVALUE_LV</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+        <Field Name="INVOICEREGISTER_LT">
+          <DataField>INVOICEREGISTER_LT</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="PACKINGSLIPREGISTER_LT">
+          <DataField>PACKINGSLIPREGISTER_LT</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="SERVICENAME">
+          <DataField>SERVICENAME</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="SERVICEADDRESS">
+          <DataField>SERVICEADDRESS</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="ONETIMESUPPLIER">
+          <DataField>ONETIMESUPPLIER</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="SERVICEDATE">
+          <DataField>SERVICEDATE</DataField>
+          <rd:TypeName>System.DateTime</rd:TypeName>
+        </Field>
+        <Field Name="CONFIRMEDDLV">
+          <DataField>CONFIRMEDDLV</DataField>
+          <rd:TypeName>System.DateTime</rd:TypeName>
+        </Field>
+        <Field Name="FSHAUTOCREATED">
+          <DataField>FSHAUTOCREATED</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="CROSSDOCKINGDATE">
+          <DataField>CROSSDOCKINGDATE</DataField>
+          <rd:TypeName>System.DateTime</rd:TypeName>
+        </Field>
+        <Field Name="SERVICECATEGORY">
+          <DataField>SERVICECATEGORY</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="AVAILSALESDATE">
+          <DataField>AVAILSALESDATE</DataField>
+          <rd:TypeName>System.DateTime</rd:TypeName>
+        </Field>
+        <Field Name="LOCALDELIVERYDATE">
+          <DataField>LOCALDELIVERYDATE</DataField>
+          <rd:TypeName>System.DateTime</rd:TypeName>
+        </Field>
+        <Field Name="REPLENISHMENTLOCATION">
+          <DataField>REPLENISHMENTLOCATION</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="RETAILRETAILSTATUSTYPE">
+          <DataField>RETAILRETAILSTATUSTYPE</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="RETAILDRIVERDETAILS">
+          <DataField>RETAILDRIVERDETAILS</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="RETAILCONCESSIONPURCH">
+          <DataField>RETAILCONCESSIONPURCH</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="CONFIRMINGPO">
+          <DataField>CONFIRMINGPO</DataField>
+          <rd:TypeName>System.Int64</rd:TypeName>
+        </Field>
+        <Field Name="MCRDROPSHIPMENT">
+          <DataField>MCRDROPSHIPMENT</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="EXCHANGERATEDATE">
+          <DataField>EXCHANGERATEDATE</DataField>
+          <rd:TypeName>System.DateTime</rd:TypeName>
+        </Field>
+        <Field Name="FIXEDEXCHRATE">
+          <DataField>FIXEDEXCHRATE</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+        <Field Name="TAMVENDREBATEGROUPID">
+          <DataField>TAMVENDREBATEGROUPID</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="TAXPERIODPAYMENTCODE_PL">
+          <DataField>TAXPERIODPAYMENTCODE_PL</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="TRANSPORTATIONDOCUMENT">
+          <DataField>TRANSPORTATIONDOCUMENT</DataField>
+          <rd:TypeName>System.Int64</rd:TypeName>
+        </Field>
+        <Field Name="CREATEDDATETIME">
+          <DataField>CREATEDDATETIME</DataField>
+          <rd:TypeName>System.DateTime</rd:TypeName>
+        </Field>
+        <Field Name="CREATEDBY">
+          <DataField>CREATEDBY</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="DATAAREAID">
+          <DataField>DATAAREAID</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="RECVERSION">
+          <DataField>RECVERSION</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="PARTITION">
+          <DataField>PARTITION</DataField>
+          <rd:TypeName>System.Int64</rd:TypeName>
+        </Field>
+        <Field Name="RECID">
+          <DataField>RECID</DataField>
+          <rd:TypeName>System.Int64</rd:TypeName>
+        </Field>
+        <Field Name="M_I009VENDBANKACCOUNTID">
+          <DataField>M_I009VENDBANKACCOUNTID</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="M_I009COMPANYBANKACCOUNTID">
+          <DataField>M_I009COMPANYBANKACCOUNTID</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="IS_BUSINESSJUSTIFICATION">
+          <DataField>IS_BUSINESSJUSTIFICATION</DataField>
+          <rd:TypeName>System.Int64</rd:TypeName>
+        </Field>
+        <Field Name="IS_VENDORMANUFACTURERID">
+          <DataField>IS_VENDORMANUFACTURERID</DataField>
+          <rd:TypeName>System.Int64</rd:TypeName>
+        </Field>
+        <Field Name="M_SORCITYNAME">
+          <DataField>M_SORCITYNAME</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+      </Fields>
+    </DataSet>
+  </DataSets>
+  <rd:ReportUnitType>Inch</rd:ReportUnitType>
+  <rd:ReportID>ab6e7c64-78b1-4a3c-8917-9f9fb335302f</rd:ReportID>
+</Report>

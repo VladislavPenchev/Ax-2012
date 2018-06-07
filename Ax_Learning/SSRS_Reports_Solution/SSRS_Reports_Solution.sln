@@ -1,0 +1,39 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.31101.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{F14B399A-7131-4C87-9E4B-1186C45EF12D}") = "HR_Reports", "..\SSRSTraining\HR_Reports\HR_Reports.rptproj", "{FD4730E9-D9E8-4A0F-B7A5-90FB45C565FA}"
+EndProject
+Project("{F14B399A-7131-4C87-9E4B-1186C45EF12D}") = "Customer_Reports", "Customer_Reports\Customer_Reports.rptproj", "{0C3AA6A7-515F-4D2B-BD20-789AF8B5E27A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Default = Debug|Default
+		DebugLocal|Default = DebugLocal|Default
+		Release|Default = Release|Default
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FD4730E9-D9E8-4A0F-B7A5-90FB45C565FA}.Debug|Default.ActiveCfg = Debug
+		{FD4730E9-D9E8-4A0F-B7A5-90FB45C565FA}.Debug|Default.Build.0 = Debug
+		{FD4730E9-D9E8-4A0F-B7A5-90FB45C565FA}.Debug|Default.Deploy.0 = Debug
+		{FD4730E9-D9E8-4A0F-B7A5-90FB45C565FA}.DebugLocal|Default.ActiveCfg = DebugLocal
+		{FD4730E9-D9E8-4A0F-B7A5-90FB45C565FA}.DebugLocal|Default.Build.0 = DebugLocal
+		{FD4730E9-D9E8-4A0F-B7A5-90FB45C565FA}.DebugLocal|Default.Deploy.0 = DebugLocal
+		{FD4730E9-D9E8-4A0F-B7A5-90FB45C565FA}.Release|Default.ActiveCfg = Release
+		{FD4730E9-D9E8-4A0F-B7A5-90FB45C565FA}.Release|Default.Build.0 = Release
+		{FD4730E9-D9E8-4A0F-B7A5-90FB45C565FA}.Release|Default.Deploy.0 = Release
+		{0C3AA6A7-515F-4D2B-BD20-789AF8B5E27A}.Debug|Default.ActiveCfg = Debug
+		{0C3AA6A7-515F-4D2B-BD20-789AF8B5E27A}.Debug|Default.Build.0 = Debug
+		{0C3AA6A7-515F-4D2B-BD20-789AF8B5E27A}.Debug|Default.Deploy.0 = Debug
+		{0C3AA6A7-515F-4D2B-BD20-789AF8B5E27A}.DebugLocal|Default.ActiveCfg = DebugLocal
+		{0C3AA6A7-515F-4D2B-BD20-789AF8B5E27A}.DebugLocal|Default.Build.0 = DebugLocal
+		{0C3AA6A7-515F-4D2B-BD20-789AF8B5E27A}.DebugLocal|Default.Deploy.0 = DebugLocal
+		{0C3AA6A7-515F-4D2B-BD20-789AF8B5E27A}.Release|Default.ActiveCfg = Release
+		{0C3AA6A7-515F-4D2B-BD20-789AF8B5E27A}.Release|Default.Build.0 = Release
+		{0C3AA6A7-515F-4D2B-BD20-789AF8B5E27A}.Release|Default.Deploy.0 = Release
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

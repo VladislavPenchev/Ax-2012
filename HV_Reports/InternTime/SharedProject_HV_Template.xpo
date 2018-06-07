@@ -1,0 +1,539 @@
+﻿Exportfile for AOT version 1.0 or later
+Formatversion: 1
+
+***Element: VPA
+
+; Microsoft Dynamics AX VISUALSTUDIOPROJECT : HV_tst unloaded
+; --------------------------------------------------------------------------------
+  VERSION 1
+  
+  VISUALSTUDIOPROJECT #HV_tst
+    PROPERTIES
+      Name                #HV_tst
+      ProjectGUID         #{F6180B8F-FD78-4A2C-AC3E-C2341C9BA7BE}
+      ProjectTypeGUID     #{AA631830-3AD7-4631-8CF6-443A09BF983B}
+      VisualStudioProjectFile   #HV_tst.dynamicsproj
+      Origin              #{A7C45A6F-5BDF-45E5-8303-40B03EBBC82D}
+    ENDPROPERTIES
+    
+    REFERENCEDPROJECTS
+      #
+    ENDREFERENCEDPROJECTS
+    
+    VISUALSTUDIOPROJECTFOLDER #Project Content
+      PROPERTIES
+        Name                #Project Content
+      ENDPROPERTIES
+      
+      VISUALSTUDIOPROJECTFILE #HV_tst.dynamicsproj
+        PROPERTIES
+          Name                #HV_tst.dynamicsproj
+        ENDPROPERTIES
+        
+        SOURCE 2134
+#﻿<?xml version="1.0" encoding="utf-8"?>
+#<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+#  <PropertyGroup>
+#    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+#    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+#    <ProductVersion>6.3.5000.138</ProductVersion>
+#    <SchemaVersion>2.0</SchemaVersion>
+#    <ProjectGuid>f6180b8f-fd78-4a2c-ac3e-c2341c9ba7be</ProjectGuid>
+#    <ProjectTypeGuids>{BF6F8E12-879D-49E7-ADF0-5503146B24B8};{aa631830-3ad7-4631-8cf6-443a09bf983b}</ProjectTypeGuids>
+#    <Name>HV_tst</Name>
+#    <BaseAssemblyName>HV_TstObject</BaseAssemblyName>
+#    <!-- Application property page properties -->
+#    <OutputType>Dynamics Reporting Library</OutputType>
+#    <!-- AssemblyInfo properties -->
+#    <AssemblyTitle>HV_TstObject</AssemblyTitle>
+#    <AssemblyCompany>
+#    </AssemblyCompany>
+#    <AssemblyProduct>HV_TstObject</AssemblyProduct>
+#    <AssemblyCopyright>Copyright ©  2017</AssemblyCopyright>
+#    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+#    <FileAlignment>512</FileAlignment>
+#    <OutputPath>bin\Debug\</OutputPath>
+#    <DeployToServer>No</DeployToServer>
+#    <DeployToClient>No</DeployToClient>
+#    <DeployToEP>No</DeployToEP>
+#    <RootNamespace>HV_TstObject</RootNamespace>
+#    <StartupElement />
+#    <DebugTarget>None</DebugTarget>
+#  </PropertyGroup>
+#  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+#    <OutputPath>bin\Debug\</OutputPath>
+#  </PropertyGroup>
+#  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+#    <OutputPath>bin\Release\</OutputPath>
+#  </PropertyGroup>
+#  <ItemGroup>
+#    <Compile Include="\SSRS Reports\Reports\HV_TstObj">
+#      <Virtual>True</Virtual>
+#    </Compile>
+#  </ItemGroup>
+#  <Import Project="$(MSBuildExtensionsPath)\Microsoft\DynamicsTools\Microsoft.Dynamics.Framework.Design.Reporting.Modeling.targets" />
+#  <Import Project="$(MSBuildExtensionsPath)\Microsoft\DynamicsTools\Microsoft.Dynamics.Framework.Design.InteractionProject.targets" />
+#</Project>
+        ENDSOURCE
+      ENDVISUALSTUDIOPROJECTFILE
+      
+    ENDVISUALSTUDIOPROJECTFOLDER
+    
+    VISUALSTUDIOPROJECTFOLDER #Project Output
+      PROPERTIES
+        Name                #Project Output
+      ENDPROPERTIES
+      
+    ENDVISUALSTUDIOPROJECTFOLDER
+    
+  ENDVISUALSTUDIOPROJECT
+  
+
+***Element: DBT
+
+; Microsoft Dynamics AX Table : HV_TemplateBodyTmp unloaded
+; --------------------------------------------------------------------------------
+  TABLEVERSION 1
+  
+  TABLE #HV_TemplateBodyTmp
+    EnforceFKRelation 1
+    PROPERTIES
+      Name                #HV_TemplateBodyTmp
+      TableType           #TempDB
+      CreateRecIdIndex    #Yes
+      PrimaryIndex        #SurrogateKey
+      ClusterIndex        #SurrogateKey
+      Origin              #{5566D04F-ED27-4A4C-8822-04935C1DC74F}
+    ENDPROPERTIES
+    
+    FIELDS
+      FIELD #Address
+        STRING
+        PROPERTIES
+          Name                #Address
+          Table               #HV_TemplateBodyTmp
+          Origin              #{04BBA4CD-3949-4441-A7DE-DBA73E7B7C42}
+        ENDPROPERTIES
+        
+      FIELD #Amount
+        REAL
+        PROPERTIES
+          Name                #Amount
+          Table               #HV_TemplateBodyTmp
+          Origin              #{AEBEA624-BF17-414B-A2B2-9501E25BFED8}
+          ExtendedDataType    #SalesLineAmount
+        ENDPROPERTIES
+        
+      FIELD #CreateDate
+        DATE
+        PROPERTIES
+          Name                #CreateDate
+          Table               #HV_TemplateBodyTmp
+          Origin              #{9F1ED460-49CC-449F-B3DF-6D8C3768F0D9}
+          ExtendedDataType    #SalesReceiptDateRequested
+        ENDPROPERTIES
+        
+      FIELD #CustAccount
+        STRING
+        PROPERTIES
+          Name                #CustAccount
+          Table               #HV_TemplateBodyTmp
+          Origin              #{E610A8DB-FC2F-4CC3-B5BA-CC31531EACC8}
+          ExtendedDataType    #CustAccount
+          StringSize          #20
+        ENDPROPERTIES
+        
+      FIELD #Description
+        STRING
+        PROPERTIES
+          Name                #Description
+          Table               #HV_TemplateBodyTmp
+          Origin              #{F66EDF82-D1C3-4A51-AA88-B3E3CF76EE6E}
+          ExtendedDataType    #Name
+          StringSize          #60
+        ENDPROPERTIES
+        
+      FIELD #Discount
+        REAL
+        PROPERTIES
+          Name                #Discount
+          Table               #HV_TemplateBodyTmp
+          Origin              #{A5629B79-5388-49D7-8128-26F536377A40}
+          ExtendedDataType    #SalesLineDisc
+        ENDPROPERTIES
+        
+      FIELD #DiscountPerPercent
+        REAL
+        PROPERTIES
+          Name                #DiscountPerPercent
+          Table               #HV_TemplateBodyTmp
+          Origin              #{135D7412-EF1A-4AB6-985E-DD71B6DA53EA}
+          ExtendedDataType    #SalesLinePercent
+        ENDPROPERTIES
+        
+      FIELD #DlvMode
+        STRING
+        PROPERTIES
+          Name                #DlvMode
+          HelpText            #@SYS1529
+          Table               #HV_TemplateBodyTmp
+          IgnoreEDTRelation   #Yes
+          Origin              #{F0FEC9E7-70AA-416D-AF5A-66B4D7F79D72}
+          ExtendedDataType    #CustDlvModeId
+        ENDPROPERTIES
+        
+      FIELD #DlvTerm
+        STRING
+        PROPERTIES
+          Name                #DlvTerm
+          HelpText            #@SYS2036
+          Table               #HV_TemplateBodyTmp
+          IgnoreEDTRelation   #Yes
+          Origin              #{E1D76460-4CA1-4F16-B0FC-177F0F9B66E8}
+          ExtendedDataType    #CustDlvTermId
+        ENDPROPERTIES
+        
+      FIELD #InvoiceId
+        STRING
+        PROPERTIES
+          Name                #InvoiceId
+          HelpText            #@SYS4726
+          AllowEditOnCreate   #No
+          AllowEdit           #No
+          Table               #HV_TemplateBodyTmp
+          Origin              #{7182D3D8-CEF6-402A-B028-283B4459D08F}
+          ExtendedDataType    #CustInvoiceId
+          StringSize          #20
+        ENDPROPERTIES
+        
+      FIELD #Invoices
+        STRING
+        PROPERTIES
+          Name                #Invoices
+          Table               #HV_TemplateBodyTmp
+          Origin              #{D42B52AD-872E-4DF3-BE06-FBE2709E2C17}
+          ExtendedDataType    #Invoices
+          StringSize          #50
+        ENDPROPERTIES
+        
+      FIELD #ItemNumber
+        STRING
+        PROPERTIES
+          Name                #ItemNumber
+          HelpText            #@SYS13670
+          Table               #HV_TemplateBodyTmp
+          IgnoreEDTRelation   #Yes
+          Origin              #{E756F0AE-2018-46CD-BA90-FB0D60925C68}
+          ExtendedDataType    #ItemIdSmall
+          StringSize          #20
+        ENDPROPERTIES
+        
+      FIELD #PurchOrderFormNum
+        STRING
+        PROPERTIES
+          Name                #PurchOrderFormNum
+          Table               #HV_TemplateBodyTmp
+          Origin              #{A890627C-4719-4B96-B24F-7D0495336564}
+          ExtendedDataType    #CustPurchaseOrder
+          StringSize          #20
+        ENDPROPERTIES
+        
+      FIELD #SalesPricePerUnit
+        REAL
+        PROPERTIES
+          Name                #SalesPricePerUnit
+          Label               #@SYS11770
+          HelpText            #@SYS1174
+          Table               #HV_TemplateBodyTmp
+          Origin              #{D1480BBD-AF92-4231-94A0-4D07F252F5FD}
+          ExtendedDataType    #SalesPrice
+        ENDPROPERTIES
+        
+      FIELD #SalesQuantity
+        REAL
+        PROPERTIES
+          Name                #SalesQuantity
+          Table               #HV_TemplateBodyTmp
+          Origin              #{AB4F5D95-B584-4FAA-9BE1-A4163A9DFAFC}
+          ExtendedDataType    #SalesOrderedQty
+        ENDPROPERTIES
+        
+      FIELD #SalesUnit
+        STRING
+        PROPERTIES
+          Name                #SalesUnit
+          Table               #HV_TemplateBodyTmp
+          Origin              #{B9D9693E-E3E5-4358-A7C2-C70513F8D4A2}
+          ExtendedDataType    #SalesUnit
+        ENDPROPERTIES
+        
+    ENDFIELDS
+    GROUPS
+    ENDGROUPS
+    
+    INDICES
+    ENDINDICES
+    FULLTEXTINDICES
+    ENDFULLTEXTINDICES
+    REFERENCES
+    ENDREFERENCES
+    
+    DELETEACTIONS
+    ENDDELETEACTIONS
+    
+    METHODS
+    ENDMETHODS
+  ENDTABLE
+  
+
+***Element: CLS
+
+; Microsoft Dynamics AX Class: HV_TemplateContract unloaded
+; --------------------------------------------------------------------------------
+  CLSVERSION 1
+  
+  CLASS #HV_TemplateContract
+    PROPERTIES
+      Name                #HV_TemplateContract
+      Origin              #{70CF360F-6E5E-4B52-A05F-279DB8E8EE04}
+    ENDPROPERTIES
+    
+    METHODS
+      SOURCE #classDeclaration
+        #[DataContractAttribute]
+        #public class HV_TemplateContract
+        #{
+        #    CustAccount custAccount;
+        #    Invoices invoices;
+        #
+        #}
+      ENDSOURCE
+      SOURCE #parmCustAccount
+        #[DataMemberAttribute('CustAccount')]
+        #public CustAccount parmCustAccount(CustAccount _custAccount = custAccount)
+        #{
+        #    CustAccount = _custAccount;
+        #
+        #    return CustAccount;
+        #}
+      ENDSOURCE
+      SOURCE #parmInvoices
+        #[DataMemberAttribute('Invoices')]
+        #public Invoices parmInvoices(Invoices _invoices = invoices)
+        #{
+        #    Invoices = _invoices;
+        #
+        #    return Invoices;
+        #}
+      ENDSOURCE
+    ENDMETHODS
+  ENDCLASS
+
+***Element: CLS
+
+; Microsoft Dynamics AX Class: HV_TemplateController unloaded
+; --------------------------------------------------------------------------------
+  CLSVERSION 1
+  
+  CLASS #HV_TemplateController
+    PROPERTIES
+      Name                #HV_TemplateController
+      Extends             #SrsReportRunController
+      Origin              #{41B5997B-FA69-4763-820F-AE75FA0D6512}
+    ENDPROPERTIES
+    
+    METHODS
+      SOURCE #classDeclaration
+        #public class HV_TemplateController extends SrsReportRunController
+        #{
+        #    CustAccount custAccount;
+        #    Invoices invoices;
+        #}
+      ENDSOURCE
+      SOURCE #main
+        #public static void main(Args _args)
+        #{
+        #    HV_TemplateController controller = new HV_TemplateController();
+        #
+        #    controller.parmReportName(ssrsReportStr(HV_TstObj,Report));
+        #    controller.startOperation();
+        #}
+      ENDSOURCE
+    ENDMETHODS
+  ENDCLASS
+
+***Element: CLS
+
+; Microsoft Dynamics AX Class: HV_TemplateDP unloaded
+; --------------------------------------------------------------------------------
+  CLSVERSION 1
+  
+  CLASS #HV_TemplateDP
+    PROPERTIES
+      Name                #HV_TemplateDP
+      Extends             #SRSReportDataProviderBase
+      RunOn               #Server
+      Origin              #{7CD3FB82-08F0-408D-A0E8-E6A941F7EF97}
+    ENDPROPERTIES
+    
+    METHODS
+      SOURCE #classDeclaration
+        #[
+        #SRSReportParameterAttribute(classStr(HV_TemplateContract))
+        #]
+        #public class HV_TemplateDP extends SRSReportDataProviderBase
+        #//class HV_TemplateDP extends SrsReportDataProviderPreProcess
+        #{
+        #    HV_TemplateContract contract;
+        #    HV_TemplateBodyTmp bodyTmp;
+        #
+        #    CustTable custTable;
+        #    CustInvoiceJour custInvoiceJour;
+        #    SalesTable salesTable;
+        #    SalesLine salesLine;
+        #
+        #    CustAccount custAccount;
+        #    Invoices invoices;
+        #}
+      ENDSOURCE
+      SOURCE #fillBodyTable
+        #public void fillBodyTable()
+        #{
+        #    while select * from CustTable
+        #    where custAccount == ""
+        #    || custTable.AccountNum == custAccount
+        #    join custInvoiceJour
+        #    where custInvoiceJour.OrderAccount == custTable.AccountNum
+        #    && invoices == custInvoiceJour.SalesId
+        #    join SalesTable
+        #    where SalesTable.SalesId == invoices
+        #    join SalesLine
+        #    where SalesLine.CustAccount == custTable.AccountNum
+        #    && salesLine.SalesId == invoices
+        #    {
+        #        bodyTmp.CustAccount = CustTable.AccountNum;
+        #
+        #        bodyTmp.Invoices = custInvoiceJour.SalesId;
+        #        bodyTmp.InvoiceId = custInvoiceJour.InvoiceId;
+        #        bodyTmp.DlvMode = SalesTable.DlvMode;
+        #        bodyTmp.DlvTerm = SalesTable.DlvTerm;
+        #
+        #        bodyTmp.PurchOrderFormNum = salesTable.PurchOrderFormNum;
+        #        bodyTmp.CreateDate = salesTable.ReceiptDateRequested;
+        #        bodyTmp.ItemNumber = SalesLine.ItemId;
+        #        bodyTmp.Description = SalesLine.itemName();
+        #        bodyTmp.SalesQuantity = SalesLine.SalesQty;
+        #        bodyTmp.SalesUnit = salesLine.SalesUnit;
+        #        bodyTmp.SalesPricePerUnit = salesLine.SalesPrice;
+        #        bodyTmp.Discount = salesLine.LineDisc;
+        #        bodyTmp.DiscountPerPercent = salesLine.LinePercent;
+        #        bodyTmp.Amount = salesLine.LineAmount;
+        #
+        #
+        #
+        #        bodyTmp.insert();
+        #    }
+        #}
+      ENDSOURCE
+      SOURCE #getBodyTmp
+        #[
+        #    SRSReportDataSetAttribute(tableStr(HV_TemplateBodyTmp))
+        #]
+        #public HV_TemplateBodyTmp getBodyTmp()
+        #{
+        #    select * from bodyTmp;
+        #    return bodyTmp;
+        #}
+      ENDSOURCE
+      SOURCE #processReport
+        #public void processReport()
+        #{
+        #    contract = this.parmDataContract() as HV_TemplateContract;
+        #
+        #    custAccount = contract.parmCustAccount();
+        #    invoices = contract.parmInvoices();
+        #
+        #    this.fillBodyTable();
+        #}
+      ENDSOURCE
+    ENDMETHODS
+  ENDCLASS
+
+***Element: FTM
+
+; Microsoft Dynamics AX MENUITEM : TemplateView unloaded
+; --------------------------------------------------------------------------------
+  VERSION 1
+  
+  MENUITEM #TemplateView
+    Type: 2
+    PROPERTIES
+      Name                #TemplateView
+      ObjectType          #Class
+      Object              #HV_TemplateController
+      Origin              #{93017134-28EF-45BC-B564-AB863CBE62D3}
+    ENDPROPERTIES
+    
+  ENDMENUITEM
+  
+
+***Element: PRN
+
+; Microsoft Dynamics AX Project : HV_Template unloaded
+; --------------------------------------------------------------------------------
+  PROJECTVERSION 2
+  
+  PROJECT #HV_Template
+  SHARED
+  PROPERTIES
+    Name                #HV_Template
+    Origin              #{3C528C8F-DCCD-4324-A382-C7A0727BF229}
+  ENDPROPERTIES
+  
+    PROJECTCLASS ProjectNode
+    BEGINNODE
+      FILETYPE 0
+      UTILTYPE 127
+      UTILOBJECTID 0
+      NODETYPE 1531
+      NAME #HV_tst
+    ENDNODE
+    BEGINNODE
+      FILETYPE 0
+      UTILTYPE 44
+      UTILOBJECTID 107509
+      NODETYPE 204
+      NAME #HV_TemplateBodyTmp
+    ENDNODE
+    BEGINNODE
+      FILETYPE 0
+      UTILTYPE 45
+      UTILOBJECTID 1030570
+      NODETYPE 329
+      NAME #HV_TemplateContract
+    ENDNODE
+    BEGINNODE
+      FILETYPE 0
+      UTILTYPE 45
+      UTILOBJECTID 1030569
+      NODETYPE 329
+      NAME #HV_TemplateController
+    ENDNODE
+    BEGINNODE
+      FILETYPE 0
+      UTILTYPE 45
+      UTILOBJECTID 1030568
+      NODETYPE 329
+      NAME #HV_TemplateDP
+    ENDNODE
+    BEGINNODE
+      FILETYPE 0
+      UTILTYPE 2
+      UTILOBJECTID 0
+      NODETYPE 296
+      NAME #TemplateView
+    ENDNODE
+  ENDPROJECT
+  
+
+***Element: END

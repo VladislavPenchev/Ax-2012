@@ -1,0 +1,357 @@
+﻿Exportfile for AOT version 1.0 or later
+Formatversion: 1
+
+***Element: JOB
+
+; Microsoft Dynamics AX Job: QuerySource unloaded
+; --------------------------------------------------------------------------------
+  JOBVERSION 1
+  
+  SOURCE #QuerySource
+    #static void QuerySource(Args _args)
+    #{
+    #    Query query = new Query(queryStr('Z_PurchCubeHVP'));
+    #    //info(query.toString());
+    #    //info(query.dataSourceNo(1).toString());
+    #
+    #
+    #}
+  ENDSOURCE
+  PROPERTIES
+    Origin              #{2ED3119E-3D64-47D5-9F76-2BCCF917AB94}
+  ENDPROPERTIES
+  
+
+***Element: JOB
+
+; Microsoft Dynamics AX Job: TestCarClass unloaded
+; --------------------------------------------------------------------------------
+  JOBVERSION 1
+  
+  SOURCE #TestCarClass
+    #public static void TestCarClass(Args _args)
+    #{
+    #    CarTable carTable;
+    #    List cars = new List(Types::Class);
+    #    Car car; //= new Car();
+    #    int i;
+    #    ListEnumerator carsEnumerator;
+    #    ListIterator carsIter;
+    #    Object test = new Object();
+    #
+    #    ;
+    #
+    #    for(i = 1 ; i <= 3; i++)
+    #    {
+    #        car = new Car();
+    #
+    #        car.setCarId(i);
+    #        car.setModelYear("2016");
+    #        car.setCarBrand("Tesla");
+    #        car.setModel("S" + strFmt("%1",i));
+    #        car.setMiliage("200" + strFmt("%1",i));
+    #
+    #        cars.addEnd(car);
+    #    }
+    #
+    #    carsIter = new ListIterator(cars);
+    #
+    #
+    #    while(carsIter.more())
+    #    {
+    #        //car = carsIter.value();
+    #
+    #        test = carsIter.value();
+    #
+    #        carTable.initValue();
+    #
+    #
+    #
+    #        carTable.CarId = test.getCarId();
+    #        carTable.ModelYear = test.getModelYear();
+    #        carTable.CarBrand = test.getCarBrand();
+    #        carTable.Model = test.getModel();
+    #        carTable.Mileage = test.getMiliage();
+    #
+    #        if(carTable.validateWrite())
+    #        {
+    #            carTable.insert();
+    #
+    #            //carsIter.delete();
+    #            carsIter.next();
+    #        }
+    #        else
+    #        {
+    #            info(strFmt("Error"));
+    #        }
+    #
+    #    }
+    #
+    #}
+  ENDSOURCE
+  PROPERTIES
+    Origin              #{2495D3E7-9D7F-442D-B108-DFBA74EBD30F}
+  ENDPROPERTIES
+  
+
+***Element: CLS
+
+; Microsoft Dynamics AX Class: Car unloaded
+; --------------------------------------------------------------------------------
+  CLSVERSION 1
+  
+  CLASS #Car
+    PROPERTIES
+      Name                #Car
+      Origin              #{D5EC2FD0-6B7E-4A8A-A1C8-E42AD7220B2B}
+    ENDPROPERTIES
+    
+    METHODS
+      SOURCE #classDeclaration
+        #public class Car
+        #{
+        #    int carId;
+        #    str modelYear;
+        #    str carBrand;
+        #    str model;
+        #    str miliage;
+        #
+        #}
+      ENDSOURCE
+      SOURCE #getCarBrand
+        #public str getCarBrand()
+        #{
+        #    return carBrand;
+        #}
+      ENDSOURCE
+      SOURCE #getCarId
+        #public int getCarId()
+        #{
+        #    return carId;
+        #}
+      ENDSOURCE
+      SOURCE #getMiliage
+        #public str getMiliage()
+        #{
+        #   return miliage;
+        #}
+      ENDSOURCE
+      SOURCE #getModel
+        #public str getModel()
+        #{
+        #    return model;
+        #}
+      ENDSOURCE
+      SOURCE #getModelYear
+        #public str getModelYear()
+        #{
+        #    return modelYear;
+        #}
+      ENDSOURCE
+      SOURCE #setCarBrand
+        #public void setCarBrand(str _carBrand)
+        #{
+        #    carBrand = _carBrand;
+        #}
+      ENDSOURCE
+      SOURCE #setCarId
+        #public void setCarId(int _carId)
+        #{
+        #    carId = _carId;
+        #}
+      ENDSOURCE
+      SOURCE #setMiliage
+        #public void setMiliage(str _miliage)
+        #{
+        #    miliage = _miliage;
+        #}
+      ENDSOURCE
+      SOURCE #setModel
+        #public void setModel(str _model)
+        #{
+        #    model = _model;
+        #}
+      ENDSOURCE
+      SOURCE #setModelYear
+        #public void setModelYear(str _modelYear)
+        #{
+        #    modelYear = _modelYear;
+        #}
+      ENDSOURCE
+    ENDMETHODS
+  ENDCLASS
+
+***Element: JOB
+
+; Microsoft Dynamics AX Job: InsertCars unloaded
+; --------------------------------------------------------------------------------
+  JOBVERSION 1
+  
+  SOURCE #InsertCars
+    #static void InsertCars(Args _args)
+    #{
+    #    CarTable carTable;
+    #
+    #    carTable.initValue();
+    #
+    #    carTable.CarId = 1;
+    #    carTable.ModelYear = "2007";
+    #    carTable.CarBrand = "BMW";
+    #    carTable.Model = "320";
+    #    carTable.Mileage = "2299";
+    #
+    #
+    #    carTable.CarId = 2;
+    #    carTable.ModelYear = "2008";
+    #    carTable.CarBrand = "Toyota";
+    #    carTable.Model = "Corolla";
+    #    carTable.Mileage = "4032";
+    #
+    #
+    #    carTable.CarId = 3;
+    #    carTable.ModelYear = "2002";
+    #    carTable.CarBrand = "Jeep";
+    #    carTable.Model = "Grand Cherokee";
+    #    carTable.Mileage = "65662";
+    #
+    #    //validation
+    #    if(carTable.validateWrite())
+    #    {
+    #        carTable.insert();
+    #    }
+    #}
+  ENDSOURCE
+  PROPERTIES
+    Origin              #{6EDF7518-50A3-4616-9AF2-49529112BA5C}
+  ENDPROPERTIES
+  
+
+***Element: DBT
+
+; Microsoft Dynamics AX Table : CarTable unloaded
+; --------------------------------------------------------------------------------
+  TABLEVERSION 1
+  
+  TABLE #CarTable
+    EnforceFKRelation 1
+    PROPERTIES
+      Name                #CarTable
+      CreateRecIdIndex    #Yes
+      PrimaryIndex        #SurrogateKey
+      ClusterIndex        #SurrogateKey
+      Origin              #{8EF069EE-1FB7-4879-9F73-9ADC500BF85D}
+    ENDPROPERTIES
+    
+    FIELDS
+      FIELD #CarBrand
+        STRING
+        PROPERTIES
+          Name                #CarBrand
+          Table               #CarTable
+          Origin              #{BAB2AC09-7232-498B-A640-B8C62DAC6807}
+        ENDPROPERTIES
+        
+      FIELD #CarId
+        INT
+        PROPERTIES
+          Name                #CarId
+          Table               #CarTable
+          Origin              #{F0394C9F-620A-473C-AE4A-19DD3D6F316E}
+        ENDPROPERTIES
+        
+      FIELD #Mileage
+        STRING
+        PROPERTIES
+          Name                #Mileage
+          Table               #CarTable
+          Origin              #{43DB0CF4-C4D2-4B0D-88F2-B4C31802BA2C}
+        ENDPROPERTIES
+        
+      FIELD #Model
+        STRING
+        PROPERTIES
+          Name                #Model
+          Table               #CarTable
+          Origin              #{C2F79FA5-DC82-445A-B9E1-9724B8173432}
+        ENDPROPERTIES
+        
+      FIELD #ModelYear
+        STRING
+        PROPERTIES
+          Name                #ModelYear
+          Table               #CarTable
+          Origin              #{BB341085-6E63-46A0-AE10-B0C331A38FEE}
+        ENDPROPERTIES
+        
+    ENDFIELDS
+    GROUPS
+    ENDGROUPS
+    
+    INDICES
+    ENDINDICES
+    FULLTEXTINDICES
+    ENDFULLTEXTINDICES
+    REFERENCES
+    ENDREFERENCES
+    
+    DELETEACTIONS
+    ENDDELETEACTIONS
+    
+    METHODS
+    ENDMETHODS
+  ENDTABLE
+  
+
+***Element: PRN
+
+; Microsoft Dynamics AX Project : HV_Training unloaded
+; --------------------------------------------------------------------------------
+  PROJECTVERSION 2
+  
+  PROJECT #HV_Training
+  PRIVATE
+  PROPERTIES
+    Name                #HV_Training
+    Origin              #{AC1DA3CC-9DA6-4280-A83B-64BC475B0E1F}
+  ENDPROPERTIES
+  
+    PROJECTCLASS ProjectNode
+    BEGINNODE
+      FILETYPE 0
+      UTILTYPE 5
+      UTILOBJECTID 0
+      NODETYPE 215
+      NAME #QuerySource
+    ENDNODE
+    BEGINNODE
+      FILETYPE 0
+      UTILTYPE 5
+      UTILOBJECTID 0
+      NODETYPE 215
+      NAME #TestCarClass
+    ENDNODE
+    BEGINNODE
+      FILETYPE 0
+      UTILTYPE 45
+      UTILOBJECTID 1030590
+      NODETYPE 329
+      NAME #Car
+    ENDNODE
+    BEGINNODE
+      FILETYPE 0
+      UTILTYPE 5
+      UTILOBJECTID 0
+      NODETYPE 215
+      NAME #InsertCars
+    ENDNODE
+    BEGINNODE
+      FILETYPE 0
+      UTILTYPE 44
+      UTILOBJECTID 107516
+      NODETYPE 204
+      NAME #CarTable
+    ENDNODE
+  ENDPROJECT
+  
+
+***Element: END

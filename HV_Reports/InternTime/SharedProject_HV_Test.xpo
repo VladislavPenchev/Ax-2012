@@ -1,0 +1,1218 @@
+﻿Exportfile for AOT version 1.0 or later
+Formatversion: 1
+
+***Element: SRP
+
+; Microsoft Dynamics AX REPORT : HV_TestCustReport unloaded
+; --------------------------------------------------------------------------------
+  VERSION 1
+  
+  REPORT #HV_TestCustReport
+    PROPERTIES
+      Name                #HV_TestCustReport
+      Origin              #{A6C20DE4-ED34-4406-8B38-B72EEC1D43C8}
+    ENDPROPERTIES
+    
+    CROSSREFERENCES
+#<CrossReferenceInfo>
+#    <CrossReferenceEntry>
+#        <ReferencedAotObjectName>HV_TestCustDP</ReferencedAotObjectName>
+#        <xrefKind>10</xrefKind>
+#        <XrefReference>2</XrefReference>
+#    </CrossReferenceEntry>
+#    <CrossReferenceEntry>
+#        <ReferencedAotObjectName>HV_TestCustDP.HV_TestCustBodyTMP</ReferencedAotObjectName>
+#        <xrefKind>11</xrefKind>
+#        <XrefReference>4</XrefReference>
+#    </CrossReferenceEntry>
+#    <CrossReferenceEntry>
+#        <ReferencedAotObjectName>HV_TestCustDP.processReport</ReferencedAotObjectName>
+#        <xrefKind>11</xrefKind>
+#        <XrefReference>4</XrefReference>
+#    </CrossReferenceEntry>
+#    <CrossReferenceEntry>
+#        <ReferencedAotObjectName>HV_TestCustBodyTMP.Address</ReferencedAotObjectName>
+#        <xrefKind>2</xrefKind>
+#        <XrefReference>1</XrefReference>
+#    </CrossReferenceEntry>
+#    <CrossReferenceEntry>
+#        <ReferencedAotObjectName>HV_TestCustBodyTMP</ReferencedAotObjectName>
+#        <xrefKind>1</xrefKind>
+#        <XrefReference>1</XrefReference>
+#    </CrossReferenceEntry>
+#    <CrossReferenceEntry>
+#        <ReferencedAotObjectName>HV_TestCustBodyTMP.CustAccount</ReferencedAotObjectName>
+#        <xrefKind>2</xrefKind>
+#        <XrefReference>1</XrefReference>
+#    </CrossReferenceEntry>
+#    <CrossReferenceEntry>
+#        <ReferencedAotObjectName>HV_TestCustBodyTMP.CustGroupId</ReferencedAotObjectName>
+#        <xrefKind>2</xrefKind>
+#        <XrefReference>1</XrefReference>
+#    </CrossReferenceEntry>
+#    <CrossReferenceEntry>
+#        <ReferencedAotObjectName>HV_TestCustBodyTMP.Name</ReferencedAotObjectName>
+#        <xrefKind>2</xrefKind>
+#        <XrefReference>1</XrefReference>
+#    </CrossReferenceEntry>
+#    <CrossReferenceEntry>
+#        <ReferencedAotObjectName>@SYS7149</ReferencedAotObjectName>
+#        <xrefKind>19</xrefKind>
+#        <XrefReference>2</XrefReference>
+#    </CrossReferenceEntry>
+#    <CrossReferenceEntry>
+#        <ReferencedAotObjectName>HV_TestCustBodyTMP.CustGroupId</ReferencedAotObjectName>
+#        <xrefKind>2</xrefKind>
+#        <XrefReference>2</XrefReference>
+#    </CrossReferenceEntry>
+#    <CrossReferenceEntry>
+#        <ReferencedAotObjectName>HV_TestCustBodyTMP</ReferencedAotObjectName>
+#        <xrefKind>1</xrefKind>
+#        <XrefReference>2</XrefReference>
+#    </CrossReferenceEntry>
+#    <CrossReferenceEntry>
+#        <ReferencedAotObjectName>HV_TestCustBodyTMP.Name</ReferencedAotObjectName>
+#        <xrefKind>2</xrefKind>
+#        <XrefReference>2</XrefReference>
+#    </CrossReferenceEntry>
+#    <CrossReferenceEntry>
+#        <ReferencedAotObjectName>HV_TestCustBodyTMP.Address</ReferencedAotObjectName>
+#        <xrefKind>2</xrefKind>
+#        <XrefReference>2</XrefReference>
+#    </CrossReferenceEntry>
+#    <CrossReferenceEntry>
+#        <ReferencedAotObjectName>HV_TestCustBodyTMP.CustAccount</ReferencedAotObjectName>
+#        <xrefKind>2</xrefKind>
+#        <XrefReference>2</XrefReference>
+#    </CrossReferenceEntry>
+#</CrossReferenceInfo>
+    ENDCROSSREFERENCES
+    
+    MOXL 53086
+#<?xml version="1.0" encoding="utf-8" ?>
+#<Reports Version="6.2.15.0">
+#  <Report Name="HV_TestCustReport">
+#    <DataSet Name="BodyDS" DataSourceType="ReportDataProvider" Query="SELECT * FROM HV_TestCustDP.HV_TestCustBodyTMP">
+#      <DataSetField Name="Address" Alias="HV_TestCustBodyTMP.1.Address" Caption="@SYS300925" DisplayWidth="Auto" UserDefined="False"/>
+#      <DataSetField Name="CustAccount" Alias="HV_TestCustBodyTMP.1.CustAccount" Caption="@SYS7149" DisplayWidth="Auto" UserDefined="False"/>
+#      <DataSetField Name="CustGroupId" Alias="HV_TestCustBodyTMP.1.CustGroupId" Caption="@SYS11904" DisplayWidth="Auto" UserDefined="False"/>
+#      <DataSetField Name="Name" Alias="HV_TestCustBodyTMP.1.Name" Caption="@SYS7399" DisplayWidth="Auto" UserDefined="False"/>
+#      <DataSetParameter Name="AX_PartitionKey" Alias="AX_PartitionKey" DataType="System.String" Parameter=":HV_TestCustReport.Parameters.AX_PartitionKey"/>
+#      <DataSetParameter Name="AX_CompanyName" Alias="AX_CompanyName" DataType="System.String" Parameter=":HV_TestCustReport.Parameters.AX_CompanyName"/>
+#      <DataSetParameter Name="AX_UserContext" Alias="AX_UserContext" DataType="System.String" Parameter=":HV_TestCustReport.Parameters.AX_UserContext"/>
+#      <DataSetParameter Name="AX_RenderingCulture" Alias="AX_RenderingCulture" DataType="System.String" Parameter=":HV_TestCustReport.Parameters.AX_RenderingCulture"/>
+#      <DataSetParameter Name="AX_ReportContext" Alias="AX_ReportContext" DataType="System.String" Parameter=":HV_TestCustReport.Parameters.AX_ReportContext"/>
+#      <DataSetParameter Name="AX_RdpPreProcessedId" Alias="AX_RdpPreProcessedId" DataType="System.String" Parameter=":HV_TestCustReport.Parameters.AX_RdpPreProcessedId"/>
+#      <DataSetParameter Name="CustAccount" Alias="CustAccount" DataType="System.String" Parameter=":HV_TestCustReport.Parameters.BodyDS_CustAccount"/>
+#    </DataSet>
+#    <ParameterGroup Name="Parameters">
+#      <Parameter Name="AX_PartitionKey" AllowBlank="True" Nullable="True" UserVisibility="Hidden"/>
+#      <Parameter Name="AX_CompanyName" UserVisibility="Hidden">
+#        <UnboundDefault Name="UnboundDefault" Value="=Microsoft.Dynamics.Framework.Reports.BuiltInMethods.GetUserCompany(Parameters!AX_UserContext.Value)"/>
+#      </Parameter>
+#      <Parameter Name="AX_UserContext" AllowBlank="True" Nullable="True" UserVisibility="Hidden"/>
+#      <Parameter Name="AX_RenderingCulture" AllowBlank="True" Nullable="True" UserVisibility="Hidden"/>
+#      <Parameter Name="AX_ReportContext" AllowBlank="True" Nullable="True" UserVisibility="Hidden"/>
+#      <Parameter Name="AX_RdpPreProcessedId" AllowBlank="True" Nullable="True" UserVisibility="Hidden"/>
+#      <Parameter Name="BodyDS_CustAccount" AllowBlank="True" Nullable="True" PromptString="@SYS7149"/>
+#    </ParameterGroup>
+#    <PrecisionDesign Name="Report" Text="&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+#&lt;Report xmlns:rd=&quot;http://schemas.microsoft.com/SQLServer/reporting/reportdesigner&quot; xmlns:cl=&quot;http://schemas.microsoft.com/sqlserver/reporting/2010/01/componentdefinition&quot; xmlns=&quot;http://schemas.microsoft.com/sqlserver/reporting/2010/01/reportdefinition&quot;&gt;
+#  &lt;AutoRefresh&gt;0&lt;/AutoRefresh&gt;
+#  &lt;DataSources&gt;
+#    &lt;DataSource Name=&quot;AutoGen__ReportDataProvider&quot;&gt;
+#      &lt;ConnectionProperties&gt;
+#        &lt;DataProvider&gt;AXREPORTDATAPROVIDER&lt;/DataProvider&gt;
+#        &lt;ConnectString /&gt;
+#        &lt;IntegratedSecurity&gt;true&lt;/IntegratedSecurity&gt;
+#      &lt;/ConnectionProperties&gt;
+#      &lt;rd:DataSourceID&gt;fb403c76-2554-4350-a54c-9a0da75746f7&lt;/rd:DataSourceID&gt;
+#    &lt;/DataSource&gt;
+#  &lt;/DataSources&gt;
+#  &lt;DataSets&gt;
+#    &lt;DataSet Name=&quot;BodyDS&quot;&gt;
+#      &lt;Query&gt;
+#        &lt;DataSourceName&gt;AutoGen__ReportDataProvider&lt;/DataSourceName&gt;
+#        &lt;QueryParameters&gt;
+#          &lt;QueryParameter Name=&quot;AX_PartitionKey&quot;&gt;
+#            &lt;Value&gt;=Parameters!AX_PartitionKey.Value&lt;/Value&gt;
+#          &lt;/QueryParameter&gt;
+#          &lt;QueryParameter Name=&quot;AX_CompanyName&quot;&gt;
+#            &lt;Value&gt;=Parameters!AX_CompanyName.Value&lt;/Value&gt;
+#          &lt;/QueryParameter&gt;
+#          &lt;QueryParameter Name=&quot;AX_UserContext&quot;&gt;
+#            &lt;Value&gt;=Parameters!AX_UserContext.Value&lt;/Value&gt;
+#          &lt;/QueryParameter&gt;
+#          &lt;QueryParameter Name=&quot;AX_RenderingCulture&quot;&gt;
+#            &lt;Value&gt;=Parameters!AX_RenderingCulture.Value&lt;/Value&gt;
+#          &lt;/QueryParameter&gt;
+#          &lt;QueryParameter Name=&quot;AX_ReportContext&quot;&gt;
+#            &lt;Value&gt;=Parameters!AX_ReportContext.Value&lt;/Value&gt;
+#          &lt;/QueryParameter&gt;
+#          &lt;QueryParameter Name=&quot;AX_RdpPreProcessedId&quot;&gt;
+#            &lt;Value&gt;=Parameters!AX_RdpPreProcessedId.Value&lt;/Value&gt;
+#          &lt;/QueryParameter&gt;
+#          &lt;QueryParameter Name=&quot;CustAccount&quot;&gt;
+#            &lt;Value&gt;=Parameters!BodyDS_CustAccount.Value&lt;/Value&gt;
+#          &lt;/QueryParameter&gt;
+#        &lt;/QueryParameters&gt;
+#        &lt;CommandText&gt;SELECT * FROM HV_TestCustDP.HV_TestCustBodyTMP&lt;/CommandText&gt;
+#        &lt;rd:UseGenericDesigner&gt;true&lt;/rd:UseGenericDesigner&gt;
+#      &lt;/Query&gt;
+#      &lt;Fields&gt;
+#        &lt;Field Name=&quot;Address&quot;&gt;
+#          &lt;DataField&gt;HV_TestCustBodyTMP.1.Address&lt;/DataField&gt;
+#          &lt;rd:TypeName&gt;System.String&lt;/rd:TypeName&gt;
+#        &lt;/Field&gt;
+#        &lt;Field Name=&quot;CustAccount&quot;&gt;
+#          &lt;DataField&gt;HV_TestCustBodyTMP.1.CustAccount&lt;/DataField&gt;
+#          &lt;rd:TypeName&gt;System.String&lt;/rd:TypeName&gt;
+#        &lt;/Field&gt;
+#        &lt;Field Name=&quot;CustGroupId&quot;&gt;
+#          &lt;DataField&gt;HV_TestCustBodyTMP.1.CustGroupId&lt;/DataField&gt;
+#          &lt;rd:TypeName&gt;System.String&lt;/rd:TypeName&gt;
+#        &lt;/Field&gt;
+#        &lt;Field Name=&quot;Name&quot;&gt;
+#          &lt;DataField&gt;HV_TestCustBodyTMP.1.Name&lt;/DataField&gt;
+#          &lt;rd:TypeName&gt;System.String&lt;/rd:TypeName&gt;
+#        &lt;/Field&gt;
+#      &lt;/Fields&gt;
+#      &lt;rd:DataSetInfo&gt;
+#        &lt;rd:DataSetName&gt;BodyDS&lt;/rd:DataSetName&gt;
+#        &lt;rd:TableName&gt;Fields&lt;/rd:TableName&gt;
+#        &lt;rd:TableAdapterFillMethod&gt;Fill&lt;/rd:TableAdapterFillMethod&gt;
+#        &lt;rd:TableAdapterGetDataMethod&gt;GetData&lt;/rd:TableAdapterGetDataMethod&gt;
+#        &lt;rd:TableAdapterName&gt;FieldsTableAdapter&lt;/rd:TableAdapterName&gt;
+#      &lt;/rd:DataSetInfo&gt;
+#    &lt;/DataSet&gt;
+#  &lt;/DataSets&gt;
+#  &lt;ReportSections&gt;
+#    &lt;ReportSection&gt;
+#      &lt;Body&gt;
+#        &lt;ReportItems&gt;
+#          &lt;Tablix Name=&quot;Tablix1&quot;&gt;
+#            &lt;TablixBody&gt;
+#              &lt;TablixColumns&gt;
+#                &lt;TablixColumn&gt;
+#                  &lt;Width&gt;1.46875in&lt;/Width&gt;
+#                &lt;/TablixColumn&gt;
+#                &lt;TablixColumn&gt;
+#                  &lt;Width&gt;2.07292in&lt;/Width&gt;
+#                &lt;/TablixColumn&gt;
+#                &lt;TablixColumn&gt;
+#                  &lt;Width&gt;2.54167in&lt;/Width&gt;
+#                &lt;/TablixColumn&gt;
+#                &lt;TablixColumn&gt;
+#                  &lt;Width&gt;1.47917in&lt;/Width&gt;
+#                &lt;/TablixColumn&gt;
+#              &lt;/TablixColumns&gt;
+#              &lt;TablixRows&gt;
+#                &lt;TablixRow&gt;
+#                  &lt;Height&gt;0.4375in&lt;/Height&gt;
+#                  &lt;TablixCells&gt;
+#                    &lt;TablixCell&gt;
+#                      &lt;CellContents&gt;
+#                        &lt;Textbox Name=&quot;Textbox1&quot;&gt;
+#                          &lt;CanGrow&gt;true&lt;/CanGrow&gt;
+#                          &lt;KeepTogether&gt;true&lt;/KeepTogether&gt;
+#                          &lt;Paragraphs&gt;
+#                            &lt;Paragraph&gt;
+#                              &lt;TextRuns&gt;
+#                                &lt;TextRun&gt;
+#                                  &lt;Value&gt;CustGroupId&lt;/Value&gt;
+#                                  &lt;Style /&gt;
+#                                &lt;/TextRun&gt;
+#                              &lt;/TextRuns&gt;
+#                              &lt;Style /&gt;
+#                            &lt;/Paragraph&gt;
+#                            &lt;Paragraph&gt;
+#                              &lt;TextRuns&gt;
+#                                &lt;TextRun&gt;
+#                                  &lt;Value /&gt;
+#                                  &lt;Style /&gt;
+#                                &lt;/TextRun&gt;
+#                              &lt;/TextRuns&gt;
+#                              &lt;Style /&gt;
+#                            &lt;/Paragraph&gt;
+#                          &lt;/Paragraphs&gt;
+#                          &lt;rd:DefaultName&gt;Textbox1&lt;/rd:DefaultName&gt;
+#                          &lt;Style&gt;
+#                            &lt;Border&gt;
+#                              &lt;Color&gt;LightGrey&lt;/Color&gt;
+#                              &lt;Style&gt;Solid&lt;/Style&gt;
+#                            &lt;/Border&gt;
+#                            &lt;PaddingLeft&gt;2pt&lt;/PaddingLeft&gt;
+#                            &lt;PaddingRight&gt;2pt&lt;/PaddingRight&gt;
+#                            &lt;PaddingTop&gt;2pt&lt;/PaddingTop&gt;
+#                            &lt;PaddingBottom&gt;2pt&lt;/PaddingBottom&gt;
+#                          &lt;/Style&gt;
+#                        &lt;/Textbox&gt;
+#                      &lt;/CellContents&gt;
+#                    &lt;/TablixCell&gt;
+#                    &lt;TablixCell&gt;
+#                      &lt;CellContents&gt;
+#                        &lt;Textbox Name=&quot;Textbox3&quot;&gt;
+#                          &lt;CanGrow&gt;true&lt;/CanGrow&gt;
+#                          &lt;KeepTogether&gt;true&lt;/KeepTogether&gt;
+#                          &lt;Paragraphs&gt;
+#                            &lt;Paragraph&gt;
+#                              &lt;TextRuns&gt;
+#                                &lt;TextRun&gt;
+#                                  &lt;Value&gt;Name&lt;/Value&gt;
+#                                  &lt;Style /&gt;
+#                                &lt;/TextRun&gt;
+#                              &lt;/TextRuns&gt;
+#                              &lt;Style /&gt;
+#                            &lt;/Paragraph&gt;
+#                          &lt;/Paragraphs&gt;
+#                          &lt;rd:DefaultName&gt;Textbox3&lt;/rd:DefaultName&gt;
+#                          &lt;Style&gt;
+#                            &lt;Border&gt;
+#                              &lt;Color&gt;LightGrey&lt;/Color&gt;
+#                              &lt;Style&gt;Solid&lt;/Style&gt;
+#                            &lt;/Border&gt;
+#                            &lt;PaddingLeft&gt;2pt&lt;/PaddingLeft&gt;
+#                            &lt;PaddingRight&gt;2pt&lt;/PaddingRight&gt;
+#                            &lt;PaddingTop&gt;2pt&lt;/PaddingTop&gt;
+#                            &lt;PaddingBottom&gt;2pt&lt;/PaddingBottom&gt;
+#                          &lt;/Style&gt;
+#                        &lt;/Textbox&gt;
+#                      &lt;/CellContents&gt;
+#                    &lt;/TablixCell&gt;
+#                    &lt;TablixCell&gt;
+#                      &lt;CellContents&gt;
+#                        &lt;Textbox Name=&quot;Textbox5&quot;&gt;
+#                          &lt;CanGrow&gt;true&lt;/CanGrow&gt;
+#                          &lt;KeepTogether&gt;true&lt;/KeepTogether&gt;
+#                          &lt;Paragraphs&gt;
+#                            &lt;Paragraph&gt;
+#                              &lt;TextRuns&gt;
+#                                &lt;TextRun&gt;
+#                                  &lt;Value&gt;Address&lt;/Value&gt;
+#                                  &lt;Style /&gt;
+#                                &lt;/TextRun&gt;
+#                              &lt;/TextRuns&gt;
+#                              &lt;Style /&gt;
+#                            &lt;/Paragraph&gt;
+#                          &lt;/Paragraphs&gt;
+#                          &lt;rd:DefaultName&gt;Textbox5&lt;/rd:DefaultName&gt;
+#                          &lt;Style&gt;
+#                            &lt;Border&gt;
+#                              &lt;Color&gt;LightGrey&lt;/Color&gt;
+#                              &lt;Style&gt;Solid&lt;/Style&gt;
+#                            &lt;/Border&gt;
+#                            &lt;PaddingLeft&gt;2pt&lt;/PaddingLeft&gt;
+#                            &lt;PaddingRight&gt;2pt&lt;/PaddingRight&gt;
+#                            &lt;PaddingTop&gt;2pt&lt;/PaddingTop&gt;
+#                            &lt;PaddingBottom&gt;2pt&lt;/PaddingBottom&gt;
+#                          &lt;/Style&gt;
+#                        &lt;/Textbox&gt;
+#                      &lt;/CellContents&gt;
+#                    &lt;/TablixCell&gt;
+#                    &lt;TablixCell&gt;
+#                      &lt;CellContents&gt;
+#                        &lt;Textbox Name=&quot;Textbox7&quot;&gt;
+#                          &lt;CanGrow&gt;true&lt;/CanGrow&gt;
+#                          &lt;KeepTogether&gt;true&lt;/KeepTogether&gt;
+#                          &lt;Paragraphs&gt;
+#                            &lt;Paragraph&gt;
+#                              &lt;TextRuns&gt;
+#                                &lt;TextRun&gt;
+#                                  &lt;Value&gt;Cust Account&lt;/Value&gt;
+#                                  &lt;Style /&gt;
+#                                &lt;/TextRun&gt;
+#                              &lt;/TextRuns&gt;
+#                              &lt;Style /&gt;
+#                            &lt;/Paragraph&gt;
+#                          &lt;/Paragraphs&gt;
+#                          &lt;rd:DefaultName&gt;Textbox7&lt;/rd:DefaultName&gt;
+#                          &lt;Style&gt;
+#                            &lt;Border&gt;
+#                              &lt;Color&gt;LightGrey&lt;/Color&gt;
+#                              &lt;Style&gt;Solid&lt;/Style&gt;
+#                            &lt;/Border&gt;
+#                            &lt;PaddingLeft&gt;2pt&lt;/PaddingLeft&gt;
+#                            &lt;PaddingRight&gt;2pt&lt;/PaddingRight&gt;
+#                            &lt;PaddingTop&gt;2pt&lt;/PaddingTop&gt;
+#                            &lt;PaddingBottom&gt;2pt&lt;/PaddingBottom&gt;
+#                          &lt;/Style&gt;
+#                        &lt;/Textbox&gt;
+#                      &lt;/CellContents&gt;
+#                    &lt;/TablixCell&gt;
+#                  &lt;/TablixCells&gt;
+#                &lt;/TablixRow&gt;
+#                &lt;TablixRow&gt;
+#                  &lt;Height&gt;0.4375in&lt;/Height&gt;
+#                  &lt;TablixCells&gt;
+#                    &lt;TablixCell&gt;
+#                      &lt;CellContents&gt;
+#                        &lt;Textbox Name=&quot;CustGroupId&quot;&gt;
+#                          &lt;CanGrow&gt;true&lt;/CanGrow&gt;
+#                          &lt;KeepTogether&gt;true&lt;/KeepTogether&gt;
+#                          &lt;Paragraphs&gt;
+#                            &lt;Paragraph&gt;
+#                              &lt;TextRuns&gt;
+#                                &lt;TextRun&gt;
+#                                  &lt;Value&gt;=Fields!CustGroupId.Value&lt;/Value&gt;
+#                                  &lt;Style /&gt;
+#                                &lt;/TextRun&gt;
+#                              &lt;/TextRuns&gt;
+#                              &lt;Style /&gt;
+#                            &lt;/Paragraph&gt;
+#                          &lt;/Paragraphs&gt;
+#                          &lt;rd:DefaultName&gt;CustGroupId&lt;/rd:DefaultName&gt;
+#                          &lt;Style&gt;
+#                            &lt;Border&gt;
+#                              &lt;Color&gt;LightGrey&lt;/Color&gt;
+#                              &lt;Style&gt;Solid&lt;/Style&gt;
+#                            &lt;/Border&gt;
+#                            &lt;PaddingLeft&gt;2pt&lt;/PaddingLeft&gt;
+#                            &lt;PaddingRight&gt;2pt&lt;/PaddingRight&gt;
+#                            &lt;PaddingTop&gt;2pt&lt;/PaddingTop&gt;
+#                            &lt;PaddingBottom&gt;2pt&lt;/PaddingBottom&gt;
+#                          &lt;/Style&gt;
+#                        &lt;/Textbox&gt;
+#                      &lt;/CellContents&gt;
+#                    &lt;/TablixCell&gt;
+#                    &lt;TablixCell&gt;
+#                      &lt;CellContents&gt;
+#                        &lt;Textbox Name=&quot;Name&quot;&gt;
+#                          &lt;CanGrow&gt;true&lt;/CanGrow&gt;
+#                          &lt;KeepTogether&gt;true&lt;/KeepTogether&gt;
+#                          &lt;Paragraphs&gt;
+#                            &lt;Paragraph&gt;
+#                              &lt;TextRuns&gt;
+#                                &lt;TextRun&gt;
+#                                  &lt;Value&gt;=Fields!Name.Value&lt;/Value&gt;
+#                                  &lt;Style /&gt;
+#                                &lt;/TextRun&gt;
+#                              &lt;/TextRuns&gt;
+#                              &lt;Style /&gt;
+#                            &lt;/Paragraph&gt;
+#                          &lt;/Paragraphs&gt;
+#                          &lt;rd:DefaultName&gt;Name&lt;/rd:DefaultName&gt;
+#                          &lt;Style&gt;
+#                            &lt;Border&gt;
+#                              &lt;Color&gt;LightGrey&lt;/Color&gt;
+#                              &lt;Style&gt;Solid&lt;/Style&gt;
+#                            &lt;/Border&gt;
+#                            &lt;PaddingLeft&gt;2pt&lt;/PaddingLeft&gt;
+#                            &lt;PaddingRight&gt;2pt&lt;/PaddingRight&gt;
+#                            &lt;PaddingTop&gt;2pt&lt;/PaddingTop&gt;
+#                            &lt;PaddingBottom&gt;2pt&lt;/PaddingBottom&gt;
+#                          &lt;/Style&gt;
+#                        &lt;/Textbox&gt;
+#                      &lt;/CellContents&gt;
+#                    &lt;/TablixCell&gt;
+#                    &lt;TablixCell&gt;
+#                      &lt;CellContents&gt;
+#                        &lt;Textbox Name=&quot;Address&quot;&gt;
+#                          &lt;CanGrow&gt;true&lt;/CanGrow&gt;
+#                          &lt;KeepTogether&gt;true&lt;/KeepTogether&gt;
+#                          &lt;Paragraphs&gt;
+#                            &lt;Paragraph&gt;
+#                              &lt;TextRuns&gt;
+#                                &lt;TextRun&gt;
+#                                  &lt;Value&gt;=Fields!Address.Value&lt;/Value&gt;
+#                                  &lt;Style /&gt;
+#                                &lt;/TextRun&gt;
+#                              &lt;/TextRuns&gt;
+#                              &lt;Style /&gt;
+#                            &lt;/Paragraph&gt;
+#                          &lt;/Paragraphs&gt;
+#                          &lt;rd:DefaultName&gt;Address&lt;/rd:DefaultName&gt;
+#                          &lt;Style&gt;
+#                            &lt;Border&gt;
+#                              &lt;Color&gt;LightGrey&lt;/Color&gt;
+#                              &lt;Style&gt;Solid&lt;/Style&gt;
+#                            &lt;/Border&gt;
+#                            &lt;PaddingLeft&gt;2pt&lt;/PaddingLeft&gt;
+#                            &lt;PaddingRight&gt;2pt&lt;/PaddingRight&gt;
+#                            &lt;PaddingTop&gt;2pt&lt;/PaddingTop&gt;
+#                            &lt;PaddingBottom&gt;2pt&lt;/PaddingBottom&gt;
+#                          &lt;/Style&gt;
+#                        &lt;/Textbox&gt;
+#                      &lt;/CellContents&gt;
+#                    &lt;/TablixCell&gt;
+#                    &lt;TablixCell&gt;
+#                      &lt;CellContents&gt;
+#                        &lt;Textbox Name=&quot;CustAccount&quot;&gt;
+#                          &lt;CanGrow&gt;true&lt;/CanGrow&gt;
+#                          &lt;KeepTogether&gt;true&lt;/KeepTogether&gt;
+#                          &lt;Paragraphs&gt;
+#                            &lt;Paragraph&gt;
+#                              &lt;TextRuns&gt;
+#                                &lt;TextRun&gt;
+#                                  &lt;Value&gt;=Fields!CustAccount.Value&lt;/Value&gt;
+#                                  &lt;Style /&gt;
+#                                &lt;/TextRun&gt;
+#                              &lt;/TextRuns&gt;
+#                              &lt;Style /&gt;
+#                            &lt;/Paragraph&gt;
+#                          &lt;/Paragraphs&gt;
+#                          &lt;rd:DefaultName&gt;CustAccount&lt;/rd:DefaultName&gt;
+#                          &lt;Style&gt;
+#                            &lt;Border&gt;
+#                              &lt;Color&gt;LightGrey&lt;/Color&gt;
+#                              &lt;Style&gt;Solid&lt;/Style&gt;
+#                            &lt;/Border&gt;
+#                            &lt;PaddingLeft&gt;2pt&lt;/PaddingLeft&gt;
+#                            &lt;PaddingRight&gt;2pt&lt;/PaddingRight&gt;
+#                            &lt;PaddingTop&gt;2pt&lt;/PaddingTop&gt;
+#                            &lt;PaddingBottom&gt;2pt&lt;/PaddingBottom&gt;
+#                          &lt;/Style&gt;
+#                        &lt;/Textbox&gt;
+#                      &lt;/CellContents&gt;
+#                    &lt;/TablixCell&gt;
+#                  &lt;/TablixCells&gt;
+#                &lt;/TablixRow&gt;
+#              &lt;/TablixRows&gt;
+#            &lt;/TablixBody&gt;
+#            &lt;TablixColumnHierarchy&gt;
+#              &lt;TablixMembers&gt;
+#                &lt;TablixMember /&gt;
+#                &lt;TablixMember /&gt;
+#                &lt;TablixMember /&gt;
+#                &lt;TablixMember /&gt;
+#              &lt;/TablixMembers&gt;
+#            &lt;/TablixColumnHierarchy&gt;
+#            &lt;TablixRowHierarchy&gt;
+#              &lt;TablixMembers&gt;
+#                &lt;TablixMember&gt;
+#                  &lt;KeepWithGroup&gt;After&lt;/KeepWithGroup&gt;
+#                &lt;/TablixMember&gt;
+#                &lt;TablixMember&gt;
+#                  &lt;Group Name=&quot;Details&quot; /&gt;
+#                &lt;/TablixMember&gt;
+#              &lt;/TablixMembers&gt;
+#            &lt;/TablixRowHierarchy&gt;
+#            &lt;DataSetName&gt;BodyDS&lt;/DataSetName&gt;
+#            &lt;Top&gt;1.07167in&lt;/Top&gt;
+#            &lt;Left&gt;0.87375in&lt;/Left&gt;
+#            &lt;Height&gt;0.875in&lt;/Height&gt;
+#            &lt;Width&gt;7.5625in&lt;/Width&gt;
+#            &lt;Style&gt;
+#              &lt;Border&gt;
+#                &lt;Style&gt;None&lt;/Style&gt;
+#              &lt;/Border&gt;
+#            &lt;/Style&gt;
+#          &lt;/Tablix&gt;
+#        &lt;/ReportItems&gt;
+#        &lt;Height&gt;5.39583in&lt;/Height&gt;
+#        &lt;Style /&gt;
+#      &lt;/Body&gt;
+#      &lt;Width&gt;9.5in&lt;/Width&gt;
+#      &lt;Page&gt;
+#        &lt;PageHeader&gt;
+#          &lt;Height&gt;1.71875in&lt;/Height&gt;
+#          &lt;PrintOnFirstPage&gt;true&lt;/PrintOnFirstPage&gt;
+#          &lt;PrintOnLastPage&gt;true&lt;/PrintOnLastPage&gt;
+#          &lt;Style&gt;
+#            &lt;Border&gt;
+#              &lt;Style&gt;None&lt;/Style&gt;
+#            &lt;/Border&gt;
+#          &lt;/Style&gt;
+#        &lt;/PageHeader&gt;
+#        &lt;InteractiveHeight&gt;11in&lt;/InteractiveHeight&gt;
+#        &lt;InteractiveWidth&gt;8.5in&lt;/InteractiveWidth&gt;
+#        &lt;LeftMargin&gt;1in&lt;/LeftMargin&gt;
+#        &lt;RightMargin&gt;1in&lt;/RightMargin&gt;
+#        &lt;TopMargin&gt;1in&lt;/TopMargin&gt;
+#        &lt;BottomMargin&gt;1in&lt;/BottomMargin&gt;
+#        &lt;Style /&gt;
+#      &lt;/Page&gt;
+#    &lt;/ReportSection&gt;
+#  &lt;/ReportSections&gt;
+#  &lt;ReportParameters&gt;
+#    &lt;ReportParameter Name=&quot;AX_PartitionKey&quot;&gt;
+#      &lt;DataType&gt;String&lt;/DataType&gt;
+#      &lt;Nullable&gt;true&lt;/Nullable&gt;
+#      &lt;AllowBlank&gt;true&lt;/AllowBlank&gt;
+#      &lt;Prompt&gt;AX_PartitionKey&lt;/Prompt&gt;
+#      &lt;Hidden&gt;true&lt;/Hidden&gt;
+#    &lt;/ReportParameter&gt;
+#    &lt;ReportParameter Name=&quot;AX_UserContext&quot;&gt;
+#      &lt;DataType&gt;String&lt;/DataType&gt;
+#      &lt;Nullable&gt;true&lt;/Nullable&gt;
+#      &lt;AllowBlank&gt;true&lt;/AllowBlank&gt;
+#      &lt;Prompt&gt;AX_UserContext&lt;/Prompt&gt;
+#      &lt;Hidden&gt;true&lt;/Hidden&gt;
+#    &lt;/ReportParameter&gt;
+#    &lt;ReportParameter Name=&quot;AX_CompanyName&quot;&gt;
+#      &lt;DataType&gt;String&lt;/DataType&gt;
+#      &lt;DefaultValue&gt;
+#        &lt;Values&gt;
+#          &lt;Value&gt;=Microsoft.Dynamics.Framework.Reports.BuiltInMethods.GetUserCompany(Parameters!AX_UserContext.Value)&lt;/Value&gt;
+#        &lt;/Values&gt;
+#      &lt;/DefaultValue&gt;
+#      &lt;Prompt&gt;AX_CompanyName&lt;/Prompt&gt;
+#      &lt;Hidden&gt;true&lt;/Hidden&gt;
+#    &lt;/ReportParameter&gt;
+#    &lt;ReportParameter Name=&quot;AX_RenderingCulture&quot;&gt;
+#      &lt;DataType&gt;String&lt;/DataType&gt;
+#      &lt;Nullable&gt;true&lt;/Nullable&gt;
+#      &lt;AllowBlank&gt;true&lt;/AllowBlank&gt;
+#      &lt;Prompt&gt;AX_RenderingCulture&lt;/Prompt&gt;
+#      &lt;Hidden&gt;true&lt;/Hidden&gt;
+#    &lt;/ReportParameter&gt;
+#    &lt;ReportParameter Name=&quot;AX_ReportContext&quot;&gt;
+#      &lt;DataType&gt;String&lt;/DataType&gt;
+#      &lt;Nullable&gt;true&lt;/Nullable&gt;
+#      &lt;AllowBlank&gt;true&lt;/AllowBlank&gt;
+#      &lt;Prompt&gt;AX_ReportContext&lt;/Prompt&gt;
+#      &lt;Hidden&gt;true&lt;/Hidden&gt;
+#      &lt;UsedInQuery&gt;True&lt;/UsedInQuery&gt;
+#    &lt;/ReportParameter&gt;
+#    &lt;ReportParameter Name=&quot;AX_RdpPreProcessedId&quot;&gt;
+#      &lt;DataType&gt;String&lt;/DataType&gt;
+#      &lt;Nullable&gt;true&lt;/Nullable&gt;
+#      &lt;AllowBlank&gt;true&lt;/AllowBlank&gt;
+#      &lt;Prompt&gt;AX_RdpPreProcessedId&lt;/Prompt&gt;
+#      &lt;Hidden&gt;true&lt;/Hidden&gt;
+#    &lt;/ReportParameter&gt;
+#    &lt;ReportParameter Name=&quot;BodyDS_CustAccount&quot;&gt;
+#      &lt;DataType&gt;String&lt;/DataType&gt;
+#      &lt;Nullable&gt;true&lt;/Nullable&gt;
+#      &lt;AllowBlank&gt;true&lt;/AllowBlank&gt;
+#      &lt;Prompt&gt;@SYS7149&lt;/Prompt&gt;
+#    &lt;/ReportParameter&gt;
+#  &lt;/ReportParameters&gt;
+#  &lt;Language&gt;en-US&lt;/Language&gt;
+#  &lt;rd:ReportUnitType&gt;Inch&lt;/rd:ReportUnitType&gt;
+#  &lt;rd:ExpressionDialog&gt;Microsoft.Dynamics.Framework.Design.Reports.ExpressionEditor.ExpressionEditorDialog, Microsoft.Dynamics.Framework.Design.Reports&lt;/rd:ExpressionDialog&gt;
+#  &lt;rd:ReportID&gt;3436dc77-9f9e-4833-bed2-ba92e836ab55&lt;/rd:ReportID&gt;
+#&lt;/Report&gt;">
+#      <DisableIndividualTransformation Name="DisableIndividualTransformation"/>
+#    </PrecisionDesign>
+#  </Report>
+#</Reports>
+    ENDMOXL
+    DESIGNS
+      SSRSREPORTDESIGN
+        PROPERTIES
+          Name                #Report
+        ENDPROPERTIES
+        
+        CROSSREFERENCES
+#<CrossReferenceInfo>
+#    <CrossReferenceEntry>
+#        <ReferencedAotObjectName>HV_TestCustDP</ReferencedAotObjectName>
+#        <xrefKind>10</xrefKind>
+#        <XrefReference>2</XrefReference>
+#    </CrossReferenceEntry>
+#    <CrossReferenceEntry>
+#        <ReferencedAotObjectName>HV_TestCustDP.HV_TestCustBodyTMP</ReferencedAotObjectName>
+#        <xrefKind>11</xrefKind>
+#        <XrefReference>4</XrefReference>
+#    </CrossReferenceEntry>
+#    <CrossReferenceEntry>
+#        <ReferencedAotObjectName>HV_TestCustDP.processReport</ReferencedAotObjectName>
+#        <xrefKind>11</xrefKind>
+#        <XrefReference>4</XrefReference>
+#    </CrossReferenceEntry>
+#    <CrossReferenceEntry>
+#        <ReferencedAotObjectName>HV_TestCustBodyTMP.Address</ReferencedAotObjectName>
+#        <xrefKind>2</xrefKind>
+#        <XrefReference>1</XrefReference>
+#    </CrossReferenceEntry>
+#    <CrossReferenceEntry>
+#        <ReferencedAotObjectName>HV_TestCustBodyTMP</ReferencedAotObjectName>
+#        <xrefKind>1</xrefKind>
+#        <XrefReference>1</XrefReference>
+#    </CrossReferenceEntry>
+#    <CrossReferenceEntry>
+#        <ReferencedAotObjectName>HV_TestCustBodyTMP.CustAccount</ReferencedAotObjectName>
+#        <xrefKind>2</xrefKind>
+#        <XrefReference>1</XrefReference>
+#    </CrossReferenceEntry>
+#    <CrossReferenceEntry>
+#        <ReferencedAotObjectName>HV_TestCustBodyTMP.CustGroupId</ReferencedAotObjectName>
+#        <xrefKind>2</xrefKind>
+#        <XrefReference>1</XrefReference>
+#    </CrossReferenceEntry>
+#    <CrossReferenceEntry>
+#        <ReferencedAotObjectName>HV_TestCustBodyTMP.Name</ReferencedAotObjectName>
+#        <xrefKind>2</xrefKind>
+#        <XrefReference>1</XrefReference>
+#    </CrossReferenceEntry>
+#    <CrossReferenceEntry>
+#        <ReferencedAotObjectName>@SYS7149</ReferencedAotObjectName>
+#        <xrefKind>19</xrefKind>
+#        <XrefReference>2</XrefReference>
+#    </CrossReferenceEntry>
+#    <CrossReferenceEntry>
+#        <ReferencedAotObjectName>HV_TestCustBodyTMP.CustGroupId</ReferencedAotObjectName>
+#        <xrefKind>2</xrefKind>
+#        <XrefReference>2</XrefReference>
+#    </CrossReferenceEntry>
+#    <CrossReferenceEntry>
+#        <ReferencedAotObjectName>HV_TestCustBodyTMP</ReferencedAotObjectName>
+#        <xrefKind>1</xrefKind>
+#        <XrefReference>2</XrefReference>
+#    </CrossReferenceEntry>
+#    <CrossReferenceEntry>
+#        <ReferencedAotObjectName>HV_TestCustBodyTMP.Name</ReferencedAotObjectName>
+#        <xrefKind>2</xrefKind>
+#        <XrefReference>2</XrefReference>
+#    </CrossReferenceEntry>
+#    <CrossReferenceEntry>
+#        <ReferencedAotObjectName>HV_TestCustBodyTMP.Address</ReferencedAotObjectName>
+#        <xrefKind>2</xrefKind>
+#        <XrefReference>2</XrefReference>
+#    </CrossReferenceEntry>
+#    <CrossReferenceEntry>
+#        <ReferencedAotObjectName>HV_TestCustBodyTMP.CustAccount</ReferencedAotObjectName>
+#        <xrefKind>2</xrefKind>
+#        <XrefReference>2</XrefReference>
+#    </CrossReferenceEntry>
+#</CrossReferenceInfo>
+        ENDCROSSREFERENCES
+        
+        RDL 13726
+#<?xml version="1.0" encoding="utf-8"?>
+#<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2008/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
+#  <rd:ExpressionDialog>Microsoft.Dynamics.Framework.Design.Reports.ExpressionEditor.ExpressionEditorDialog, Microsoft.Dynamics.Framework.Design.Reports</rd:ExpressionDialog>
+#  <rd:SnapToGrid>true</rd:SnapToGrid>
+#  <rd:DrawGrid>true</rd:DrawGrid>
+#  <Page>
+#    <BottomMargin>1in</BottomMargin>
+#    <RightMargin>1in</RightMargin>
+#    <LeftMargin>1in</LeftMargin>
+#    <TopMargin>1in</TopMargin>
+#    <InteractiveWidth>8.5in</InteractiveWidth>
+#    <InteractiveHeight>11in</InteractiveHeight>
+#  </Page>
+#  <Body>
+#    <Height>3.0in</Height>
+#  </Body>
+#  <Width>8.5in</Width>
+#  <Language>en-US</Language>
+#  <rd:ReportID>3436dc77-9f9e-4833-bed2-ba92e836ab55</rd:ReportID>
+#  <DataSources>
+#    <DataSource Name="AutoGen__ReportDataProvider">
+#      <Transaction>true</Transaction>
+#      <ConnectionProperties>
+#        <DataProvider>AXREPORTDATAPROVIDER</DataProvider>
+#        <ConnectString />
+#        <IntegratedSecurity>true</IntegratedSecurity>
+#      </ConnectionProperties>
+#      <rd:DataSourceID>3bcd84d9-6e6d-4ed3-9eeb-a23534bdda9c</rd:DataSourceID>
+#    </DataSource>
+#  </DataSources>
+#  <DataSets>
+#    <DataSet Name="BodyDS">
+#      <Fields>
+#        <Field Name="Address">
+#          <DataField>HV_TestCustBodyTMP.1.Address</DataField>
+#          <rd:TypeName>System.String</rd:TypeName>
+#        </Field>
+#        <Field Name="CustAccount">
+#          <DataField>HV_TestCustBodyTMP.1.CustAccount</DataField>
+#          <rd:TypeName>System.String</rd:TypeName>
+#        </Field>
+#        <Field Name="CustGroupId">
+#          <DataField>HV_TestCustBodyTMP.1.CustGroupId</DataField>
+#          <rd:TypeName>System.String</rd:TypeName>
+#        </Field>
+#        <Field Name="Name">
+#          <DataField>HV_TestCustBodyTMP.1.Name</DataField>
+#          <rd:TypeName>System.String</rd:TypeName>
+#        </Field>
+#      </Fields>
+#      <Query>
+#        <QueryParameters>
+#          <QueryParameter Name="AX_PartitionKey">
+#            <Value>=Parameters!AX_PartitionKey.Value</Value>
+#          </QueryParameter>
+#          <QueryParameter Name="AX_CompanyName">
+#            <Value>=Parameters!AX_CompanyName.Value</Value>
+#          </QueryParameter>
+#          <QueryParameter Name="AX_UserContext">
+#            <Value>=Parameters!AX_UserContext.Value</Value>
+#          </QueryParameter>
+#          <QueryParameter Name="AX_RenderingCulture">
+#            <Value>=Parameters!AX_RenderingCulture.Value</Value>
+#          </QueryParameter>
+#          <QueryParameter Name="AX_ReportContext">
+#            <Value>=Parameters!AX_ReportContext.Value</Value>
+#          </QueryParameter>
+#          <QueryParameter Name="AX_RdpPreProcessedId">
+#            <Value>=Parameters!AX_RdpPreProcessedId.Value</Value>
+#          </QueryParameter>
+#          <QueryParameter Name="CustAccount">
+#            <Value>=Parameters!BodyDS_CustAccount.Value</Value>
+#          </QueryParameter>
+#        </QueryParameters>
+#        <DataSourceName>AutoGen__ReportDataProvider</DataSourceName>
+#        <CommandType>Text</CommandType>
+#        <CommandText>SELECT * FROM HV_TestCustDP.HV_TestCustBodyTMP</CommandText>
+#        <rd:UseGenericDesigner>true</rd:UseGenericDesigner>
+#      </Query>
+#      <rd:DataSetInfo>
+#        <rd:TableAdapterGetDataMethod>GetData</rd:TableAdapterGetDataMethod>
+#        <rd:DataSetName>BodyDS</rd:DataSetName>
+#        <rd:TableAdapterFillMethod>Fill</rd:TableAdapterFillMethod>
+#        <rd:TableAdapterName>FieldsTableAdapter</rd:TableAdapterName>
+#        <rd:TableName>Fields</rd:TableName>
+#      </rd:DataSetInfo>
+#    </DataSet>
+#  </DataSets>
+#  <ReportParameters>
+#    <ReportParameter Name="AX_PartitionKey">
+#      <DataType>String</DataType>
+#      <Nullable>true</Nullable>
+#      <Hidden>true</Hidden>
+#      <AllowBlank>true</AllowBlank>
+#      <Prompt>AX_PartitionKey</Prompt>
+#      <MultiValue>false</MultiValue>
+#    </ReportParameter>
+#    <ReportParameter Name="AX_UserContext">
+#      <DataType>String</DataType>
+#      <Nullable>true</Nullable>
+#      <Hidden>true</Hidden>
+#      <AllowBlank>true</AllowBlank>
+#      <Prompt>AX_UserContext</Prompt>
+#      <MultiValue>false</MultiValue>
+#    </ReportParameter>
+#    <ReportParameter Name="AX_CompanyName">
+#      <DataType>String</DataType>
+#      <Nullable>false</Nullable>
+#      <Hidden>true</Hidden>
+#      <DefaultValue>
+#        <Values>
+#          <Value>=Microsoft.Dynamics.Framework.Reports.BuiltInMethods.GetUserCompany(Parameters!AX_UserContext.Value)</Value>
+#        </Values>
+#      </DefaultValue>
+#      <AllowBlank>false</AllowBlank>
+#      <Prompt>AX_CompanyName</Prompt>
+#      <MultiValue>false</MultiValue>
+#    </ReportParameter>
+#    <ReportParameter Name="AX_RenderingCulture">
+#      <DataType>String</DataType>
+#      <Nullable>true</Nullable>
+#      <Hidden>true</Hidden>
+#      <AllowBlank>true</AllowBlank>
+#      <Prompt>AX_RenderingCulture</Prompt>
+#      <MultiValue>false</MultiValue>
+#    </ReportParameter>
+#    <ReportParameter Name="AX_ReportContext">
+#      <DataType>String</DataType>
+#      <Nullable>true</Nullable>
+#      <Hidden>true</Hidden>
+#      <AllowBlank>true</AllowBlank>
+#      <Prompt>AX_ReportContext</Prompt>
+#      <MultiValue>false</MultiValue>
+#      <UsedInQuery>True</UsedInQuery>
+#    </ReportParameter>
+#    <ReportParameter Name="AX_RdpPreProcessedId">
+#      <DataType>String</DataType>
+#      <Nullable>true</Nullable>
+#      <Hidden>true</Hidden>
+#      <AllowBlank>true</AllowBlank>
+#      <Prompt>AX_RdpPreProcessedId</Prompt>
+#      <MultiValue>false</MultiValue>
+#    </ReportParameter>
+#    <ReportParameter Name="BodyDS_CustAccount">
+#      <DataType>String</DataType>
+#      <Nullable>true</Nullable>
+#      <Hidden>false</Hidden>
+#      <AllowBlank>true</AllowBlank>
+#      <Prompt>Customer account</Prompt>
+#      <MultiValue>false</MultiValue>
+#    </ReportParameter>
+#  </ReportParameters>
+#  <CodeModules>
+#    <CodeModule>Microsoft.Dynamics.Framework.Reports, Version=6.3.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35</CodeModule>
+#    <CodeModule>Microsoft.Dynamics.Framework.Metadata.AX, Version=6.3.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35</CodeModule>
+#  </CodeModules>
+#  <Code>Protected Overrides Sub OnInit()
+#    Microsoft.Dynamics.Framework.Reports.DataMethodUtility.ReportInitialize()
+#End Sub
+#
+#</Code>
+#  <CustomProperties>
+#    <CustomProperty>
+#      <Name>DATASETSFIELDS</Name>
+#      <Value><![CDATA[BodyDS:Address.HV_TestCustBodyTMP.Address;CustAccount.HV_TestCustBodyTMP.CustAccount;CustGroupId.HV_TestCustBodyTMP.CustGroupId;Name.HV_TestCustBodyTMP.Name]]></Value>
+#    </CustomProperty>
+#  </CustomProperties>
+#</Report>
+        ENDRDL
+        PERMISSIONSET #Permissions
+          PROPERTIES
+          ENDPROPERTIES
+          
+          TABLES #Tables
+          ENDTABLES
+          
+        SERVERMETHODS #Server Methods
+        ENDSERVERMETHODS
+        
+      ASSOCIATEDFORMS #Associated Forms
+      ENDASSOCIATEDFORMS
+      
+  ENDPERMISSIONSET
+  
+ENDSSRSREPORTDESIGN
+
+ENDDESIGNS
+
+ENDREPORT
+
+
+***Element: VPA
+
+; Microsoft Dynamics AX VISUALSTUDIOPROJECT : HV_TestCustReport unloaded
+; --------------------------------------------------------------------------------
+  VERSION 1
+  
+  VISUALSTUDIOPROJECT #HV_TestCustReport
+    PROPERTIES
+      Name                #HV_TestCustReport
+      ProjectGUID         #{09A0EF28-F3BE-431A-96FD-73454602C77F}
+      ProjectTypeGUID     #{AA631830-3AD7-4631-8CF6-443A09BF983B}
+      VisualStudioProjectFile   #HV_TestCustReport.dynamicsproj
+      Origin              #{18005D9A-9011-460B-AC96-3B6255868E8D}
+    ENDPROPERTIES
+    
+    REFERENCEDPROJECTS
+      #
+    ENDREFERENCEDPROJECTS
+    
+    VISUALSTUDIOPROJECTFOLDER #Project Content
+      PROPERTIES
+        Name                #Project Content
+      ENDPROPERTIES
+      
+      VISUALSTUDIOPROJECTFILE #HV_TestCustReport.dynamicsproj
+        PROPERTIES
+          Name                #HV_TestCustReport.dynamicsproj
+        ENDPROPERTIES
+        
+        SOURCE 2173
+#﻿<?xml version="1.0" encoding="utf-8"?>
+#<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+#  <PropertyGroup>
+#    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+#    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+#    <ProductVersion>6.3.5000.138</ProductVersion>
+#    <SchemaVersion>2.0</SchemaVersion>
+#    <ProjectGuid>09a0ef28-f3be-431a-96fd-73454602c77f</ProjectGuid>
+#    <ProjectTypeGuids>{BF6F8E12-879D-49E7-ADF0-5503146B24B8};{aa631830-3ad7-4631-8cf6-443a09bf983b}</ProjectTypeGuids>
+#    <Name>HV_TestCustReport</Name>
+#    <BaseAssemblyName>HV_TestCustReport</BaseAssemblyName>
+#    <!-- Application property page properties -->
+#    <OutputType>Dynamics Reporting Library</OutputType>
+#    <!-- AssemblyInfo properties -->
+#    <AssemblyTitle>HV_TestCustReport</AssemblyTitle>
+#    <AssemblyCompany>
+#    </AssemblyCompany>
+#    <AssemblyProduct>HV_TestCustReport</AssemblyProduct>
+#    <AssemblyCopyright>Copyright ©  2017</AssemblyCopyright>
+#    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+#    <FileAlignment>512</FileAlignment>
+#    <OutputPath>bin\Debug\</OutputPath>
+#    <DeployToServer>No</DeployToServer>
+#    <DeployToClient>No</DeployToClient>
+#    <DeployToEP>No</DeployToEP>
+#    <RootNamespace>HV_TestCustReport</RootNamespace>
+#    <StartupElement />
+#    <DebugTarget>None</DebugTarget>
+#  </PropertyGroup>
+#  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+#    <OutputPath>bin\Debug\</OutputPath>
+#  </PropertyGroup>
+#  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+#    <OutputPath>bin\Release\</OutputPath>
+#  </PropertyGroup>
+#  <ItemGroup>
+#    <Compile Include="\SSRS Reports\Reports\HV_TestCustReport">
+#      <Virtual>True</Virtual>
+#    </Compile>
+#  </ItemGroup>
+#  <Import Project="$(MSBuildExtensionsPath)\Microsoft\DynamicsTools\Microsoft.Dynamics.Framework.Design.Reporting.Modeling.targets" />
+#  <Import Project="$(MSBuildExtensionsPath)\Microsoft\DynamicsTools\Microsoft.Dynamics.Framework.Design.InteractionProject.targets" />
+#</Project>
+        ENDSOURCE
+      ENDVISUALSTUDIOPROJECTFILE
+      
+    ENDVISUALSTUDIOPROJECTFOLDER
+    
+    VISUALSTUDIOPROJECTFOLDER #Project Output
+      PROPERTIES
+        Name                #Project Output
+      ENDPROPERTIES
+      
+    ENDVISUALSTUDIOPROJECTFOLDER
+    
+  ENDVISUALSTUDIOPROJECT
+  
+
+***Element: DBT
+
+; Microsoft Dynamics AX Table : HV_TestCustBodyTMP unloaded
+; --------------------------------------------------------------------------------
+  TABLEVERSION 1
+  
+  TABLE #HV_TestCustBodyTMP
+    EnforceFKRelation 1
+    PROPERTIES
+      Name                #HV_TestCustBodyTMP
+      TableType           #TempDB
+      CreateRecIdIndex    #Yes
+      PrimaryIndex        #SurrogateKey
+      ClusterIndex        #SurrogateKey
+      Origin              #{93AEF048-A620-4AB9-903A-E6DFE76BF814}
+    ENDPROPERTIES
+    
+    FIELDS
+      FIELD #Address
+        STRING
+        PROPERTIES
+          Name                #Address
+          Table               #HV_TestCustBodyTMP
+          Origin              #{735E8AEF-4F07-4D42-9896-D9FE4653301F}
+          ExtendedDataType    #String255
+          StringSize          #255
+        ENDPROPERTIES
+        
+      FIELD #CustAccount
+        STRING
+        PROPERTIES
+          Name                #CustAccount
+          Table               #HV_TestCustBodyTMP
+          Origin              #{EDD60F53-BB01-4C8E-B29A-D134D520EF2D}
+          ExtendedDataType    #CustAccount
+          StringSize          #20
+        ENDPROPERTIES
+        
+      FIELD #CustGroupId
+        STRING
+        PROPERTIES
+          Name                #CustGroupId
+          Table               #HV_TestCustBodyTMP
+          Origin              #{5B448CA3-A9F8-4728-B110-8EBA74F40375}
+          ExtendedDataType    #CustGroupId
+        ENDPROPERTIES
+        
+      FIELD #Name
+        STRING
+        PROPERTIES
+          Name                #Name
+          Table               #HV_TestCustBodyTMP
+          Origin              #{DBF3F5AE-47EB-4948-A8D2-218257BBE632}
+          ExtendedDataType    #Name
+          StringSize          #60
+        ENDPROPERTIES
+        
+    ENDFIELDS
+    GROUPS
+    ENDGROUPS
+    
+    INDICES
+    ENDINDICES
+    FULLTEXTINDICES
+    ENDFULLTEXTINDICES
+    REFERENCES
+    ENDREFERENCES
+    
+    DELETEACTIONS
+    ENDDELETEACTIONS
+    
+    METHODS
+    ENDMETHODS
+  ENDTABLE
+  
+
+***Element: CLS
+
+; Microsoft Dynamics AX Class: HV_TestCustContract unloaded
+; --------------------------------------------------------------------------------
+  CLSVERSION 1
+  
+  CLASS #HV_TestCustContract
+    PROPERTIES
+      Name                #HV_TestCustContract
+      Origin              #{2F949B50-885B-449D-9058-47197D634EF5}
+    ENDPROPERTIES
+    
+    METHODS
+      SOURCE #classDeclaration
+        #[DataContractAttribute]
+        #public class HV_TestCustContract
+        #{
+        #    CustAccount custAccount;
+        #}
+      ENDSOURCE
+      SOURCE #parmCustAccount
+        #[DataMemberAttribute('CustAccount')]
+        #public CustAccount parmCustAccount(CustAccount _custAccount = custAccount)
+        #{
+        #    CustAccount = _custAccount;
+        #
+        #    return CustAccount;
+        #}
+      ENDSOURCE
+    ENDMETHODS
+  ENDCLASS
+
+***Element: CLS
+
+; Microsoft Dynamics AX Class: HV_TestCustController unloaded
+; --------------------------------------------------------------------------------
+  CLSVERSION 1
+  
+  CLASS #HV_TestCustController
+    PROPERTIES
+      Name                #HV_TestCustController
+      Extends             #SrsReportRunController
+      Origin              #{F870F44B-BF47-4D62-AEED-50AA8F1FA9AC}
+    ENDPROPERTIES
+    
+    METHODS
+      SOURCE #classDeclaration
+        #public class HV_TestCustController extends SrsReportRunController
+        #{
+        #}
+      ENDSOURCE
+      SOURCE #main
+        #public static void main(Args _args)
+        #{
+        #    HV_TestCustController controller = new HV_TestCustController();
+        #
+        #    controller.parmReportName(ssrsReportStr(HV_TestCustReport,Report));
+        #    controller.startOperation();
+        #}
+      ENDSOURCE
+    ENDMETHODS
+  ENDCLASS
+
+***Element: CLS
+
+; Microsoft Dynamics AX Class: HV_TestCustDP unloaded
+; --------------------------------------------------------------------------------
+  CLSVERSION 1
+  
+  CLASS #HV_TestCustDP
+    PROPERTIES
+      Name                #HV_TestCustDP
+      Extends             #SRSReportDataProviderBase
+      RunOn               #Server
+      Origin              #{324965F0-81F2-41D7-AD19-B164354ACC16}
+    ENDPROPERTIES
+    
+    METHODS
+      SOURCE #classDeclaration
+        #[
+        #SRSReportParameterAttribute(classStr(HV_TestCustContract))
+        #]
+        #public class HV_TestCustDP extends SRSReportDataProviderBase
+        #//Debug Mode
+        #//class Is_TestCustDP extends SrsReportDataProviderPreProcess
+        #{
+        #    HV_TestCustContract contract;
+        #    HV_TestCustBodyTMP bodyTmp;
+        #
+        #
+        #    CustTable custTable;
+        #    CustAccount custAccount;
+        #}
+      ENDSOURCE
+      SOURCE #fillBodyTmp
+        #public void fillBodyTmp()
+        #{
+        #    while select * from custTable
+        #        Where(custAccount =="" || custTable.AccountNum == custAccount)
+        #    {
+        #        bodyTmp.CustAccount = custTable.AccountNum;
+        #        bodyTmp.Name = custTable.name();
+        #        bodyTmp.Address = custTable.address();
+        #        bodyTmp.CustGroupId = custTable.CustGroup;
+        #
+        #        bodyTmp.insert();
+        #    }
+        #}
+      ENDSOURCE
+      SOURCE #getBodyTmp
+        #[
+        #    SRSReportDataSetAttribute(tableStr(HV_TestCustBodyTMP))
+        #]
+        #public HV_TestCustBodyTMP getBodyTmp()
+        #{
+        #    select * from bodyTmp;
+        #    return bodyTmp;
+        #}
+      ENDSOURCE
+      SOURCE #processReport
+        #public void processReport()
+        #{
+        #    contract = this.parmDataContract() as HV_TestCustContract;
+        #
+        #    custAccount = contract.parmCustAccount();
+        #
+        #    this.fillBodyTmp();
+        #}
+      ENDSOURCE
+    ENDMETHODS
+  ENDCLASS
+
+***Element: PRN
+
+; Microsoft Dynamics AX Project : HV_Test unloaded
+; --------------------------------------------------------------------------------
+  PROJECTVERSION 2
+  
+  PROJECT #HV_Test
+  SHARED
+  PROPERTIES
+    Name                #HV_Test
+    Origin              #{C548C1F1-83B6-45E7-AFD8-6537DF96A93D}
+  ENDPROPERTIES
+  
+    PROJECTCLASS ProjectNode
+    BEGINNODE
+      FILETYPE 0
+      UTILTYPE 85
+      UTILOBJECTID 0
+      NODETYPE 1439
+      NAME #HV_TestCustReport
+    ENDNODE
+    BEGINNODE
+      FILETYPE 0
+      UTILTYPE 127
+      UTILOBJECTID 0
+      NODETYPE 1531
+      NAME #HV_TestCustReport
+    ENDNODE
+    BEGINNODE
+      FILETYPE 0
+      UTILTYPE 44
+      UTILOBJECTID 107504
+      NODETYPE 204
+      NAME #HV_TestCustBodyTMP
+    ENDNODE
+    BEGINNODE
+      FILETYPE 0
+      UTILTYPE 45
+      UTILOBJECTID 1030564
+      NODETYPE 329
+      NAME #HV_TestCustContract
+    ENDNODE
+    BEGINNODE
+      FILETYPE 0
+      UTILTYPE 45
+      UTILOBJECTID 1030563
+      NODETYPE 329
+      NAME #HV_TestCustController
+    ENDNODE
+    BEGINNODE
+      FILETYPE 0
+      UTILTYPE 45
+      UTILOBJECTID 1030562
+      NODETYPE 329
+      NAME #HV_TestCustDP
+    ENDNODE
+  ENDPROJECT
+  
+
+***Element: END
