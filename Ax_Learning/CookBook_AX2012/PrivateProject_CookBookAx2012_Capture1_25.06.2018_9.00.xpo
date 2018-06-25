@@ -1,0 +1,1526 @@
+﻿Exportfile for AOT version 1.0 or later
+Formatversion: 1
+
+***Element: CLS
+
+; Microsoft Dynamics AX Class: CreateXmlFile unloaded
+; --------------------------------------------------------------------------------
+  CLSVERSION 1
+  
+  CLASS #CreateXmlFile
+    PROPERTIES
+      Name                #CreateXmlFile
+      Origin              #{76C0DEEE-F7F4-420C-8FBA-3048BC7A56D7}
+    ENDPROPERTIES
+    
+    METHODS
+      SOURCE #classDeclaration
+        #public class CreateXmlFile
+        #{
+        #
+        #}
+      ENDSOURCE
+      SOURCE #main
+        #public static void main(Args _args)
+        #{
+        #    XmlDocument doc;
+        #    XmlElement nodeXml;
+        #    XmlElement nodeTable;
+        #    XmlElement nodeAccount;
+        #    XmlElement nodeName;
+        #    MainAccount mainAccount;
+        #
+        #
+        #
+        #    #define.filename(@'C:\Temp\accounts.xml')
+        #
+        #    doc = XmlDocument::newBlank();
+        #
+        #    nodeXml = doc.createElement('xml');
+        #
+        #    doc.appendChild(nodeXml);
+        #
+        #    while select RecId, MainAccountId,Name from mainAccount
+        #    {
+        #        nodeTable = doc.createElement(tableStr(MainAccount));
+        #        nodeTable.setAttribute(
+        #        fieldStr(mainAccount,RecId),
+        #        int642str(mainAccount.RecId));
+        #
+        #        nodeXml.appendChild(nodeTable);
+        #
+        #        nodeAccount = doc.createElement(fieldStr(MainAccount,MainAccountId));
+        #
+        #        nodeAccount.appendChild(doc.createTextNode(mainAccount.MainAccountId));
+        #
+        #        nodeTable.appendChild(nodeAccount);
+        #
+        #        nodeName = doc.createElement(fieldStr(MainAccount, Name));
+        #
+        #        nodeName.appendChild(doc.createTextNode(mainAccount.Name));
+        #
+        #        nodeTable.appendChild(nodeName);
+        #    }
+        #
+        #    doc.save(#filename);
+        #
+        #    info(strFmt("File %1 created.", #filename));
+        #}
+      ENDSOURCE
+    ENDMETHODS
+  ENDCLASS
+
+***Element: CLS
+
+; Microsoft Dynamics AX Class: VendTableSql_7 unloaded
+; --------------------------------------------------------------------------------
+  CLSVERSION 1
+  
+  CLASS #VendTableSql_7
+    PROPERTIES
+      Name                #VendTableSql_7
+      Origin              #{8790C0D3-6BA3-4675-920F-F93AAACBCE60}
+    ENDPROPERTIES
+    
+    METHODS
+      SOURCE #classDeclaration
+        #public class VendTableSql_7
+        #{
+        #
+        #}
+      ENDSOURCE
+      SOURCE #main
+        #private server static void main(Args _args)
+        #{
+        #    //TO DO: PAGE 34 CookBook
+        #    UserConnection userConnection;
+        #    Statement statement;
+        #    str sqlStatement;
+        #    SqlSystem sqlSystem;
+        #    SqlStatementExecutePermission sqlPermission;
+        #    ResultSet resultSet;
+        #    DictTable tblVendTable;
+        #    DictTable tblDirPartyTable;
+        #    DictField fldParty;
+        #    DictField fldAccountNum;
+        #    DictField fldDataAreaId;
+        #    DictField fldBlocked;
+        #    DictField fldRecId;
+        #    DictField fldName;
+        #
+        #    tblVendTable = new DictTable(tableNum(VendTable));
+        #    tblDirPartyTable = new DictTable(tableNum(DirPartyTable));
+        #
+        #    fldParty = new DictField(tableNum(VendTable),fieldNum(VendTable,Party));
+        #
+        #    fldAccountNum = new DictField(tableNum(VendTable),fieldNum(VendTable,AccountNum));
+        #
+        #    fldDataAreaId = new DictField(tableNum(VendTable),fieldNum(VendTable,DataAreaId));
+        #
+        #    fldBlocked = new DictField(tableNum(VendTable),fieldNum(VendTable,Blocked));
+        #
+        #    fldRecId = new DictField(tableNum(DirPartyTable), fieldNum(DirPartyTable,RecId));
+        #
+        #    fldName = new DictField(tableNum(DirPartyTable), fieldNum(DirPartyTable,Name));
+        #
+        #    sqlSystem = new sqlSystem();
+        #    sqlStatement = 'SELECT %3, %4 FROM %1 ' + 'JOIN %2 ON %1.%5 = %2.%6 ' + 'WHERE %7 = %9 AND %8 = %10';
+        #
+        #    sqlStatement = strFmt(
+        #    sqlStatement,
+        #    tblVendTable.name(DbBackend::Sql),
+        #    fldAccountNum.name(DbBackend::Sql),
+        #    fldName.name(DbBackend::Sql),
+        #    fldParty.name(DbBackend::Sql),
+        #    fldRecId.name(DbBackend::Sql),
+        #    fldDataAreaId.name(DbBackend::Sql),
+        #    fldBlocked.name(DbBackend::Sql),
+        #    sqlSystem.sqlLiteral(curext(), true),
+        #    sqlSystem.sqlLiteral(CustVendorBlocked::No, true));
+        #
+        #
+        #    userConnection = new UserConnection();
+        #    statement = userConnection.createStatement();
+        #
+        #    sqlPermission = new SqlStatementExecutePermission(sqlStatement);
+        #
+        #    sqlPermission.assert();
+        #
+        #    resultSet = statement.executeQuery(sqlStatement);
+        #    CodeAccessPermission::revertAssert();
+        #
+        #    while(resultSet.next())
+        #    {
+        #        info(strFmt("%1 - %2",resultSet.getString(1),resultSet.getString(2)));
+        #    }
+        #
+        #}
+      ENDSOURCE
+    ENDMETHODS
+  ENDCLASS
+
+***Element: JOB
+
+; Microsoft Dynamics AX Job: VendTableMacro_6 unloaded
+; --------------------------------------------------------------------------------
+  JOBVERSION 1
+  
+  SOURCE #VendTableMacro_6
+    #static void VendTableMacro_6(Args _args)
+    #{
+    #    VendTable vendTable;
+    #    int countt = 0;
+    #
+    #    while select vendTable
+    #        where #VendTableNotBlocked(vendTable)
+    #    {
+    #        countt++;
+    #        info(strFmt("%1 - %2 - %3",countt,vendTable.AccountNum,vendTable.name()));
+    #    }
+    #}
+  ENDSOURCE
+  PROPERTIES
+    Origin              #{C85C2E16-36B7-4C07-A82B-E6819555858F}
+  ENDPROPERTIES
+  
+
+***Element: MCR
+
+; Microsoft Dynamics AX Macro: VendTableNotBlocked unloaded
+; --------------------------------------------------------------------------------
+  JOBVERSION 1
+  
+  SOURCE #VendTableNotBlocked
+    #(%1.Blocked == CustVendorBlocked::No)
+  ENDSOURCE
+  PROPERTIES
+    Origin              #{D09A0626-B937-4308-8380-5623DABB9893}
+  ENDPROPERTIES
+  
+
+***Element: JOB
+
+; Microsoft Dynamics AX Job: ProjTableQuery unloaded
+; --------------------------------------------------------------------------------
+  JOBVERSION 1
+  
+  SOURCE #ProjTableQuery
+    #static void ProjTableQuery(Args _args)
+    #{
+    #    /*
+    #    Query query;
+    #    QueryBuildDataSource qbds1;
+    #    QueryBuildDataSource qbds2;
+    #    QueryBuildRange qbr1;
+    #    QueryBuildRange qbr2;
+    #    QueryRun queryRun;
+    #    ProjTable projTable;
+    #
+    #    query = new query();
+    #
+    #    qbds1 = query.addDataSource(tableNum(projTable));
+    #    qbds1.addSortField(fieldNum(projTable,Name),SortOrder::Ascending);
+    #    qbr1 = qbds1.addRange(fieldNum(projTable,Type));
+    #    qbr1.value(queryValue(ProjType::FixedPrice));
+    #
+    #    qbr2 = qbds1.addRange(fieldNum(projTable,ProjId));
+    #    qbr2.value(queryValue('2') + '*');
+    #
+    #    qbds2 = qbds1.addDataSource(tableNum(ProjEmplTrans));
+    #    qbds2.relations(true);
+    #    qbds2.joinMode(JoinMode::ExistsJoin);
+    #
+    #    queryRun = new queryRun(query);
+    #
+    #    while(queryRun.next())
+    #    {
+    #        projTable = queryRun.get(tableNum(projTable));
+    #        info(strFmt("%1, %2, %3",projTable.ProjId,projTable.Name,projTable.Type));
+    #    }
+    #    */
+    #
+    #    ///////////////////////////////OR STATMENT
+    #
+    #    /*
+    #    Query query;
+    #    QueryBuildDataSource qbds1;
+    #    QueryBuildDataSource qbds2;
+    #    QueryBuildRange qbr1;
+    #    QueryBuildRange qbr2;
+    #    QueryRun queryRun;
+    #    ProjTable projTable;
+    #
+    #    query = new query();
+    #
+    #    qbds1 = query.addDataSource(tableNum(projTable));
+    #    qbds1.addSortField(fieldNum(projTable,Name),SortOrder::Ascending);
+    #    qbr1 = qbds1.addRange(fieldNum(projTable,Type));
+    #    qbr1.value(queryValue(ProjType::FixedPrice));
+    #    qbr1.value(strFmt('((%1 = %2) || (%3 = "%4"))',fieldStr(ProjTable,Type),ProjType::FixedPrice+0,fieldStr(ProjTable,ProjGroupId),queryValue('TM1')));
+    #
+    #    qbr2 = qbds1.addRange(fieldNum(projTable,ProjId));
+    #    qbr2.value(queryValue('2') + '*');
+    #
+    #    qbds2 = qbds1.addDataSource(tableNum(ProjEmplTrans));
+    #    qbds2.relations(true);
+    #    qbds2.joinMode(JoinMode::ExistsJoin);
+    #
+    #    queryRun = new queryRun(query);
+    #
+    #    while(queryRun.next())
+    #    {
+    #        projTable = queryRun.get(tableNum(projTable));
+    #        info(strFmt("%1, %2, %3",projTable.ProjId,projTable.Name,projTable.Type));
+    #    }
+    #
+    #    */
+    #    /////////////////////////Array
+    #
+    #    Query query;
+    #    QueryBuildDataSource qbds1;
+    #    QueryBuildDataSource qbds2;
+    #    QueryBuildRange qbr1;
+    #    QueryBuildRange qbr2;
+    #    QueryBuildRange qbr3;
+    #    QueryRun queryRun;
+    #    ProjTable projTable;
+    #
+    #
+    #    query = new query();
+    #
+    #    qbds1 = query.addDataSource(tableNum(projTable));
+    #    qbds1.addSortField(fieldNum(projTable,Name),SortOrder::Ascending);
+    #    qbr1 = qbds1.addRange(fieldNum(projTable,Type));
+    #    qbr1.value(queryValue(ProjType::FixedPrice));
+    #    qbr1.value(strFmt('((%1 = %2) || (%3 = "%4"))',fieldStr(ProjTable,Type),ProjType::FixedPrice+0,fieldStr(ProjTable,ProjGroupId),queryValue('TM1')));
+    #
+    #    qbr2 = qbds1.addRange(fieldNum(projTable,ProjId));
+    #    qbr2.value(queryValue('2') + '*');
+    #
+    #    qbr3 = qbds1.addRange(fieldNum(projTable,SortingId),2);
+    #    qbr3.value(queryValue('South'));
+    #
+    #    qbds2 = qbds1.addDataSource(tableNum(ProjEmplTrans));
+    #    qbds2.relations(true);
+    #    qbds2.joinMode(JoinMode::ExistsJoin);
+    #
+    #    queryRun = new queryRun(query);
+    #
+    #    while(queryRun.next())
+    #    {
+    #        projTable = queryRun.get(tableNum(projTable));
+    #        info(strFmt("%1, %2, %3",projTable.ProjId,projTable.Name,projTable.Type));
+    #    }
+    #}
+  ENDSOURCE
+  PROPERTIES
+    Origin              #{E1AA66BC-B24C-411E-9D0B-266A9C512E11}
+  ENDPROPERTIES
+  
+
+***Element: JOB
+
+; Microsoft Dynamics AX Job: MainAccountCopy_5 unloaded
+; --------------------------------------------------------------------------------
+  JOBVERSION 1
+  
+  SOURCE #MainAccountCopy_5
+    #static void MainAccountCopy_5(Args _args)
+    #{
+    #    MainAccount mainAccount1;
+    #    MainAccount mainAccount2;
+    #
+    #    mainAccount1 = MainAccount::findByMainAccountId('1010.1010');
+    #
+    #    ttsBegin;
+    #
+    #    mainAccount2.data(mainAccount1);
+    #
+    #    mainAccount2.MainAccountId = '1010.10';
+    #
+    #    if(!mainAccount2.validateWrite())
+    #    {
+    #        throw Exception::Error
+    #    }
+    #
+    #    mainAccount2.insert();
+    #
+    #    ttsCommit;
+    #}
+  ENDSOURCE
+  PROPERTIES
+    Origin              #{7C0A9CAE-764C-4AB3-B9C7-229A196F7025}
+  ENDPROPERTIES
+  
+
+***Element: JOB
+
+; Microsoft Dynamics AX Job: VendAccountDocu_4 unloaded
+; --------------------------------------------------------------------------------
+  JOBVERSION 1
+  
+  SOURCE #VendAccountDocu_4
+    #static void VendAccountDocu_4(Args _args)
+    #{
+    #    DocuRef docuRef;
+    #    VendTable vendTable;
+    #
+    #    vendTable = vendTable::find("VE00307");
+    #
+    #    docuRef.RefCompanyId = vendTable.dataAreaId;
+    #    docuRef.RefTableId = vendTable.TableId;
+    #    docuRef.RefRecId = vendTable.RecId;
+    #    docuRef.TypeId = "Note";
+    #    docuRef.Name = "Imported";
+    #    docuRef.Notes = "This vendor was imported.";
+    #    docuRef.insert();
+    #
+    #}
+  ENDSOURCE
+  PROPERTIES
+    Origin              #{07055CC9-6E38-4E75-B7FD-E837693E0127}
+  ENDPROPERTIES
+  
+
+***Element: JOB
+
+; Microsoft Dynamics AX Job: LedgerReasonMerge_3 unloaded
+; --------------------------------------------------------------------------------
+  JOBVERSION 1
+  
+  SOURCE #LedgerReasonMerge_3
+    #static void LedgerReasonMerge_3(Args _args)
+    #{
+    #    ReasonTable reasonTableDelete;
+    #    ReasonTable reasonTable;
+    #    //str firstReason = "COUNTER";
+    #    //str secondReason = "ACTION";
+    #
+    #    ttsBegin;
+    #
+    #    select firstOnly forUpdate reasonTableDelete
+    #        where reasonTableDelete.Reason == "COUNTER";
+    #
+    #
+    #
+    #    select firstOnly forUpdate reasonTable
+    #        where reasonTable.Reason == "ACTION";
+    #
+    #    if(reasonTableDelete.Reason == "COUNTER" && reasonTable.Reason == "ACTION")
+    #    {
+    #        reasonTableDelete.merge(reasonTable);
+    #        reasonTable.doUpdate();
+    #        reasonTableDelete.doDelete();
+    #    }
+    #    else
+    #    {
+    #        info(strFmt("The Reason with name COUNTER or ACTION don't exists."));
+    #    }
+    #
+    #    ttsCommit;
+    #}
+  ENDSOURCE
+  PROPERTIES
+    Origin              #{EBFF34D8-0A34-4256-B1F8-9F3345FE59F4}
+  ENDPROPERTIES
+  
+
+***Element: JOB
+
+; Microsoft Dynamics AX Job: CustAccountRaname_2 unloaded
+; --------------------------------------------------------------------------------
+  JOBVERSION 1
+  
+  SOURCE #CustAccountRaname_2
+    #static void CustAccountRaname_2(Args _args)
+    #{
+    #    CustTable custTable;
+    #
+    #    select firstOnly custTable
+    #        where custTable.AccountNum == "CU00087";
+    #    if(custTable.RecId)
+    #    {
+    #        custTable.AccountNum = "CU00087_TEST";
+    #        custTable.renamePrimaryKey();
+    #    }
+    #}
+  ENDSOURCE
+  PROPERTIES
+    Origin              #{B409F298-8B4B-49D6-84FD-3A7FD4249952}
+  ENDPROPERTIES
+  
+
+***Element: JOB
+
+; Microsoft Dynamics AX Job: NumberSeqLoadAll_1 unloaded
+; --------------------------------------------------------------------------------
+  JOBVERSION 1
+  
+  SOURCE #NumberSeqLoadAll_1
+    #static void NumberSeqLoadAll_1(Args _args)
+    #{
+    #    NumberSeqApplicationModule::loadAll();
+    #}
+  ENDSOURCE
+  PROPERTIES
+    Origin              #{F99CB03D-3419-4FBB-85C8-7DFA5715ACC7}
+  ENDPROPERTIES
+  
+
+***Element: CLS
+
+; Microsoft Dynamics AX Class: NumberSeqModuleCustomer unloaded
+; --------------------------------------------------------------------------------
+  CLSVERSION 1
+  
+  CLASS #NumberSeqModuleCustomer
+    PROPERTIES
+      Name                #NumberSeqModuleCustomer
+      Extends             #NumberSeqApplicationModule
+      RunOn               #Server
+      Origin              #{2D170000-0000-1000-90D7-D56D9923106E}
+    ENDPROPERTIES
+    
+    METHODS
+      SOURCE #classDeclaration
+        #public class NumberSeqModuleCustomer_8 extends NumberSeqApplicationModule
+        #{
+        #
+        #}
+      ENDSOURCE
+      SOURCE #initializeReference
+        #/// <summary>
+        #///    Performs module-specific initialization of a <c>NumberSequenceReference</c> object.
+        #/// </summary>
+        #/// <param name="_reference">
+        #///    The instance of the <c>NumberSequenceReference</c> object to initialize.
+        #/// </param>
+        #/// <param name="_datatype">
+        #///    The data type to be used by the <c>NumberSequenceReference</c> object.
+        #/// </param>
+        #/// <param name="_scope">
+        #///    The scope to be used by the <c>NumberSequenceReference</c> object.
+        #/// </param>
+        #/// <remarks>
+        #///    This is the place to implement the specific initialization of a <c>NumberSequenceReference</c>
+        #///    object for fields that are too dynamic to be configured on the <c>NumberSequenceDatatype</c>
+        #///    object. The default implementation does nothing, but can be overridden to set dynamic values for
+        #///    the <c>AllowSameAs</c> property, based on the context specified by the
+        #///    <c>NumberSequenceDatatype</c> and <c>NumberSequenceScope</c> objects.
+        #/// </remarks>
+        #public void initializeReference(NumberSequenceReference _reference, NumberSeqDatatype _datatype, NumberSeqScope _scope)
+        #{
+        #    #ISOCountryRegionCodes
+        #
+        #    super(_reference, _datatype, _scope);
+        #
+        #    switch (_datatype.parmDatatypeId())
+        #    {
+        #        case extendedTypeNum(CustInvoiceVoucher):
+        #        case extendedTypeNum(CustCreditNoteVoucher):
+        #            if (SysCountryRegionCode::isLegalEntityInCountryRegion([#isoIT]))
+        #            {
+        #                _reference.AllowSameAs = true;
+        #            }
+        #    }
+        #}
+      ENDSOURCE
+      SOURCE #loadModule
+        #/// <summary>
+        #///    Configures all the data types that are being used by the module.
+        #/// </summary>
+        #/*
+        #Detailed description of how to setup references for number sequences can
+        #be found i method loadModule() on the 'father' class: NumberSeqApplicationModule.
+        #*/
+        #
+        #protected void loadModule()
+        #{
+        #    NumberSeqDatatype datatype = NumberSeqDatatype::construct();
+        #    ;
+        #    /* Setup Customer numbers */
+        #
+        #    datatype.parmDatatypeId(extendedTypeNum(CustAccount));
+        #    datatype.parmConfigurationKeyId(configurationKeyNum(ledgerBasic));
+        #    datatype.parmReferenceHelp(literalStr("@SYS53967"));
+        #    datatype.parmWizardIsContinuous(true);
+        #    datatype.parmWizardIsManual(NoYes::No);
+        #    datatype.parmWizardIsChangeDownAllowed(NoYes::No);
+        #    datatype.parmWizardIsChangeUpAllowed(NoYes::No);
+        #    datatype.parmWizardHighest(999999);
+        #    datatype.parmSortField(1);
+        #
+        #    datatype.addParameterType(NumberSeqParameterType::DataArea, true, false);
+        #    this.create(datatype);
+        #
+        #    datatype.parmDatatypeId(extendedTypeNum(OneTimeCustomerAccount));
+        #    datatype.parmConfigurationKeyId(configurationKeyNum(ledgerBasic));
+        #    datatype.parmReferenceHelp(literalStr("@SYS53969"));
+        #    datatype.parmWizardIsContinuous(true);
+        #    datatype.parmWizardIsManual(NoYes::No);
+        #    datatype.parmWizardIsChangeDownAllowed(NoYes::No);
+        #    datatype.parmWizardIsChangeUpAllowed(NoYes::No);
+        #    datatype.parmWizardHighest(999999);
+        #    datatype.parmSortField(2);
+        #
+        #    datatype.addParameterType(NumberSeqParameterType::DataArea, true, false);
+        #    this.create(datatype);
+        #
+        #    /* Setup posting numbers */
+        #
+        #    datatype.parmDatatypeId(extendedTypeNum(CustInvoiceId));
+        #    datatype.parmReferenceLabel(literalStr("@SYS23028"));
+        #    datatype.parmReferenceHelp(literalStr("@SYS53968"));
+        #    datatype.parmWizardIsContinuous(true);
+        #    datatype.parmWizardIsManual(NoYes::No);
+        #    datatype.parmWizardIsChangeDownAllowed(NoYes::No);
+        #    datatype.parmWizardIsChangeUpAllowed(NoYes::No);
+        #    datatype.parmIsGroupEnabled(NoYes::Yes);
+        #    datatype.parmSortField(3);
+        #
+        #    datatype.addParameterType(NumberSeqParameterType::DataArea, true, false);
+        #    this.create(datatype);
+        #
+        #    datatype.parmDatatypeId(extendedTypeNum(CustCreditNoteId));
+        #    datatype.parmReferenceLabel(literalStr("@SYS73517"));
+        #    datatype.parmReferenceHelp(literalStr("@SYS53970"));
+        #    datatype.parmWizardIsContinuous(true);
+        #    datatype.parmWizardIsManual(NoYes::No);
+        #    datatype.parmWizardIsChangeDownAllowed(NoYes::No);
+        #    datatype.parmWizardIsChangeUpAllowed(NoYes::No);
+        #    datatype.parmIsGroupEnabled(NoYes::Yes);
+        #    datatype.parmSortField(4);
+        #
+        #    datatype.addParameterType(NumberSeqParameterType::DataArea, true, false);
+        #    this.create(datatype);
+        #
+        #    datatype.parmDatatypeId(extendedTypeNum(CollectionLetterNum));
+        #    datatype.parmReferenceHelp(literalStr("@SYS53972"));
+        #    datatype.parmWizardIsContinuous(true);
+        #    datatype.parmWizardIsManual(NoYes::No);
+        #    datatype.parmWizardIsChangeDownAllowed(NoYes::No);
+        #    datatype.parmWizardIsChangeUpAllowed(NoYes::No);
+        #    datatype.parmSortField(5);
+        #
+        #    datatype.addParameterType(NumberSeqParameterType::DataArea, true, false);
+        #    this.create(datatype);
+        #
+        #    datatype.parmDatatypeId(extendedTypeNum(InterestNote));
+        #    datatype.parmReferenceHelp(literalStr("@SYS53973"));
+        #    datatype.parmWizardIsContinuous(true);
+        #    datatype.parmWizardIsManual(NoYes::No);
+        #    datatype.parmWizardIsChangeDownAllowed(NoYes::No);
+        #    datatype.parmWizardIsChangeUpAllowed(NoYes::No);
+        #    datatype.parmSortField(6);
+        #
+        #    datatype.addParameterType(NumberSeqParameterType::DataArea, true, false);
+        #    this.create(datatype);
+        #
+        #    datatype.parmDatatypeId(extendedTypeNum(CustPaymId));
+        #    datatype.parmReferenceHelp(literalStr("@SYS53974"));
+        #    datatype.parmWizardIsContinuous(true);
+        #    datatype.parmWizardIsManual(NoYes::No);
+        #    datatype.parmWizardIsChangeDownAllowed(NoYes::No);
+        #    datatype.parmWizardIsChangeUpAllowed(NoYes::No);
+        #    datatype.parmSortField(7);
+        #
+        #    datatype.addParameterType(NumberSeqParameterType::DataArea, true, false);
+        #    this.create(datatype);
+        #
+        #    datatype.parmDatatypeId(extendedTypeNum(CustOverPaymId));
+        #    datatype.parmReferenceHelp(literalStr("@SYS54075"));
+        #    datatype.parmWizardIsContinuous(true);
+        #    datatype.parmWizardIsManual(NoYes::No);
+        #    datatype.parmWizardIsChangeDownAllowed(NoYes::No);
+        #    datatype.parmWizardIsChangeUpAllowed(NoYes::No);
+        #    datatype.parmSortField(8);
+        #
+        #    datatype.addParameterType(NumberSeqParameterType::DataArea, true, false);
+        #    this.create(datatype);
+        #
+        #    datatype.parmDatatypeId(extendedTypeNum(CustBillOfExchangeID));
+        #    datatype.parmReferenceHelp(literalStr("@SYS71452"));
+        #    datatype.parmWizardIsContinuous(true);
+        #    datatype.parmWizardIsManual(NoYes::No);
+        #    datatype.parmWizardIsChangeDownAllowed(NoYes::No);
+        #    datatype.parmWizardIsChangeUpAllowed(NoYes::No);
+        #    datatype.parmSortField(9);
+        #
+        #    datatype.addParameterType(NumberSeqParameterType::DataArea, true, false);
+        #    this.create(datatype);
+        #
+        #    /* Setup voucher numbers */
+        #
+        #    datatype.parmDatatypeId(extendedTypeNum(CustInvoiceVoucher));
+        #    datatype.parmReferenceLabel(literalStr("@SYS73519"));
+        #    datatype.parmReferenceHelp(literalStr("@SYS53979"));
+        #    datatype.parmDatatypeSameAsId(extendedTypeNum(CustInvoiceId));
+        #    datatype.parmWizardIsContinuous(true);
+        #    datatype.parmWizardIsManual(NoYes::No);
+        #    datatype.parmWizardIsChangeDownAllowed(NoYes::No);
+        #    datatype.parmWizardIsChangeUpAllowed(NoYes::No);
+        #    datatype.parmWizardLowest(30000000);
+        #    datatype.parmWizardHighest(39999999);
+        #    datatype.parmIsGroupEnabled(NoYes::Yes);
+        #    datatype.parmSortField(10);
+        #
+        #    datatype.addParameterType(NumberSeqParameterType::DataArea, true, false);
+        #    this.create(datatype);
+        #
+        #    datatype.parmDatatypeId(extendedTypeNum(CustCreditNoteVoucher));
+        #    datatype.parmReferenceLabel(literalStr("@SYS73520"));
+        #    datatype.parmReferenceHelp(literalStr("@SYS53980"));
+        #    datatype.parmDatatypeSameAsId(extendedTypeNum(CustCreditNoteId));
+        #    datatype.parmWizardIsContinuous(true);
+        #    datatype.parmWizardIsManual(NoYes::No);
+        #    datatype.parmWizardIsChangeDownAllowed(NoYes::No);
+        #    datatype.parmWizardIsChangeUpAllowed(NoYes::No);
+        #    datatype.parmWizardLowest(40000000);
+        #    datatype.parmWizardHighest(49999999);
+        #    datatype.parmIsGroupEnabled(NoYes::Yes);
+        #    datatype.parmSortField(11);
+        #
+        #    datatype.addParameterType(NumberSeqParameterType::DataArea, true, false);
+        #    this.create(datatype);
+        #
+        #    datatype.parmDatatypeId(extendedTypeNum(CollectionLetterVoucher));
+        #    datatype.parmReferenceHelp(literalStr("@SYS53977"));
+        #    datatype.parmWizardIsContinuous(true);
+        #    datatype.parmWizardIsManual(NoYes::No);
+        #    datatype.parmWizardIsChangeDownAllowed(NoYes::No);
+        #    datatype.parmWizardIsChangeUpAllowed(NoYes::No);
+        #    datatype.parmWizardLowest(50000000);
+        #    datatype.parmWizardHighest(59999999);
+        #    datatype.parmSortField(12);
+        #
+        #    datatype.addParameterType(NumberSeqParameterType::DataArea, true, false);
+        #    this.create(datatype);
+        #
+        #    datatype.parmDatatypeId(extendedTypeNum(InterestNoteVoucher));
+        #    datatype.parmReferenceHelp(literalStr("@SYS53978"));
+        #    datatype.parmWizardIsContinuous(true);
+        #    datatype.parmWizardIsManual(NoYes::No);
+        #    datatype.parmWizardIsChangeDownAllowed(NoYes::No);
+        #    datatype.parmWizardIsChangeUpAllowed(NoYes::No);
+        #    datatype.parmWizardLowest(60000000);
+        #    datatype.parmWizardHighest(69999999);
+        #    datatype.parmSortField(13);
+        #
+        #    datatype.addParameterType(NumberSeqParameterType::DataArea, true, false);
+        #    this.create(datatype);
+        #
+        #    datatype.parmDatatypeId(extendedTypeNum(CustExchAdjVoucher));
+        #    datatype.parmReferenceHelp(literalStr("@SYS54013"));
+        #    datatype.parmWizardIsContinuous(true);
+        #    datatype.parmWizardIsManual(NoYes::No);
+        #    datatype.parmWizardIsChangeDownAllowed(NoYes::No);
+        #    datatype.parmWizardIsChangeUpAllowed(NoYes::No);
+        #    datatype.parmWizardLowest(70000000);
+        #    datatype.parmWizardHighest(79999999);
+        #    datatype.parmSortField(14);
+        #
+        #    datatype.addParameterType(NumberSeqParameterType::DataArea, true, false);
+        #    this.create(datatype);
+        #
+        #    datatype.parmDatatypeId(extendedTypeNum(CustPaymVoucher));
+        #    datatype.parmReferenceHelp(literalStr("@SYS53985"));
+        #    datatype.parmWizardIsContinuous(true);
+        #    datatype.parmWizardIsManual(NoYes::No);
+        #    datatype.parmWizardIsChangeDownAllowed(NoYes::No);
+        #    datatype.parmWizardIsChangeUpAllowed(NoYes::No);
+        #    datatype.parmWizardLowest(80000000);
+        #    datatype.parmWizardHighest(89999999);
+        #    datatype.parmSortField(15);
+        #
+        #    datatype.addParameterType(NumberSeqParameterType::DataArea, true, false);
+        #    this.create(datatype);
+        #
+        #    datatype.parmDatatypeId(extendedTypeNum(CustCloseVoucher));
+        #    datatype.parmReferenceHelp(literalStr("@SYS54012"));
+        #    datatype.parmWizardIsContinuous(true);
+        #    datatype.parmWizardIsManual(NoYes::No);
+        #    datatype.parmWizardIsChangeDownAllowed(NoYes::No);
+        #    datatype.parmWizardIsChangeUpAllowed(NoYes::No);
+        #    datatype.parmWizardLowest(90000000);
+        #    datatype.parmWizardHighest(99999999);
+        #    datatype.parmSortField(16);
+        #
+        #    datatype.addParameterType(NumberSeqParameterType::DataArea, true, false);
+        #    this.create(datatype);
+        #
+        #    datatype.parmDatatypeId(extendedTypeNum(CustPaymManVoucher));
+        #    datatype.parmReferenceHelp(literalStr("@SYS58060"));
+        #    datatype.parmWizardIsContinuous(true);
+        #    datatype.parmWizardIsManual(NoYes::No);
+        #    datatype.parmWizardIsChangeDownAllowed(NoYes::No);
+        #    datatype.parmWizardIsChangeUpAllowed(NoYes::No);
+        #    datatype.parmSortField(17);
+        #
+        #    datatype.addParameterType(NumberSeqParameterType::DataArea, true, false);
+        #    this.create(datatype);
+        #
+        #    datatype.parmDatatypeId(extendedTypeNum(BankRemittanceFileIdCust));
+        #    datatype.parmReferenceHelp(literalStr("@SYS58060"));
+        #    datatype.parmWizardIsContinuous(true);
+        #    datatype.parmWizardIsManual(NoYes::No);
+        #    datatype.parmWizardIsChangeDownAllowed(NoYes::No);
+        #    datatype.parmWizardIsChangeUpAllowed(NoYes::No);
+        #    datatype.parmWizardHighest(999999);
+        #    datatype.parmSortField(18);
+        #
+        #    datatype.addParameterType(NumberSeqParameterType::DataArea, true, false);
+        #    this.create(datatype);
+        #
+        #    datatype.parmDatatypeId(extendedTypeNum(RecurrenceInvoiceId));
+        #    datatype.parmConfigurationKeyId(configurationKeyNum(ledgerBasic));
+        #    datatype.parmReferenceHelp(literalStr("@SYS318923"));
+        #    datatype.parmWizardIsContinuous(true);
+        #    datatype.parmWizardIsManual(NoYes::No);
+        #    datatype.parmWizardIsChangeDownAllowed(NoYes::No);
+        #    datatype.parmWizardIsChangeUpAllowed(NoYes::No);
+        #    datatype.parmWizardHighest(999999);
+        #    datatype.parmSortField(19);
+        #    datatype.addParameterType(NumberSeqParameterType::DataArea, true, false);
+        #    this.create(datatype);
+        #
+        #    // Free text debit note
+        #    datatype.parmDatatypeId(extendedTypeNum(CustDebitNoteId));
+        #    datatype.parmConfigurationKeyId(configurationKeyNum(TaxThailandGovCertification));
+        #    // Select the number sequence to associate with the free text debit note.
+        #    datatype.parmReferenceHelp(literalStr("@SYS4082875"));
+        #    datatype.parmWizardIsContinuous(true);
+        #    datatype.parmWizardIsManual(NoYes::No);
+        #    datatype.parmWizardIsChangeDownAllowed(NoYes::No);
+        #    datatype.parmWizardIsChangeUpAllowed(NoYes::No);
+        #    datatype.parmWizardHighest(999999);
+        #    datatype.parmIsGroupEnabled(NoYes::Yes);
+        #    datatype.parmSortField(20);
+        #
+        #    datatype.addParameterType(NumberSeqParameterType::DataArea, true, false);
+        #    this.create(datatype);
+        #
+        #    // Free text debit note voucher
+        #    datatype.parmDatatypeId(extendedTypeNum(CustDebitNoteVoucher));
+        #    datatype.parmConfigurationKeyId(configurationKeyNum(TaxThailandGovCertification));
+        #    // Select the number sequence to associate with the free text debit note voucher.
+        #    datatype.parmReferenceHelp(literalStr("@SYS4082878"));
+        #    datatype.parmWizardIsContinuous(true);
+        #    datatype.parmWizardIsManual(NoYes::No);
+        #    datatype.parmWizardIsChangeDownAllowed(NoYes::No);
+        #    datatype.parmWizardIsChangeUpAllowed(NoYes::No);
+        #    datatype.parmWizardHighest(999999);
+        #    datatype.parmIsGroupEnabled(NoYes::Yes);
+        #    datatype.parmSortField(21);
+        #
+        #    datatype.addParameterType(NumberSeqParameterType::DataArea, true, false);
+        #    this.create(datatype);
+        #
+        #    // Free text tax invoice
+        #    datatype.parmDatatypeId(extendedTypeNum(CustTaxInvoiceId));
+        #    datatype.parmConfigurationKeyId(configurationKeyNum(TaxThailandGovCertification));
+        #    // Select the number sequence to associate with the free text tax invoice.
+        #    datatype.parmReferenceHelp(literalStr("@SYS4082880"));
+        #    datatype.parmWizardIsContinuous(true);
+        #    datatype.parmWizardIsManual(NoYes::No);
+        #    datatype.parmWizardIsChangeDownAllowed(NoYes::No);
+        #    datatype.parmWizardIsChangeUpAllowed(NoYes::No);
+        #    datatype.parmWizardHighest(999999);
+        #    datatype.parmIsGroupEnabled(NoYes::Yes);
+        #    datatype.parmSortField(22);
+        #
+        #    datatype.addParameterType(NumberSeqParameterType::DataArea, true, false);
+        #    this.create(datatype);
+        #
+        #    // Free text tax invoice voucher
+        #    datatype.parmDatatypeId(extendedTypeNum(CustTaxInvoiceVoucher));
+        #    datatype.parmConfigurationKeyId(configurationKeyNum(TaxThailandGovCertification));
+        #    // Select the number sequence to associate with the free text tax invoice voucher.
+        #    datatype.parmReferenceHelp(literalStr("@SYS4082881"));
+        #    datatype.parmWizardIsContinuous(true);
+        #    datatype.parmWizardIsManual(NoYes::No);
+        #    datatype.parmWizardIsChangeDownAllowed(NoYes::No);
+        #    datatype.parmWizardIsChangeUpAllowed(NoYes::No);
+        #    datatype.parmWizardHighest(999999);
+        #    datatype.parmIsGroupEnabled(NoYes::Yes);
+        #    datatype.parmSortField(23);
+        #
+        #    datatype.addParameterType(NumberSeqParameterType::DataArea, true, false);
+        #    this.create(datatype);
+        #
+        #    // Receipt number
+        #    datatype.parmDatatypeId(extendedTypeNum(CustReceiptId));
+        #    datatype.parmConfigurationKeyId(configurationKeyNum(TaxThailandGovCertification));
+        #    // Select the number sequence to associate with the receipts.
+        #    datatype.parmReferenceHelp(literalStr("@SYS4082877"));
+        #    datatype.parmWizardIsContinuous(true);
+        #    datatype.parmWizardIsManual(NoYes::No);
+        #    datatype.parmWizardIsChangeDownAllowed(NoYes::No);
+        #    datatype.parmWizardIsChangeUpAllowed(NoYes::No);
+        #    datatype.parmWizardHighest(999999);
+        #    datatype.parmSortField(24);
+        #
+        #    datatype.addParameterType(NumberSeqParameterType::DataArea, true, false);
+        #    this.create(datatype);
+        #
+        #    // Tax invoice/Receipt number
+        #    datatype.parmDatatypeId(extendedTypeNum(CustTaxInvoiceReceiptId));
+        #    datatype.parmConfigurationKeyId(configurationKeyNum(TaxThailandGovCertification));
+        #    // Select the number sequence to associate with the receipts/tax invoices.
+        #    datatype.parmReferenceHelp(literalStr("@SYS4082876"));
+        #    datatype.parmWizardIsContinuous(true);
+        #    datatype.parmWizardIsManual(NoYes::No);
+        #    datatype.parmWizardIsChangeDownAllowed(NoYes::No);
+        #    datatype.parmWizardIsChangeUpAllowed(NoYes::No);
+        #    datatype.parmWizardHighest(999999);
+        #    datatype.parmSortField(25);
+        #
+        #    datatype.addParameterType(NumberSeqParameterType::DataArea, true, false);
+        #    this.create(datatype);
+        #
+        #    // Consolidation Id
+        #    datatype.parmDatatypeId(extendedTypeNum(CustConsId_JP));
+        #    datatype.parmReferenceHelp(literalStr("@GLS62930"));
+        #    datatype.parmWizardIsContinuous(true);
+        #    datatype.parmWizardIsManual(NoYes::No);
+        #    datatype.parmWizardIsChangeDownAllowed(NoYes::No);
+        #    datatype.parmWizardIsChangeUpAllowed(NoYes::No);
+        #    datatype.parmWizardHighest(999999);
+        #    datatype.parmSortField(20);
+        #
+        #    datatype.addParameterType(NumberSeqParameterType::DataArea, true, false);
+        #    this.create(datatype);
+        #
+        #    // Invoices
+        #    datatype.parmDatatypeId(extendedTypeNum(CustAmountDiffFactureId_RU));
+        #    datatype.parmReferenceHelp(literalStr("@GLS101281"));
+        #    datatype.parmWizardIsContinuous(true);
+        #    datatype.parmWizardIsManual(NoYes::No);
+        #    datatype.parmWizardIsChangeDownAllowed(NoYes::No);
+        #    datatype.parmWizardIsChangeUpAllowed(NoYes::No);
+        #    datatype.parmSortField(21);
+        #
+        #    datatype.addParameterType(NumberSeqParameterType::DataArea, true, false);
+        #    this.create(datatype);
+        #
+        #
+        #    // Sales Books numbers
+        #    datatype.parmDatatypeId(extendedTypeNum(SalesBookId_RU));
+        #    datatype.parmReferenceHelp(literalStr("@GLS101244"));
+        #    datatype.parmReferenceLabel(literalStr("@GLS101510"));
+        #    datatype.parmWizardIsContinuous(true);
+        #    datatype.parmWizardIsManual(NoYes::No);
+        #    datatype.parmWizardIsChangeDownAllowed(NoYes::No);
+        #    datatype.parmWizardIsChangeUpAllowed(NoYes::No);
+        #    datatype.parmSortField(22);
+        #
+        #    datatype.addParameterType(NumberSeqParameterType::DataArea, true, false);
+        #    this.create(datatype);
+        #
+        #
+        #    // Number reference for payment orders
+        #    datatype.parmDatatypeId(extendedTypeNum(BankPaymentOrder_Cust_RU));
+        #    datatype.parmReferenceHelp(literalStr("@GLS101370"));
+        #    datatype.parmWizardIsContinuous(true);
+        #    datatype.parmWizardIsManual(NoYes::No);
+        #    datatype.parmWizardIsChangeDownAllowed(NoYes::No);
+        #    datatype.parmWizardIsChangeUpAllowed(NoYes::No);
+        #    datatype.parmSortField(23);
+        #
+        #    datatype.addParameterType(NumberSeqParameterType::DataArea, true, false);
+        #    this.create(datatype);
+        #
+        #
+        #    // Number reference for payment orders in currency
+        #    datatype.parmDatatypeId(extendedTypeNum(BankPaymentOrderCur_Cust_RU));
+        #    datatype.parmReferenceHelp(literalStr("@GLS102276"));
+        #    datatype.parmWizardIsContinuous(true);
+        #    datatype.parmWizardIsManual(NoYes::No);
+        #    datatype.parmWizardIsChangeDownAllowed(NoYes::No);
+        #    datatype.parmWizardIsChangeUpAllowed(NoYes::No);
+        #    datatype.parmSortField(24);
+        #
+        #     datatype.addParameterType(NumberSeqParameterType::DataArea, true, false);
+        #     this.create(datatype);
+        #
+        #
+        #    // RTax25 Bad debts
+        #    datatype.parmDatatypeId(extendedTypeNum(RTax25DebtDebitVoucher));
+        #    datatype.parmReferenceHelp(literalStr("@GLS104208"));
+        #    datatype.parmReferenceLabel(literalStr("@GLS104209"));
+        #    datatype.parmWizardIsContinuous(true);
+        #    datatype.parmWizardIsManual(NoYes::No);
+        #    datatype.parmWizardIsChangeDownAllowed(NoYes::No);
+        #    datatype.parmWizardIsChangeUpAllowed(NoYes::No);
+        #    datatype.parmWizardLowest(500000000);
+        #    datatype.parmWizardHighest(509999999);
+        #    datatype.parmSortField(25);
+        #
+        #    datatype.addParameterType(NumberSeqParameterType::DataArea, true, false);
+        #    this.create(datatype);
+        #
+        #
+        #    datatype.parmDatatypeId(extendedTypeNum(RTax25DebtReserveVoucher));
+        #    datatype.parmReferenceHelp(literalStr("@GLS104137"));
+        #    datatype.parmWizardIsContinuous(true);
+        #    datatype.parmWizardIsManual(NoYes::No);
+        #    datatype.parmWizardIsChangeDownAllowed(NoYes::No);
+        #    datatype.parmWizardIsChangeUpAllowed(NoYes::No);
+        #    datatype.parmWizardLowest(510000000);
+        #    datatype.parmWizardHighest(519999999);
+        #    datatype.parmSortField(26);
+        #
+        #    datatype.addParameterType(NumberSeqParameterType::DataArea, true, false);
+        #    this.create(datatype);
+        #
+        #
+        #    // Facture
+        #    datatype.parmDatatypeId(extendedTypeNum(CustFactureId_RU));
+        #    datatype.parmReferenceLabel(literalStr("@GLS106861"));
+        #    datatype.parmReferenceHelp(literalStr("@GLS104536"));
+        #    datatype.parmWizardIsContinuous(false);
+        #    datatype.parmWizardIsManual(NoYes::No);
+        #    datatype.parmWizardIsChangeDownAllowed(NoYes::No);
+        #    datatype.parmWizardIsChangeUpAllowed(NoYes::No);
+        #    datatype.parmSortField(27);
+        #
+        #    datatype.addParameterType(NumberSeqParameterType::DataArea, true, false);
+        #    this.create(datatype);
+        #
+        #
+        #    datatype.parmDatatypeId(extendedTypeNum(FactureExternalId_RU));
+        #    datatype.parmReferenceHelp(literalStr("@GLS106862"));
+        #    datatype.parmWizardIsContinuous(true);
+        #    datatype.parmWizardIsManual(NoYes::No);
+        #    datatype.parmWizardIsChangeDownAllowed(NoYes::No);
+        #    datatype.parmWizardIsChangeUpAllowed(NoYes::No);
+        #    datatype.parmIsGroupEnabled(NoYes::Yes);
+        #    datatype.parmSortField(28);
+        #
+        #    datatype.addParameterType(NumberSeqParameterType::DataArea, true, false);
+        #    this.create(datatype);
+        #
+        #
+        #    // CZ Prepayments, Tax Document number
+        #    datatype.parmDatatypeId(extendedTypeNum(CzTaxDocumentNum_Cust));
+        #    datatype.parmReferenceLabel(literalStr("@GLS108299"));
+        #    datatype.parmReferenceHelp(literalStr("@GLS108300"));
+        #    datatype.parmWizardIsContinuous(true);
+        #    datatype.parmWizardIsManual(NoYes::No);
+        #    datatype.parmWizardIsChangeDownAllowed(NoYes::No);
+        #    datatype.parmWizardIsChangeUpAllowed(NoYes::No);
+        #    datatype.parmSortField(29);
+        #
+        #    datatype.addParameterType(NumberSeqParameterType::DataArea, true, false);
+        #    this.create(datatype);
+        #
+        #    // CZ Prepayments, Tax Credit Memo number
+        #    datatype.parmDatatypeId(extendedTypeNum(CzTaxCreditMemoNum_Cust));
+        #    datatype.parmReferenceLabel(literalStr("@GLS108319"));
+        #    datatype.parmReferenceHelp(literalStr("@GLS108320"));
+        #    datatype.parmWizardIsContinuous(true);
+        #    datatype.parmWizardIsManual(NoYes::No);
+        #    datatype.parmWizardIsChangeDownAllowed(NoYes::No);
+        #    datatype.parmWizardIsChangeUpAllowed(NoYes::No);
+        #    datatype.parmSortField(30);
+        #
+        #    datatype.addParameterType(NumberSeqParameterType::DataArea, true, false);
+        #    this.create(datatype);
+        #
+        #
+        #    // RU corrective documents
+        #    datatype.parmDatatypeId(extendedTypeNum(CustCorrectInvoiceId_RU));
+        #    datatype.parmReferenceHelp(literalStr("@GLS111926"));
+        #    datatype.parmWizardIsContinuous(true);
+        #    datatype.parmWizardIsManual(NoYes::No);
+        #    datatype.parmWizardIsChangeDownAllowed(NoYes::No);
+        #    datatype.parmWizardIsChangeUpAllowed(NoYes::No);
+        #    datatype.parmIsGroupEnabled(NoYes::Yes);
+        #    datatype.parmSortField(31);
+        #
+        #    datatype.addParameterType(NumberSeqParameterType::DataArea, true, false);
+        #    this.create(datatype);
+        #
+        #
+        #    datatype.parmDatatypeId(extendedTypeNum(CustCorrectCreditNoteId_RU));
+        #    datatype.parmReferenceHelp(literalStr("@GLS111927"));
+        #    datatype.parmWizardIsContinuous(true);
+        #    datatype.parmWizardIsManual(NoYes::No);
+        #    datatype.parmWizardIsChangeDownAllowed(NoYes::No);
+        #    datatype.parmWizardIsChangeUpAllowed(NoYes::No);
+        #    datatype.parmIsGroupEnabled(NoYes::Yes);
+        #    datatype.parmSortField(32);
+        #
+        #    datatype.addParameterType(NumberSeqParameterType::DataArea, true, false);
+        #    this.create(datatype);
+        #
+        #
+        #    datatype.parmDatatypeId(extendedTypeNum(CustCorrectInvoiceVoucher_RU));
+        #    datatype.parmReferenceHelp(literalStr("@GLS111928"));
+        #    datatype.parmDatatypeSameAsId(extendedTypeNum(CustCorrectInvoiceId_RU));
+        #    datatype.parmWizardIsContinuous(true);
+        #    datatype.parmWizardIsManual(NoYes::No);
+        #    datatype.parmWizardIsChangeDownAllowed(NoYes::No);
+        #    datatype.parmWizardIsChangeUpAllowed(NoYes::No);
+        #    datatype.parmWizardLowest(30000000);
+        #    datatype.parmWizardHighest(39999999);
+        #    datatype.parmIsGroupEnabled(NoYes::Yes);
+        #    datatype.parmSortField(33);
+        #
+        #    datatype.addParameterType(NumberSeqParameterType::DataArea, true, false);
+        #    this.create(datatype);
+        #
+        #
+        #    datatype.parmDatatypeId(extendedTypeNum(CustCorrectCreditNoteVoucher_RU));
+        #    datatype.parmReferenceHelp(literalStr("@GLS111929"));
+        #    datatype.parmDatatypeSameAsId(extendedTypeNum(CustCorrectCreditNoteId_RU));
+        #    datatype.parmWizardIsContinuous(true);
+        #    datatype.parmWizardIsManual(NoYes::No);
+        #    datatype.parmWizardIsChangeDownAllowed(NoYes::No);
+        #    datatype.parmWizardIsChangeUpAllowed(NoYes::No);
+        #    datatype.parmWizardLowest(40000000);
+        #    datatype.parmWizardHighest(49999999);
+        #    datatype.parmIsGroupEnabled(NoYes::Yes);
+        #    datatype.parmSortField(34);
+        #
+        #    datatype.addParameterType(NumberSeqParameterType::DataArea, true, false);
+        #    this.create(datatype);
+        #
+        #
+        #    datatype.parmDatatypeId(extendedTypeNum(CorrectFactureExternalId_RU));
+        #    datatype.parmReferenceHelp(literalStr("@GLS111930"));
+        #    datatype.parmWizardIsContinuous(true);
+        #    datatype.parmWizardIsManual(NoYes::No);
+        #    datatype.parmWizardIsChangeDownAllowed(NoYes::No);
+        #    datatype.parmWizardIsChangeUpAllowed(NoYes::No);
+        #    datatype.parmIsGroupEnabled(NoYes::Yes);
+        #    datatype.parmSortField(35);
+        #
+        #    datatype.addParameterType(NumberSeqParameterType::DataArea, true, false);
+        #    this.create(datatype);
+        #
+        #    datatype.parmDatatypeId(extendedTypeNum(SalesBookVATProcessVoucher_RU));
+        #    datatype.parmReferenceHelp(literalStr("@GLS112931"));
+        #    datatype.parmWizardIsContinuous(false);
+        #    datatype.parmWizardIsManual(NoYes::No);
+        #    datatype.parmWizardIsChangeDownAllowed(NoYes::No);
+        #    datatype.parmWizardIsChangeUpAllowed(NoYes::No);
+        #    datatype.parmWizardLowest(520000000);
+        #    datatype.parmWizardHighest(529999999);
+        #    datatype.parmSortField(37);
+        #
+        #    datatype.addParameterType(NumberSeqParameterType::DataArea, true, false);
+        #    this.create(datatype);
+        #
+        #
+        #    datatype.parmDatatypeId(extendedTypeNum(SalesExportFactureExternalId_RU));
+        #    datatype.parmReferenceHelp(literalStr("@GLS112951"));
+        #    datatype.parmWizardIsContinuous(true);
+        #    datatype.parmWizardIsManual(NoYes::No);
+        #    datatype.parmWizardIsChangeDownAllowed(NoYes::No);
+        #    datatype.parmWizardIsChangeUpAllowed(NoYes::No);
+        #    datatype.parmIsGroupEnabled(NoYes::Yes);
+        #    datatype.parmSortField(38);
+        #
+        #    datatype.addParameterType(NumberSeqParameterType::DataArea, true, false);
+        #    this.create(datatype);
+        #
+        #    datatype.parmDatatypeId(extendedTypeNum(GoodsInRouteId_RU));
+        #    datatype.parmReferenceHelp(literalStr("@GLS114738"));
+        #    datatype.parmWizardIsContinuous(false);
+        #    datatype.parmWizardIsManual(NoYes::No);
+        #    datatype.parmWizardIsChangeDownAllowed(NoYes::No);
+        #    datatype.parmWizardIsChangeUpAllowed(NoYes::No);
+        #    datatype.parmSortField(39);
+        #
+        #    datatype.addParameterType(NumberSeqParameterType::DataArea, true, false);
+        #    this.create(datatype);
+        #
+        #    datatype.parmDatatypeId(extendedTypeNum(GoodsInRouteVoucher_RU));
+        #    datatype.parmReferenceHelp(literalStr("@GLS114802"));
+        #    datatype.parmWizardIsManual(NoYes::No);
+        #    datatype.parmWizardIsChangeDownAllowed(NoYes::No);
+        #    datatype.parmWizardIsChangeUpAllowed(NoYes::No);
+        #    datatype.parmWizardLowest(530000000);
+        #    datatype.parmWizardHighest(539999999);
+        #    datatype.parmSortField(40);
+        #
+        #    datatype.addParameterType(NumberSeqParameterType::DataArea, true, false);
+        #    this.create(datatype);
+        #
+        #    // HU Tax Reimbursement Document number
+        #    datatype.parmDatatypeId(extendedTypeNum(TaxReimbursementDoc_HU));
+        #    datatype.parmReferenceHelp(literalStr("@GLS112615"));
+        #    datatype.parmWizardIsContinuous(true);
+        #    datatype.parmWizardIsManual(NoYes::No);
+        #    datatype.parmWizardIsChangeDownAllowed(NoYes::No);
+        #    datatype.parmWizardIsChangeUpAllowed(NoYes::No);
+        #    datatype.parmWizardHighest(9999999);
+        #    datatype.parmSortField(41);
+        #
+        #    datatype.addParameterType(NumberSeqParameterType::DataArea, true, false);
+        #    this.create(datatype);
+        #
+        #    datatype.parmDatatypeId(extendedTypeNum(TaxIntgrExportDocumentId_CN));
+        #    datatype.parmConfigurationKeyId(configurationKeyNum(LedgerBasicSalesTax));
+        #    datatype.parmReferenceHelp(literalStr("@SYS4002264"));
+        #    datatype.parmWizardIsContinuous(true);
+        #    datatype.parmWizardIsManual(NoYes::No);
+        #    datatype.parmWizardIsChangeDownAllowed(NoYes::No);
+        #    datatype.parmWizardIsChangeUpAllowed(NoYes::No);
+        #    datatype.parmWizardHighest(999999);
+        #    datatype.parmSortField(100);
+        #
+        #    datatype.addParameterType(NumberSeqParameterType::DataArea, true, false);
+        #    this.create(datatype);
+        #
+        #    // Bill of exchange endorsement voucher id
+        #    datatype.parmDatatypeId(extendedTypeNum(CustBillOfExchangeEndorseVoucher));
+        #    datatype.parmReferenceHelp(literalStr("@GLS221447"));
+        #    datatype.parmWizardIsContinuous(true);
+        #    datatype.parmWizardIsManual(NoYes::No);
+        #    datatype.parmWizardIsChangeDownAllowed(NoYes::No);
+        #    datatype.parmWizardIsChangeUpAllowed(NoYes::No);
+        #    datatype.parmWizardHighest(9999999);
+        #    datatype.parmSortField(42);
+        #
+        #    datatype.addParameterType(NumberSeqParameterType::DataArea, true, false);
+        #    this.create(datatype);
+        #
+        #
+        #    // payment reference
+        #    datatype.parmDatatypeId(extendedTypeNum(CustPaymReference_EE));
+        #    datatype.parmReferenceHelp(literalstr("@GLS109021"));
+        #    datatype.parmWizardIsContinuous(true);
+        #    datatype.parmWizardIsManual(NoYes::No);
+        #    datatype.parmWizardIsChangeDownAllowed(NoYes::No);
+        #    datatype.parmWizardIsChangeUpAllowed(NoYes::No);
+        #    datatype.parmSortField(43);
+        #
+        #    datatype.addParameterType(NumberSeqParameterType::DataArea, true, false);
+        #    this.create(datatype);
+        #
+        #
+        #
+        #    // Interest Note Document number
+        #    dataType.parmDatatypeId(extendedTypeNum(PlInterestNoteDocument));
+        #    datatype.parmReferenceHelp(literalstr("@GLS113037"));
+        #    datatype.parmWizardIsContinuous(true);
+        #    datatype.parmWizardIsManual(NoYes::No);
+        #    datatype.parmWizardIsChangeDownAllowed(NoYes::No);
+        #    datatype.parmWizardIsChangeUpAllowed(NoYes::No);
+        #    datatype.parmWizardHighest(999999);
+        #    datatype.parmSortField(44);
+        #
+        #    datatype.addParameterType(NumberSeqParameterType::DataArea, true, false);
+        #    this.create(datatype);
+        #
+        #    datatype.parmDatatypeId(extendedTypeNum(CustOverdueVATJournalId_W));
+        #    datatype.parmReferenceLabel(literalStr("@SYS4003605"));
+        #    datatype.parmReferenceHelp(literalStr("@SYS4003606"));
+        #    datatype.parmWizardIsContinuous(true);
+        #    datatype.parmWizardIsManual(NoYes::No);
+        #    datatype.parmWizardIsChangeDownAllowed(NoYes::No);
+        #    datatype.parmWizardIsChangeUpAllowed(NoYes::No);
+        #    datatype.parmWizardHighest(999999);
+        #    datatype.parmSortField(45);
+        #    datatype.addParameterType(NumberSeqParameterType::DataArea, true, false);
+        #    this.create(datatype);
+        #
+        #    // -- Begin -- Modify on 24 feb 2012 at 09:51:41 by dpastrel project MHT_I064_ProformaInvoice
+        #    datatype.parmDatatypeId(extendedtypenum(M_I064ProformaInvoiceId));
+        #    datatype.parmConfigurationKeyId(configurationkeynum(M_I064));
+        #    datatype.parmReferenceHelp(literalstr("@IBP254"));
+        #    datatype.parmWizardIsContinuous(true);
+        #    datatype.parmWizardIsManual(NoYes::No);
+        #    datatype.parmWizardIsChangeDownAllowed(NoYes::No);
+        #    datatype.parmWizardIsChangeUpAllowed(NoYes::No);
+        #    datatype.parmWizardHighest(999999);
+        #    datatype.parmSortField(47);
+        #    datatype.addParameterType(NumberSeqParameterType::DataArea, true, false);
+        #    this.create(datatype);
+        #    // --  End  -- Modify on 24 feb 2012 at 09:51:48 by dpastrel project MHT_I064_ProformaInvoice
+        #
+        #    datatype.parmDatatypeId(extendedTypeNum(CustOverdueVATVoucher_W));
+        #    datatype.parmReferenceHelp(literalStr("@SYS4003607"));
+        #    datatype.parmReferenceLabel(literalStr("@SYS4003535"));
+        #    datatype.parmWizardIsContinuous(true);
+        #    datatype.parmWizardIsManual(NoYes::No);
+        #    datatype.parmWizardIsChangeDownAllowed(NoYes::No);
+        #    datatype.parmWizardIsChangeUpAllowed(NoYes::No);
+        #    datatype.parmWizardHighest(999999);
+        #    datatype.parmSortField(46);
+        #
+        #    datatype.addParameterType(NumberSeqParameterType::DataArea, true, false);
+        #    this.create(datatype);
+        #
+        #
+        #    datatype.parmDatatypeId(extendedTypeNum(CustDirectiveId_PSN));
+        #    datatype.parmReferenceLabel(literalStr("@GLS223147"));
+        #    datatype.parmReferenceHelp(literalStr("@GLS223182"));
+        #    datatype.parmConfigurationKeyId(configurationKeyNum(PublicSector));
+        #    datatype.parmWizardIsContinuous(true);
+        #    datatype.parmWizardIsManual(NoYes::No);
+        #    datatype.parmWizardIsChangeDownAllowed(NoYes::No);
+        #    datatype.parmWizardIsChangeUpAllowed(NoYes::No);
+        #    datatype.parmWizardLowest(1);
+        #    datatype.parmSortField(20);
+        #
+        #    datatype.addParameterType(NumberSeqParameterType::DataArea, true, false);
+        #    datatype.addParameterType(NumberSeqParameterType::FiscalCalendarPeriod, true, false);
+        #    this.create(datatype);
+        #
+        #    datatype.parmDatatypeId(extendedtypenum(CustRoutingSlipId_PSN));
+        #    datatype.parmReferenceLabel(literalStr("@GLS223145"));
+        #    datatype.parmReferenceHelp(literalStr("@GLS223183"));
+        #    datatype.parmConfigurationKeyId(configurationkeynum(PublicSector));
+        #    datatype.parmWizardIsContinuous(true);
+        #    datatype.parmWizardIsManual(NoYes::No);
+        #    datatype.parmWizardIsChangeDownAllowed(NoYes::No);
+        #    datatype.parmWizardIsChangeUpAllowed(NoYes::No);
+        #    datatype.parmWizardLowest(1);
+        #    datatype.parmSortField(21);
+        #
+        #    datatype.addParameterType(NumberSeqParameterType::DataArea, true, false);
+        #    datatype.addParameterType(NumberSeqParameterType::FiscalCalendarPeriod, true, false);
+        #    this.create(datatype);
+        #
+        #    // Direct debit mandate reference
+        #    datatype.parmDatatypeId(extendedTypeNum(CustMandateId));
+        #    //datatype.parmReferenceHelp(literalStr("@???"));
+        #    datatype.parmReferenceHelp(literalStr("@SYS4002659"));
+        #    datatype.parmWizardIsContinuous(NoYes::Yes);
+        #    datatype.parmWizardIsManual(NoYes::No);
+        #    datatype.parmWizardIsChangeDownAllowed(NoYes::No);
+        #    datatype.parmWizardIsChangeUpAllowed(NoYes::No);
+        #    datatype.parmWizardHighest(999999999);
+        #    datatype.parmSortField(26);
+        #
+        #    datatype.addParameterType(NumberSeqParameterType::DataArea, true, false);
+        #    this.create(datatype);
+        #
+        #    // Entry certificate id
+        #    datatype.parmDatatypeId(extendedTypeNum(EntryCertificateId_W));
+        #    // Select the number sequence to associate with the entry certificates.
+        #    datatype.parmReferenceHelp(literalStr("@SYS4004147"));
+        #    datatype.parmWizardIsContinuous(true);
+        #    datatype.parmWizardIsManual(NoYes::No);
+        #    datatype.parmWizardIsChangeDownAllowed(NoYes::No);
+        #    datatype.parmWizardIsChangeUpAllowed(NoYes::No);
+        #    datatype.parmWizardHighest(999999);
+        #    datatype.parmSortField(27);
+        #
+        #    datatype.addParameterType(NumberSeqParameterType::DataArea, true, false);
+        #    this.create(datatype);
+        #
+        #    // <GMY>
+        #    // Free text debit note
+        #    datatype.parmDatatypeId(extendedTypeNum(CustDebitNoteId_MY));
+        #    datatype.parmReferenceHelp(literalStr("@SYP4860858"));
+        #    datatype.parmWizardIsContinuous(true);
+        #    datatype.parmWizardIsManual(NoYes::No);
+        #    datatype.parmWizardIsChangeDownAllowed(NoYes::No);
+        #    datatype.parmWizardIsChangeUpAllowed(NoYes::No);
+        #    datatype.parmIsGroupEnabled(NoYes::Yes);
+        #    datatype.parmSortField(50);
+        #
+        #    datatype.addParameterType(NumberSeqParameterType::DataArea, true, false);
+        #    this.create(datatype);
+        #
+        #    // Free text debit note voucher
+        #    datatype.parmDatatypeId(extendedTypeNum(CustDebitNoteVoucher_MY));
+        #    datatype.parmDatatypeSameAsId(extendedTypeNum(CustDebitNoteId_MY));
+        #    datatype.parmReferenceHelp(literalStr("@SYP4860859"));
+        #    datatype.parmWizardIsContinuous(true);
+        #    datatype.parmWizardIsManual(NoYes::No);
+        #    datatype.parmWizardIsChangeDownAllowed(NoYes::No);
+        #    datatype.parmWizardIsChangeUpAllowed(NoYes::No);
+        #    datatype.parmWizardLowest(140000000);
+        #    datatype.parmWizardHighest(149999999);
+        #    datatype.parmIsGroupEnabled(NoYes::Yes);
+        #    datatype.parmSortField(51);
+        #
+        #    datatype.parmDatatypeId(extendedTypeNum(CustGroupId));
+        #    datatype.parmReferenceHelp("Customer group ID");
+        #    datatype.parmWizardIsContinuous(false);
+        #    datatype.parmWizardIsManual(NoYes::No);
+        #    datatype.parmWizardIsChangeDownAllowed(NoYes::Yes);
+        #    datatype.parmWizardIsChangeUpAllowed(NoYes::Yes);
+        #    datatype.parmWizardHighest(999);
+        #    datatype.parmSortField(20);
+        #    datatype.addParameterType(
+        #    NumberSeqParameterType::DataArea, true, false);
+        #    this.create(datatype);
+        #
+        #
+        #    datatype.addParameterType(NumberSeqParameterType::DataArea, true, false);
+        #    this.create(datatype);
+        #    // </GMY>
+        #    this.mcrLoadModules(datatype);
+        #}
+      ENDSOURCE
+      SOURCE #mcrLoadModules
+        #/// <summary>
+        #/// Configures all the data types that are being used by the module.
+        #/// </summary>
+        #/// <param name="datatype">
+        #/// The <c>NumberSeqDataType</c> object that this method configures.
+        #/// </param>
+        #private void mcrLoadModules(NumberSeqDatatype datatype)
+        #{
+        #    // Free texts invoice ID that is created as part of the gift card add amount functionality
+        #    datatype.parmDatatypeId(extendedTypeNum(MCRFreeTextGiftCard));
+        #    datatype.parmConfigurationKeyId(configurationKeyNum(MCRPayment));
+        #    datatype.parmReferenceLabel("@MCR34113");
+        #    datatype.parmReferenceHelp(literalStr("@MCR34114"));
+        #    datatype.parmWizardIsContinuous(true);
+        #    datatype.parmWizardIsManual(NoYes::No);
+        #    datatype.parmWizardIsChangeDownAllowed(NoYes::No);
+        #    datatype.parmWizardIsChangeUpAllowed(NoYes::No);
+        #    datatype.parmIsGroupEnabled(NoYes::Yes);
+        #    datatype.parmWizardHighest(999999);
+        #    datatype.parmSortField(45);
+        #
+        #    datatype.addParameterType(NumberSeqParameterType::DataArea, true, false);
+        #    this.create(datatype);
+        #
+        #    // Free texts invoice ID that is created as part of the gift card add amount functionality
+        #    datatype.parmDatatypeId(extendedTypeNum(MCRFreeTextGiftCardVoucher));
+        #    datatype.parmConfigurationKeyId(configurationKeyNum(MCRPayment));
+        #    datatype.parmReferenceLabel("@MCR34115");
+        #    datatype.parmReferenceHelp(literalStr("@MCR34116"));
+        #    datatype.parmWizardIsContinuous(true);
+        #    datatype.parmWizardIsManual(NoYes::No);
+        #    datatype.parmWizardIsChangeDownAllowed(NoYes::No);
+        #    datatype.parmWizardIsChangeUpAllowed(NoYes::No);
+        #    datatype.parmIsGroupEnabled(NoYes::Yes);
+        #    datatype.parmWizardHighest(999999);
+        #    datatype.parmSortField(46);
+        #
+        #    datatype.addParameterType(NumberSeqParameterType::DataArea, true, false);
+        #    this.create(datatype);
+        #
+        #    // Item list id number sequence.
+        #    datatype.parmDatatypeId(extendedTypeNum(MCRItemListId));
+        #    datatype.parmConfigurationKeyId(configurationKeyNum(LogisticsBasic));
+        #    datatype.parmReferenceHelp(literalStr("@MCR40219")); // Unique key for item list
+        #    datatype.parmWizardIsContinuous(true);
+        #    datatype.parmWizardIsManual(NoYes::No);
+        #    datatype.parmWizardIsChangeDownAllowed(NoYes::No);
+        #    datatype.parmWizardIsChangeUpAllowed(NoYes::No);
+        #    datatype.parmSortField(47);
+        #    datatype.parmWizardHighest(999999);
+        #
+        #    datatype.addParameterType(NumberSeqParameterType::DataArea, true, false);
+        #    this.create(datatype);
+        #}
+      ENDSOURCE
+      SOURCE #numberSeqModule
+        #/// <summary>
+        #///    Retrieves the ID of the application-specific module for this class.
+        #/// </summary>
+        #/// <returns>
+        #///    The module-specific ID.
+        #/// </returns>
+        #public NumberSeqModule numberSeqModule()
+        #{
+        #    return NumberSeqModule::Cust;
+        #}
+      ENDSOURCE
+    ENDMETHODS
+  ENDCLASS
+
+***Element: PRN
+
+; Microsoft Dynamics AX Project : CookBookAx2012_Capture1 unloaded
+; --------------------------------------------------------------------------------
+  PROJECTVERSION 2
+  
+  PROJECT #CookBookAx2012_Capture1
+  PRIVATE
+  PROPERTIES
+    Name                #CookBookAx2012_Capture1
+    Origin              #{1CD784BE-0131-4269-949D-2212F0A935E4}
+  ENDPROPERTIES
+  
+    PROJECTCLASS ProjectNode
+    BEGINNODE
+      FILETYPE 0
+      UTILTYPE 45
+      UTILOBJECTID 1030599
+      NODETYPE 329
+      NAME #CreateXmlFile
+    ENDNODE
+    BEGINNODE
+      FILETYPE 0
+      UTILTYPE 45
+      UTILOBJECTID 1030597
+      NODETYPE 329
+      NAME #VendTableSql_7
+    ENDNODE
+    BEGINNODE
+      FILETYPE 0
+      UTILTYPE 5
+      UTILOBJECTID 0
+      NODETYPE 215
+      NAME #VendTableMacro_6
+    ENDNODE
+    BEGINNODE
+      FILETYPE 0
+      UTILTYPE 4
+      UTILOBJECTID 0
+      NODETYPE 218
+      NAME #VendTableNotBlocked
+    ENDNODE
+    BEGINNODE
+      FILETYPE 0
+      UTILTYPE 5
+      UTILOBJECTID 0
+      NODETYPE 215
+      NAME #ProjTableQuery
+    ENDNODE
+    BEGINNODE
+      FILETYPE 0
+      UTILTYPE 5
+      UTILOBJECTID 0
+      NODETYPE 215
+      NAME #MainAccountCopy_5
+    ENDNODE
+    BEGINNODE
+      FILETYPE 0
+      UTILTYPE 5
+      UTILOBJECTID 0
+      NODETYPE 215
+      NAME #VendAccountDocu_4
+    ENDNODE
+    BEGINNODE
+      FILETYPE 0
+      UTILTYPE 5
+      UTILOBJECTID 0
+      NODETYPE 215
+      NAME #LedgerReasonMerge_3
+    ENDNODE
+    BEGINNODE
+      FILETYPE 0
+      UTILTYPE 5
+      UTILOBJECTID 0
+      NODETYPE 215
+      NAME #CustAccountRaname_2
+    ENDNODE
+    BEGINNODE
+      FILETYPE 0
+      UTILTYPE 5
+      UTILOBJECTID 0
+      NODETYPE 215
+      NAME #NumberSeqLoadAll_1
+    ENDNODE
+    BEGINNODE
+      FILETYPE 0
+      UTILTYPE 45
+      UTILOBJECTID 1016451
+      NODETYPE 329
+      NAME #NumberSeqModuleCustomer
+    ENDNODE
+  ENDPROJECT
+  
+
+***Element: END
