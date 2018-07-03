@@ -1,0 +1,1294 @@
+﻿Exportfile for AOT version 1.0 or later
+Formatversion: 1
+
+***Element: FTM
+
+; Microsoft Dynamics AX MENUITEM : IS_ImportSalesPriceBatch unloaded
+; --------------------------------------------------------------------------------
+  VERSION 1
+  
+  MENUITEM #IS_ImportSalesPriceBatch
+    Type: 3
+    PROPERTIES
+      Name                #IS_ImportSalesPriceBatch
+      Label               #Import Sales Price Batch
+      ObjectType          #Class
+      Object              #IS_ImportSalesPriceBatch
+      Origin              #{92B81553-D070-4D4E-B6FF-5D3787E89E65}
+    ENDPROPERTIES
+    
+  ENDMENUITEM
+  
+
+***Element: FTM
+
+; Microsoft Dynamics AX MENUITEM : IS_ImportSalesPriceBatchParameters unloaded
+; --------------------------------------------------------------------------------
+  VERSION 1
+  
+  MENUITEM #IS_ImportSalesPriceBatchParameters
+    Type: 1
+    PROPERTIES
+      Name                #IS_ImportSalesPriceBatchParameters
+      Label               #Import Sales Price Batch Parameters
+      Object              #IS_ImportSalesPriceBatchParameters
+      Origin              #{D9077D7A-94D7-4458-868D-8C09BCC9C3D7}
+    ENDPROPERTIES
+    
+  ENDMENUITEM
+  
+
+***Element: DBT
+
+; Microsoft Dynamics AX Table : IS_ImportSalesPriceParameters unloaded
+; --------------------------------------------------------------------------------
+  TABLEVERSION 1
+  
+  TABLE #IS_ImportSalesPriceParameters
+    EnforceFKRelation 1
+    PROPERTIES
+      Name                #IS_ImportSalesPriceParameters
+      CreateRecIdIndex    #Yes
+      PrimaryIndex        #SurrogateKey
+      ClusterIndex        #SurrogateKey
+      Origin              #{DF927618-40A6-4CB5-BF81-DDACB2B9513F}
+    ENDPROPERTIES
+    
+    FIELDS
+      FIELD #DestinationPath
+        STRING
+        PROPERTIES
+          Name                #DestinationPath
+          Label               #@GLS223837
+          Table               #IS_ImportSalesPriceParameters
+          Origin              #{0120C475-9171-455C-A0B2-2EA2B49C1338}
+          ExtendedDataType    #FilePath
+          StringSize          #259
+        ENDPROPERTIES
+        
+      FIELD #JournalName
+        STRING
+        PROPERTIES
+          Name                #JournalName
+          Table               #IS_ImportSalesPriceParameters
+          Origin              #{035B50B2-F93A-468B-8491-1113119CC4EC}
+          ExtendedDataType    #PriceDiscJournalName
+          StringSize          #13
+        ENDPROPERTIES
+        
+      FIELD #Separator
+        STRING
+        PROPERTIES
+          Name                #Separator
+          Table               #IS_ImportSalesPriceParameters
+          Origin              #{47F2F240-B81F-4E0F-AC90-E552528D471E}
+          ExtendedDataType    #char
+          StringSize          #1
+        ENDPROPERTIES
+        
+      FIELD #SourcePath
+        STRING
+        PROPERTIES
+          Name                #SourcePath
+          Label               #@SYS11258
+          Table               #IS_ImportSalesPriceParameters
+          Origin              #{716A186F-9874-477C-ACA5-5432A89364D0}
+          ExtendedDataType    #FilePath
+          StringSize          #259
+        ENDPROPERTIES
+        
+    ENDFIELDS
+    GROUPS
+    ENDGROUPS
+    
+    INDICES
+    ENDINDICES
+    FULLTEXTINDICES
+    ENDFULLTEXTINDICES
+    REFERENCES
+      REFERENCE #PriceDiscAdmName
+        PROPERTIES
+          Name                #PriceDiscAdmName
+          Table               #PriceDiscAdmName
+          UseDefaultRoleNames #Yes
+        ENDPROPERTIES
+        
+        FIELDREFERENCES
+          REFERENCETYPE PKFK
+          PROPERTIES
+            Field               #JournalName
+            RelatedField        #JournalName
+          ENDPROPERTIES
+          
+        ENDFIELDREFERENCES
+      ENDREFERENCE
+    ENDREFERENCES
+    
+    DELETEACTIONS
+    ENDDELETEACTIONS
+    
+    METHODS
+    ENDMETHODS
+  ENDTABLE
+  
+
+***Element: DBT
+
+; Microsoft Dynamics AX Table : PriceDiscAdmName unloaded
+; --------------------------------------------------------------------------------
+  TABLEVERSION 1
+  
+  TABLE #PriceDiscAdmName
+    EnforceFKRelation 0
+    PROPERTIES
+      Name                #PriceDiscAdmName
+      Label               #@SYS60311
+      FormRef             #PriceDiscAdmName
+      TitleField1         #JournalName
+      TitleField2         #Name
+      ConfigurationKey    #PriceDisc
+      SecurityKey         #BasicTables
+      CacheLookup         #EntireTable
+      TableGroup          #Group
+      PrimaryIndex        #JournalNameIdx
+      ClusterIndex        #JournalNameIdx
+      DeveloperDocumentation  #@SYS124524
+      Origin              #{2C1003CA-0000-1000-C16C-F232557AC5CF}
+      LegacyId            #970
+    ENDPROPERTIES
+    
+    FIELDS
+      FIELD #DefaultRelation
+        ENUM
+        PROPERTIES
+          Name                #DefaultRelation
+          Label               #@SYS9114
+          HelpText            #@SYS4404
+          Table               #PriceDiscAdmName
+          Origin              #{B34B2A00-DE30-45B7-920B-9CEC89B4EFA4}
+          EnumType            #PriceType
+        ENDPROPERTIES
+        
+      FIELD #JournalName
+        STRING
+        PROPERTIES
+          Name                #JournalName
+          Mandatory           #Yes
+          AllowEdit           #No
+          Table               #PriceDiscAdmName
+          Origin              #{0BA8FFFE-6E13-4AA7-87F4-F127133ECD2F}
+          LegacyId            #2
+          ExtendedDataType    #PriceDiscName
+          StringSize          #150
+        ENDPROPERTIES
+        
+      FIELD #Name
+        STRING
+        PROPERTIES
+          Name                #Name
+          Label               #@SYS6303
+          HelpText            #@SYS28124
+          Table               #PriceDiscAdmName
+          Origin              #{40430C0D-9E77-4109-9683-9053E0051E76}
+          LegacyId            #1
+          ExtendedDataType    #Name
+          StringSize          #150
+        ENDPROPERTIES
+        
+    ENDFIELDS
+    GROUPS
+      GROUP #AutoReport
+        PROPERTIES
+          Name                #AutoReport
+        ENDPROPERTIES
+        
+        GROUPFIELDS
+          #Name
+          #JournalName
+        ENDGROUPFIELDS
+      ENDGROUP
+      GROUP #Defaults
+        PROPERTIES
+          Name                #Defaults
+          Label               #@SYS334126
+        ENDPROPERTIES
+        
+        GROUPFIELDS
+          #DefaultRelation
+        ENDGROUPFIELDS
+      ENDGROUP
+      GROUP #Identification
+        PROPERTIES
+          Name                #Identification
+          Label               #@SYS5711
+        ENDPROPERTIES
+        
+        GROUPFIELDS
+          #Name
+        ENDGROUPFIELDS
+      ENDGROUP
+      GROUP #NameOfJournal
+        PROPERTIES
+          Name                #NameOfJournal
+          Label               #@SYS1436
+        ENDPROPERTIES
+        
+        GROUPFIELDS
+          #JournalName
+        ENDGROUPFIELDS
+      ENDGROUP
+    ENDGROUPS
+    
+    INDICES
+      #JournalNameIdx
+      PROPERTIES
+        Name                #JournalNameIdx
+        AllowDuplicates     #No
+        Origin              #{2B0E0001-03CA-1000-85BF-D1A3305BD060}
+        LegacyId            #1
+      ENDPROPERTIES
+      
+      INDEXFIELDS
+        #JournalName
+      ENDINDEXFIELDS
+      
+    ENDINDICES
+    FULLTEXTINDICES
+    ENDFULLTEXTINDICES
+    REFERENCES
+    ENDREFERENCES
+    
+    DELETEACTIONS
+      #PriceDiscAdmTable
+      PROPERTIES
+        Table               #PriceDiscAdmTable
+        DeleteAction        #Restricted
+      ENDPROPERTIES
+      
+    ENDDELETEACTIONS
+    
+    METHODS
+      SOURCE #find
+        #static PriceDiscAdmName find(PriceDiscJournalName priceDiscJournalName)
+        #{
+        #    PriceDiscAdmName priceDiscAdmName;
+        #    ;
+        #    select firstonly priceDiscAdmName
+        #        index hint JournalNameIdx
+        #        where priceDiscAdmName.JournalName == priceDiscJournalName;
+        #
+        #    return priceDiscAdmName;
+        #
+        #}
+      ENDSOURCE
+    ENDMETHODS
+  ENDTABLE
+  
+
+***Element: FRM
+
+; Microsoft Dynamics AX Forms unloaded
+; --------------------------------------------------------------------------------
+FRMVERSION 12
+
+FORM #IS_ImportSalesPriceBatchParameters
+  PROPERTIES
+    Name                #IS_ImportSalesPriceBatchParameters
+    Origin              #{78F89942-C7D4-45D2-AD6A-B720B724EDE4}
+  ENDPROPERTIES
+  
+  METHODS
+    SOURCE #classDeclaration
+      #public class FormRun extends ObjectRun
+      #{
+      #}
+    ENDSOURCE
+    SOURCE #filePathLookupTitle
+      #str filePathLookupTitle()
+      #{;
+      #     return "";
+      #}
+    ENDSOURCE
+  ENDMETHODS
+  OBJECTBANK
+    PROPERTIES
+    ENDPROPERTIES
+    
+    DATASOURCE
+      OBJECTPOOL
+        PROPERTIES
+          Name                #IS_ImportSalesPriceParameters
+          Table               #IS_ImportSalesPriceParameters
+        ENDPROPERTIES
+        
+        FIELDLIST
+          DATAFIELD JournalName
+            PROPERTIES
+            ENDPROPERTIES
+            
+            METHODS
+              SOURCE #lookup
+                #public void lookup(FormControl _formControl, str _filterStr)
+                #{
+                #    QueryBuildDataSource queryBuildDataSource;
+                #    SysTableLookup sys = SysTableLookup::newParameters(tableNum(PriceDiscAdmName), _formControl);
+                #
+                #    Query query = new Query();
+                #
+                #
+                #    queryBuildDataSource = query.addDataSource(tableNum(PriceDiscAdmName));
+                #
+                #    sys.addLookupfield(fieldNum(PriceDiscAdmName,JOURNALNAME));
+                #
+                #    sys.parmQuery(query);
+                #    sys.performFormLookup();
+                #}
+              ENDSOURCE
+            ENDMETHODS
+          ENDDATAFIELD
+          
+        ENDFIELDLIST
+      ENDOBJECTPOOL
+      METHODS
+      ENDMETHODS
+    ENDDATASOURCE
+  ENDOBJECTBANK
+  
+  REFERENCEDATASOURCES
+  ENDREFERENCEDATASOURCES
+  
+  JOINS
+  ENDJOINS
+  
+  PARTREFERENCES
+  ENDPARTREFERENCES
+  
+  DESIGN
+    PROPERTIES
+      Caption             #Import Sales Price Batch Parameters
+      WindowResize        #Dynamic
+      ViewEditMode        #Edit
+    ENDPROPERTIES
+    
+    CONTAINER
+      CONTROL GROUP
+        PROPERTIES
+          Name                #Group
+          ElementPosition     #429496729
+        ENDPROPERTIES
+        
+        METHODS
+        ENDMETHODS
+      ENDCONTROL 
+      
+      CONTROL STRINGEDIT
+        PROPERTIES
+          Name                #DestinationPath
+          AutoDeclaration     #Yes
+          ElementPosition     #1288490187
+          DataSource          #IS_ImportSalesPriceParameters
+          DataField           #DestinationPath
+        ENDPROPERTIES
+        
+        METHODS
+        ENDMETHODS
+      ENDCONTROL 
+      
+      CONTROL STRINGEDIT
+        PROPERTIES
+          Name                #IS_ImportSalesPriceParameters_JournalName
+          ElementPosition     #1431655764
+          HierarchyParent     #Group
+          DataSource          #IS_ImportSalesPriceParameters
+          DataField           #JournalName
+        ENDPROPERTIES
+        
+        METHODS
+        ENDMETHODS
+      ENDCONTROL 
+      
+      CONTROL STRINGEDIT
+        PROPERTIES
+          Name                #Separator
+          AutoDeclaration     #Yes
+          ElementPosition     #1717986916
+          DataSource          #IS_ImportSalesPriceParameters
+          DataField           #Separator
+        ENDPROPERTIES
+        
+        METHODS
+        ENDMETHODS
+      ENDCONTROL 
+      
+      CONTROL STRINGEDIT
+        PROPERTIES
+          Name                #SourcePath
+          AutoDeclaration     #Yes
+          ElementPosition     #858993458
+          DataSource          #IS_ImportSalesPriceParameters
+          DataField           #SourcePath
+        ENDPROPERTIES
+        
+        METHODS
+        ENDMETHODS
+      ENDCONTROL 
+      
+    ENDCONTAINER
+    
+  ENDDESIGN
+  
+  PERMISSIONS #Permissions
+    PROPERTIES
+    ENDPROPERTIES
+    
+    PERMISSIONSET #Read
+      PROPERTIES
+      ENDPROPERTIES
+      
+      FORM #Controls
+      ENDFORM
+      
+    TABLES #Tables
+    ENDTABLES
+    
+  SERVERMETHODS #Server Methods
+  ENDSERVERMETHODS
+  
+ASSOCIATEDFORMS #Associated Forms
+ENDASSOCIATEDFORMS
+
+ENDPERMISSIONSET
+
+PERMISSIONSET #Update
+  PROPERTIES
+  ENDPROPERTIES
+  
+  FORM #Controls
+  ENDFORM
+  
+TABLES #Tables
+ENDTABLES
+
+SERVERMETHODS #Server Methods
+ENDSERVERMETHODS
+
+ASSOCIATEDFORMS #Associated Forms
+ENDASSOCIATEDFORMS
+
+ENDPERMISSIONSET
+
+PERMISSIONSET #Create
+  PROPERTIES
+  ENDPROPERTIES
+  
+  FORM #Controls
+  ENDFORM
+  
+TABLES #Tables
+ENDTABLES
+
+SERVERMETHODS #Server Methods
+ENDSERVERMETHODS
+
+ASSOCIATEDFORMS #Associated Forms
+ENDASSOCIATEDFORMS
+
+ENDPERMISSIONSET
+
+PERMISSIONSET #Delete
+  PROPERTIES
+  ENDPROPERTIES
+  
+  FORM #Controls
+  ENDFORM
+  
+TABLES #Tables
+ENDTABLES
+
+SERVERMETHODS #Server Methods
+ENDSERVERMETHODS
+
+ASSOCIATEDFORMS #Associated Forms
+ENDASSOCIATEDFORMS
+
+ENDPERMISSIONSET
+
+ENDPERMISSIONS
+
+ENDFORM
+
+
+***Element: CLS
+
+; Microsoft Dynamics AX Class: IS_ImportSalesPriceBatch unloaded
+; --------------------------------------------------------------------------------
+  CLSVERSION 1
+  
+  CLASS #IS_ImportSalesPriceBatch
+    PROPERTIES
+      Name                #IS_ImportSalesPriceBatch
+      Extends             #RunBaseBatch
+      Origin              #{A01B2353-64DF-4D02-9440-E2ED481E2614}
+    ENDPROPERTIES
+    
+    METHODS
+      SOURCE #addSlashToFolder
+        #private Filename addSlashToFolder(Filename _fileName)
+        #{
+        #    if (subStr(_fileName, 1, strLen(_fileName)) != '\\')
+        #    {
+        #        _fileName += '\\';
+        #    }
+        #    return _fileName;
+        #}
+      ENDSOURCE
+      SOURCE #canGoBatch
+        #/// <summary>
+        #/// Indicates whether the job can run in batch mode.
+        #/// </summary>
+        #/// <returns>
+        #/// Always returns true.
+        #/// </returns>
+        #public boolean canGoBatch()
+        #{
+        #    return true;
+        #}
+      ENDSOURCE
+      SOURCE #canGoBatchJournal
+        #/// <summary>
+        #///    Determines whether the class is shown in the list of <c>Journal</c> types.
+        #/// </summary>
+        #/// <returns>
+        #///    true if the class is shown in the list of <c>Journal</c> types; otherwise, false.
+        #/// </returns>
+        #/// <remarks>
+        #///    A class that can be used in a batch journal is a class where the same parameters can be used
+        #///    repeatedly. The false dialog box can be shown and the parameters can be changed but parameters of
+        #///    some classes might build on data that is only valid for a short time. Running a class two times
+        #///    with the same parameters is not always possible. If the <see cref="M:RunBaseBatch.canGoBatch" />
+        #///    method returns false, this method will not have any effect.
+        #/// </remarks>
+        #public boolean canGoBatchJournal()
+        #{
+        #    return true;
+        #}
+      ENDSOURCE
+      SOURCE #checkFile
+        #public boolean checkFile(AsciiIO _file, str 10 _separator, str _fileName)
+        #{
+        #    container               dataRow;
+        #    int i;
+        #    str msg;
+        #    _file.inFieldDelimiter(_separator);
+        #    _file.inRecordDelimiter("\n");
+        #
+        #    dataRow = _file.read();
+        #
+        #    while(_file.status() == IO_Status::Ok)
+        #    {
+        #        dataRow = _file.read();
+        #        i++;
+        #    }
+        #
+        #    //Empty file
+        #    if(i <= 1)
+        #    {
+        #        msg += strFmt("File %1 does empty", _fileName);
+        #        IS_ImportSalesPriceLog::insertLog("File", "", "", _fileName, msg);
+        #        return false;
+        #    }
+        #
+        #    return true;
+        #}
+      ENDSOURCE
+      SOURCE #checkFilename
+        #private boolean checkFilename(Filename _fileName)
+        #{
+        #    #File
+        #    #Evat_NL
+        #    System.Globalization.CultureInfo culture
+        #    = System.Globalization.CultureInfo::get_InvariantCulture();
+        #    utcDateTime dt;
+        #    str fileNameFormat = 'yyyyMMddHmmss'+#csv;
+        #    boolean retValue = true;
+        #    str errorMessage;
+        #
+        #    InteropPermission   interopPermission = new InteropPermission(InteropKind::ClrInterop);
+        #    Set                 interopPermissionSet = new Set(Types::Class);
+        #    ;
+        #
+        #    if (_fileName != #currentFolder && _fileName != #upFolder && _fileName != '')
+        #    {
+        #
+        #        try
+        #        {
+        #            //dt = System.DateTime::ParseExact(
+        #            //    System.IO.Path::GetFileNameWithoutExtension(_filename),
+        #            //    System.IO.Path::GetFileNameWithoutExtension(fileNameFormat),
+        #            //    culture);
+        #
+        #            // Granting file permission rights
+        #            interopPermissionSet.add(interopPermission);
+        #            interopPermissionSet.add(new FileIoPermission(_filename,'rw'));
+        #
+        #            CodeAccessPermission::assertMultiple(interopPermissionSet);
+        #        }
+        #        catch (Exception::CLRError)
+        #        {
+        #            errorMessage = strFmt("@HVP1799", _filename+#csv, fileNameFormat);
+        #            //IS_ImportSalesPriceLog::logException(_filename+#csv, errorMessage);
+        #            retValue = false;
+        #        }
+        #    }
+        #    CodeAccessPermission::revertAssert();
+        #    return retValue;
+        #}
+      ENDSOURCE
+      SOURCE #checkHistoryLog
+        #private void checkHistoryLog(Filename _fileName)
+        #{
+        #    /*
+        #    //IS_ImportReceiptDateHistoryLog importReceiptDateHistoryLog;
+        #    str errorMessage;
+        #    select firstOnly importReceiptDateHistoryLog
+        #    ORDER BY RecId DESC
+        #    WHERE importReceiptDateHistoryLog.Filename == _fileName
+        #        &&
+        #        (
+        #            importReceiptDateHistoryLog.ImportStatus == IS_ImportReceiptStatus::Completed ||
+        #            importReceiptDateHistoryLog.ImportStatus == IS_ImportReceiptStatus::Processed ||
+        #            importReceiptDateHistoryLog.ImportStatus == IS_ImportReceiptStatus::Rejected ||
+        #            importReceiptDateHistoryLog.ImportStatus == IS_ImportReceiptStatus::Imported
+        #        )
+        #        ;
+        #
+        #    if (importReceiptDateHistoryLog)
+        #    {
+        #        errorMessage = strFmt("@HVP1800", _fileName, importReceiptDateHistoryLog.ImportStatus);
+        #        throw error(errorMessage);
+        #    }
+        #    */
+        #}
+      ENDSOURCE
+      SOURCE #classDeclaration
+        #class IS_ImportSalesPriceBatch extends RunBaseBatch
+        #{
+        #    NoYes           displayMessage;
+        #    Description     message;
+        #
+        #    #define.CurrentVersion(1)
+        #
+        #    IS_ImportSalesPriceParameters importSalesPriceParameters;
+        #    str fileNameNew;
+        #    RecordInsertList    deletePriceListLocal;
+        #    PriceDiscJournalNum deleteJournalNum;
+        #    boolean deleteJournal;
+        #    #localmacro.CurrentList
+        #        displayMessage,
+        #        message
+        #    #endmacro
+        #
+        #}
+      ENDSOURCE
+      SOURCE #deletePrice
+        #private void deletePrice(PriceDiscAdmTrans _PriceDiscAdmTrans)
+        #{
+        #    PriceDiscAdmTable PriceDiscAdmTable;
+        #    PriceDiscAdmName PriceDiscAdmName;
+        #    PriceDiscAdmTrans PriceDiscAdmTrans;
+        #
+        #    buf2Buf(_PriceDiscAdmTrans, PriceDiscAdmTrans);
+        #    PriceDiscAdmTrans.JournalNum = deleteJournalNum;
+        #    PriceDiscAdmTrans.insert();
+        #
+        #
+        #}
+      ENDSOURCE
+      SOURCE #getFiles
+        #private container getFiles(Filename sourcePath)
+        #{
+        #    #File
+        #    #define.allCSVFiles(#AllFilesName+#csv)
+        #    container retFiles;
+        #    System.String[] filePaths;
+        #    int fileCount, currentFileCount, fileCounter;
+        #    Filename fileName;
+        #
+        #    filePaths = System.IO.Directory::GetFiles(sourcePath, #allCSVFiles, System.IO.SearchOption::TopDirectoryOnly); //get listing of all files within the folder
+        #            fileCount = filePaths.get_Length();
+        #
+        #            for(currentFileCount = 0; currentFileCount < fileCount ; ++currentFileCount)
+        #            {
+        #                fileName = conPeek(fileNameSplit(filepaths.GetValue(currentFileCount)),2);
+        #                if (this.checkFilename(fileName))
+        #                {
+        #                    fileCounter ++;
+        #                    retFiles = conins (retFiles, fileCounter, strFmt("%1%2",fileName, #csv));
+        #                }
+        #            }
+        #
+        #    return retFiles;
+        #}
+      ENDSOURCE
+      SOURCE #importData
+        #private boolean importData(AsciiIO _file, str 10 _separator, str _fileName)
+        #{
+        #    PriceDiscAdmTable PriceDiscAdmTable;
+        #    PriceDiscAdmName PriceDiscAdmName;
+        #    PriceDiscAdmTrans PriceDiscAdmTrans;
+        #    PriceDiscAdmTrans PriceDiscAdmTransCheck;
+        #    AxPriceDiscAdmTrans AxPriceDiscAdmTrans;
+        #    boolean                 ret;
+        #    container               dataRow;
+        #    System.DateTime sysDateTime;
+        #    int                     counter;
+        #    str                     fileName, fileType, filePath, dateStr;
+        #    NumberSeq journalNum;
+        #    boolean post = true;
+        #    AccountNum accountNum;
+        #    TransDate transDate;
+        #    ItemId itemId;
+        #    Amount amount;
+        #    CurrencyCode currencyCode;
+        #    int startLine = infolog.line();
+        #    str msg;
+        #    int currentLine;
+        #    boolean findFile = true;
+        #    RecordInsertList    CrmPricesList;
+        #
+        #    void priceDiscAdmCheckPost(PriceDiscJournalNum _JournalNum)
+        #    {
+        #        PriceDiscAdmCheckPost   priceDiscAdmCheckPost = new PriceDiscAdmCheckPost(false);
+        #
+        #        priceDiscAdmCheckPost.initJournalNum(_JournalNum);
+        #        priceDiscAdmCheckPost.run();
+        #    }
+        #
+        #
+        #    _file.inFieldDelimiter(_separator);
+        #    _file.inRecordDelimiter("\n");
+        #
+        #    deleteJournal = true;
+        #    ttsBegin;
+        #
+        #    //PriceDiscAdmName = PriceDiscAdmName::find("SalesCRM");
+        #    //select forUpdate PriceDiscAdmTable;
+        #    //PriceDiscAdmTable.initFromPriceDiscAdmName(PriceDiscAdmName);
+        #    //journalNum      = NumberSeq::newGetNum(SalesParameters::numRefPriceDiscJournalNum());
+        #    //PriceDiscAdmTable.JournalNum = journalNum.num();
+        #    //PriceDiscAdmTable.insert();
+        #
+        #        //select JournalName from PriceDiscAdmName;
+        #
+        #    CrmPricesList = new RecordInsertList(tableNum(PriceDiscAdmTrans));
+        #    deletePriceListLocal = new RecordInsertList(tableNum(PriceDiscAdmTrans));
+        #    //read the header
+        #    dataRow = _file.read();
+        #
+        #    while(_file.status() == IO_Status::Ok)
+        #    {
+        #
+        #        dataRow = _file.read();
+        #        if(dataRow)
+        #        {
+        #
+        #            if(findFile == true)
+        #            {
+        #                /*
+        #                if (importSalesPriceParameters.JournalName != " ")//have record
+        #                {
+        #                   //importSalesPriceParameters.JournalName = " ";
+        #                }
+        #                else
+        #                {
+        #                    //PriceDiscAdmName = PriceDiscAdmName::find("SalesCRM");
+        #                }
+        #                */
+        #
+        #
+        #                PriceDiscAdmName = PriceDiscAdmName::find("SalesCRM");
+        #                select forUpdate PriceDiscAdmTable;
+        #                PriceDiscAdmTable.initFromPriceDiscAdmName(PriceDiscAdmName);
+        #                journalNum      = NumberSeq::newGetNum(SalesParameters::numRefPriceDiscJournalNum());
+        #                PriceDiscAdmTable.JournalNum = journalNum.num();
+        #                PriceDiscAdmTable.insert();
+        #                findFile = false;
+        #
+        #            }
+        #
+        #            accountNum = conPeek(dataRow,1);
+        #            amount = conPeek(dataRow,2);
+        #            currencyCode = conPeek(dataRow,3);
+        #            itemId = (conPeek(dataRow,4));
+        #            //info(conPeek(dataRow,4));
+        #            transDate = str2Date(conPeek(dataRow,5),123);
+        #            if(CustTable::find(accountNum))
+        #            {
+        #                //Create lines
+        #                PriceDiscAdmTrans.clear();
+        #                PriceDiscAdmTrans.initValue();
+        #                PriceDiscAdmTrans.AccountCode = TableGroupAll::Table;
+        #                PriceDiscAdmTrans.AccountRelation = accountNum;
+        #                PriceDiscAdmTrans.ItemCode = TableGroupAll::Table;
+        #                PriceDiscAdmTrans.ItemRelation = itemId;
+        #                PriceDiscAdmTrans.UnitId = InventTableModule::find(PriceDiscAdmTrans.ItemRelation, ModuleInventPurchSales::Sales).UnitId;
+        #                PriceDiscAdmTrans.Amount = amount;
+        #                PriceDiscAdmTrans.PriceUnit = 1;
+        #                PriceDiscAdmTrans.relation = PriceType::PriceSales;
+        #
+        #                //HVBESUP_28 Y.RUSANOV -->
+        #                if(currencyCode)
+        #                    PriceDiscAdmTrans.Currency = currencyCode;
+        #                else
+        #                    PriceDiscAdmTrans.Currency = CustTable::find(PriceDiscAdmTrans.AccountRelation).Currency;
+        #
+        #                //PriceDiscAdmTrans.Currency = CustTable::find(PriceDiscAdmTrans.AccountRelation).Currency;
+        #                //<--
+        #                PriceDiscAdmTrans.FromDate = transDate;
+        #                PriceDiscAdmTrans.InventDimId = inventDim::findOrCreateBlank().inventDimId;
+        #                PriceDiscAdmTrans.JournalNum = PriceDiscAdmTable.JournalNum;
+        #
+        #                CrmPricesList.add(PriceDiscAdmTrans);
+        #                CrmPricesList = this.updateExistingPrices(PriceDiscAdmTrans, CrmPricesList);
+        #
+        #
+        #                if(!PriceDiscAdmTrans.validateWrite())
+        #                {
+        #                    //warning(strFmt("Item id %1, Account number: %2",AxPriceDiscAdmTrans.parmItemRelation(), AxPriceDiscAdmTrans.parmAccountRelation()));
+        #                    //errorMessage = infolog.text(infologLine());
+        #                    for (currentLine = startLine + 1; currentLine <= infolog.line(); currentLine++)
+        #                    {
+        #                        msg += strFmt("%1; ",infolog.text(currentLine));
+        #                    }
+        #                    IS_ImportSalesPriceLog::insertLog(PriceDiscAdmTrans.JournalNum, PriceDiscAdmTrans.AccountRelation, PriceDiscAdmTrans.ItemRelation, _fileName, msg);
+        #                    post = false;
+        #                }
+        #                CrmPricesList.insertDatabase();
+        #
+        #
+        #
+        #                //deletePriceListLocal.insertDatabase();
+        #                //PriceDiscAdmTrans.insert();
+        #                /*
+        #                PriceDiscAdmTransCheck = this.updateExistingPrices(AxPriceDiscAdmTrans.priceDiscAdmTrans());
+        #                if(PriceDiscAdmTransCheck.ItemRelation)
+        #                {
+        #                    AxPriceDiscAdmTrans = new AxPriceDiscAdmTrans();
+        #                    //AxPriceDiscAdmTrans.priceDiscAdmTrans(PriceDiscAdmTransCheck);
+        #                    AxPriceDiscAdmTrans.parmJournalNum(PriceDiscAdmTransCheck.JournalNum);
+        #                    AxPriceDiscAdmTrans.parmrelation(PriceDiscAdmTransCheck.relation);
+        #                    AxPriceDiscAdmTrans.parmAccountCode(PriceDiscAdmTransCheck.AccountCode);
+        #                    AxPriceDiscAdmTrans.parmAccountRelation(PriceDiscAdmTransCheck.AccountRelation);
+        #                    AxPriceDiscAdmTrans.parmItemCode(PriceDiscAdmTransCheck.ItemCode);
+        #                    //AxPriceDiscAdmTrans.parmPriceDiscTableRef(PriceDiscAdmTable.RecId);
+        #                    AxPriceDiscAdmTrans.parmItemRelation(PriceDiscAdmTransCheck.ItemRelation);
+        #                    AxPriceDiscAdmTrans.parmUnitId(PriceDiscAdmTransCheck.UnitId);
+        #                    AxPriceDiscAdmTrans.parmAmount(PriceDiscAdmTransCheck.Amount);
+        #                    AxPriceDiscAdmTrans.parmCurrency(PriceDiscAdmTransCheck.Currency);
+        #                    //AxPriceDiscAdmTrans.parmFromDate(PriceDiscAdmTransCheck.FromDate);
+        #                    AxPriceDiscAdmTrans.parmToDate(PriceDiscAdmTransCheck.ToDate);
+        #                    AxPriceDiscAdmTrans.parmPriceUnit(PriceDiscAdmTransCheck.PriceUnit);
+        #
+        #
+        #                    AxPriceDiscAdmTrans.save();
+        #                }
+        #                */
+        #
+        #            }
+        #        }
+        #        else
+        #        {
+        #            //for (currentLine = startLine + 1; currentLine <= infolog.line(); currentLine++)
+        #            //{
+        #                msg += strFmt("Customer %1 does not exists", accountNum);
+        #            //}
+        #            IS_ImportSalesPriceLog::insertLog(PriceDiscAdmTable.JournalNum, "", "", _fileName, msg);
+        #        }
+        #    }
+        #    ttsCommit;
+        #
+        #    if(post)
+        #    {
+        #        priceDiscAdmCheckPost(PriceDiscAdmTable.JournalNum);
+        #
+        #        if(PriceDiscAdmTable::find(PriceDiscAdmTable.JournalNum).Posted)
+        #        {
+        #            [FilePath, Filename, fileType] = fileNameSplit(_fileName);
+        #            sysDateTime =DateTimeUtil::getSystemDateTime();
+        #            dateStr = strFmt("%1 %2 %3_%4",dayOfMth(systemDateGet()),mthOfYr(systemDateGet()),year(systemDateGet()),time2Str(timeNow(), TimeSeparator::Space, TimeFormat::Hour24));
+        #            fileNameNew = strFmt("%1_%2.csv",Filename, dateStr);
+        #
+        #
+        #
+        #            //if(deleteJournalNum)
+        #            //    priceDiscAdmCheckPost(deleteJournalNum);
+        #            return true;
+        #        }
+        #    }
+        #    return false;
+        #}
+      ENDSOURCE
+      SOURCE #method1
+        #private void method1()
+        #{
+        #}
+      ENDSOURCE
+      SOURCE #pack
+        #public container pack()
+        #{
+        #    return [#CurrentVersion, #CurrentList];
+        #}
+      ENDSOURCE
+      SOURCE #run
+        #public void run()
+        #{
+        #    #File
+        #    #define.allCSVFiles(#AllFilesName+#csv)
+        #    Filename sourcePath;
+        #    Filename destinationPath;
+        #    str 10 separator;
+        #    str 10 jour;
+        #    Filename fileName;
+        #    container files;
+        #    int i;
+        #    boolean post;
+        #    AccountNum accountNum;
+        #    TransDate transDate;
+        #    ItemId itemId;
+        #    Amount amount;
+        #    str sTempPath;
+        #    //IS_ImportReceiptStatus importStatus;
+        #    str errorMessage;
+        #    FileIOPermission _perm1, _perm2;
+        #    //IS_importShippingDate importShippingDate;
+        #    Set setPerm;
+        #    AsciiIo openFile, checkFile;
+        #    ;
+        #
+        #    super();
+        #    select  importSalesPriceParameters;
+        #    if (importSalesPriceParameters)
+        #    {
+        #        setPerm = new Set(Types::Class);
+        #
+        #        sourcePath = this.addSlashToFolder(importSalesPriceParameters.SourcePath);
+        #        destinationPath = this.addSlashToFolder(importSalesPriceParameters.DestinationPath);
+        #        separator = importSalesPriceParameters.Separator ? importSalesPriceParameters.Separator : ";";
+        #
+        #        //IS_ImportSalesPriceBatch::validateExportfilePermissions(sourcePath, NoYes::Yes, NoYes::Yes, NoYes::Yes);
+        #        //IS_ImportSalesPriceBatch::validateExportfilePermissions(destinationPath, NoYes::Yes, NoYes::Yes, NoYes::Yes);
+        #
+        #        setPerm.add(new FileIOPermission(sourcePath, 'r'));
+        #        setPerm.add(new FileIOPermission(destinationPath, 'r'));
+        #        CodeAccessPermission::assertMultiple(setPerm);
+        #        if (WinAPIServer::fileExists(sourcePath,true) && WinAPIServer::fileExists(destinationPath,true))
+        #        {
+        #            files = this.getFiles(sourcePath);
+        #
+        #            for (i = 1; i <= conLen(files); i++)
+        #            {
+        #            //files = this.getFiles(sourcePath);
+        #
+        #            //IS_ImportSalesPriceBatch::sortContainer(files);
+        #
+        #
+        #                CodeAccessPermission::revertAssert();
+        #                fileName = conPeek(files, i);
+        #                setPerm.add(new FileIOPermission(sourcePath + fileName, 'r'));
+        #                CodeAccessPermission::assertMultiple(setPerm);
+        #                if(WinAPIServer::fileExists(sourcePath + fileName, true))
+        #                {
+        #                    openFile = new AsciiIo (sourcePath + fileName, #io_read);
+        #                    checkFile = new AsciiIo (sourcePath + fileName, #io_read);
+        #                }
+        #
+        #
+        #                if (openFile && this.checkFile(checkFile, separator,fileName))
+        #                {
+        #                    post = this.importData(openFile, separator,fileName);
+        #                    openFile.finalize();
+        #                    openFile = null;
+        #                    checkFile.finalize();
+        #                    checkFile = null;
+        #                    if(post)
+        #                    {
+        #                        System.IO.File::Move(sourcePath + fileName, destinationPath + fileNameNew);
+        #                   }
+        #                }
+        #            }
+        #            //IS_ImportSalesPriceLog::logException(fileName, errorMessage);
+        #        }
+        #    }
+        #}
+      ENDSOURCE
+      SOURCE #unpack
+        #public boolean unpack(container _packedClass)
+        #{
+        #    Integer version = RunBase::getVersion(_packedClass);
+        #    ;
+        #
+        #    switch (version)
+        #    {
+        #        case #CurrentVersion:
+        #            [version, #CurrentList] = _packedClass;
+        #            break;
+        #
+        #        default:
+        #            return false;
+        #    }
+        #
+        #    return true;
+        #}
+      ENDSOURCE
+      SOURCE #updateExistingPrices
+        #private RecordInsertList updateExistingPrices(PriceDiscAdmTrans _priceDiscAdmTrans, RecordInsertList _crmPricesList)
+        #{
+        #    PriceDiscAdmTrans   priceDiscAdmTransLocal, deletePriceDiscAdmTrans;
+        #    PriceDiscTable      priceDiscTable;
+        #    PriceDiscAdmTable   priceDiscAdmTable;
+        #    ToDate              toDateLocal;
+        #    PriceDiscAdmName PriceDiscAdmName;
+        #    RecordInsertList    crmPriceListLocal;
+        #
+        #    priceDiscAdmTransLocal.clear();
+        #    buf2Buf(_priceDiscAdmTrans,priceDiscAdmTransLocal);
+        #
+        #    crmPriceListLocal = _crmPricesList;
+        #
+        #    toDateLocal = priceDiscAdmTransLocal.FromDate - 1;
+        #
+        #    while select priceDiscTable
+        #        where priceDiscTable.relation == PriceType::PriceSales
+        #        && priceDiscTable.AccountCode == priceDiscAdmTransLocal.AccountCode
+        #        && priceDiscTable.AccountRelation == priceDiscAdmTransLocal.AccountRelation
+        #        //&& priceDiscTable.PriceUnit == _priceDiscAdmTrans.PriceUnit
+        #        //&& priceDiscTable.Amount == _priceDiscAdmTrans.Amount
+        #        && priceDiscTable.Currency == priceDiscAdmTransLocal.Currency
+        #        && priceDiscTable.UnitId == priceDiscAdmTransLocal.UnitId
+        #        && priceDiscTable.ItemCode == priceDiscAdmTransLocal.ItemCode
+        #        && priceDiscTable.ItemRelation == priceDiscAdmTransLocal.ItemRelation
+        #        //&& priceDiscTable.FromDate == _priceDiscAdmTrans.FromDate
+        #        && priceDiscTable.ToDate <= _priceDiscAdmTrans.ToDate
+        #        //&& priceDiscTable.GenericCurrency == _priceDiscAdmTrans.GenericCurrency
+        #        //&& priceDiscTable.Percent1 == _priceDiscAdmTrans.Percent1
+        #        //&& priceDiscTable.Percent2 == _priceDiscAdmTrans.Percent2
+        #        && priceDiscTable.QuantityAmountFrom == priceDiscAdmTransLocal.QuantityAmountFrom
+        #        && priceDiscTable.QuantityAmountTo == priceDiscAdmTransLocal.QuantityAmountTo
+        #        //&& priceDiscTable.SearchAgain == _priceDiscAdmTrans.SearchAgain
+        #    {
+        #
+        #        priceDiscAdmTransLocal.FromDate = priceDiscTable.FromDate;
+        #        priceDiscAdmTransLocal.ToDate = toDateLocal;
+        #        priceDiscAdmTransLocal.PriceDiscTableRef = priceDiscTable.RecId;
+        #        priceDiscAdmTransLocal.Amount = priceDiscTable.Amount;
+        #        priceDiscAdmTransLocal.AccountCode = priceDiscTable.AccountCode;
+        #        priceDiscAdmTransLocal.AccountRelation = priceDiscTable.AccountRelation;
+        #        priceDiscAdmTransLocal.PriceUnit = priceDiscTable.PriceUnit;
+        #        priceDiscAdmTransLocal.Currency = priceDiscTable.Currency;
+        #        priceDiscAdmTransLocal.UnitId = priceDiscTable.UnitId;
+        #        priceDiscAdmTransLocal.ItemCode = priceDiscTable.ItemCode;
+        #        priceDiscAdmTransLocal.ItemRelation = priceDiscTable.ItemRelation;
+        #        //priceDiscTable.FromDate = priceDiscTable.FromDate;
+        #        priceDiscAdmTransLocal.QuantityAmountFrom = priceDiscTable.QuantityAmountFrom;
+        #        priceDiscAdmTransLocal.QuantityAmountTo = priceDiscTable.QuantityAmountTo;
+        #        //priceDiscAdmTransLocal.insert();
+        #
+        #        //if(priceDiscTable.FromDate == _priceDiscAdmTrans.FromDate)
+        #        //{
+        #        //    //if(deleteJournal == true)
+        #        //    //{
+        #        //    //    PriceDiscAdmName = PriceDiscAdmName::find("SalesCRM");
+        #        //    //    select forUpdate PriceDiscAdmTable;
+        #        //    //    PriceDiscAdmTable.initFromPriceDiscAdmName(PriceDiscAdmName);
+        #        //    //    PriceDiscAdmTable.JournalNum = NumberSeq::newGetNum(SalesParameters::numRefPriceDiscJournalNum()).num();
+        #        //    //    PriceDiscAdmTable.LockedForDeletion = true;
+        #        //    //    PriceDiscAdmTable.insert();
+        #        //    //    deleteJournalNum = PriceDiscAdmTable.JournalNum;
+        #        //    //    deleteJournal = false;
+        #        //    //}
+        #        //    //this.deletePrice(priceDiscAdmTransLocal);
+        #        //    //priceDiscAdmTransLocal.MustBeDeleted = true;
+        #        //    //priceDiscTable.delete();
+        #        //}
+        #        //else
+        #        {
+        #            crmPriceListLocal.add(priceDiscAdmTransLocal);
+        #        }
+        #    }
+        #
+        #    return crmPriceListLocal;
+        #}
+      ENDSOURCE
+      SOURCE #constructOnServer
+        #public server static IS_ImportSalesPriceBatch constructOnServer()
+        #{
+        #    return new IS_ImportSalesPriceBatch();
+        #}
+      ENDSOURCE
+      SOURCE #description
+        #private static ClassDescription  description()
+        #{
+        #    return "Import Sales Price";
+        #}
+      ENDSOURCE
+      SOURCE #main
+        #public static void main(Args _args)
+        #{
+        #    IS_ImportSalesPriceBatch IS_ImportSalesPriceBatch = IS_ImportSalesPriceBatch::constructOnServer();// new IS_ImportSalesPriceBatch();
+        #    ;
+        #
+        #    if(IS_ImportSalesPriceBatch.prompt())
+        #    {
+        #        IS_ImportSalesPriceBatch.run();
+        #
+        #    }
+        #
+        #}
+      ENDSOURCE
+      SOURCE #sortContainer
+        #static container sortContainer(container _con)
+        #{
+        #    anytype     temp1;
+        #    anytype     temp2;
+        #    int         i;
+        #    int         j;
+        #    container   sortedCon;
+        #    ;
+        #
+        #    sortedCon = _con;
+        #
+        #    // Sort the container
+        #    for (i = 1; i <= conlen(sortedCon); i++)
+        #    {
+        #        for (j = i + 1; j <= conlen(sortedCon); j++)
+        #        {
+        #            temp1 = conpeek(sortedCon, j);
+        #            temp2 = conpeek(sortedCon, i);
+        #
+        #            if (temp1 < temp2)
+        #            {
+        #                sortedCon = condel(sortedCon, j, 1);
+        #                sortedCon = conins(sortedCon, j, temp2);
+        #                sortedCon = condel(sortedCon, i, 1);
+        #                sortedCon = conins(sortedCon, i, temp1);
+        #            }
+        #        }
+        #    }
+        #
+        #    return sortedCon;
+        #}
+      ENDSOURCE
+      SOURCE #validateExportfilePermissions
+        #client server static void validateExportfilePermissions(FilePath _filePath,
+        #                                                        NoYesId  _checkRead,
+        #                                                        NoYesId  _checkWrite,
+        #                                                        NoYesId  _checkDelete)
+        #{
+        #     int requiredPermissions;
+        #     int directoryPermissions;
+        #     str errorMessage;
+        #     Microsoft.Dynamics.IntegrationFramework.Adapter.FileSystem fileSystem;
+        #
+        #     #AIF
+        #     ;
+        #
+        #     if (_checkRead)
+        #         {
+        #              requiredPermissions = AifDirectoryPermission::ReadFile;
+        #         }
+        #     if (_checkWrite)
+        #         {
+        #              requiredPermissions = requiredPermissions | AifDirectoryPermission::WriteFile;
+        #         }
+        #     if (_checkDelete)
+        #         {
+        #              requiredPermissions = requiredPermissions | AifDirectoryPermission::DeleteFile;
+        #         }
+        #
+        #     errorMessage = "@SYS95130";
+        #
+        #     new InteropPermission(InteropKind::ClrInterop).assert();
+        #     fileSystem = AifUtil::getClrObject(#FileSystemProgId);
+        #     CodeAccessPermission::revertAssert();
+        #
+        #     // Check that path exists
+        #     new InteropPermission(InteropKind::ClrInterop).assert();
+        #     if (!fileSystem.DoesDirectoryExist(_filePath))
+        #         throw error(strfmt("@SYS95128", _filePath));
+        #     CodeAccessPermission::revertAssert();
+        #
+        #     // Check required directory permissions
+        #     new InteropPermission(InteropKind::ClrInterop).assert();
+        #     directoryPermissions = fileSystem.VerifyDirectoryPermissions(_filePath, requiredPermissions);
+        #
+        #     CodeAccessPermission::revertAssert();
+        #
+        #     if (requiredPermissions != directoryPermissions)
+        #         {
+        #              throw error(strfmt(errorMessage, _filePath));
+        #         }
+        #}
+      ENDSOURCE
+    ENDMETHODS
+  ENDCLASS
+
+***Element: PRN
+
+; Microsoft Dynamics AX Project : HV_IS_ImportSalesPriceParameters unloaded
+; --------------------------------------------------------------------------------
+  PROJECTVERSION 2
+  
+  PROJECT #HV_IS_ImportSalesPriceParameters
+  SHARED
+  PROPERTIES
+    Name                #HV_IS_ImportSalesPriceParameters
+    Origin              #{925C55E1-A8D2-45CD-9822-F3962ABB1CA6}
+  ENDPROPERTIES
+  
+    PROJECTCLASS ProjectNode
+    BEGINNODE
+      FILETYPE 0
+      UTILTYPE 3
+      UTILOBJECTID 0
+      NODETYPE 296
+      NAME #IS_ImportSalesPriceBatch
+    ENDNODE
+    BEGINNODE
+      FILETYPE 0
+      UTILTYPE 1
+      UTILOBJECTID 0
+      NODETYPE 296
+      NAME #IS_ImportSalesPriceBatchParameters
+    ENDNODE
+    BEGINNODE
+      FILETYPE 0
+      UTILTYPE 44
+      UTILOBJECTID 104255
+      NODETYPE 204
+      NAME #IS_ImportSalesPriceParameters
+    ENDNODE
+    BEGINNODE
+      FILETYPE 0
+      UTILTYPE 44
+      UTILOBJECTID 970
+      NODETYPE 204
+      NAME #PriceDiscAdmName
+    ENDNODE
+    BEGINNODE
+      FILETYPE 0
+      UTILTYPE 11
+      UTILOBJECTID 0
+      NODETYPE 201
+      NAME #IS_ImportSalesPriceBatchParameters
+    ENDNODE
+    BEGINNODE
+      FILETYPE 0
+      UTILTYPE 45
+      UTILOBJECTID 1024604
+      NODETYPE 329
+      NAME #IS_ImportSalesPriceBatch
+    ENDNODE
+  ENDPROJECT
+  
+
+***Element: END
