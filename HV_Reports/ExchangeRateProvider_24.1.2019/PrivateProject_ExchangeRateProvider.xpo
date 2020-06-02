@@ -1,0 +1,257 @@
+﻿Exportfile for AOT version 1.0 or later
+Formatversion: 1
+
+***Element: CLS
+
+; Microsoft Dynamics AX Class: ExchangeRateProviderOanda unloaded
+; --------------------------------------------------------------------------------
+  CLSVERSION 1
+  
+  CLASS #ExchangeRateProviderOanda
+    PROPERTIES
+      Name                #ExchangeRateProviderOanda
+      Extends             #ExchangeRateProvider
+      Origin              #{2C22586E-8001-4AA3-B563-653CB6EB1B96}
+    ENDPROPERTIES
+    
+    METHODS
+      SOURCE #readRate
+        #private void readRate(str _xmlString)
+        #{
+        #    System.Xml.XmlDocument xmlDom = new System.Xml.XmlDocument();
+        #    System.Xml.XmlNode xmlQuoteNode, xmlBidNode, xmlDateNode;
+        #    CurrencyExchangeRate exchangeRate;
+        #    ValidFromDate exchangeDate;
+        #    str value;
+        #    xmlDom.LoadXml(_xmlString);
+        #    // Find the Quote
+        #    xmlQuoteNode = xmlDom.SelectSingleNode(#QuoteXPath);
+        #    if (xmlQuoteNode)
+        #    {
+        #        // Find the exchange rate
+        #        xmlBidNode = xmlQuoteNode.SelectSingleNode(#BidXPath);
+        #        if (xmlBidNode)
+        #        {
+        #            value = xmlBidNode.get_InnerText();
+        #            exchangeRate = str2num(value);
+        #            if (exchangeRate)
+        #            {
+        #                rates.addEnd(exchangeRate);
+        #            }
+        #        }
+        #        //Find the date of the exchange rate.
+        #        xmlDateNode = xmlQuoteNode.SelectSingleNode(#DateXPath);
+        #        if (xmlDateNode)
+        #        {
+        #            value = xmlDateNode.get_InnerText();
+        #            // convert the date from UTC to local timezone.
+        #            exchangeDate = System.DateTime::Parse(value, System.Globalization.CultureInfo::get_CurrentUICulture(), System.Globalization.DateTimeStyles::AssumeUniversal);
+        #            if (exchangeRate)
+        #            {
+        #                dates.addEnd(exchangeDate);
+        #            }
+        #        }
+        #    }
+        #}
+      ENDSOURCE
+      SOURCE #getExchangeRates
+        #public ExchangeRateResponse getExchangeRates(ExchangeRateRequest _exchangeRateRequest)
+        #{
+        #    ExchangeRateResponse response = ExchangeRateResponse::construct();
+        #    ExchangeRateResponseCurrencyPair currencyPairResponse;
+        #    ExchangeRateResponseExchangeRate exchangeRateResponse;
+        #    ExchangeRateRequestCurrencyPair currencyPairRequest;
+        #    ExchangeRateProviderConfig config = ExchangeRateProviderConfig::construct();
+        #    str oandaRequestString;
+        #    date currentDate;
+        #    CurrencyExchangeRate exchangeRate;
+        #    System.Net.WebResponse webResponse;
+        #    System.IO.StreamReader streamReader;
+        #    System.IO.Stream stream;
+        #    System.Net.HttpWebRequest httpWebRequest;
+        #    ListEnumerator rateEnumerator, dateEnumerator;
+        #    System.Net.WebHeaderCollection webCollection;
+        #    System.DateTime fromDate, fromUTCDate;
+        #    System.TimeZone localTimeZone;
+        #    int compareResult;
+        #    str XMLOut;
+        #    str dateForRequest;
+        #    rates = new List(Types::Real);
+        #    dates = new List(Types::Date);
+        #    localTimeZone = System.TimeZone::get_CurrentTimeZone();
+        #    // Iterate over the requested currency pairs. This is only required for providers
+        #    // that support specific currency pairs.
+        #    _exchangeRateRequest.initializeCurrencyPairEnumerator();
+        #
+        #    while(_exchangeRateRequest.moveNextCurrencyPair())
+        #    {
+        #        serviceTimeout = str2int(config.getPropertyValue(this.getProviderId(), #ServiceTimeout));
+        #        serviceUrl = config.getPropertyValue(this.getProviderId(), #ServiceURL);
+        #        // Process each date separately.
+        #        // If we attempt to make a single request for multiple dates
+        #        // then OANDA will average the rates across the dates which is not what we want.
+        #        fromDate = _exchangeRateRequest.parmFromDate();
+        #        compareResult = fromDate.CompareTo(_exchangeRateRequest.parmToDate());
+        #
+        #        while (compareResult <= 0)
+        #        {
+        #        currencyPairRequest = _exchangeRateRequest.getCurrentCurrencyPair();
+        #        currencyPairResponse = ExchangeRateResponseCurrencyPair::construct();
+        #        currencyPairResponse.parmFromCurrency(currencyPairRequest.parmFromCurrency());
+        #        currencyPairResponse.parmToCurrency(currencyPairRequest.parmToCurrency());
+        #        // All rates are requested with a display factor of 1 for this provider. If the
+        #        // rates internally are represented using a different exchange rate display
+        #
+        #        // factor, the framework will make the necessary adjustments when saving the
+        #        // exchange rates.
+        #        currencyPairResponse.parmExchangeRateDisplayFactor(ExchangeRateDisplayFactor::One);
+        #        // convert to UTC which is required by OANDA
+        #        fromUTCDate = localTimeZone.ToUniversalTime(fromDate);
+        #        dateForRequest = fromUTCDate.ToString(#OANDADateFormat);
+        #        // Build the request URL.
+        #        oandaRequestString = strFmt(serviceUrl,
+        #        currencyPairRequest.parmFromCurrency(),
+        #        currencyPairRequest.parmToCurrency(),
+        #        dateForRequest,
+        #        dateForRequest);
+        #        // Configure the request for OANDA.
+        #        httpWebRequest = System.Net.WebRequest::CreateHttp(oandaRequestString);
+        #        httpWebRequest.set_Method(#HttpWebRequestMethod);
+        #        httpWebRequest.set_ContentType(#HttpWebRequestContentType);
+        #        httpWebRequest.set_Timeout(serviceTimeout);
+        #        // Authentication
+        #        webCollection = httpWebRequest.get_Headers();
+        #        //webCollection.Add(#HttpHeaderAuthorization, #KeyTokenPrefix + TODO: Retrieve and concatenate your Key provided by OANDA);
+        #
+        #        try
+        #        {
+        #        // Invoke the service
+        #        webResponse = httpWebRequest.GetResponse();
+        #        // Retrieve the XML response.
+        #        stream = webResponse.GetResponseStream();
+        #        streamReader = new System.IO.StreamReader(stream);
+        #        XMLOut = streamReader.ReadToEnd();
+        #        // Parse the XML to retrieve the rate and date.
+        #        this.readRate(XMLOut);
+        #        rateEnumerator = rates.getEnumerator();
+        #        dateEnumerator = dates.getEnumerator();
+        #        // Create the Exchange Rate Provider Response.
+        #        dateEnumerator.moveNext();
+        #        exchangeRate = rateEnumerator.current();
+        #        currentDate = dateEnumerator.current();
+        #        if (currentDate != dateNull() && exchangeRate)
+        #        {
+        #        exchangeRateResponse = ExchangeRateResponseExchangeRate::construct();
+        #        exchangeRateResponse.parmValidFrom(currentDate);
+        #        exchangeRateResponse.parmExchangeRate(exchangeRate);
+        #        currencyPairResponse.addExchangeRate(exchangeRateResponse);
+        #        currentDate = dateNull();
+        #        exchangeRate = 0;
+        #        }
+        #    }
+        #    catch (Exception::CLRError)
+        #    {
+        #    // The service call did not complete. Swallow the exception and try the next
+        #    // currency pair. The framework will be able to determine which currency
+        #    // pairs were successfully retrieved and will display the appropriate
+        #    // warnings to the user.
+        #    }
+        #    response.addOrUpdateCurrencyPair(currencyPairResponse);
+        #    rates = new List(Types::Real);
+        #    dates = new List(Types::Date);
+        #    fromDate = fromDate.AddDays(1);
+        #    compareResult = fromDate.CompareTo(_exchangeRateRequest.parmToDate());
+        #    }
+        #}
+        #    return response;
+        #}
+      ENDSOURCE
+      SOURCE #getConfigurationDefaults
+        #public ExchangeRateProviderConfigDefaults getConfigurationDefaults()
+        #{
+        #    ExchangeRateProviderConfigDefaults configurationDefaults = ExchangeRateProviderConfigDefaults::construct();
+        #    configurationDefaults.addNameValueConfigurationPair(#ServiceTimeout, '5000');
+        #    configurationDefaults.addNameValueConfigurationPair(#ServiceURL, 'https://www.oanda.com/rates/api/v1/rates/%1.xml?quote=%2&start=%3&end=%4&fields=averages');
+        #    return configurationDefaults;
+        #}
+      ENDSOURCE
+      SOURCE #getSupportedOptions
+        #public ExchangeRateProviderSupportedOptions getSupportedOptions()
+        #{
+        #    ExchangeRateProviderSupportedOptions supportedOptions = ExchangeRateProviderSupportedOptions::construct();
+        #    supportedOptions.parmDoesSupportSpecificCurrencyPairs(true);
+        #    supportedOptions.parmDoesSupportSpecificDates(false);
+        #    supportedOptions.parmFixedBaseIsoCurrency('');
+        #    return supportedOptions;
+        #}
+      ENDSOURCE
+      SOURCE #getProviderId
+        #public ExchangeRateProviderId getProviderId()
+        #{
+        #    return 'CB024E9B-312B-44CE-BE89-3ED8597B007D';
+        #}
+      ENDSOURCE
+      SOURCE #getName
+        #public ExchangeRateProviderName getName()
+        #{
+        #    return "Oanda exchange rate service";
+        #}
+      ENDSOURCE
+      SOURCE #classDeclaration
+        #[ExchangeRateProviderAttribute,
+        #ExchangeRateProviderIdAttribute('CB024E9B-312B-44CE-BE89-3ED8597B007D')]
+        #class ExchangeRateProviderOanda extends ExchangeRateProvider
+        #{
+        #    str serviceUrl;
+        #    str serviceUrlForDateRange;
+        #    str serviceClient;
+        #    int serviceTimeout;
+        #
+        #    List rates;
+        #    List dates;
+        #    #define.ExchangeRatePosition(8)
+        #    #define.DatePosition(12)
+        #    #define.RatePrice("bid")
+        #    #define.RateDate("time")
+        #    #define.DateFormatMDY(213)
+        #    #define.ProviderId("71A3DB36-FEBC-416B-B1AA-D3BD61D47336")
+        #    #define.QuoteXPath("//response/quotes/quote")
+        #    #define.BidXPath("//bid")
+        #    #define.DateXPath("//quote/date")
+        #    #define.ServiceTimeout("serviceTimeout")
+        #    #define.ServiceURL("ServiceUrl")
+        #    #define.OANDADateFormat("yyyy-MM-dd")
+        #    #define.HttpWebRequestMethod("GET")
+        #    #define.HttpWebRequestContentType("application/xml")
+        #    #define.HttpHeaderAuthorization("Authorization")
+        #    #define.KeyTokenPrefix("Bearer ")
+        #}
+      ENDSOURCE
+    ENDMETHODS
+  ENDCLASS
+
+***Element: PRN
+
+; Microsoft Dynamics AX Project : ExchangeRateProvider unloaded
+; --------------------------------------------------------------------------------
+  PROJECTVERSION 2
+  
+  PROJECT #ExchangeRateProvider
+  PRIVATE
+  PROPERTIES
+    Name                #ExchangeRateProvider
+    Origin              #{45E251F7-1973-4C28-8CCA-7817666E7F31}
+  ENDPROPERTIES
+  
+    PROJECTCLASS ProjectNode
+    BEGINNODE
+      FILETYPE 0
+      UTILTYPE 45
+      UTILOBJECTID 1024736
+      NODETYPE 329
+      NAME #ExchangeRateProviderOanda
+    ENDNODE
+  ENDPROJECT
+  
+
+***Element: END

@@ -1,0 +1,12 @@
+SELECT
+ct.ACCOUNTNUM AS [Customer Number],
+ct.DEL_Name AS [Customer Name],
+lpa.ZIPCODE,
+lpa.CITY,
+lpa.STREET AS [Street Address],
+(dpn.FIRSTNAME + dpn.MIDDLENAME + dpn.LASTNAME) AS [Sales Responsible],
+ct.DEL_PHONE AS [Phone number]
+FROM CUSTTABLE AS ct
+LEFT JOIN DIRPARTYTABLE AS dpt ON dpt.RECID = ct.PARTY
+LEFT JOIN LOGISTICSPOSTALADDRESS AS lpa ON lpa.RECID = dpt.RECID
+LEFT JOIN DIRPERSONNAME AS dpn ON dpn.RECID = dpt.RECID

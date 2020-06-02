@@ -1,0 +1,116 @@
+﻿Exportfile for AOT version 1.0 or later
+Formatversion: 1
+
+***Element: JOB
+
+; Microsoft Dynamics AX Job: ImportCustomerDimension unloaded
+; --------------------------------------------------------------------------------
+  JOBVERSION 1
+  
+  SOURCE #ImportCustomerDimension
+    #static void ImportCustomerDimension(Args _args)
+    #{
+    #    AsciiIO     asciiIO;
+    #    Filename    filename;
+    #    NoYesId     skipFirstLine;
+    #    Container   line;
+    #    Dialog      dialog;
+    #    DialogField dialogFileName, dialogSkipFirstLine;
+    #    DimensionAttribute              dimAttr;
+    #    DimensionAttributeSetItem       dimAttrSetItem;
+    #    DimensionEnumeration            dimensionSetId;
+    #    Container                       combinedContainer;
+    #    CustTable                       custTable;
+    #    CustAccount                     custAccount;
+    #    Counter                         counter;
+    #    DimensionAttributeValue         dimAttributeValue;
+    #    //Dialog
+    #    dialog                  = new Dialog("Import Default Dimension");
+    #    dialogFileName          = dialog.addField(extendedTypeStr(Filenameopen), "File name");
+    #    dialogSkipFirstLine     = dialog.addField(extendedTypeStr(NoYesId), "Skip first line");
+    #
+    #    if (dialog.run())
+    #    {
+    #        filename      = dialogFileName.value();
+    #        skipFirstLine = dialogSkipFirstLine.value();
+    #    }
+    #    asciiIO = new AsciiIO(filename, 'R');
+    #    if (!asciiIO || asciiIO.status() != IO_Status::Ok )
+    #    {
+    #        throw error (strfmt("@SYS19312",filename));
+    #    }
+    #
+    #    asciiIO.inRecordDelimiter('\r\n');
+    #    asciiIO.inFieldDelimiter(',');
+    #    if (skipFirstLine)
+    #        line = asciiIO.read();
+    #    while (asciiIO.status() == IO_status::Ok)
+    #    {
+    #        line = asciiIO.read();
+    #        if (line)
+    #        {
+    #            //get customer account number
+    #            custAccount = conpeek(line,1);
+    #            counter = 1; //Dimension starting point
+    #            combinedContainer = conNull();
+    #            dimAttributeValue = null;
+    #
+    #            //Build dimension container
+    #            dimensionSetId = DimensionCache::getDimensionAttributeSetForLedger();
+    #            while select dimAttr
+    #                order by Name
+    #                    where dimAttr.Type != DimensionAttributeType::MainAccount
+    #                join RecId from dimAttrSetItem
+    #                    where dimAttrSetItem.DimensionAttribute == dimAttr.RecId &&
+    #                          dimAttrSetItem.DimensionAttributeSet == dimensionSetId
+    #            {
+    #                counter++;
+    #                //only insert into container if it has a value
+    #                if (conPeek(line, counter))
+    #                {
+    #                    combinedContainer += [dimAttr.Name, conPeek(line, counter)];
+    #                    //info(strFmt("%1 %2",dimAttr.Name, conPeek(line, counter)));
+    #                    dimAttributeValue = AxdDimensionUtil::validateFinancialDimensionValue(dimAttr, conPeek(line, counter));
+    #                }
+    #            }
+    #            //insert the count in the first value of the container - number of dimensions divided by 2 - since we have name and value
+    #            combinedContainer = conIns(combinedContainer, 1, int2str(conLen(combinedContainer)/2));
+    #            ttsBegin;
+    #            custTable = CustTable::find(custAccount, true);
+    #            custTable.DefaultDimension = AxdDimensionUtil::getDimensionAttributeValueSetId(combinedContainer);
+    #            custTable.update();
+    #            ttsCommit;
+    #        }
+    #    }
+    #}
+  ENDSOURCE
+  PROPERTIES
+    Origin              #{4FE4D1CA-2870-418B-A7BC-8E130FB1222A}
+  ENDPROPERTIES
+  
+
+***Element: PRN
+
+; Microsoft Dynamics AX Project : Goro_08012019 unloaded
+; --------------------------------------------------------------------------------
+  PROJECTVERSION 2
+  
+  PROJECT #Goro_08012019
+  PRIVATE
+  PROPERTIES
+    Name                #Goro_08012019
+    Origin              #{05CA2A7F-3FDC-447E-BB45-9C916E0D6728}
+  ENDPROPERTIES
+  
+    PROJECTCLASS ProjectNode
+    BEGINNODE
+      FILETYPE 0
+      UTILTYPE 5
+      UTILOBJECTID 0
+      NODETYPE 215
+      NAME #ImportCustomerDimension
+    ENDNODE
+  ENDPROJECT
+  
+
+***Element: END

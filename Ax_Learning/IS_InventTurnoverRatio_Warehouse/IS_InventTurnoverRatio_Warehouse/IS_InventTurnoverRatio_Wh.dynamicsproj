@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>6.3.5000.138</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>dc6b9e11-4970-49fb-b3ba-9fa61dc8671d</ProjectGuid>
+    <ProjectTypeGuids>{BF6F8E12-879D-49E7-ADF0-5503146B24B8};{aa631830-3ad7-4631-8cf6-443a09bf983b}</ProjectTypeGuids>
+    <Name>IS_InventTurnoverRatio_Wh</Name>
+    <BaseAssemblyName>IS_InventTurnoverRatio_Warehouse</BaseAssemblyName>
+    <!-- Application property page properties -->
+    <OutputType>Dynamics Reporting Library</OutputType>
+    <!-- AssemblyInfo properties -->
+    <AssemblyTitle>IS_InventTurnoverRatio_Warehouse</AssemblyTitle>
+    <AssemblyCompany>
+    </AssemblyCompany>
+    <AssemblyProduct>IS_InventTurnoverRatio_Warehouse</AssemblyProduct>
+    <AssemblyCopyright>Copyright ©  2019</AssemblyCopyright>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DeployToServer>No</DeployToServer>
+    <DeployToClient>No</DeployToClient>
+    <DeployToEP>No</DeployToEP>
+    <RootNamespace>IS_InventTurnoverRatio_Warehouse</RootNamespace>
+    <StartupElement />
+    <DebugTarget>None</DebugTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>bin\Debug\</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>bin\Release\</OutputPath>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="\SSRS Reports\Reports\IS_InventTurnoverRatio_HV">
+      <Virtual>True</Virtual>
+    </Compile>
+    <Compile Include="\SSRS Reports\Reports\IS_InventTurnoverRatio_Warehouse_HV">
+      <Virtual>True</Virtual>
+    </Compile>
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\DynamicsTools\Microsoft.Dynamics.Framework.Design.Reporting.Modeling.targets" />
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\DynamicsTools\Microsoft.Dynamics.Framework.Design.InteractionProject.targets" />
+</Project>

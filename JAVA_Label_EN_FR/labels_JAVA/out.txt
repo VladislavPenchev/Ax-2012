@@ -1,0 +1,56 @@
+﻿@HVP130 Compte facturé
+@HVP137 Condition de livraison
+@HVP144 Date de chargement
+@HVP161 Numero de TVA
+@HVP1047 Contrat de vente
+@HVP1048 Protocol de livraison
+@HVP1834 
+@HVP1835 
+@HVP1951 
+@HVP1952 Symbole spécifique
+CZ:  #GEE16860#
+@HVP1953 Date de vente
+{Locked=!cs-CZ,!et-EE,!hu-HU,!lt-LT,!lv-LV,!pl-PL,!ru-RU} MBSI: re-enabed localization for ru-RU and EE languages as they were localized in v2009  PL:  #GEE28215#
+@HVP1954 Numéro de duplicata
+W: #GEE30003#
+@HVP1955 Code entreprise
+{Locked=!lt-LT}
+@HVP1956 Date du duplicata de la facture
+{Locked=!pl-PL}
+@HVP1957 Condition de paiement
+@HVP1958 Lieu de chargement
+@HVP1959 Document de transport (type, nombre)
+@HVP1960 Document de transport
+@HVP1961 FOB
+@HVP1962 Date paiement d'avance
+used in many places
+@HVP1963 Montant de la remise pour paiement d'avance
+Cash discount
+@HVP1964 Nombre d'article
+@HVP1965 Contrat
+//duplicate
+@HVP1966 Marchandise
+@HVP1967 Remise pour paiement d'avance
+@HVP1968 Code Article
+@HVP1969 Fax
+[VendorOnboardingPhase1]
+@HVP134 Article
+@HVP264 Montant total
+@HVP138 Compte bancaire
+@HVP160 Destinataire
+@HVP163 Commande client
+@HVP165 Contrat de vente
+@HVP1397 Numéro de client
+@HVP178 Condition de paiement
+@HVP179 Lieu de chargement
+@HVP180 Lieu de livraison
+@HVP262 Conteneur
+@HVP252 Document de transport
+@HVP325 Montant net
+@HVP1220 Taux de change
+@HVP251 Document de transport (type, nombre)
+@HVP354 Lieu de livraison
+@HVP65 
+@HVP1039 
+@HVP1038 
+

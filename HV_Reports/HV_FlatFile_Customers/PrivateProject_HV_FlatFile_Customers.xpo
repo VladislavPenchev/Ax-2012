@@ -1,0 +1,271 @@
+﻿Exportfile for AOT version 1.0 or later
+Formatversion: 1
+
+***Element: JOB
+
+; Microsoft Dynamics AX Job: Checking_PODimensionValues unloaded
+; --------------------------------------------------------------------------------
+  JOBVERSION 1
+  
+  SOURCE #Checking_PODimensionValues
+    #static void Checking_PODimensionValues(Args _args)
+    #{
+    #    OdbcConnection  odbcConnection;
+    #    Statement       statement;
+    #    HV_FlatFile_Customers tableToInsert;
+    #
+    #
+    #    //Variables to connection
+    #    #define.ServerDefault('SF-AXDEV01')
+    #    #define.DatabaseDefault("SoftUni") //GrassioTraining
+    #
+    #    //Sentence to execute in SQLServer-database
+    #    str             sql;
+    #
+    #    //Result of excecution
+    #    ResultSet       resultSet;
+    #
+    #    LoginProperty   loginProperty;
+    #    SqlStatementExecutePermission perm;
+    #
+    #    PurchTable      purchTable;
+    #    PurchId         purchId;
+    #    Dimension       dimension;
+    #    ;
+    #
+    #
+    #    sql = "SELECT TOP(3) FirstName FROM Employees";
+    #
+    #    //Get ODBC connection
+    #    loginProperty = new LoginProperty();
+    #    loginProperty.setServer(#ServerDefault);
+    #    loginProperty.setDatabase(#DatabaseDefault);
+    #
+    #    //Create a connection to external database
+    #    try
+    #    {
+    #        odbcConnection = new OdbcConnection(loginProperty);
+    #    }
+    #    catch
+    #    {
+    #        throw error("Error creating ODBC Connection");
+    #    }
+    #
+    #    //Exec sentence
+    #    if(odbcConnection)
+    #    {
+    #        if(sql == "")
+    #        {
+    #            throw error("No sql sentence to execute");
+    #        }
+    #
+    #        //Assert permission for executing the sql string
+    #        perm = new SqlStatementExecutePermission(sql);
+    #
+    #        //Check for permission to use the statement
+    #        perm.assert();
+    #
+    #        //Prepare the sql statement
+    #        statement = odbcConnection.createStatement();
+    #        resultSet = statement.executeQuery(sql);
+    #    }
+    #
+    #    ttsBegin;
+    #    while (resultSet.next())
+    #    {
+    #        tableToInsert.initValue();
+    #
+    #        purchId         = resultSet.getString(1);
+    #        tableToInsert.Name = purchId;
+    #
+    #        tableToInsert.insert();
+    #        tableToInsert.clear();
+    #
+    #        //dimension[1]    = resultSet.getString(2);
+    #        //dimension[2]    = resultSet.getString(3);
+    #        //dimension[3]    = resultSet.getString(3);
+    #
+    #
+    #    }
+    #    ttsCommit;
+    #
+    #    //Close the connection
+    #    if(resultSet)
+    #    {
+    #        resultSet.close();
+    #    }
+    #    if(statement)
+    #    {
+    #        statement.close();
+    #    }
+    #
+    #    //End the scope of the assert call
+    #    CodeAccessPermission::revertAssert();
+    #}
+  ENDSOURCE
+  PROPERTIES
+    Origin              #{3E01005C-3EF9-4B06-AE70-0F949A91B6E5}
+  ENDPROPERTIES
+  
+
+***Element: DBT
+
+; Microsoft Dynamics AX Table : HV_FlatFile_Customers unloaded
+; --------------------------------------------------------------------------------
+  TABLEVERSION 1
+  
+  TABLE #HV_FlatFile_Customers
+    EnforceFKRelation 1
+    PROPERTIES
+      Name                #HV_FlatFile_Customers
+      TableType           #TempDB
+      CreateRecIdIndex    #Yes
+      PrimaryIndex        #SurrogateKey
+      ClusterIndex        #SurrogateKey
+      Origin              #{246E53E7-8E04-4B8D-9102-AD40E9D3C22F}
+    ENDPROPERTIES
+    
+    FIELDS
+      FIELD #Name
+        STRING
+        PROPERTIES
+          Name                #Name
+          Table               #HV_FlatFile_Customers
+          Origin              #{61AB0A8D-A1CC-495A-9D2F-8C4E97DB0CD7}
+        ENDPROPERTIES
+        
+      FIELD #AccountNum
+        STRING
+        PROPERTIES
+          Name                #AccountNum
+          Mandatory           #Yes
+          AllowEdit           #No
+          Table               #HV_FlatFile_Customers
+          Origin              #{7C33A43A-4CDD-4265-B765-C6A40CDA633D}
+          ExtendedDataType    #CustAccount
+          StringSize          #20
+        ENDPROPERTIES
+        
+    ENDFIELDS
+    GROUPS
+    ENDGROUPS
+    
+    INDICES
+    ENDINDICES
+    FULLTEXTINDICES
+    ENDFULLTEXTINDICES
+    REFERENCES
+    ENDREFERENCES
+    
+    DELETEACTIONS
+    ENDDELETEACTIONS
+    
+    METHODS
+    ENDMETHODS
+  ENDTABLE
+  
+
+***Element: JOB
+
+; Microsoft Dynamics AX Job: dbODBCConnection unloaded
+; --------------------------------------------------------------------------------
+  JOBVERSION 1
+  
+  SOURCE #dbODBCConnection
+    #static void dbODBCConnection(Args _args)
+    #{
+    #    LoginProperty   loginProp;
+    #    ODBCConnection  conn;
+    #    Resultset       resultSet, resultSetCount;
+    #    Statement       statement1, statement2;
+    #    int             countOfRecords;
+    #    HV_FlatFile_Customers customerTable;
+    #    str proba;
+    #    List accountnumList = new List(Types::String);
+    #    ListIterator accountnumLiterator;
+    #    int i;
+    #;
+    #    countOfRecords = 0;
+    #    loginProp = new LoginProperty();
+    #
+    #    loginProp.setDSN('AXDEV');
+    #    loginProp.setServer('SF-AXDEV01');
+    #    loginProp.setDatabase('SoftUni'); //SoftUni //GrassioTraining
+    #
+    #    conn = new ODBCConnection(loginProp);
+    #
+    #    statement1  = conn.createStatement();
+    #    resultSet   = statement1.executeQuery(@"SELECT TOP(3) FirstName FROM Employees");
+    #
+    #    while (resultSet.next())
+    #    {
+    #        countOfRecords++;
+    #        info(resultSet.getString(1));
+    #        customerTable.AccountNum = resultSet.getString(1);
+    #        //proba = resultSet.getString(1);
+    #    }
+    #
+    #    /*
+    #    for(i = 1; i<=30; i+=1)
+    #    {
+    #        info(resultSet.getString(i));
+    #    }
+    #    */
+    #    info('-----');
+    #    info(proba);
+    #    /*
+    #    accountnumLiterator = new ListIterator(accountnumList);
+    #    while (accountnumLiterator.more())
+    #    {
+    #        info(accountnumLiterator.value());
+    #    }
+    #    */
+    #
+    #
+    #    info(strFmt('%1',countOfRecords));
+    #}
+  ENDSOURCE
+  PROPERTIES
+    Origin              #{DC54ED9E-29BA-4C62-8D14-7A9764F8627F}
+  ENDPROPERTIES
+  
+
+***Element: PRN
+
+; Microsoft Dynamics AX Project : HV_FlatFile_Customers unloaded
+; --------------------------------------------------------------------------------
+  PROJECTVERSION 2
+  
+  PROJECT #HV_FlatFile_Customers
+  PRIVATE
+  PROPERTIES
+    Name                #HV_FlatFile_Customers
+    Origin              #{BEFFA91F-CBD5-446B-B63C-1B45F0949F67}
+  ENDPROPERTIES
+  
+    PROJECTCLASS ProjectNode
+    BEGINNODE
+      FILETYPE 0
+      UTILTYPE 5
+      UTILOBJECTID 0
+      NODETYPE 215
+      NAME #Checking_PODimensionValues
+    ENDNODE
+    BEGINNODE
+      FILETYPE 0
+      UTILTYPE 44
+      UTILOBJECTID 104291
+      NODETYPE 204
+      NAME #HV_FlatFile_Customers
+    ENDNODE
+    BEGINNODE
+      FILETYPE 0
+      UTILTYPE 5
+      UTILOBJECTID 0
+      NODETYPE 215
+      NAME #dbODBCConnection
+    ENDNODE
+  ENDPROJECT
+  
+
+***Element: END

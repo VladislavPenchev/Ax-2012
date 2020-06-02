@@ -1,0 +1,24 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.40629.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{AA631830-3AD7-4631-8CF6-443A09BF983B}") = "IS_InventTurnoverRatio_Wh", "IS_InventTurnoverRatio_Warehouse\IS_InventTurnoverRatio_Wh.dynamicsproj", "{DC6B9E11-4970-49FB-B3BA-9FA61DC8671D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DC6B9E11-4970-49FB-B3BA-9FA61DC8671D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DC6B9E11-4970-49FB-B3BA-9FA61DC8671D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DC6B9E11-4970-49FB-B3BA-9FA61DC8671D}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{DC6B9E11-4970-49FB-B3BA-9FA61DC8671D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DC6B9E11-4970-49FB-B3BA-9FA61DC8671D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DC6B9E11-4970-49FB-B3BA-9FA61DC8671D}.Release|Any CPU.Deploy.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

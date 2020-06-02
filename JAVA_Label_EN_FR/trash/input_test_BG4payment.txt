@@ -1,0 +1,97 @@
+<Table:Record name="TmpSysLabel"
+       xmlns:Table='urn:www.microsoft.com/Formats/Table'>
+    <Table:Field name="Language">en-us</Table:Field>
+    <Table:Field name="Label">Item code</Table:Field>
+    <Table:Field name="Description"></Table:Field>
+    <Table:Field name="LabelId">@SYS58740</Table:Field>
+    <Table:Field name="SysLabelApplModule">0</Table:Field>
+    <Table:Field name="recVersion">0</Table:Field>
+    <Table:Field name="Partition">5637144576</Table:Field>
+</Table:Record>
+
+<Table:Record name="TmpSysLabel"
+       xmlns:Table='urn:www.microsoft.com/Formats/Table'>
+    <Table:Field name="Language">fr</Table:Field>
+    <Table:Field name="Label">Article - valide pour</Table:Field>
+    <Table:Field name="Description"></Table:Field>
+    <Table:Field name="LabelId">@SYS58740</Table:Field>
+    <Table:Field name="SysLabelApplModule">0</Table:Field>
+    <Table:Field name="recVersion">0</Table:Field>
+    <Table:Field name="Partition">5637144576</Table:Field>
+</Table:Record>
+
+<Table:Record name="TmpSysLabel"
+       xmlns:Table='urn:www.microsoft.com/Formats/Table'>
+    <Table:Field name="Language">en-us</Table:Field>
+    <Table:Field name="Label">Article</Table:Field>
+    <Table:Field name="Description">HV</Table:Field>
+    <Table:Field name="LabelId">@HVP134</Table:Field>
+    <Table:Field name="SysLabelApplModule">0</Table:Field>
+    <Table:Field name="recVersion">0</Table:Field>
+    <Table:Field name="Partition">5637144576</Table:Field>
+</Table:Record>
+<Table:Record name="TmpSysLabel"
+       xmlns:Table='urn:www.microsoft.com/Formats/Table'>
+    <Table:Field name="Language">fr</Table:Field>
+    <Table:Field name="Label">EATSHIT</Table:Field>
+    <Table:Field name="Description">HV</Table:Field>
+    <Table:Field name="LabelId">@HVP134</Table:Field>
+    <Table:Field name="SysLabelApplModule">0</Table:Field>
+    <Table:Field name="recVersion">0</Table:Field>
+    <Table:Field name="Partition">5637144576</Table:Field>
+</Table:Record>
+
+<Table:Record name="TmpSysLabel"
+       xmlns:Table='urn:www.microsoft.com/Formats/Table'>
+    <Table:Field name="Language">en-us</Table:Field>
+    <Table:Field name="Label">Unit</Table:Field>
+    <Table:Field name="Description"></Table:Field>
+    <Table:Field name="LabelId">@SYS11959</Table:Field>
+    <Table:Field name="SysLabelApplModule">0</Table:Field>
+    <Table:Field name="recVersion">0</Table:Field>
+    <Table:Field name="Partition">5637144576</Table:Field>
+</Table:Record>
+<Table:Record name="TmpSysLabel"
+       xmlns:Table='urn:www.microsoft.com/Formats/Table'>
+    <Table:Field name="Language">fr</Table:Field>
+    <Table:Field name="Label">Unité</Table:Field>
+    <Table:Field name="Description"></Table:Field>
+    <Table:Field name="LabelId">@SYS11959</Table:Field>
+    <Table:Field name="SysLabelApplModule">0</Table:Field>
+    <Table:Field name="recVersion">0</Table:Field>
+    <Table:Field name="Partition">5637144576</Table:Field>
+</Table:Record>
+
+<Table:Record name="TmpSysLabel"
+       xmlns:Table='urn:www.microsoft.com/Formats/Table'>
+    <Table:Field name="Language">en-us</Table:Field>
+    <Table:Field name="Label">Qty</Table:Field>
+    <Table:Field name="Description">RU:</Table:Field>
+    <Table:Field name="LabelId">@GEE9459</Table:Field>
+    <Table:Field name="SysLabelApplModule">0</Table:Field>
+    <Table:Field name="recVersion">0</Table:Field>
+    <Table:Field name="Partition">5637144576</Table:Field>
+</Table:Record>
+
+<Table:Record name="TmpSysLabel"
+       xmlns:Table='urn:www.microsoft.com/Formats/Table'>
+    <Table:Field name="Language">en-us</Table:Field>
+    <Table:Field name="Label">Say:</Table:Field>
+    <Table:Field name="Description"></Table:Field>
+    <Table:Field name="LabelId">@HVP183</Table:Field>
+    <Table:Field name="SysLabelApplModule">0</Table:Field>
+    <Table:Field name="recVersion">0</Table:Field>
+    <Table:Field name="Partition">5637144576</Table:Field>
+</Table:Record>
+
+<Table:Record name="TmpSysLabel"
+       xmlns:Table='urn:www.microsoft.com/Formats/Table'>
+    <Table:Field name="Language">en-us</Table:Field>
+    <Table:Field name="Label">Total Amount:</Table:Field>
+    <Table:Field name="Description"></Table:Field>
+    <Table:Field name="LabelId">@HVP264</Table:Field>
+    <Table:Field name="SysLabelApplModule">0</Table:Field>
+    <Table:Field name="recVersion">0</Table:Field>
+    <Table:Field name="Partition">5637144576</Table:Field>
+</Table:Record>
+END

@@ -1,0 +1,616 @@
+﻿Exportfile for AOT version 1.0 or later
+Formatversion: 1
+
+***Element: JOB
+
+; Microsoft Dynamics AX Job: testMain unloaded
+; --------------------------------------------------------------------------------
+  JOBVERSION 1
+  
+  SOURCE #testMain
+    #static void testMain(Args _args)
+    #{
+    #    ExchangeRateProvider_BNB bnb = new ExchangeRateProvider_BNB();
+    #
+    #}
+  ENDSOURCE
+  PROPERTIES
+    Origin              #{BEBC9481-F01A-472B-8CB0-591364D443A2}
+  ENDPROPERTIES
+  
+
+***Element: JOB
+
+; Microsoft Dynamics AX Job: ReadXML_Test unloaded
+; --------------------------------------------------------------------------------
+  JOBVERSION 1
+  
+  SOURCE #ReadXML_Test
+    #static void ReadXML_Test(Args _args)
+    #{
+    #    XmlDocument xmlDoc;
+    #    XmlElement xmlRoot;
+    #    XmlElement xmlField;
+    #    XmlElement xmlRecord;
+    #    XmlNodeList xmlRecordList;
+    #    XmlNodeList xmlFieldList;
+    #    //DictTable dTable = new DictTable(tablenum(CarTable));
+    #    int i, j, fieldId;
+    #    //#CarsXmlTags
+    #    // Create an XmlDocument object to hold the
+    #    // contents of the xml-file
+    #    xmlDoc = new XmlDocument();
+    #    // Load the content of the xml-file
+    #    // into the XmlDocument object
+    #    xmlDoc.load(@"C:\Temp\test\Exchange_Rates.xml");
+    #
+    #    // Get the root node
+    #    xmlRoot = xmlDoc.getNamedElement("ROWSET");
+    #    // Get all child nodes (records)
+    #    xmlRecordList = xmlRoot.childNodes();
+    #    // Loop through the list of records
+    #    for (i=0; i<xmlRecordList.length(); i++)
+    #    {
+    #    //carTable.clear();
+    #    // Get the current record from the
+    #    // record list
+    #    xmlRecord = xmlRecordList.item(i);
+    #    // Get all child nodes (fields)
+    #    xmlFieldList = xmlRecord.childNodes();
+    #    // Loop through the list of fields
+    #    for (j=0; j<xmlFieldList.length(); j++)
+    #    {
+    #    // Get the current field from the
+    #    // field list
+    #    xmlField = xmlFieldList.item(j);
+    #    // Set the matching field in the carTable
+    #    // to be equal to the inner text
+    #    // (the text between the tag and end tag).
+    #    //carTable.(dTable.fieldName2Id(xmlField.name())) = xmlField.innerText();
+    #    }
+    #    // Insert the record into the carTable
+    #    //carTable.insert();
+    #    }
+    #}
+    #
+    #
+    #
+  ENDSOURCE
+  PROPERTIES
+    Origin              #{7453CDA9-07A3-4ED8-AC33-CE5C66D3745D}
+  ENDPROPERTIES
+  
+
+***Element: CLS
+
+; Microsoft Dynamics AX Class: ExchangeRateProvider_BNB unloaded
+; --------------------------------------------------------------------------------
+  CLSVERSION 1
+  
+  CLASS #ExchangeRateProvider_BNB
+    PROPERTIES
+      Name                #ExchangeRateProvider_BNB
+      Extends             #ExchangeRateProvider
+      Origin              #{84EFD979-454E-48CD-AF95-D71279C9F168}
+    ENDPROPERTIES
+    
+    METHODS
+      SOURCE #classDeclaration
+        #/// <summary>
+        #/// The <c>ExchangeRateProviderCBRF_RU</c> class represents exchange rate provider for Central Bank of Russian Federation.
+        #/// </summary>
+        #[ExchangeRateProviderAttribute(),
+        #ExchangeRateProviderIdAttribute('ab56593a-1731-4980-9619-17bd982e30ae')]
+        #class ExchangeRateProvider_BNB extends ExchangeRateProvider
+        #{
+        #    #File
+        #    #define.ProviderId('ab56593a-1731-4980-9619-17bd982e30ae')
+        #    #define.BNB('BNB')
+        #    #define.valuteNodeName('ROW')
+        #    #define.valCursNodeName('ROWSET')
+        #    #define.dateName('CURR_DATE')
+        #    #define.charCodeNodeName('CODE')
+        #    #define.nominalNodeName('RATIO')
+        #    #define.valueNodeName('RATE')
+        #    #define.ServiceOnDateUrl('ServiceOnDateUrl')
+        #    #define.ServiceCurrentUrl('ServiceCurrentUrl')
+        #
+        #    #define.urlOnDateFmt(@"C:\Temp\test\Exchange_Rates.xml")
+        #    #define.urlCurrentFmt(@"C:\Temp\test\Exchange_Rates.xml")
+        #}
+      ENDSOURCE
+      SOURCE #getConfigurationDefaults
+        #public ExchangeRateProviderConfigDefaults getConfigurationDefaults()
+        #{
+        #    ExchangeRateProviderConfigDefaults defaults = ExchangeRateProviderConfigDefaults::construct();
+        #
+        #    defaults.addNameValueConfigurationPair(#ServiceOnDateUrl, #urlOnDateFmt);
+        #    defaults.addNameValueConfigurationPair(#ServiceCurrentUrl, #urlCurrentFmt);
+        #
+        #    return defaults;
+        #}
+      ENDSOURCE
+      SOURCE #getExchangeRateDisplayFactor
+        #private ExchangeRateDisplayFactor getExchangeRateDisplayFactor(str _nominal)
+        #{
+        #    switch (_nominal)
+        #    {
+        #        case '1':
+        #            return ExchangeRateDisplayFactor::One;
+        #
+        #        case '10':
+        #            return ExchangeRateDisplayFactor::Ten;
+        #
+        #        case '100':
+        #            return ExchangeRateDisplayFactor::Hundred;
+        #
+        #        case '1000':
+        #            return ExchangeRateDisplayFactor::Thousand;
+        #
+        #        case '10000':
+        #            return ExchangeRateDisplayFactor::TenThousand;
+        #    }
+        #
+        #    return 0;
+        #}
+      ENDSOURCE
+      SOURCE #getExchangeRateFromNode
+        #private container getExchangeRateFromNode(XmlNode _node)
+        #{
+        #    XmlNode                     childNode;
+        #    CBCurrencyCode_RU           cbCurrencyCode;
+        #    ExchRate                    exchRate;
+        #    ExchangeRateDisplayFactor   displayFactor;
+        #
+        #    childNode = _node.selectSingleNode(#charCodeNodeName);
+        #    if (childNode)
+        #    {
+        #        cbCurrencyCode = childNode.text();
+        #    }
+        #
+        #    childNode = _node.selectSingleNode(#nominalNodeName);
+        #    if (childNode)
+        #    {
+        #        displayFactor = this.getExchangeRateDisplayFactor(childNode.text());
+        #    }
+        #
+        #    childNode = _node.selectSingleNode(#valueNodeName);
+        #    if (childNode)
+        #    {
+        #        exchRate = str2num_RU(childNode.text());
+        #    }
+        #
+        #    return [cbCurrencyCode, displayFactor, exchRate];
+        #}
+      ENDSOURCE
+      SOURCE #getExchangeRates
+        #public ExchangeRateResponse getExchangeRates(ExchangeRateRequest _request)
+        #{
+        #    ExchangeRateResponse    exchangeRateResponse    = ExchangeRateResponse::construct();
+        #    TransDate               exchangeDate            = _request.parmFromDate();
+        #    str                     serviceUrlFmt;
+        #    str                     serviceUrl;
+        #
+        #    if (_request.parmImportDateType() == ExchangeRateImportDateType::DateRange)
+        #    {
+        #        serviceUrlFmt = ExchangeRateProviderConfig::construct().getPropertyValue(#ProviderId, #ServiceOnDateUrl);
+        #    }
+        #    else
+        #    {
+        #        serviceUrlFmt = ExchangeRateProviderConfig::construct().getPropertyValue(#ProviderId, #ServiceCurrentUrl);
+        #    }
+        #
+        #    while (exchangeDate <= _request.parmToDate())
+        #    {
+        #        serviceUrl = strFmt(serviceUrlFmt, date2str(exchangeDate, 123, 2, 4, 2, 4, 4, DateFlags::None));
+        #
+        #        this.getExchangeRatesFromService(serviceUrl, exchangeRateResponse, _request.parmExchangeRateTypeRecId());
+        #        exchangeDate++;
+        #    }
+        #
+        #    return exchangeRateResponse;
+        #}
+      ENDSOURCE
+      SOURCE #getExchangeRatesFromService
+        #private void getExchangeRatesFromService(
+        #    str                     _serviceUrl,
+        #    ExchangeRateResponse    _exchangeRateResponse,
+        #    ExchangeRateTypeRecId   _exchangeRateTypeRecId)
+        #{
+        #    XmlDocument                         xmlRates;
+        #    XmlNode                             currencyNode;
+        #    XmlAttribute                        dateAttr;
+        #    TransDate                           rateDate;
+        #    ExchangeRateResponseCurrencyPair    currencyPair;
+        #    CBCurrencyCode_RU                   cbCurrencyCode;
+        #    ExchRate                            exchRateValue;
+        #    ExchangeRateDisplayFactor           displayFactor;
+        #    ExchangeRateResponseExchangeRate    exchangeRate;
+        #    Currency                            fromCurrency;
+        #    RatesImportFactor_RU                factor;
+        #    CurrencyCode                        currencyCode;
+        #
+        #    xmlRates = new XmlDocument();
+        #
+        #    new FileIOPermission(_serviceUrl, #io_read).assert();
+        #    if (!xmlRates.load(_serviceUrl))
+        #    {
+        #        return;
+        #    }
+        #
+        #    currencyNode = xmlRates.selectSingleNode(#valCursNodeName);
+        #    if (!currencyNode)
+        #    {
+        #        return;
+        #    }
+        #
+        #    dateAttr = currencyNode.attributes().getNamedItem(#dateName);
+        #    if (!dateAttr)
+        #    {
+        #        return;
+        #    }
+        #
+        #    rateDate = str2Date(dateAttr.text(), 123);
+        #    for (currencyNode = currencyNode.firstChild(); currencyNode; currencyNode = currencyNode.nextSibling())
+        #    {
+        #        [cbCurrencyCode, displayFactor, exchRateValue] = this.getExchangeRateFromNode(currencyNode);
+        #
+        #        if (displayFactor && exchRateValue && cbCurrencyCode)
+        #        {
+        #            select CurrencyCode from fromCurrency
+        #                where fromCurrency.CurrencyCode     == cbCurrencyCode
+        #                   || fromCurrency.CurrencyCodeISO  == cbCurrencyCode;
+        #
+        #            do
+        #            {
+        #                if (fromCurrency)
+        #                {
+        #                    currencyCode = fromCurrency.CurrencyCode;
+        #                }
+        #                else
+        #                {
+        #                    currencyCode = cbCurrencyCode;
+        #                }
+        #
+        #                currencyPair = ExchangeRateResponseCurrencyPair::construct();
+        #
+        #                currencyPair.parmFromCurrency(currencyCode);
+        #                currencyPair.parmToCurrency(#BNB);
+        #                currencyPair.parmExchangeRateDisplayFactor(displayFactor);
+        #
+        #                exchangeRate = ExchangeRateResponseExchangeRate::construct();
+        #                exchangeRate.parmValidFrom(rateDate);
+        #
+        #                factor = CurrencyFactor_RU::getCurrencyRatesImportFactor(currencyCode, _exchangeRateTypeRecId);
+        #                if (factor > 0)
+        #                {
+        #                    exchangeRate.parmExchangeRate(exchRateValue * factor);
+        #                }
+        #                else
+        #                {
+        #                    exchangeRate.parmExchangeRate(exchRateValue);
+        #                }
+        #
+        #                currencyPair.addExchangeRate(exchangeRate);
+        #
+        #                _exchangeRateResponse.addOrUpdateCurrencyPair(currencyPair);
+        #
+        #                if (fromCurrency)
+        #                {
+        #                    next fromCurrency;
+        #                }
+        #            }
+        #            while (fromCurrency);
+        #        }
+        #    }
+        #}
+      ENDSOURCE
+      SOURCE #getName
+        #public ExchangeRateProviderName getName()
+        #{
+        #    return #BNB;
+        #}
+      ENDSOURCE
+      SOURCE #getProviderId
+        #public ExchangeRateProviderId getProviderId()
+        #{
+        #    return #ProviderId;
+        #}
+      ENDSOURCE
+      SOURCE #getSupportedOptions
+        #public ExchangeRateProviderSupportedOptions getSupportedOptions()
+        #{
+        #    ExchangeRateProviderSupportedOptions options = ExchangeRateProviderSupportedOptions::construct();
+        #
+        #    options.parmDoesSupportSpecificCurrencyPairs(false);
+        #    options.parmDoesSupportSpecificDates(true);
+        #    options.parmFixedBaseIsoCurrency(#BNB);
+        #
+        #    return options;
+        #}
+      ENDSOURCE
+      SOURCE #providerId
+        #public static ExchangeRateProviderId providerId()
+        #{
+        #    return #ProviderId;
+        #}
+      ENDSOURCE
+    ENDMETHODS
+  ENDCLASS
+
+***Element: CLS
+
+; Microsoft Dynamics AX Class: ExchangeRateProviderOanda unloaded
+; --------------------------------------------------------------------------------
+  CLSVERSION 1
+  
+  CLASS #ExchangeRateProviderOanda
+    PROPERTIES
+      Name                #ExchangeRateProviderOanda
+      Extends             #ExchangeRateProvider
+      Origin              #{2C22586E-8001-4AA3-B563-653CB6EB1B96}
+    ENDPROPERTIES
+    
+    METHODS
+      SOURCE #classDeclaration
+        #[ExchangeRateProviderAttribute,
+        #ExchangeRateProviderIdAttribute('6685d7a3-f326-49e2-a6df-7a0f75e45d22')]
+        #class ExchangeRateProviderOanda extends ExchangeRateProvider
+        #{
+        #    str serviceUrl;
+        #    str serviceUrlForDateRange;
+        #    str serviceClient;
+        #    int serviceTimeout;
+        #
+        #    List rates;
+        #    List dates;
+        #    #define.ExchangeRatePosition(8)
+        #    #define.DatePosition(12)
+        #    #define.RatePrice("bid")
+        #    #define.RateDate("time")
+        #    #define.DateFormatMDY(213)
+        #    #define.ProviderId("6685d7a3-f326-49e2-a6df-7a0f75e45d22")
+        #    #define.QuoteXPath("//response/quotes/quote")
+        #    #define.BidXPath("//bid")
+        #    #define.DateXPath("//quote/date")
+        #    #define.ServiceTimeout("serviceTimeout")
+        #    #define.ServiceURL("ServiceUrl")
+        #    #define.OANDADateFormat("yyyy-MM-dd")
+        #    #define.HttpWebRequestMethod("GET")
+        #    #define.HttpWebRequestContentType("application/xml")
+        #    #define.HttpHeaderAuthorization("Authorization")
+        #    #define.KeyTokenPrefix("Bearer ")
+        #}
+      ENDSOURCE
+      SOURCE #getConfigurationDefaults
+        #public ExchangeRateProviderConfigDefaults getConfigurationDefaults()
+        #{
+        #    ExchangeRateProviderConfigDefaults configurationDefaults = ExchangeRateProviderConfigDefaults::construct();
+        #    configurationDefaults.addNameValueConfigurationPair(#ServiceTimeout, '5000');
+        #    configurationDefaults.addNameValueConfigurationPair(#ServiceURL, 'C:/Users/vladislav.penchev/Desktop/test');
+        #    return configurationDefaults;
+        #}
+      ENDSOURCE
+      SOURCE #getExchangeRates
+        #public ExchangeRateResponse getExchangeRates(ExchangeRateRequest _exchangeRateRequest)
+        #{
+        #    ExchangeRateResponse response = ExchangeRateResponse::construct();
+        #    ExchangeRateResponseCurrencyPair currencyPairResponse;
+        #    ExchangeRateResponseExchangeRate exchangeRateResponse;
+        #    ExchangeRateRequestCurrencyPair currencyPairRequest;
+        #    ExchangeRateProviderConfig config = ExchangeRateProviderConfig::construct();
+        #    str oandaRequestString;
+        #    date currentDate;
+        #    CurrencyExchangeRate exchangeRate;
+        #    System.Net.WebResponse webResponse;
+        #    System.IO.StreamReader streamReader;
+        #    System.IO.Stream stream;
+        #    System.Net.HttpWebRequest httpWebRequest;
+        #    ListEnumerator rateEnumerator, dateEnumerator;
+        #    System.Net.WebHeaderCollection webCollection;
+        #    System.DateTime fromDate, fromUTCDate;
+        #    System.TimeZone localTimeZone;
+        #
+        #    int compareResult;
+        #    str XMLOut;
+        #    str dateForRequest;
+        #    rates = new List(Types::Real);
+        #    dates = new List(Types::Date);
+        #    localTimeZone = System.TimeZone::get_CurrentTimeZone();
+        #    // Iterate over the requested currency pairs. This is only required for providers
+        #    // that support specific currency pairs.
+        #    _exchangeRateRequest.initializeCurrencyPairEnumerator();
+        #
+        #    while(_exchangeRateRequest.moveNextCurrencyPair())
+        #    {
+        #        serviceTimeout = str2int(config.getPropertyValue(this.getProviderId(), #ServiceTimeout));
+        #        serviceUrl = config.getPropertyValue(this.getProviderId(), #ServiceURL);
+        #        // Process each date separately.
+        #        // If we attempt to make a single request for multiple dates
+        #        // then OANDA will average the rates across the dates which is not what we want.
+        #        fromDate = _exchangeRateRequest.parmFromDate();
+        #        compareResult = fromDate.CompareTo(_exchangeRateRequest.parmToDate());
+        #
+        #        while (compareResult <= 0)
+        #        {
+        #        currencyPairRequest = _exchangeRateRequest.getCurrentCurrencyPair();
+        #        currencyPairResponse = ExchangeRateResponseCurrencyPair::construct();
+        #        currencyPairResponse.parmFromCurrency(currencyPairRequest.parmFromCurrency());
+        #        currencyPairResponse.parmToCurrency(currencyPairRequest.parmToCurrency());
+        #        // All rates are requested with a display factor of 1 for this provider. If the
+        #        // rates internally are represented using a different exchange rate display
+        #
+        #        // factor, the framework will make the necessary adjustments when saving the
+        #        // exchange rates.
+        #        currencyPairResponse.parmExchangeRateDisplayFactor(ExchangeRateDisplayFactor::One);
+        #        // convert to UTC which is required by OANDA
+        #        fromUTCDate = localTimeZone.ToUniversalTime(fromDate);
+        #        dateForRequest = fromUTCDate.ToString(#OANDADateFormat);
+        #        // Build the request URL.
+        #        oandaRequestString = strFmt(serviceUrl,
+        #        currencyPairRequest.parmFromCurrency(),
+        #        currencyPairRequest.parmToCurrency(),
+        #        dateForRequest,
+        #        dateForRequest);
+        #        // Configure the request for OANDA.
+        #        httpWebRequest = System.Net.WebRequest::CreateHttp(oandaRequestString);
+        #        httpWebRequest.set_Method(#HttpWebRequestMethod);
+        #        httpWebRequest.set_ContentType(#HttpWebRequestContentType);
+        #        httpWebRequest.set_Timeout(serviceTimeout);
+        #        // Authentication
+        #        webCollection = httpWebRequest.get_Headers();
+        #        //webCollection.Add(#HttpHeaderAuthorization, #KeyTokenPrefix + TODO: Retrieve and concatenate your Key provided by OANDA);
+        #
+        #        try
+        #        {
+        #        // Invoke the service
+        #        webResponse = httpWebRequest.GetResponse();
+        #        // Retrieve the XML response.
+        #        stream = webResponse.GetResponseStream();
+        #        streamReader = new System.IO.StreamReader(stream);
+        #        XMLOut = streamReader.ReadToEnd();
+        #        // Parse the XML to retrieve the rate and date.
+        #        this.readRate(XMLOut);
+        #        rateEnumerator = rates.getEnumerator();
+        #        dateEnumerator = dates.getEnumerator();
+        #        // Create the Exchange Rate Provider Response.
+        #        dateEnumerator.moveNext();
+        #        exchangeRate = rateEnumerator.current();
+        #        currentDate = dateEnumerator.current();
+        #        if (currentDate != dateNull() && exchangeRate)
+        #        {
+        #        exchangeRateResponse = ExchangeRateResponseExchangeRate::construct();
+        #        exchangeRateResponse.parmValidFrom(currentDate);
+        #        exchangeRateResponse.parmExchangeRate(exchangeRate);
+        #        currencyPairResponse.addExchangeRate(exchangeRateResponse);
+        #        currentDate = dateNull();
+        #        exchangeRate = 0;
+        #        }
+        #    }
+        #    catch (Exception::CLRError)
+        #    {
+        #    // The service call did not complete. Swallow the exception and try the next
+        #    // currency pair. The framework will be able to determine which currency
+        #    // pairs were successfully retrieved and will display the appropriate
+        #    // warnings to the user.
+        #    }
+        #    response.addOrUpdateCurrencyPair(currencyPairResponse);
+        #    rates = new List(Types::Real);
+        #    dates = new List(Types::Date);
+        #    fromDate = fromDate.AddDays(1);
+        #    compareResult = fromDate.CompareTo(_exchangeRateRequest.parmToDate());
+        #    }
+        #}
+        #    return response;
+        #}
+      ENDSOURCE
+      SOURCE #getName
+        #public ExchangeRateProviderName getName()
+        #{
+        #    return "Oanda exchange rate service";
+        #}
+      ENDSOURCE
+      SOURCE #getProviderId
+        #public ExchangeRateProviderId getProviderId()
+        #{
+        #    return 'CB024E9B-312B-44CE-BE89-3ED8597B007D';
+        #}
+      ENDSOURCE
+      SOURCE #getSupportedOptions
+        #public ExchangeRateProviderSupportedOptions getSupportedOptions()
+        #{
+        #    ExchangeRateProviderSupportedOptions supportedOptions = ExchangeRateProviderSupportedOptions::construct();
+        #    supportedOptions.parmDoesSupportSpecificCurrencyPairs(true);
+        #    supportedOptions.parmDoesSupportSpecificDates(false);
+        #    supportedOptions.parmFixedBaseIsoCurrency('');
+        #    return supportedOptions;
+        #}
+      ENDSOURCE
+      SOURCE #readRate
+        #private void readRate(str _xmlString)
+        #{
+        #    System.Xml.XmlDocument xmlDom = new System.Xml.XmlDocument();
+        #    System.Xml.XmlNode xmlQuoteNode, xmlBidNode, xmlDateNode;
+        #    CurrencyExchangeRate exchangeRate;
+        #    ValidFromDate exchangeDate;
+        #    str value;
+        #    xmlDom.LoadXml(_xmlString);
+        #    // Find the Quote
+        #    xmlQuoteNode = xmlDom.SelectSingleNode(#QuoteXPath);
+        #    if (xmlQuoteNode)
+        #    {
+        #        // Find the exchange rate
+        #        xmlBidNode = xmlQuoteNode.SelectSingleNode(#BidXPath);
+        #        if (xmlBidNode)
+        #        {
+        #            value = xmlBidNode.get_InnerText();
+        #            exchangeRate = str2num(value);
+        #            if (exchangeRate)
+        #            {
+        #                rates.addEnd(exchangeRate);
+        #            }
+        #        }
+        #        //Find the date of the exchange rate.
+        #        xmlDateNode = xmlQuoteNode.SelectSingleNode(#DateXPath);
+        #        if (xmlDateNode)
+        #        {
+        #            value = xmlDateNode.get_InnerText();
+        #            // convert the date from UTC to local timezone.
+        #            exchangeDate = System.DateTime::Parse(value, System.Globalization.CultureInfo::get_CurrentUICulture(), System.Globalization.DateTimeStyles::AssumeUniversal);
+        #            if (exchangeRate)
+        #            {
+        #                dates.addEnd(exchangeDate);
+        #            }
+        #        }
+        #    }
+        #}
+      ENDSOURCE
+    ENDMETHODS
+  ENDCLASS
+
+***Element: PRN
+
+; Microsoft Dynamics AX Project : ExchangeRateProvider_MY unloaded
+; --------------------------------------------------------------------------------
+  PROJECTVERSION 2
+  
+  PROJECT #ExchangeRateProvider_MY
+  PRIVATE
+  PROPERTIES
+    Name                #ExchangeRateProvider_MY
+    Origin              #{45E251F7-1973-4C28-8CCA-7817666E7F31}
+  ENDPROPERTIES
+  
+    PROJECTCLASS ProjectNode
+    BEGINNODE
+      FILETYPE 0
+      UTILTYPE 5
+      UTILOBJECTID 0
+      NODETYPE 215
+      NAME #testMain
+    ENDNODE
+    BEGINNODE
+      FILETYPE 0
+      UTILTYPE 5
+      UTILOBJECTID 0
+      NODETYPE 215
+      NAME #ReadXML_Test
+    ENDNODE
+    BEGINNODE
+      FILETYPE 0
+      UTILTYPE 45
+      UTILOBJECTID 1024714
+      NODETYPE 329
+      NAME #ExchangeRateProvider_BNB
+    ENDNODE
+    BEGINNODE
+      FILETYPE 0
+      UTILTYPE 45
+      UTILOBJECTID 1024713
+      NODETYPE 329
+      NAME #ExchangeRateProviderOanda
+    ENDNODE
+  ENDPROJECT
+  
+
+***Element: END

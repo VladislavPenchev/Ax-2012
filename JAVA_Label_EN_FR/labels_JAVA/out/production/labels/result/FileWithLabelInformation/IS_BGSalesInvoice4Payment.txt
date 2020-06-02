@@ -1,0 +1,187 @@
+@SYS58740	$$$	Item code	$$$	Code Article	$$$	
+@HVP134	$$$	Article	$$$	Article	$$$	
+@SYS11959	$$$	Unit	$$$	Unité	$$$	
+@GEE9459	$$$	Qty	$$$	Qté	$$$	
+@HVP183	$$$	Say:	$$$		$$$	
+@HVP264	$$$	Total Amount:	$$$	Montant total	$$$	
+@HVP138	$$$	Bank Account:	$$$	Compte bancaire	$$$	
+@HVP160	$$$	Consignee:	$$$	Destinataire	$$$	
+@HVP130	$$$	Buyer:	$$$	Compte facturé	$$$	
+@HVP163	$$$	Customer Order:	$$$	Commande client	$$$	
+@HVP165	$$$	Sales Contract:	$$$	Contrat de vente	$$$	
+@HVP1397	$$$	Customer number:	$$$	Numéro de client	$$$	
+@HVP178	$$$	Payment conditions:	$$$	Condition de paiement	$$$	
+@HVP137	$$$	Delivery terms:	$$$	Condition de livraison	$$$	
+@HVP179	$$$	Place of Shipment:	$$$	Lieu de chargement	$$$	
+@HVP180	$$$	Place of Destination:	$$$	Lieu de livraison	$$$	
+@HVP144	$$$	Date of shipment:	$$$	Date de chargement	$$$	
+@HVP262	$$$	Container:	$$$	Conteneur	$$$	
+@HVP252	$$$	Shipping document:	$$$	Document de transport	$$$	
+@SYS7426	$$$	Page	$$$	Page	$$$	
+@SYS70751	$$$	of	$$$	de	$$$	Pertains to "side x of y"
+@GEE16736	$$$	VAT rate	$$$	Taux de TVA	$$$	
+@HVP325	$$$	Net amount:	$$$	Montant net	$$$	
+@GEE3260	$$$	VAT	$$$	TVA	$$$	
+@SYS4010299	$$$	Customer number	$$$	Customer number	$$$	SEPA
+@HVP161	$$$	VAT Id:	$$$	Numero de TVA	$$$	
+@HVP1220	$$$	Exchange rate	$$$	Taux de change	$$$	
+@GLS108000	$$$	Specific symbol	$$$	Symbole spécifique	$$$	CZ:  #GEE16860#
+@SYS9362	$$$	Address	$$$	Adresse	$$$	[VendorOnboardingPhase1]
+@GLS220835	$$$	Enterprise code	$$$	Code entreprise	$$$	{Locked=!lt-LT}
+@SYS80991	$$$	Name	$$$	Nom	$$$	
+@SYS70361	$$$	Routing number	$$$	Numéro d'acheminement	$$$	en-us = "Routing number". en-gb "Commercial registration number" de: "Handelsregisternummer" at: "Firmenbuchnummer" ch: ""Handelsregisternummer". Other countries are to be translated into  the text of label 22457
+@SYS106892	$$$	String 50	$$$	Chaîne 50	$$$	
+@SYS7399	$$$	Name	$$$	Nom	$$$	[VendorOnboardingPhase1]
+@SYS969	$$$	Tax registration number	$$$	Numéro d'identification fiscale	$$$	tax registration number assigned by the tax authority
+@GLS107990	$$$	Kept at commercial register	$$$	Kept at commercial register	$$$	{Locked=!cs-CZ}
+@GLS107986	$$$	Inset number	$$$	Inset number	$$$	{Locked=!cs-CZ}
+@GLS107988	$$$	Section of commercial register	$$$	Section of commercial register	$$$	{Locked=!cs-CZ}
+@SYS68579	$$$	Direct debit ID	$$$	ID débit direct	$$$	se: Redovisningsenhetsnummer
+@SYS5845	$$$	E-mail	$$$	E-mail	$$$	
+@SYS77429	$$$	Enterprise number	$$$	Numéro de l'entreprise	$$$	[VendorOnboardingPhase1] Dialog field
+@SYS23443	$$$	Bank giro number	$$$	Numéro de virement bancaire	$$$	[VendorOnboardingPhase1] Situated computing
+@SYS86069	$$$	Bitmap	$$$	Bitmap	$$$	
+@SYS7869	$$$	Telephone	$$$	Téléphone	$$$	
+@SYS7888	$$$	Fax	$$$	Fax	$$$	[VendorOnboardingPhase1]
+@SYS22221	$$$	Internet address	$$$	Adresse Internet	$$$	
+@SYS8946	$$$	Tax exempt number	$$$	Numéro identifiant TVA	$$$	[VendorOnboardingPhase1]
+@GLS107993	$$$	Constant symbol	$$$	Constant symbol	$$$	CZ:  #GEE16853#
+@SYS14559	$$$	Contact	$$$	Contrat	$$$	//duplicate
+@SYS99716	$$$	Corrected invoice	$$$	Facture corrigée	$$$	
+@SYS99717	$$$	Reason for correction	$$$	Motif de la correction	$$$	
+@SYS97242	$$$	Enable reference number on customer invoices	$$$	Activer le numéro de référence sur les factures client	$$$	
+@SYS23010	$$$	Customer reference	$$$	Référence client	$$$	
+@SYS2587	$$$	Document date	$$$	Date de document	$$$	
+@GLS221005	$$$	Duplicate invoice date	$$$	Date du duplicata de la facture	$$$	{Locked=!pl-PL}
+@GLS110947	$$$	Duplicate number	$$$	Numéro de duplicata	$$$	W: #GEE30003#
+@SYS7576	$$$	Description	$$$	Description	$$$	[VendorOnboardingPhase1] Description
+@HVP251	$$$	Shipping document (type, number)	$$$	Document de transport (type, nombre)	$$$	
+@SYS23107	$$$	Container	$$$	Conteneur	$$$	
+@SYS67677	$$$	Cross rate	$$$	Taux croisé	$$$	
+@SYS9458	$$$	Invoice amount	$$$	Montant de la facture	$$$	
+@ABC734	$$$	Date of creation of the document:	$$$	Date de la création du document	$$$	
+@ABC735	$$$	Document No.:	$$$	N° du document :	$$$	
+@SYS7149	$$$	Customer account	$$$	Compte client	$$$	
+@HVP354	$$$	Place of Destination	$$$	Lieu de livraison	$$$	
+@SYS464	$$$	Sales subtotal amount	$$$	Montant du sous-total des ventes	$$$	Bug 878045 {ValidStrings=de-DE,de-AT,de-CH;"Verkaufszwischensumme"}
+@SYS71021	$$$	The sales subtotal amount, in the accounting currency	$$$	Montant du sous-total des ventes en devise comptable	$$$	currencies
+@ABC507	$$$	Customer VAT number	$$$	Numéro de TVA client	$$$	
+@SYS7924	$$$	Delivery address	$$$	Adresse de livraison	$$$	
+@SYS22058	$$$	Delivery name	$$$	Nom de livraison	$$$	
+@SYS14021	$$$	Due	$$$	Echéance	$$$	
+@SYS14578	$$$	Quantity	$$$	Quantité	$$$	
+@SYS71686	$$$	IBAN	$$$	IBAN	$$$	[VendorOnboardingPhase1]
+@HVP1047	$$$	Sales contract	$$$	Contrat de vente	$$$	
+@SYS334867	$$$	Contact number/address	$$$	Numéro/adresse du contact	$$$	gab : contact info address value for a postal address
+@HVP65	$$$	Customer requisition date	$$$		$$$	
+@SYS23422	$$$	Customer requisition	$$$	Bon de commande client	$$$	
+@SYS23725	$$$	SWIFT code	$$$	Code SWIFT	$$$	[VendorOnboardingPhase1]
+@SYS70989	$$$	Notes	$$$	Notes	$$$	
+@SYS7402	$$$	Date	$$$	Date	$$$	?
+@SYS16056	$$$	Delivery date	$$$	Date de livraison	$$$	
+@SYS190530	$$$	Short name	$$$	Nom court	$$$	GAB
+@SYS25708	$$$	Invoice account	$$$	Compte de facturation	$$$	
+@SYS97575	$$$	Customer invoice reference number	$$$	Numéro de référence de la facture client	$$$	
+@SYS116965	$$$	String 60	$$$	Chaîne 60	$$$	
+@SYS58518	$$$	Invoicing name	$$$	Nom de facturation	$$$	
+@SYS15217	$$$	Reference	$$$	Référence	$$$	Used very many places, among other as book title in the online help system.
+@SYS21837	$$$	List code	$$$	Code liste	$$$	
+@MCR11097	$$$	Ship via	$$$	Expédier via	$$$	
+@MCR35603	$$$	FOB	$$$	FOB	$$$	
+@SYS23564	$$$	Note line	$$$	Ligne de note	$$$	
+@SYS6928	$$$	Amount	$$$	Montant	$$$	Amount label
+@SYS300925	$$$	String 255	$$$	Chaîne 255	$$$	SysSecForm
+@SYS11443	$$$	Payment ID	$$$	ID paiement	$$$	
+@SYS828	$$$	Payment	$$$	Paiement	$$$	
+@SYS22514	$$$	Payment reference	$$$	Référence de paiement	$$$	
+@SYS67098	$$$	Print tax exempt number on invoice	$$$	Imprimer le numéro identifiant TVA sur la facture	$$$	
+@SYS4082994	$$$	Reference	$$$	Reference	$$$	{Locked=!th-TH}
+@SYS320666	$$$	Worker name	$$$	Nom du collaborateur	$$$	Expense management
+@GLS109510	$$$	Sales date	$$$	Date de vente	$$$	{Locked=!cs-CZ,!et-EE,!hu-HU,!lt-LT,!lv-LV,!pl-PL,!ru-RU} MBSI: re-enabed localization for ru-RU and EE languages as they were localized in v2009  PL:  #GEE28215#
+@SYS9694	$$$	Sales order	$$$	Commande client	$$$	
+@SYS73294	$$$	Temporary	$$$	Temporaire	$$$	
+@SYS58658	$$$	Packing duty license number	$$$	Numéro de licence de droits de douane emballages	$$$	
+@GLS109142	$$$	Date of VAT register	$$$	Date of VAT register	$$$	W:  #GEE27843#
+@SYS98362	$$$	Amount	$$$	Montant	$$$	Amount in default currency
+@SYS12836	$$$	Item number	$$$	Nombre d'article	$$$	
+@SYS2595	$$$	Text	$$$	Détails	$$$	[VendorOnboardingPhase1]
+@SYS11990	$$$	Sales quantity	$$$	Quantité vendue	$$$	
+@SYS190813	$$$	Unit	$$$	Unité	$$$	Unit of measure
+@SYS4160085	$$$	Special regime for cash accounting method	$$$	Special regime for cash accounting method	$$$	{Locked=!es-ES,!es-MX}{ValidStrings=es-ES;"Régimen especial del criterio de caja"} dax62hf label #@SYP4471265#
+@SYS4376	$$$	Cash discount	$$$	Remise pour paiement d'avance	$$$	
+@SYS10946	$$$	Cash discount amount	$$$	Montant de la remise pour paiement d'avance	$$$	Cash discount
+@GLS63105	$$$	VAT commodity code	$$$	VAT commodity code	$$$	IN:
+@SYS14011	$$$	Configuration	$$$	Configuration	$$$	Configuration used in the sense variants of items.
+@SYS7572	$$$	Currency	$$$	Devise	$$$	[VendorOnboardingPhase1]
+@SYS97920	$$$	String 30	$$$	Chaîne 30	$$$	
+@SYS14588	$$$	Due date	$$$	Date d'échéance	$$$	
+@SYS10042	$$$	Cash discount date	$$$	Date paiement d'avance	$$$	used in many places
+@SYS7813	$$$	Discount percent	$$$	Pourcentage de remise	$$$	Discount percent
+@SYS11829	$$$	Discount	$$$	Remise	$$$	
+@SYS340849	$$$	Total amount	$$$	Montant total	$$$	Total amount
+@SYS6465	$$$	Total discount	$$$	Remise totale	$$$	
+@SYS4955	$$$	Exchange rate	$$$	Taux de change	$$$	
+@SYS14552	$$$	External item number	$$$	Numéro d'article externe	$$$	
+@SYS22817	$$$	Form note	$$$	Note d'écran	$$$	'Form' used in the sense form letter, ie document.
+@SYS68973	$$$	Associated payment attachment on customer invoice	$$$	Document de paiement associé de facture client	$$$	Associated payment attachment (Giro) on sales invoice
+@SYS13887	$$$	Note	$$$	Note	$$$	[VendorOnboardingPhase1] Text in document management
+@SYS28731	$$$	Commodity	$$$	Marchandise	$$$	
+@SYS23057	$$$	Lot ID	$$$	N° de traitement	$$$	
+@ABC662	$$$	Position for the declaration according to the VAT Law	$$$		$$$	
+@SYS73185	$$$	Quality	$$$	Qualité	$$$	
+@GLS110031	$$$	PKWiU	$$$	PKWiU	$$$	PL:  #GEE28899#
+@SYS11762	$$$	Value	$$$	Valeur	$$$	When it is used for amount.
+@SYS53635	$$$	Batch number	$$$	Numéro du lot	$$$	
+@SYS73726	$$$	Color	$$$	Couleur	$$$	Special label used with inventory dimensions
+@SYS86105	$$$	Free Txt	$$$	Texte libre	$$$	
+@GLS115400	$$$	GTD number	$$$	GTD number	$$$	RU: #GEE34667#
+@HVP1039	$$$	Status	$$$		$$$	
+@SYS6437	$$$	Warehouse	$$$	Entrepôt	$$$	
+@GLS115496	$$$	Owner	$$$	Owner	$$$	RU: #GEE34763#
+@GLS113769	$$$	Inventory profile	$$$	Profil de stock	$$$	RU: #GEE33020#
+@HVP1038	$$$	Consignation	$$$		$$$	
+@SYS103211	$$$	Site	$$$	Site	$$$	Multi Site
+@SYS73727	$$$	Size	$$$	Taille	$$$	Special label used with Inventory Dimensions
+@WAX355	$$$	Inventory status	$$$	Statut du stock	$$$	The inventory status identification.
+@FPK270000	$$$	Style	$$$	Style	$$$	Style dimension
+@SYS860	$$$	Amount in transaction currency	$$$	Montant dans la devise de transaction	$$$	Amont in current currency.
+@SYS12128	$$$	Invoice	$$$	Facture	$$$	An invoice, not to invoice
+@SYS8172	$$$	Round-off	$$$	Arrondi	$$$	
+@WAX67	$$$	License plate	$$$	Contenant	$$$	The identification number of the license plate.
+@SYS54467	$$$	Line heading	$$$	En-tête de ligne	$$$	
+@MCR11275	$$$	Amount due	$$$	Montant dû	$$$	
+@SYS23280	$$$	Main line	$$$	Ligne principale	$$$	
+@SYS69023	$$$	Calculated value	$$$	Valeur calculée	$$$	
+@SYS23727	$$$	Charges code	$$$	Code frais	$$$	
+@SYS13566	$$$	Description	$$$	Description	$$$	bug 189654
+@SYS23652	$$$	Charges value	$$$	Valeur des frais	$$$	
+@SYS15658	$$$	Paid	$$$	Payé	$$$	
+@SYS19792	$$$	Terms	$$$	Conditions	$$$	
+@SYS68593	$$$	Reference table ID	$$$	ID table de référence	$$$	
+@SYS4002620	$$$	Direct debit mandate ID	$$$	ID mandat de débit direct	$$$	SEPA
+@SYS21877	$$$	Sales tax code	$$$	Code taxe	$$$	Tax = Sales tax (VAT)
+@SYS6901	$$$	Net amount	$$$	Montant HT	$$$	
+@SYS72987	$$$	Packing material code	$$$	Code matières d'emballage	$$$	
+@SYS72995	$$$	Packing material	$$$	Matières d'emballage	$$$	
+@SYS54069	$$$	Packing weight	$$$	Poids de l'emballage	$$$	
+@SYS10178	$$$	Ship date	$$$	Date d'expédition	$$$	
+@HVP1048	$$$	Delivery Protocol	$$$	Protocol de livraison	$$$	
+@SYS345070	$$$	Process Distribution	$$$	Traiter la distribution	$$$	Process Manufacturing - Config Key
+@SYS21906	$$$	Print code	$$$	Code d'impression	$$$	
+@SYS8483	$$$	Symbol	$$$	Symbole	$$$	
+@SYS22646	$$$	Sales tax amount	$$$	Montant de la taxe	$$$	Tax = Sales tax (VAT)
+@SYS5755	$$$	Sales price	$$$	Prix de vente	$$$	
+@SYS21950	$$$	Amount origin	$$$	Base de la taxe	$$$	
+@SYS53608	$$$	Corrected amount in currency	$$$	Montant corrigé en devise	$$$	
+@SYS11466	$$$	Total charges	$$$	Total des frais	$$$	
+@SYS5878	$$$	Sales tax	$$$	Taxe	$$$	Tax = Sales tax
+@SYS98363	$$$	Origin	$$$	Origine	$$$	Origin used when referring to the original amount of money
+@SYS62373	$$$	Nontaxable	$$$	Non soumis à taxe	$$$	
+@SYS115506	$$$	Tax invoice ID - sales	$$$	ID facture pour les taxes - ventes	$$$	
+@SYS62243	$$$	Separate tax exempt balance in forms	$$$	Séparer le solde exonéré de taxe dans les écrans	$$$	'Form' used in the sense form letter, ie document.
+@SYS81672	$$$	Withholding tax code	$$$	Code de retenue à la source	$$$	
+@SYS62374	$$$	Taxable	$$$	Soumis à taxe	$$$	Tax = Sales tax (VAT)
+@SYS101242	$$$	Location	$$$	Emplacement	$$$	A store room / warehouse where items are or could be located.
+@SYS50253	$$$	Pallet ID	$$$	ID palette	$$$	
+@PDS1	$$$	CW quantity	$$$	Quantité en PV	$$$	
+@PDS3	$$$	CW unit	$$$	Unité en PV	$$$	

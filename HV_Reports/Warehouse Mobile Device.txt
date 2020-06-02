@@ -1,0 +1,35 @@
+https://docs.microsoft.com/en-us/dynamics365/unified-operations/supply-chain/warehousing/warehouse-mobile-devices-portal
+
+https://blogs.msdn.microsoft.com/dynamicsaxscm/tag/warehouse-mobile-devices-portal/
+//install 
+https://technet.microsoft.com/en-us/library/dn741429.aspx
+
+//DEVELOPMENT
+
+--WeightContainer
+https://blogs.msdn.microsoft.com/dynamicsaxscm/2015/03/13/creating-custom-solutions-with-the-warehouse-mobile-device-portal/
+
+
+--ItemTransfer
+http://www.axpulse.com/warehouse-mobile-device-portal-in-microsoft-ax-dynamics-2012/
+
+--Alex Complete work
+http://ax2012manufacturing.blogspot.bg/2014/06/microsoft-dynamics-ax-2012-warehouse.html
+
+--SSRS in Mobile Divece
+CSS
+https://technet.microsoft.com/en-us/library/dn553175.aspx
+
+
+
+INSTALL WMDP
+https://organicax.com/2015/07/24/installing-the-wms-mobile-device-portal-for-ax2012-r3/
+
+MENU ITEM % MENUS
+https://organicax.com/2016/09/02/wms-mobile-device-indirect-menu-items-compile-of-posts/
+
+ARCHITECTURE OF WMDP
+https://blogs.msdn.microsoft.com/dynamicsaxscm/2015/03/03/warehouse-mobile-device-portal-architecture/
+
+ON WHICH DEVICES CAN BE WORK
+https://blogs.msdn.microsoft.com/dynamicsaxscm/2014/07/18/which-devices-can-you-use-for-warehouse-mobile-device-portal/

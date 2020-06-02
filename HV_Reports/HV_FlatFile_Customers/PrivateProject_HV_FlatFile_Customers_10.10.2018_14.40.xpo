@@ -1,0 +1,951 @@
+﻿Exportfile for AOT version 1.0 or later
+Formatversion: 1
+
+***Element: JOB
+
+; Microsoft Dynamics AX Job: Query3 unloaded
+; --------------------------------------------------------------------------------
+  JOBVERSION 1
+  
+  SOURCE #Query3
+    #static void Query3(Args _args)
+    #{
+    #    OdbcConnection  odbcConnection;
+    #    Statement       statement;
+    #
+    #    //Variables to connection
+    #    #define.ServerDefault('SF-TEST')
+    #    #define.DatabaseDefault("HuvepharmaTraining") //GrassioTraining
+    #
+    #    //Sentence to execute in SQLServer-database
+    #    str             sql;
+    #
+    #    //Result of excecution
+    #    ResultSet       resultSet;
+    #
+    #    LoginProperty   loginProperty;
+    #    SqlStatementExecutePermission perm;
+    #
+    #    Dimension       dimension;
+    #
+    #    SysExcelApplication excel;
+    #    SysExcelWorkbooks workbooks;
+    #    SysExcelWorkbook workbook;
+    #    SysExcelWorksheets worksheets;
+    #    SysExcelWorksheet worksheet;
+    #    SysExcelCells cells;
+    #    SysExcelCell cell;
+    #    int row;
+    #    ;
+    #
+    #    excel = SysExcelApplication::construct();
+    #    workbooks = excel.workbooks();
+    #    workbook = workbooks.add();
+    #    worksheets = workbook.worksheets();
+    #    worksheet = worksheets.itemFromNum(1);
+    #    cells = worksheet.cells();
+    #    cells.range('A:A').numberFormat('@');
+    #
+    #
+    #    //query
+    #    sql = @"
+    #        select
+    #    z.[Price Code],
+    #    -- z.idt1,
+    #    z.[Item N°],
+    #    z.[Item (2)],
+    #    --z.UNITID,
+    #    z.[Customer Number],
+    #    z.Country,
+    #    -- z.CREATEDDATETIME,
+    #    x.Price,
+    #    z.CURRENCY
+    #    from
+    #    (
+    #    select
+    #    t.[Price Code],
+    #    t.idt1,
+    #    t.[Item N°],
+    #    t.[Item (2)],
+    #    t.UNITID,
+    #    t.[Customer Number],
+    #    t.Country,
+    #    t.CURRENCY,
+    #    max(t.CREATEDDATETIME) as CREATEDDATETIME
+    #    from (
+    #   pdatr.itemrelation,'_',pdatr.accountrelation) as 'Price Code',
+    #    CONCAT (ct select
+    #    concat (.DESTINATION_HV,pdatr.ITEMRELATION,pdatr.ACCOUNTRELATION) 'idt1',
+    #    pdatr.ITEMRELATION as 'Item N°',
+    #    pdatr.itemrelation as 'Item (2)',
+    #    pdatr.UNITID,
+    #    pdatr.ACCOUNTRELATION as 'Customer Number',
+    #    --'Country' as 'Country_column',
+    #    ct.DESTINATION_HV as 'Country',
+    #    --'1' as '1',
+    #    cast (pdatr.amount as money) as 'Price',
+    #    pdatr.CURRENCY,
+    #    pdt.CREATEDDATETIME
+    #    -- ,pdt.MODIFIEDDATETIME
+    #
+    #
+    #    from pricediscadmtrans pdatr
+    #
+    #    left join PRICEDISCTABLE pdt
+    #    on pdt.ORIGINALPRICEDISCADMTRANSRECID = pdatr.RECID
+    #
+    #
+    #    left join PRICEDISCADMTABLE pdat
+    #    on pdatr.JOURNALNUM = pdat.JOURNALNUM
+    #    and pdatr.DATAAREAID = pdat.DATAAREAID
+    #
+    #    left join CUSTTABLE ct
+    #    on pdatr.ACCOUNTRELATION = ct.ACCOUNTNUM
+    #    and pdatr.DATAAREAID = ct.DATAAREAID
+    #    where
+    #    pdat.JOURNALNAME = 'SalesCRM' and
+    #    pdat.POSTED =1
+    #    and ct.DATAAREAID = '110'
+    #    and pdatr.AMOUNT >0
+    #    and cast(pdt.CREATEDDATETIME as date) between cast (CURRENT_TIMESTAMP-1 as date) and cast (current_timestamp as date)
+    #    -- and pdatr.ITEMRELATION = '01672'
+    #    -- and pdatr.ACCOUNTRELATION = '00237'
+    #    )t
+    #    group by t.[Price Code],t.idt1,t.[Item N°],t.[Item (2)],t.UNITID,t.[Customer Number],t.Country,t.CURRENCY
+    #    )z
+    #    left join
+    #    (
+    #    select
+    #    concat (pdatr.itemrelation,'_',pdatr.accountrelation) as 'Price Code',
+    #    CONCAT (ct.DESTINATION_HV,pdatr.ITEMRELATION,pdatr.ACCOUNTRELATION) 'idt1',
+    #    pdatr.ITEMRELATION as 'Item N°',
+    #    pdatr.itemrelation as 'Item (2)',
+    #    pdatr.UNITID,
+    #    pdatr.ACCOUNTRELATION as 'Customer Number',
+    #    --'Country' as 'Country_column',
+    #    ct.DESTINATION_HV as 'Country',
+    #    --'1' as '1',
+    #    cast (pdatr.amount as money) as 'Price',
+    #    pdatr.CURRENCY,
+    #    pdt.CREATEDDATETIME
+    #    -- ,pdt.MODIFIEDDATETIME
+    #
+    #
+    #    from pricediscadmtrans pdatr
+    #
+    #    left join PRICEDISCTABLE pdt
+    #    on pdt.ORIGINALPRICEDISCADMTRANSRECID = pdatr.RECID
+    #
+    #
+    #    left join PRICEDISCADMTABLE pdat
+    #    on pdatr.JOURNALNUM = pdat.JOURNALNUM
+    #    and pdatr.DATAAREAID = pdat.DATAAREAID
+    #
+    #    left join CUSTTABLE ct
+    #    on pdatr.ACCOUNTRELATION = ct.ACCOUNTNUM
+    #    and pdatr.DATAAREAID = ct.DATAAREAID
+    #    where
+    #    pdat.JOURNALNAME = 'SalesCRM' and
+    #    pdat.POSTED =1
+    #    and ct.DATAAREAID = '110'
+    #    and pdatr.AMOUNT >0
+    #    -- and pdatr.ITEMRELATION = '01672'
+    #    -- and pdatr.ACCOUNTRELATION = '00237'
+    #    ) x on z.[Price Code] = x.[Price Code] and z.Country = x.Country and z.CURRENCY = x.CURRENCY and z.[Customer Number] = x.[Customer Number]
+    #    and z.idt1 = z.idt1 and z.[Item (2)] = x.[Item (2)] and z.[Item N°] = x.[Item N°] and z.UNITID = x.UNITID and z.CREATEDDATETIME = x.CREATEDDATETIME
+    #
+    #    ";
+    #
+    #    //Get ODBC connection
+    #    loginProperty = new LoginProperty();
+    #    loginProperty.setServer(#ServerDefault);
+    #    loginProperty.setDatabase(#DatabaseDefault);
+    #
+    #    //Create a connection to external database
+    #    try
+    #    {
+    #        odbcConnection = new OdbcConnection(loginProperty);
+    #    }
+    #    catch
+    #    {
+    #        throw error("Error creating ODBC Connection");
+    #    }
+    #
+    #    //Exec sentence
+    #    if(odbcConnection)
+    #    {
+    #        if(sql == "")
+    #        {
+    #            throw error("No sql sentence to execute");
+    #        }
+    #
+    #        //Assert permission for executing the sql string
+    #        perm = new SqlStatementExecutePermission(sql);
+    #
+    #        //Check for permission to use the statement
+    #        perm.assert();
+    #
+    #        //Prepare the sql statement
+    #        statement = odbcConnection.createStatement();
+    #        resultSet = statement.executeQuery(sql);
+    #    }
+    #
+    #    ttsBegin;
+    #
+    #    //titles
+    #
+    #    cell = cells.item(1, 1);
+    #    cell.value("Price Code");
+    #
+    #    cell = cells.item(1, 2);
+    #    cell.value("Item N*");
+    #
+    #    cell = cells.item(1, 3);
+    #    cell.value("Item (2)");
+    #
+    #    cell = cells.item(1, 4);
+    #    cell.value("Customer Number");
+    #
+    #    cell = cells.item(1, 5);
+    #    cell.value("Country");
+    #
+    #    cell = cells.item(1, 6);
+    #    cell.value("Price");
+    #
+    #    cell = cells.item(1, 7);
+    #    cell.value("CURRENCY");
+    #
+    #
+    #    while (resultSet.next())
+    #    {
+    #        row++;
+    #        cell = cells.item(row + 1, 1);
+    #        cell.value(resultSet.getString(1));
+    #
+    #        cell = cells.item(row + 1, 2);
+    #        cell.value(resultSet.getString(2));
+    #
+    #        cell = cells.item(row + 1, 3);
+    #        cell.value(resultSet.getString(3));
+    #
+    #        cell = cells.item(row + 1, 4);
+    #        cell.value(resultSet.getString(4));
+    #
+    #        cell = cells.item(row + 1, 5);
+    #        cell.value(resultSet.getString(5));
+    #
+    #        cell = cells.item(row + 1, 6);
+    #        cell.value(resultSet.getString(6));
+    #
+    #        cell = cells.item(row + 1, 7);
+    #        cell.value(resultSet.getString(7));
+    #
+    #    }
+    #    ttsCommit;
+    #
+    #    //Close the connection
+    #    if(resultSet)
+    #    {
+    #        resultSet.close();
+    #    }
+    #    if(statement)
+    #    {
+    #        statement.close();
+    #    }
+    #
+    #    //End the scope of the assert call
+    #    CodeAccessPermission::revertAssert();
+    #
+    #    excel.visible(true);
+    #    workbook.saveas("C:\\Users\\vladislav.penchev\\Desktop\\Query3.csv");
+    #}
+  ENDSOURCE
+  PROPERTIES
+    Origin              #{F593A773-DFA2-4367-8425-108725B72104}
+  ENDPROPERTIES
+  
+
+***Element: JOB
+
+; Microsoft Dynamics AX Job: Sales unloaded
+; --------------------------------------------------------------------------------
+  JOBVERSION 1
+  
+  SOURCE #Sales
+    #static void Sales(Args _args)
+    #{
+    #    OdbcConnection  odbcConnection;
+    #    Statement       statement;
+    #
+    #    //Variables to connection
+    #    #define.ServerDefault('SF-TEST')
+    #    #define.DatabaseDefault("HuvepharmaTraining") //GrassioTraining
+    #
+    #    //Sentence to execute in SQLServer-database
+    #    str             sql;
+    #
+    #    //Result of excecution
+    #    ResultSet       resultSet;
+    #
+    #    LoginProperty   loginProperty;
+    #    SqlStatementExecutePermission perm;
+    #
+    #    Dimension       dimension;
+    #
+    #    SysExcelApplication excel;
+    #    SysExcelWorkbooks workbooks;
+    #    SysExcelWorkbook workbook;
+    #    SysExcelWorksheets worksheets;
+    #    SysExcelWorksheet worksheet;
+    #    SysExcelCells cells;
+    #    SysExcelCell cell;
+    #    int row;
+    #    ;
+    #
+    #    excel = SysExcelApplication::construct();
+    #    workbooks = excel.workbooks();
+    #    workbook = workbooks.add();
+    #    worksheets = workbook.worksheets();
+    #    worksheet = worksheets.itemFromNum(1);
+    #    cells = worksheet.cells();
+    #    cells.range('A:A').numberFormat('@');
+    #
+    #
+    #    //query
+    #    sql = @"
+    #    select
+    #    t.ClientCode,
+    #    convert(varchar(10),t.OrderDate,103) as orderdate,
+    #    t.salesman,
+    #    t.OrderRef,
+    #    t.ProductCode,
+    #    t.ProductTitle,
+    #    t.AX_ItemCode,
+    #    replace (convert(nvarchar(100),sum(t.Quantity)),'.',',') as Qty,
+    #    replace(convert(nvarchar(100),sum(t.price)),'.',',') as Price
+    #
+    #
+    #    from
+    #    (
+    #    select
+    #    ct.INVOICEACCOUNT_HV as ClientCode,
+    #    ct.INVOICEDATE as OrderDate,
+    #    hcm.name as salesman,
+    #    ct.SALESID as OrderRef,
+    #    ct.itemid as AX_ItemCode,
+    #
+    #    CASE
+    #    WHEN it.PRODUCTID_HV = '' THEN 'NO_product_name'
+    #    Else it.PRODUCTID_HV
+    #    END as ProductCode,
+    #
+    #    replace(replace(ct.NAME,CHAR(13),''),CHAR(10),'') as ProductTitle,
+    #    convert (double precision,round(ct.QTY,0)) as Quantity,
+    #    convert (double precision,ct.SALESPRICE) as Price,
+    #    ct.LINEAMOUNTMST as Amount
+    #
+    #    from CUSTINVOICETRANS CT
+    #
+    #    left join INVENTTABLE it
+    #    on ct.ITEMID = it.ITEMID
+    #    and ct.DATAAREAID = it.DATAAREAID
+    #
+    #    left join SALESTABLE st
+    #    on ct.SALESID = st.SALESID
+    #    and ct.DATAAREAID = st.DATAAREAID
+    #
+    #    left join HCMWORKERDETAILSVIEW hcm
+    #    on hcm.RECID = st.WORKERSALESRESPONSIBLE
+    #
+    #    where ct.DATAAREAID = '110'
+    #    and ct.INVOICEDATE >= '2016-01-01'
+    #
+    #    )t
+    #    group by t.ClientCode,t.OrderDate,t.salesman,t.OrderRef,t.ProductCode,t.ProductTitle,t.AX_ItemCode
+    #    order by OrderRef
+    #
+    #    ";
+    #
+    #    //Get ODBC connection
+    #    loginProperty = new LoginProperty();
+    #    loginProperty.setServer(#ServerDefault);
+    #    loginProperty.setDatabase(#DatabaseDefault);
+    #
+    #    //Create a connection to external database
+    #    try
+    #    {
+    #        odbcConnection = new OdbcConnection(loginProperty);
+    #    }
+    #    catch
+    #    {
+    #        throw error("Error creating ODBC Connection");
+    #    }
+    #
+    #    //Exec sentence
+    #    if(odbcConnection)
+    #    {
+    #        if(sql == "")
+    #        {
+    #            throw error("No sql sentence to execute");
+    #        }
+    #
+    #        //Assert permission for executing the sql string
+    #        perm = new SqlStatementExecutePermission(sql);
+    #
+    #        //Check for permission to use the statement
+    #        perm.assert();
+    #
+    #        //Prepare the sql statement
+    #        statement = odbcConnection.createStatement();
+    #        resultSet = statement.executeQuery(sql);
+    #    }
+    #
+    #    ttsBegin;
+    #
+    #    //titles
+    #
+    #    cell = cells.item(1, 1);
+    #    cell.value("ClientCode");
+    #
+    #    cell = cells.item(1, 2);
+    #    cell.value("orderdate");
+    #
+    #    cell = cells.item(1, 3);
+    #    cell.value("salesman");
+    #
+    #    cell = cells.item(1, 4);
+    #    cell.value("OrderRef");
+    #
+    #    cell = cells.item(1, 5);
+    #    cell.value("ProductCode");
+    #
+    #    cell = cells.item(1, 6);
+    #    cell.value("ProductTitle");
+    #
+    #    cell = cells.item(1, 7);
+    #    cell.value("AX_ItemCode");
+    #
+    #    cell = cells.item(1, 8);
+    #    cell.value("Qty");
+    #
+    #    cell = cells.item(1, 9);
+    #    cell.value("Price");
+    #
+    #
+    #
+    #    while (resultSet.next())
+    #    {
+    #        row++;
+    #        cell = cells.item(row + 1, 1);
+    #        cell.value(resultSet.getString(1));
+    #
+    #        cell = cells.item(row + 1, 2);
+    #        cell.value(resultSet.getString(2));
+    #
+    #        cell = cells.item(row + 1, 3);
+    #        cell.value(resultSet.getString(3));
+    #
+    #        cell = cells.item(row + 1, 4);
+    #        cell.value(resultSet.getString(4));
+    #
+    #        cell = cells.item(row + 1, 5);
+    #        cell.value(resultSet.getString(5));
+    #
+    #        cell = cells.item(row + 1, 6);
+    #        cell.value(resultSet.getString(6));
+    #
+    #        cell = cells.item(row + 1, 7);
+    #        cell.value(resultSet.getString(7));
+    #
+    #        cell = cells.item(row + 1, 8);
+    #        cell.value(resultSet.getString(8));
+    #
+    #        cell = cells.item(row + 1, 9);
+    #        cell.value(resultSet.getString(9));
+    #
+    #
+    #    }
+    #    ttsCommit;
+    #
+    #
+    #
+    #    //Close the connection
+    #    if(resultSet)
+    #    {
+    #        resultSet.close();
+    #    }
+    #    if(statement)
+    #    {
+    #        statement.close();
+    #    }
+    #
+    #    //End the scope of the assert call
+    #    CodeAccessPermission::revertAssert();
+    #
+    #    excel.visible(true);
+    #
+    #    workbook.saveas("C:\\Users\\vladislav.penchev\\Desktop\\Sales.csv");
+    #
+    #
+    #}
+  ENDSOURCE
+  PROPERTIES
+    Origin              #{5D8E37AB-0C35-4F84-B7A0-3780D02F421C}
+  ENDPROPERTIES
+  
+
+***Element: JOB
+
+; Microsoft Dynamics AX Job: Customers unloaded
+; --------------------------------------------------------------------------------
+  JOBVERSION 1
+  
+  SOURCE #Customers
+    #static void Customers(Args _args)
+    #{
+    #    OdbcConnection  odbcConnection;
+    #    Statement       statement;
+    #
+    #    //Variables to connection
+    #    #define.ServerDefault('SF-TEST')
+    #    #define.DatabaseDefault("HuvepharmaTraining") //GrassioTraining
+    #
+    #    //Sentence to execute in SQLServer-database
+    #    str             sql;
+    #
+    #    //Result of excecution
+    #    ResultSet       resultSet;
+    #
+    #    LoginProperty   loginProperty;
+    #    SqlStatementExecutePermission perm;
+    #
+    #    Dimension       dimension;
+    #
+    #    SysExcelApplication excel;
+    #    SysExcelWorkbooks workbooks;
+    #    SysExcelWorkbook workbook;
+    #    SysExcelWorksheets worksheets;
+    #    SysExcelWorksheet worksheet;
+    #    SysExcelCells cells;
+    #    SysExcelCell cell;
+    #    int row;
+    #    ;
+    #
+    #    excel = SysExcelApplication::construct();
+    #    workbooks = excel.workbooks();
+    #    workbook = workbooks.add();
+    #    worksheets = workbook.worksheets();
+    #    worksheet = worksheets.itemFromNum(1);
+    #    cells = worksheet.cells();
+    #    cells.range('A:A').numberFormat('@');
+    #
+    #
+    #    //query
+    #    sql = @"
+    #     WITH
+    #    cte as
+    #    (
+    #    select
+    #    CASE
+    #    WHEN dpav.isprimary = 1
+    #    THEN ct.accountnum
+    #    ELSE concat (ct.accountnum,'_',dpav.zipcode)
+    #    END 'Customeraccount',
+    #    cast ('Yes' AS nvarchar(10))as 'ax',
+    #    CASE
+    #    WHEN isct.NAMEALIAS like '%DO NOT USE%'
+    #    THEN cast('1' as nvarchar(10))
+    #    ELSE cast('' as nvarchar(10))
+    #    END 'Archived',
+    #
+    #    CASE
+    #    WHEN ct.INVOICEACCOUNT = ct.ACCOUNTNUM
+    #    THEN ''
+    #    ELSE CT.INVOICEACCOUNT
+    #    END 'KeyAccountCode',
+    #
+    #    isnull (t13.[DeliveryAddresses], '') DeliveryAddress,
+    #    isnull (t13.[DeliveryAddresses], '') DeliveryAddress2,
+    #
+    #    case
+    #    when t13.DeliveryAddresses <> '' or ct.INVOICEACCOUNT = '' then cast('Yes' as nvarchar(10))
+    #    --when DeliveryAddresses <> '' or ct.INVOICEACCOUNT = '' and Customeraccount LIKE '%[_]%'
+    #    else cast('No' as nvarchar(10))
+    #    end 'KeyAccount',
+    #
+    #    isct.NAME as 'Name',
+    #    replace(isct.NAMEALIAS,';','@') as 'Search name',
+    #    --isct.NAMEALIAS 'Search name',
+    #    dpav.ZIPCODE as 'ZIPCODE',
+    #    replace(dpav.city, ';', '') as 'CITY',
+    #    --replace(replace((replace(dpav.CITY, ';', '')),CHAR(13),''),CHAR(10),'') as  'CITY',
+    #    dpav.COUNTRYREGIONID,
+    #    --replace(dpav.street, ';', '') as 'STREET',
+    #    replace(replace((replace(dpav.street, ';', '')),CHAR(13),''),CHAR(10),'') as 'STREET',
+    #    isnull(lea.LOCATOR,'') as 'Telephone',
+    #    isnull(lea.LOCATOREXTENSION,'') as 'Extension',
+    #    ct.CURRENCY as 'CURRENCY',
+    #    ct.CUSTGROUP as 'Customer group',
+    #    ct.INVOICEACCOUNT as 'Invoice account',
+    #    ct.CREATEDDATETIME as 'Created date and time',
+    #    ct.CREATEDBY as 'Created by',
+    #    ct.VATNUMBER_BG as 'VAT number',
+    #    dpav.COUNTRYREGIONID as'Country region',
+    #    dpav.COUNTRYREGIONID as'AccessRights',
+    #    cast ((concat(crm.CountryGroupId,',69')) as nvarchar (10)) as 'GroupID'
+    #
+    #
+    #    from custtable ct
+    #
+    #    left join DIRPARTYPOSTALADDRESSVIEW dpav
+    #    on ct.PARTY = dpav.PARTY
+    #
+    #
+    #    left join IS_CUSTTABLEVIEW ISCT
+    #    on
+    #    ct.DATAAREAID = ISCT.DATAAREAID and
+    #    ct.ACCOUNTNUM = ISCT.ACCOUNTNUM
+    #
+    #    left join dbo.DIRPARTYTABLE dpt
+    #    on ct.PARTY = dpt.RECID
+    #
+    #    left join
+    #    dbo.LOGISTICSELECTRONICADDRESS lea
+    #    on dpt.PRIMARYCONTACTPHONE = lea.RECID
+    #
+    #    left join
+    #    dbo.Z_crmnv_CountryGroups crm
+    #    on dpav.COUNTRYREGIONID = crm.CountryGroupName
+    #
+    #    left join
+    #    (select
+    #    llp.party,lpa.MODIFIEDDATETIME, lpa.VALIDTO,lpa.RECID from LOGISTICSPOSTALADDRESS lpa
+    #    left join LOGISTICSLOCATIONPARTY llp
+    #    on lpa.LOCATION = llp.LOCATION
+    #    group by llp.party,lpa.RECID ,lpa.MODIFIEDDATETIME, lpa.VALIDTO
+    #    having max(lpa.VALIDTO) > CURRENT_TIMESTAMP) lpa2
+    #    on ct.PARTY = lpa2.PARTY
+    #
+    #
+    #    left join
+    #    (select
+    #    c1.INVOICEACCOUNT as [KeyAccountCode],
+    #    STUFF(
+    #    (SELECT ',' + c2.ACCOUNTNUM FROM CUSTTABLE c2 where c2.INVOICEACCOUNT = c1.INVOICEACCOUNT and c2.dataareaid = '110' FOR XML PATH ('')), 1, 1, ''
+    #    ) as [DeliveryAddresses]
+    #    from dbo.CUSTTABLE c1
+    #    where c1.INVOICEACCOUNT <> '' and c1.ACCOUNTNUM <> c1.INVOICEACCOUNT and DATAAREAID = '110'
+    #    group by c1.INVOICEACCOUNT) t13
+    #    on t13.[KeyAccountCode] = ct.ACCOUNTNUM
+    #
+    #    where
+    #    ct.DATAAREAID = '110'
+    #    and isct.NAME <> 'Import Customer Sales'
+    #    -- and isct.NAMEALIAS not like '%DO NOT USE%'
+    #    and ZIPCODE <> ''
+    #    --and (CONVERT(VARCHAR(10),ct.MODIFIEDDATETIME,110) >= DATEADD(day,-5,GETDATE())
+    #    -- or CONVERT(VARCHAR(10),dpt.MODIFIEDDATETIME,110) >= DATEADD(day,-5,GETDATE())
+    #    -- or CONVERT(VARCHAR(10),lpa2.MODIFIEDDATETIME,110) >= DATEADD(day,-5,GETDATE()))
+    #    --and isct.NAME = 'Trouw Nutrition Espana SA'
+    #
+    #
+    #
+    #    group by ct.party,dpav.isprimary,ct.ACCOUNTNUM,dpav.LOCATION,isct.NAME, dpt.MODIFIEDDATETIME,
+    #    isct.NAMEALIAS, dpav.ZIPCODE,dpav.CITY,dpav.COUNTRYREGIONID,dpav.STREET,
+    #    ct.CUSTNAME_BG, lea.LOCATOR, lea.LOCATOREXTENSION, ct.CURRENCY, ct.CUSTGROUP,
+    #    ct.INVOICEACCOUNT, ct.CREATEDDATETIME, ct.CREATEDBY, ct.VATNUMBER_BG, dpav.COUNTRYREGIONID,
+    #    dpav.COUNTRYREGIONID, crm.CountryGroupId
+    #    ,t13.[DeliveryAddresses]
+    #    ,t13.[KeyAccountCode]
+    #
+    #    having max(dpav.VALIDTO) > CURRENT_TIMESTAMP
+    #
+    #    --order by Customeraccount
+    #    )
+    #    --select cte.DeliveryAddress,* from cte
+    #
+    #    select
+    #    cte.Customeraccount,
+    #    cte.ax,
+    #    cte.Archived,
+    #    cte.KeyAccountCode,
+    #    cast(cte.DeliveryAddress as nvarchar(255)) as DeliveryAddress,
+    #    cast(cte.DeliveryAddress2 as nvarchar(255)) as DeliveryAddress2,
+    #    case
+    #    when (cte.DeliveryAddress <> '' or cte.[Invoice account] = '') and cte.Customeraccount LIKE '%[_]%' then 'No'
+    #    when cte.DeliveryAddress <> '' or cte.[Invoice account] = '' then cast('Yes' as nvarchar(10))
+    #    else cast('No' as nvarchar(10))
+    #    end 'KeyAccount',
+    #    --cte.[Invoice account],
+    #    replace(cte.Name, ';', '') as Name,
+    #    cte.[Search name],
+    #    --replace(cte.[Search name],';','@') as 'Search name',
+    #    cte.ZIPCODE,
+    #    cte.city,
+    #    --replace(replace( cte.city,CHAR(13),''),CHAR(10),'') as 'CITY',
+    #    UPPER(CTE.COUNTRYREGIONID) as 'COUNTRYREGIONID',
+    #    replace(replace( cte.STREET,CHAR(13),''),CHAR(10),'') as 'STREET',
+    #    cte.Telephone,
+    #    cte.Extension,
+    #    cte.CURRENCY,
+    #    cte.[Customer group],
+    #    cte.[Invoice account],
+    #    cte.[Created date and time],
+    #    cte.[Created by],
+    #    cte.[VAT number],
+    #    upper (cte.[Country region]) as 'Country region',
+    #    upper (cte.[Country region]) as 'AccessRights',
+    #    cast (cte.GroupId as nvarchar (10)) as 'GroupID'
+    #    from cte
+    #    order by cte.Customeraccount
+    #
+    #    ";
+    #
+    #    //Get ODBC connection
+    #    loginProperty = new LoginProperty();
+    #    loginProperty.setServer(#ServerDefault);
+    #    loginProperty.setDatabase(#DatabaseDefault);
+    #
+    #    //Create a connection to external database
+    #    try
+    #    {
+    #        odbcConnection = new OdbcConnection(loginProperty);
+    #    }
+    #    catch
+    #    {
+    #        throw error("Error creating ODBC Connection");
+    #    }
+    #
+    #    //Exec sentence
+    #    if(odbcConnection)
+    #    {
+    #        if(sql == "")
+    #        {
+    #            throw error("No sql sentence to execute");
+    #        }
+    #
+    #        //Assert permission for executing the sql string
+    #        perm = new SqlStatementExecutePermission(sql);
+    #
+    #        //Check for permission to use the statement
+    #        perm.assert();
+    #
+    #        //Prepare the sql statement
+    #        statement = odbcConnection.createStatement();
+    #        resultSet = statement.executeQuery(sql);
+    #    }
+    #
+    #    ttsBegin;
+    #
+    #    //titles
+    #
+    #    cell = cells.item(1, 1);
+    #    cell.value("Customeraccount");
+    #
+    #    cell = cells.item(1, 2);
+    #    cell.value("ax");
+    #
+    #    cell = cells.item(1, 3);
+    #    cell.value("Archived");
+    #
+    #    cell = cells.item(1, 4);
+    #    cell.value("KeyAccountCode");
+    #
+    #    cell = cells.item(1, 5);
+    #    cell.value("DeliveryAddress");
+    #
+    #    cell = cells.item(1, 6);
+    #    cell.value("DeliveryAddress2");
+    #
+    #    cell = cells.item(1, 7);
+    #    cell.value("KeyAccount");
+    #
+    #    cell = cells.item(1, 8);
+    #    cell.value("Name");
+    #
+    #    cell = cells.item(1, 9);
+    #    cell.value("Search name");
+    #
+    #    cell = cells.item(1, 10);
+    #    cell.value("ZIPCODE");
+    #
+    #    cell = cells.item(1, 11);
+    #    cell.value("city");
+    #
+    #    cell = cells.item(1, 12);
+    #    cell.value("COUNTRYREGIONID");
+    #
+    #    cell = cells.item(1, 13);
+    #    cell.value("STREET");
+    #
+    #    cell = cells.item(1, 14);
+    #    cell.value("Telephone");
+    #
+    #    cell = cells.item(1, 15);
+    #    cell.value("Extension");
+    #
+    #    cell = cells.item(1, 16);
+    #    cell.value("CURRENCY");
+    #
+    #    cell = cells.item(1, 17);
+    #    cell.value("Customer group");
+    #
+    #    cell = cells.item(1, 18);
+    #    cell.value("Invoice account");
+    #
+    #    cell = cells.item(1, 19);
+    #    cell.value("Created date and time");
+    #
+    #    cell = cells.item(1, 20);
+    #    cell.value("Created by");
+    #
+    #    cell = cells.item(1, 21);
+    #    cell.value("VAT number");
+    #
+    #    cell = cells.item(1, 22);
+    #    cell.value("Country region");
+    #
+    #    cell = cells.item(1, 23);
+    #    cell.value("AccessRights");
+    #
+    #    cell = cells.item(1, 24);
+    #    cell.value("GroupID");
+    #
+    #
+    #    while (resultSet.next())
+    #    {
+    #        row++;
+    #        cell = cells.item(row + 1, 1);
+    #        cell.value(resultSet.getString(1));
+    #
+    #        cell = cells.item(row + 1, 2);
+    #        cell.value(resultSet.getString(2));
+    #
+    #        cell = cells.item(row + 1, 3);
+    #        cell.value(resultSet.getString(3));
+    #
+    #        cell = cells.item(row + 1, 4);
+    #        cell.value(resultSet.getString(4));
+    #
+    #        cell = cells.item(row + 1, 5);
+    #        cell.value(resultSet.getString(5));
+    #
+    #        cell = cells.item(row + 1, 6);
+    #        cell.value(resultSet.getString(6));
+    #
+    #        cell = cells.item(row + 1, 7);
+    #        cell.value(resultSet.getString(7));
+    #
+    #        cell = cells.item(row + 1, 8);
+    #        cell.value(resultSet.getString(8));
+    #
+    #        cell = cells.item(row + 1, 9);
+    #        cell.value(resultSet.getString(9));
+    #
+    #        cell = cells.item(row + 1, 10);
+    #        cell.value(resultSet.getString(10));
+    #
+    #        cell = cells.item(row + 1, 11);
+    #        cell.value(resultSet.getString(11));
+    #
+    #        cell = cells.item(row + 1, 12);
+    #        cell.value(resultSet.getString(12));
+    #
+    #        cell = cells.item(row + 1, 13);
+    #        cell.value(resultSet.getString(13));
+    #
+    #        cell = cells.item(row + 1, 14);
+    #        cell.value(resultSet.getString(14));
+    #
+    #        cell = cells.item(row + 1, 15);
+    #        cell.value(resultSet.getString(15));
+    #
+    #        cell = cells.item(row + 1, 16);
+    #        cell.value(resultSet.getString(16));
+    #
+    #        cell = cells.item(row + 1, 17);
+    #        cell.value(resultSet.getString(17));
+    #
+    #        cell = cells.item(row + 1, 18);
+    #        cell.value(resultSet.getString(18));
+    #
+    #        cell = cells.item(row + 1, 19);
+    #        cell.value(resultSet.getString(19));
+    #
+    #        cell = cells.item(row + 1, 20);
+    #        cell.value(resultSet.getString(20));
+    #
+    #        cell = cells.item(row + 1, 21);
+    #        cell.value(resultSet.getString(21));
+    #
+    #        cell = cells.item(row + 1, 22);
+    #        cell.value(resultSet.getString(22));
+    #
+    #        cell = cells.item(row + 1, 23);
+    #        cell.value(resultSet.getString(23));
+    #
+    #
+    #    }
+    #    ttsCommit;
+    #
+    #    //Close the connection
+    #    if(resultSet)
+    #    {
+    #        resultSet.close();
+    #    }
+    #    if(statement)
+    #    {
+    #        statement.close();
+    #    }
+    #
+    #    //End the scope of the assert call
+    #    CodeAccessPermission::revertAssert();
+    #
+    #    excel.visible(true);
+    #    workbook.saveas("C:\\Users\\vladislav.penchev\\Desktop\\ExcelTest.csv");
+    #}
+  ENDSOURCE
+  PROPERTIES
+    Origin              #{3E01005C-3EF9-4B06-AE70-0F949A91B6E5}
+  ENDPROPERTIES
+  
+
+***Element: PRN
+
+; Microsoft Dynamics AX Project : HV_FlatFile_Customers unloaded
+; --------------------------------------------------------------------------------
+  PROJECTVERSION 2
+  
+  PROJECT #HV_FlatFile_Customers
+  PRIVATE
+  PROPERTIES
+    Name                #HV_FlatFile_Customers
+    Origin              #{BEFFA91F-CBD5-446B-B63C-1B45F0949F67}
+  ENDPROPERTIES
+  
+    PROJECTCLASS ProjectNode
+    BEGINNODE
+      FILETYPE 0
+      UTILTYPE 5
+      UTILOBJECTID 0
+      NODETYPE 215
+      NAME #Query3
+    ENDNODE
+    BEGINNODE
+      FILETYPE 0
+      UTILTYPE 5
+      UTILOBJECTID 0
+      NODETYPE 215
+      NAME #Sales
+    ENDNODE
+    BEGINNODE
+      FILETYPE 0
+      UTILTYPE 5
+      UTILOBJECTID 0
+      NODETYPE 215
+      NAME #Customers
+    ENDNODE
+  ENDPROJECT
+  
+
+***Element: END
